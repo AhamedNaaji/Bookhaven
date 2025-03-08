@@ -21,13 +21,24 @@ namespace Bookhaven
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+     
 
-        }
-
-        private void btn_login_Click(object sender, EventArgs e)
+        private void btn_Login_Click_1(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\Bookhaven\Bookhaven\Bookhaven.mdf;Integrated Security=True");
+            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Login where Username='" + txt_Username.Text + "' and Password='" + txt_Password.Text + "'", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                this.Hide();
+                Dashboard ss = new Dashboard();
+                ss.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please Check your Username and Password");
+            }
 
         }
     }
