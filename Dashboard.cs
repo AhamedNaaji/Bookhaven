@@ -16,5 +16,15 @@ namespace Bookhaven
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_emp_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

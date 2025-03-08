@@ -12,8 +12,8 @@ namespace Bookhaven.CommonClasses
     internal class Common
     {
         dbconnection dbcon = new dbconnection();
-    }
-    public void messages(string qry, string key)
+
+        public void messages(string qry, string key)
         {
             try
             {
@@ -23,7 +23,7 @@ namespace Bookhaven.CommonClasses
                         if (MessageBox.Show("Do you want to save?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             RunQuery(qry);
-                            MessageBox.Show("Saved Succesfully", "Saved");
+                            MessageBox.Show("Saved Successfully", "Saved");
                         }
                         break;
                     case "update":
@@ -57,7 +57,6 @@ namespace Bookhaven.CommonClasses
             cmd.ExecuteNonQuery();
             dbcon.mycon.Close();
         }
-
     }
 
 }

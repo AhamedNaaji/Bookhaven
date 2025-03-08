@@ -15,7 +15,7 @@ namespace Bookhaven.CommonClasses
 
         double leaves;
         double totalleaves;
-    }
+    
 
     public void combobox(string qry, ComboBox cmb_name, string display_member, string value_member)
         {
@@ -196,21 +196,6 @@ namespace Bookhaven.CommonClasses
 
         }
 
-        public void FillReportView(string qry, ReportViewer rpt)
-        {
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(qry, con.mycon);
-            da.Fill(dt);
-
-            rpt.LocalReport.DataSources.Clear();
-            ReportDataSource source = new ReportDataSource("EmployeeSalary", dt);
-            ReportDataSource source1 = new ReportDataSource("tbl_salary", dt);
-            ReportDataSource source2 = new ReportDataSource("tbl_employee", dt);
-            rpt.LocalReport.ReportPath = "D:\\HND\\Assignment Answer\\Programming\\Grifindo Toys\\Grifindo Toys\\Report1.rdlc";
-            rpt.LocalReport.DataSources.Add(source);
-            rpt.LocalReport.DataSources.Add(source1);
-            rpt.LocalReport.DataSources.Add(source2);
-            rpt.RefreshReport();
-        }
+        
     }
 }
