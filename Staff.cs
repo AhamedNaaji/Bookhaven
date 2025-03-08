@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace Bookhaven
 {
-    public partial class Book : Form
+    public partial class Staff : Form
     {
-        public Book()
+        public Staff()
         {
             InitializeComponent();
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
+        private void label17_Click(object sender, EventArgs e)
         {
 
         }

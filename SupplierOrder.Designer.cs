@@ -749,7 +749,7 @@
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
-            this.Name = "SupplierOrder";
+            
             this.Text = "SupplierOrder";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -822,7 +822,7 @@
         private System.Windows.Forms.Button btn_addCustomer;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

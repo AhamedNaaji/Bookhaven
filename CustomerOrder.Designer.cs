@@ -840,7 +840,7 @@
             this.Controls.Add(this.btn_updateCustomer);
             this.Controls.Add(this.btn_addCustomer);
             this.Controls.Add(this.panel1);
-            this.Name = "CustomerOrder";
+            
             this.Text = "CustomerOrder";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -918,7 +918,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

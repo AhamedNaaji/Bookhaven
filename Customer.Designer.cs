@@ -82,7 +82,7 @@
             this.btn_updateCustomer = new System.Windows.Forms.Button();
             this.btn_deleteCustomer = new System.Windows.Forms.Button();
             this.dgv_customer = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+       
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -658,7 +658,7 @@
             // 
             this.dgv_customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
+        
             this.Column1,
             this.Column2,
             this.Column3,
@@ -673,10 +673,7 @@
             // 
             // Name
             // 
-            this.Name.HeaderText = "Name";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.Width = 125;
+         
             // 
             // Column1
             // 
@@ -726,7 +723,7 @@
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
-            this.Name = "Customer";
+            
             this.Text = "Customer";
             this.Totalsales_panel.ResumeLayout(false);
             this.Totalsales_panel.PerformLayout();
@@ -798,7 +795,7 @@
         private System.Windows.Forms.Button btn_updateCustomer;
         private System.Windows.Forms.Button btn_deleteCustomer;
         private System.Windows.Forms.DataGridView dgv_customer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
