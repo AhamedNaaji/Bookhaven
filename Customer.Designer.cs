@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -181,16 +181,16 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea7.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chart1.Legends.Add(legend7);
             this.chart1.Location = new System.Drawing.Point(1442, 1203);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chart1.Series.Add(series7);
             this.chart1.Size = new System.Drawing.Size(2095, 733);
             this.chart1.TabIndex = 25;
             this.chart1.Text = "chart1";
@@ -535,6 +535,7 @@
             this.txtbox_Number2.Name = "txtbox_Number2";
             this.txtbox_Number2.Size = new System.Drawing.Size(233, 37);
             this.txtbox_Number2.TabIndex = 13;
+            this.txtbox_Number2.TextChanged += new System.EventHandler(this.txtbox_Number2_TextChanged);
             // 
             // label21
             // 
@@ -553,6 +554,7 @@
             this.txtbox_Number1.Name = "txtbox_Number1";
             this.txtbox_Number1.Size = new System.Drawing.Size(233, 37);
             this.txtbox_Number1.TabIndex = 11;
+            this.txtbox_Number1.TextChanged += new System.EventHandler(this.txtbox_Number1_TextChanged);
             // 
             // label20
             // 
@@ -571,6 +573,7 @@
             this.txtbox_Address.Name = "txtbox_Address";
             this.txtbox_Address.Size = new System.Drawing.Size(233, 37);
             this.txtbox_Address.TabIndex = 9;
+            this.txtbox_Address.TextChanged += new System.EventHandler(this.txtbox_Address_TextChanged);
             // 
             // label19
             // 
@@ -589,6 +592,7 @@
             this.txtbox_DOB.Name = "txtbox_DOB";
             this.txtbox_DOB.Size = new System.Drawing.Size(233, 37);
             this.txtbox_DOB.TabIndex = 7;
+            this.txtbox_DOB.TextChanged += new System.EventHandler(this.txtbox_DOB_TextChanged);
             // 
             // label18
             // 
@@ -607,6 +611,7 @@
             this.txtbox_NIC.Name = "txtbox_NIC";
             this.txtbox_NIC.Size = new System.Drawing.Size(233, 37);
             this.txtbox_NIC.TabIndex = 5;
+            this.txtbox_NIC.TextChanged += new System.EventHandler(this.txtbox_NIC_TextChanged);
             // 
             // label3
             // 
@@ -645,6 +650,7 @@
             this.btn_updateCustomer.TabIndex = 28;
             this.btn_updateCustomer.Text = "Update Customer";
             this.btn_updateCustomer.UseVisualStyleBackColor = true;
+            this.btn_updateCustomer.Click += new System.EventHandler(this.btn_updateCustomer_Click);
             // 
             // btn_deleteCustomer
             // 
@@ -654,6 +660,7 @@
             this.btn_deleteCustomer.TabIndex = 29;
             this.btn_deleteCustomer.Text = "Delete Customer";
             this.btn_deleteCustomer.UseVisualStyleBackColor = true;
+            this.btn_deleteCustomer.Click += new System.EventHandler(this.btn_deleteCustomer_Click);
             // 
             // dgv_customer
             // 

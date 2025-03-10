@@ -21,7 +21,7 @@ namespace Bookhaven
 
         private void btn_emp_Click(object sender, EventArgs e)
         {
-            Staff emp_frm = new Staff();
+            Customer emp_frm = new Customer();
             emp_frm.ShowDialog();
         }
 
