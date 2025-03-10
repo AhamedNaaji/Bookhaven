@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -66,23 +66,22 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtbox_name = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtbox_NIC = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtbox_DOB = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtbox_Address = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txtbox_Number1 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.txtbox_Number2 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtbox_Number1 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtbox_Address = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtbox_DOB = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtbox_NIC = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtbox_name = new System.Windows.Forms.TextBox();
             this.btn_addCustomer = new System.Windows.Forms.Button();
             this.btn_updateCustomer = new System.Windows.Forms.Button();
             this.btn_deleteCustomer = new System.Windows.Forms.Button();
             this.dgv_customer = new System.Windows.Forms.DataGridView();
-       
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -176,22 +175,22 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(213, 29);
+            this.label2.Size = new System.Drawing.Size(170, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Total  Customers";
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(1442, 1203);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(2095, 733);
             this.chart1.TabIndex = 25;
             this.chart1.Text = "chart1";
@@ -212,7 +211,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 145F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1524, 145);
             this.tableLayoutPanel1.TabIndex = 23;
             // 
@@ -320,7 +319,7 @@
             this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(3, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(226, 29);
+            this.label13.Size = new System.Drawing.Size(181, 23);
             this.label13.TabIndex = 0;
             this.label13.Text = "Existing Customer";
             // 
@@ -374,7 +373,7 @@
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(223, 29);
+            this.label9.Size = new System.Drawing.Size(178, 23);
             this.label9.TabIndex = 0;
             this.label9.Text = "Today Customers";
             // 
@@ -519,103 +518,13 @@
             this.panel2.Size = new System.Drawing.Size(662, 352);
             this.panel2.TabIndex = 26;
             // 
-            // txtbox_name
-            // 
-            this.txtbox_name.Location = new System.Drawing.Point(19, 43);
-            this.txtbox_name.Multiline = true;
-            this.txtbox_name.Name = "txtbox_name";
-            this.txtbox_name.Size = new System.Drawing.Size(233, 37);
-            this.txtbox_name.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 29);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Name";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(366, 11);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(59, 29);
-            this.label18.TabIndex = 6;
-            this.label18.Text = "NIC";
-            // 
-            // txtbox_NIC
-            // 
-            this.txtbox_NIC.Location = new System.Drawing.Point(370, 43);
-            this.txtbox_NIC.Multiline = true;
-            this.txtbox_NIC.Name = "txtbox_NIC";
-            this.txtbox_NIC.Size = new System.Drawing.Size(233, 37);
-            this.txtbox_NIC.TabIndex = 5;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(15, 117);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(66, 29);
-            this.label19.TabIndex = 8;
-            this.label19.Text = "DOB";
-            // 
-            // txtbox_DOB
-            // 
-            this.txtbox_DOB.Location = new System.Drawing.Point(19, 149);
-            this.txtbox_DOB.Multiline = true;
-            this.txtbox_DOB.Name = "txtbox_DOB";
-            this.txtbox_DOB.Size = new System.Drawing.Size(233, 37);
-            this.txtbox_DOB.TabIndex = 7;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(366, 117);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(110, 29);
-            this.label20.TabIndex = 10;
-            this.label20.Text = "Address";
-            // 
-            // txtbox_Address
-            // 
-            this.txtbox_Address.Location = new System.Drawing.Point(370, 149);
-            this.txtbox_Address.Multiline = true;
-            this.txtbox_Address.Name = "txtbox_Address";
-            this.txtbox_Address.Size = new System.Drawing.Size(233, 37);
-            this.txtbox_Address.TabIndex = 9;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(15, 229);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(145, 29);
-            this.label21.TabIndex = 12;
-            this.label21.Text = "Number 01";
-            // 
-            // txtbox_Number1
-            // 
-            this.txtbox_Number1.Location = new System.Drawing.Point(19, 261);
-            this.txtbox_Number1.Multiline = true;
-            this.txtbox_Number1.Name = "txtbox_Number1";
-            this.txtbox_Number1.Size = new System.Drawing.Size(233, 37);
-            this.txtbox_Number1.TabIndex = 11;
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(366, 229);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(145, 29);
+            this.label22.Size = new System.Drawing.Size(116, 23);
             this.label22.TabIndex = 14;
             this.label22.Text = "Number 02";
             // 
@@ -627,6 +536,97 @@
             this.txtbox_Number2.Size = new System.Drawing.Size(233, 37);
             this.txtbox_Number2.TabIndex = 13;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(15, 229);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(116, 23);
+            this.label21.TabIndex = 12;
+            this.label21.Text = "Number 01";
+            // 
+            // txtbox_Number1
+            // 
+            this.txtbox_Number1.Location = new System.Drawing.Point(19, 261);
+            this.txtbox_Number1.Multiline = true;
+            this.txtbox_Number1.Name = "txtbox_Number1";
+            this.txtbox_Number1.Size = new System.Drawing.Size(233, 37);
+            this.txtbox_Number1.TabIndex = 11;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(366, 117);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(88, 23);
+            this.label20.TabIndex = 10;
+            this.label20.Text = "Address";
+            // 
+            // txtbox_Address
+            // 
+            this.txtbox_Address.Location = new System.Drawing.Point(370, 149);
+            this.txtbox_Address.Multiline = true;
+            this.txtbox_Address.Name = "txtbox_Address";
+            this.txtbox_Address.Size = new System.Drawing.Size(233, 37);
+            this.txtbox_Address.TabIndex = 9;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(15, 117);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(53, 23);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "DOB";
+            // 
+            // txtbox_DOB
+            // 
+            this.txtbox_DOB.Location = new System.Drawing.Point(19, 149);
+            this.txtbox_DOB.Multiline = true;
+            this.txtbox_DOB.Name = "txtbox_DOB";
+            this.txtbox_DOB.Size = new System.Drawing.Size(233, 37);
+            this.txtbox_DOB.TabIndex = 7;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(366, 11);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(47, 23);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "NIC";
+            // 
+            // txtbox_NIC
+            // 
+            this.txtbox_NIC.Location = new System.Drawing.Point(370, 43);
+            this.txtbox_NIC.Multiline = true;
+            this.txtbox_NIC.Name = "txtbox_NIC";
+            this.txtbox_NIC.Size = new System.Drawing.Size(233, 37);
+            this.txtbox_NIC.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(15, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 23);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Name";
+            // 
+            // txtbox_name
+            // 
+            this.txtbox_name.Location = new System.Drawing.Point(19, 43);
+            this.txtbox_name.Multiline = true;
+            this.txtbox_name.Name = "txtbox_name";
+            this.txtbox_name.Size = new System.Drawing.Size(233, 37);
+            this.txtbox_name.TabIndex = 0;
+            this.txtbox_name.TextChanged += new System.EventHandler(this.txtbox_name_TextChanged);
+            // 
             // btn_addCustomer
             // 
             this.btn_addCustomer.Location = new System.Drawing.Point(1450, 210);
@@ -635,6 +635,7 @@
             this.btn_addCustomer.TabIndex = 27;
             this.btn_addCustomer.Text = "Add Customer";
             this.btn_addCustomer.UseVisualStyleBackColor = true;
+            this.btn_addCustomer.Click += new System.EventHandler(this.btn_addCustomer_Click);
             // 
             // btn_updateCustomer
             // 
@@ -658,7 +659,6 @@
             // 
             this.dgv_customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-        
             this.Column1,
             this.Column2,
             this.Column3,
@@ -670,10 +670,6 @@
             this.dgv_customer.RowTemplate.Height = 24;
             this.dgv_customer.Size = new System.Drawing.Size(1495, 428);
             this.dgv_customer.TabIndex = 30;
-            // 
-            // Name
-            // 
-         
             // 
             // Column1
             // 
@@ -723,7 +719,7 @@
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
-            
+            this.Name = "Customer";
             this.Text = "Customer";
             this.Totalsales_panel.ResumeLayout(false);
             this.Totalsales_panel.PerformLayout();

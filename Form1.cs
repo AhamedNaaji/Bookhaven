@@ -15,30 +15,71 @@ namespace Bookhaven
 
     public partial class Form1 : Form
     {
+        public SqlConnection mycon = new SqlConnection("Data Source=DESKTOP-V3UAK82;Initial Catalog=Bookhaven;Integrated Security=True;Encrypt=False");
+
 
         public Form1()
         {
             InitializeComponent();
         }
 
-     
+
 
         private void btn_Login_Click_1(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\source\repos\Bookhaven\Bookhaven\Bookhaven.mdf;Integrated Security=True");
-            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) From Login where Username='" + txt_Username.Text + "' and Password='" + txt_Password.Text + "'", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "1")
+            try
             {
-                this.Hide();
-                Dashboard ss = new Dashboard();
-                ss.Show();
+                if (txt_Username.Text.Trim() != "" && txt_Password.Text.Trim() != "")
+                {
+                    mycon.Open();
+                    string qry = "SELECT s.*, sr.Role_Name FROM Staff s " +
+                                 "INNER JOIN staffRole sr ON s.staffRoll_Id_fk = sr.staffRoll_Id " +
+                                 "WHERE s.Username = @username AND s.Password = @password";
+
+                    SqlCommand cmd = new SqlCommand(qry, mycon);
+                    cmd.Parameters.AddWithValue("@username", txt_Username.Text.Trim());
+                    cmd.Parameters.AddWithValue("@password", txt_Password.Text.Trim());
+
+                    SqlDataReader rdr = cmd.ExecuteReader();
+
+                    if (rdr.Read())
+                    {
+                        if (rdr["Role_Name"].ToString() == "Admin")
+                        {
+                            // Assuming frm_dashboard is the correct form name
+                            Dashboard dashboard_frm = new Dashboard();
+                            dashboard_frm.ShowDialog();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            Dashboard_Clerk dashboard = new Dashboard_Clerk();
+                            dashboard.ShowDialog();
+                            this.Hide();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Incorrect Username or Password");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter both Username and Password");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Please Check your Username and Password");
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
+            finally
+            {
+                mycon.Close();
+            }
+        }
+
+        private void txt_Username_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

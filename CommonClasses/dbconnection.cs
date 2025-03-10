@@ -9,7 +9,7 @@ namespace Bookhaven.CommonClasses
 {
     internal class dbconnection
     {
-        public SqlConnection mycon = new SqlConnection("Data Source=DESKTOP-V3UAK82;Initial Catalog=Bookhaven;Integrated Security=True;Encrypt=False;Trust Server Certificate=True");
+        public SqlConnection mycon = new SqlConnection("Data Source=DESKTOP-V3UAK82;Initial Catalog=Bookhaven;Integrated Security=True;Encrypt=False");
 
     }
 }

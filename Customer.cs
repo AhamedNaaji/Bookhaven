@@ -16,5 +16,15 @@ namespace Bookhaven
         {
             InitializeComponent();
         }
+
+        private void txtbox_name_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_addCustomer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
