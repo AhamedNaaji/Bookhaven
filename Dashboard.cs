@@ -17,14 +17,24 @@ namespace Bookhaven
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btn_emp_Click(object sender, EventArgs e)
         {
+            Staff emp_frm = new Staff();
+            emp_frm.ShowDialog();
+        }
 
+        private void btn_Sales_Click(object sender, EventArgs e)
+        {
+            Sales emp_sale = new Sales();
+            emp_sale.ShowDialog();
+        }
+
+        private void btn_Cusorder_Click(object sender, EventArgs e)
+        {
+            CustomerOrder emp_cusOrder = new CustomerOrder();
+            emp_cusOrder.ShowDialog();
         }
     }
 }
