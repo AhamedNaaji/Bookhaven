@@ -41,49 +41,43 @@
             this.btn_overview = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txt_Author = new System.Windows.Forms.TextBox();
-            this.txt_Genre = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.Label();
+            this.comboStaffRole = new System.Windows.Forms.ComboBox();
+            this.txtBox_StaffMobile = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBox_StaffPassword = new System.Windows.Forms.TextBox();
+            this.txtBox_StaffUsername = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txt_Price = new System.Windows.Forms.TextBox();
-            this.txt_Isbn = new System.Windows.Forms.TextBox();
-            this.txt_Bookname = new System.Windows.Forms.TextBox();
+            this.txtBox_StaffNIC = new System.Windows.Forms.TextBox();
+            this.txtBox_StaffAddress = new System.Windows.Forms.TextBox();
+            this.txtBox_Staffname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dgv_customer = new System.Windows.Forms.DataGridView();
-            this.btn_deleteBook = new System.Windows.Forms.Button();
-            this.btn_updateBook = new System.Windows.Forms.Button();
-            this.btn_addBook = new System.Windows.Forms.Button();
+            this.dgv_staff = new System.Windows.Forms.DataGridView();
+            this.btn_deleteStaff = new System.Windows.Forms.Button();
+            this.btn_updateStaff = new System.Windows.Forms.Button();
+            this.btn_addStaff = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cusorderRecieve_panel = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.outofstock_panel = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.Totalcustomer_panel = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.Totalsales_panel = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_staff)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.cusorderRecieve_panel.SuspendLayout();
             this.outofstock_panel.SuspendLayout();
@@ -109,7 +103,7 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(476, 1064);
+            this.panel1.Size = new System.Drawing.Size(476, 1055);
             this.panel1.TabIndex = 60;
             // 
             // btn_Report
@@ -241,16 +235,18 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.Email);
+            this.panel3.Controls.Add(this.comboStaffRole);
+            this.panel3.Controls.Add(this.txtBox_StaffMobile);
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.txt_Author);
-            this.panel3.Controls.Add(this.txt_Genre);
+            this.panel3.Controls.Add(this.txtBox_StaffPassword);
+            this.panel3.Controls.Add(this.txtBox_StaffUsername);
             this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.txt_Price);
-            this.panel3.Controls.Add(this.txt_Isbn);
-            this.panel3.Controls.Add(this.txt_Bookname);
+            this.panel3.Controls.Add(this.txtBox_StaffNIC);
+            this.panel3.Controls.Add(this.txtBox_StaffAddress);
+            this.panel3.Controls.Add(this.txtBox_Staffname);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label5);
@@ -260,19 +256,78 @@
             this.panel3.Size = new System.Drawing.Size(801, 244);
             this.panel3.TabIndex = 62;
             // 
-            // txt_Author
+            // textBox1
             // 
-            this.txt_Author.Location = new System.Drawing.Point(277, 121);
-            this.txt_Author.Name = "txt_Author";
-            this.txt_Author.Size = new System.Drawing.Size(190, 22);
-            this.txt_Author.TabIndex = 36;
+            this.textBox1.Location = new System.Drawing.Point(277, 199);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(190, 22);
+            this.textBox1.TabIndex = 43;
+            this.textBox1.TextChanged += new System.EventHandler(this.Email_TextChanged);
             // 
-            // txt_Genre
+            // Email
             // 
-            this.txt_Genre.Location = new System.Drawing.Point(20, 121);
-            this.txt_Genre.Name = "txt_Genre";
-            this.txt_Genre.Size = new System.Drawing.Size(190, 22);
-            this.txt_Genre.TabIndex = 35;
+            this.Email.AutoSize = true;
+            this.Email.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email.Location = new System.Drawing.Point(273, 165);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(62, 23);
+            this.Email.TabIndex = 42;
+            this.Email.Text = "Email";
+            this.Email.UseMnemonic = false;
+            this.Email.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // comboStaffRole
+            // 
+            this.comboStaffRole.FormattingEnabled = true;
+            this.comboStaffRole.Location = new System.Drawing.Point(554, 121);
+            this.comboStaffRole.Name = "comboStaffRole";
+            this.comboStaffRole.Size = new System.Drawing.Size(190, 24);
+            this.comboStaffRole.TabIndex = 41;
+            this.comboStaffRole.SelectedIndexChanged += new System.EventHandler(this.comboStaffRole_SelectedIndexChanged);
+            // 
+            // txtBox_StaffMobile
+            // 
+            this.txtBox_StaffMobile.Location = new System.Drawing.Point(20, 200);
+            this.txtBox_StaffMobile.Name = "txtBox_StaffMobile";
+            this.txtBox_StaffMobile.Size = new System.Drawing.Size(190, 22);
+            this.txtBox_StaffMobile.TabIndex = 40;
+            this.txtBox_StaffMobile.TextChanged += new System.EventHandler(this.txtBox_StaffMobile_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(16, 165);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(161, 23);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "Mobile Number";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(550, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 23);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Role";
+            // 
+            // txtBox_StaffPassword
+            // 
+            this.txtBox_StaffPassword.Location = new System.Drawing.Point(277, 121);
+            this.txtBox_StaffPassword.Name = "txtBox_StaffPassword";
+            this.txtBox_StaffPassword.Size = new System.Drawing.Size(190, 22);
+            this.txtBox_StaffPassword.TabIndex = 36;
+            this.txtBox_StaffPassword.TextChanged += new System.EventHandler(this.txtBox_StaffPassword_TextChanged);
+            // 
+            // txtBox_StaffUsername
+            // 
+            this.txtBox_StaffUsername.Location = new System.Drawing.Point(20, 121);
+            this.txtBox_StaffUsername.Name = "txtBox_StaffUsername";
+            this.txtBox_StaffUsername.Size = new System.Drawing.Size(190, 22);
+            this.txtBox_StaffUsername.TabIndex = 35;
+            this.txtBox_StaffUsername.TextChanged += new System.EventHandler(this.txtBox_StaffUsername_TextChanged);
             // 
             // label14
             // 
@@ -280,30 +335,33 @@
             this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(16, 91);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(135, 29);
+            this.label14.Size = new System.Drawing.Size(108, 23);
             this.label14.TabIndex = 34;
             this.label14.Text = "Username";
             // 
-            // txt_Price
+            // txtBox_StaffNIC
             // 
-            this.txt_Price.Location = new System.Drawing.Point(277, 43);
-            this.txt_Price.Name = "txt_Price";
-            this.txt_Price.Size = new System.Drawing.Size(190, 22);
-            this.txt_Price.TabIndex = 33;
+            this.txtBox_StaffNIC.Location = new System.Drawing.Point(277, 43);
+            this.txtBox_StaffNIC.Name = "txtBox_StaffNIC";
+            this.txtBox_StaffNIC.Size = new System.Drawing.Size(190, 22);
+            this.txtBox_StaffNIC.TabIndex = 33;
+            this.txtBox_StaffNIC.TextChanged += new System.EventHandler(this.txtBox_StaffNIC_TextChanged);
             // 
-            // txt_Isbn
+            // txtBox_StaffAddress
             // 
-            this.txt_Isbn.Location = new System.Drawing.Point(554, 41);
-            this.txt_Isbn.Name = "txt_Isbn";
-            this.txt_Isbn.Size = new System.Drawing.Size(190, 22);
-            this.txt_Isbn.TabIndex = 32;
+            this.txtBox_StaffAddress.Location = new System.Drawing.Point(554, 41);
+            this.txtBox_StaffAddress.Name = "txtBox_StaffAddress";
+            this.txtBox_StaffAddress.Size = new System.Drawing.Size(190, 22);
+            this.txtBox_StaffAddress.TabIndex = 32;
+            this.txtBox_StaffAddress.TextChanged += new System.EventHandler(this.txtBox_StaffAddress_TextChanged);
             // 
-            // txt_Bookname
+            // txtBox_Staffname
             // 
-            this.txt_Bookname.Location = new System.Drawing.Point(19, 44);
-            this.txt_Bookname.Name = "txt_Bookname";
-            this.txt_Bookname.Size = new System.Drawing.Size(190, 22);
-            this.txt_Bookname.TabIndex = 31;
+            this.txtBox_Staffname.Location = new System.Drawing.Point(19, 44);
+            this.txtBox_Staffname.Name = "txtBox_Staffname";
+            this.txtBox_Staffname.Size = new System.Drawing.Size(190, 22);
+            this.txtBox_Staffname.TabIndex = 31;
+            this.txtBox_Staffname.TextChanged += new System.EventHandler(this.txtBox_Staffname_TextChanged);
             // 
             // label1
             // 
@@ -311,7 +369,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(279, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 29);
+            this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 28;
             this.label1.Text = "Password";
             // 
@@ -341,55 +399,52 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(15, 11);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(146, 29);
+            this.label6.Size = new System.Drawing.Size(117, 23);
             this.label6.TabIndex = 4;
             this.label6.Text = "Staff Name";
             // 
-            // dgv_customer
+            // dgv_staff
             // 
-            this.dgv_customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column6,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column8,
-            this.Column7});
-            this.dgv_customer.Location = new System.Drawing.Point(574, 630);
-            this.dgv_customer.Name = "dgv_customer";
-            this.dgv_customer.RowHeadersWidth = 51;
-            this.dgv_customer.RowTemplate.Height = 24;
-            this.dgv_customer.Size = new System.Drawing.Size(1192, 319);
-            this.dgv_customer.TabIndex = 66;
+            this.dgv_staff.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgv_staff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_staff.Location = new System.Drawing.Point(574, 630);
+            this.dgv_staff.Name = "dgv_staff";
+            this.dgv_staff.RowHeadersWidth = 51;
+            this.dgv_staff.RowTemplate.Height = 24;
+            this.dgv_staff.Size = new System.Drawing.Size(1192, 319);
+            this.dgv_staff.TabIndex = 66;
+            this.dgv_staff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_staff_CellClick);
+            this.dgv_staff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_staff_CellContentClick);
+            this.dgv_staff.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_staff_CellContentDoubleClick);
+            this.dgv_staff.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_staff_CellDoubleClick);
             // 
-            // btn_deleteBook
+            // btn_deleteStaff
             // 
-            this.btn_deleteBook.Location = new System.Drawing.Point(1519, 468);
-            this.btn_deleteBook.Name = "btn_deleteBook";
-            this.btn_deleteBook.Size = new System.Drawing.Size(247, 67);
-            this.btn_deleteBook.TabIndex = 65;
-            this.btn_deleteBook.Text = "Delete Staff";
-            this.btn_deleteBook.UseVisualStyleBackColor = true;
+            this.btn_deleteStaff.Location = new System.Drawing.Point(1519, 468);
+            this.btn_deleteStaff.Name = "btn_deleteStaff";
+            this.btn_deleteStaff.Size = new System.Drawing.Size(247, 67);
+            this.btn_deleteStaff.TabIndex = 65;
+            this.btn_deleteStaff.Text = "Delete Staff";
+            this.btn_deleteStaff.UseVisualStyleBackColor = true;
             // 
-            // btn_updateBook
+            // btn_updateStaff
             // 
-            this.btn_updateBook.Location = new System.Drawing.Point(1519, 362);
-            this.btn_updateBook.Name = "btn_updateBook";
-            this.btn_updateBook.Size = new System.Drawing.Size(247, 67);
-            this.btn_updateBook.TabIndex = 64;
-            this.btn_updateBook.Text = "Update Staff";
-            this.btn_updateBook.UseVisualStyleBackColor = true;
+            this.btn_updateStaff.Location = new System.Drawing.Point(1519, 362);
+            this.btn_updateStaff.Name = "btn_updateStaff";
+            this.btn_updateStaff.Size = new System.Drawing.Size(247, 67);
+            this.btn_updateStaff.TabIndex = 64;
+            this.btn_updateStaff.Text = "Update Staff";
+            this.btn_updateStaff.UseVisualStyleBackColor = true;
             // 
-            // btn_addBook
+            // btn_addStaff
             // 
-            this.btn_addBook.Location = new System.Drawing.Point(1519, 253);
-            this.btn_addBook.Name = "btn_addBook";
-            this.btn_addBook.Size = new System.Drawing.Size(247, 67);
-            this.btn_addBook.TabIndex = 63;
-            this.btn_addBook.Text = "Add Staff";
-            this.btn_addBook.UseVisualStyleBackColor = true;
+            this.btn_addStaff.Location = new System.Drawing.Point(1519, 253);
+            this.btn_addStaff.Name = "btn_addStaff";
+            this.btn_addStaff.Size = new System.Drawing.Size(247, 67);
+            this.btn_addStaff.TabIndex = 63;
+            this.btn_addStaff.Text = "Add Staff";
+            this.btn_addStaff.UseVisualStyleBackColor = true;
+            this.btn_addStaff.Click += new System.EventHandler(this.btn_addStaff_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -428,7 +483,7 @@
             this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(58, 65);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(73, 29);
+            this.label17.Size = new System.Drawing.Size(58, 23);
             this.label17.TabIndex = 0;
             this.label17.Text = "Soon";
             this.label17.Click += new System.EventHandler(this.label17_Click);
@@ -444,15 +499,15 @@
             this.outofstock_panel.Size = new System.Drawing.Size(322, 165);
             this.outofstock_panel.TabIndex = 2;
             // 
-            // label13
+            // label7
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(76, 56);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(130, 23);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Out of Stock";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(128, 56);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 23);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Soon";
             // 
             // Totalcustomer_panel
             // 
@@ -466,13 +521,23 @@
             this.Totalcustomer_panel.Size = new System.Drawing.Size(320, 165);
             this.Totalcustomer_panel.TabIndex = 1;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(76, 56);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(130, 23);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Out of Stock";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 29);
+            this.label9.Size = new System.Drawing.Size(0, 23);
             this.label9.TabIndex = 0;
             // 
             // Totalsales_panel
@@ -529,125 +594,26 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "Total Staffs";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(550, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 29);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Role";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(554, 121);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 22);
-            this.textBox1.TabIndex = 38;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 165);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(201, 29);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Mobile Number";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(20, 200);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(190, 22);
-            this.textBox2.TabIndex = 40;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "No";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Staff Name";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "NIC";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Address";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Username";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Password";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Role";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Mobile No";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(128, 56);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 23);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Soon";
-            // 
             // Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1803, 1064);
+            this.ClientSize = new System.Drawing.Size(1803, 1055);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.dgv_customer);
-            this.Controls.Add(this.btn_deleteBook);
-            this.Controls.Add(this.btn_updateBook);
-            this.Controls.Add(this.btn_addBook);
+            this.Controls.Add(this.dgv_staff);
+            this.Controls.Add(this.btn_deleteStaff);
+            this.Controls.Add(this.btn_updateStaff);
+            this.Controls.Add(this.btn_addStaff);
             this.Name = "Staff";
             this.Text = "Staff";
+            this.Load += new System.EventHandler(this.Staff_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_staff)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.cusorderRecieve_panel.ResumeLayout(false);
             this.cusorderRecieve_panel.PerformLayout();
@@ -675,20 +641,20 @@
         private System.Windows.Forms.Button btn_overview;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txt_Author;
-        private System.Windows.Forms.TextBox txt_Genre;
+        private System.Windows.Forms.TextBox txtBox_StaffPassword;
+        private System.Windows.Forms.TextBox txtBox_StaffUsername;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txt_Price;
-        private System.Windows.Forms.TextBox txt_Isbn;
-        private System.Windows.Forms.TextBox txt_Bookname;
+        private System.Windows.Forms.TextBox txtBox_StaffNIC;
+        private System.Windows.Forms.TextBox txtBox_StaffAddress;
+        private System.Windows.Forms.TextBox txtBox_Staffname;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dgv_customer;
-        private System.Windows.Forms.Button btn_deleteBook;
-        private System.Windows.Forms.Button btn_updateBook;
-        private System.Windows.Forms.Button btn_addBook;
+        private System.Windows.Forms.DataGridView dgv_staff;
+        private System.Windows.Forms.Button btn_deleteStaff;
+        private System.Windows.Forms.Button btn_updateStaff;
+        private System.Windows.Forms.Button btn_addStaff;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel cusorderRecieve_panel;
         private System.Windows.Forms.Label label17;
@@ -701,18 +667,12 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBox_StaffMobile;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboStaffRole;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label Email;
     }
 }
