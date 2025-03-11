@@ -15,14 +15,13 @@ namespace Bookhaven
 
     public partial class Form1 : Form
     {
-        public SqlConnection mycon = new SqlConnection("Data Source=DESKTOP-V3UAK82;Initial Catalog=Bookhaven;Integrated Security=True;Encrypt=False");
+        public SqlConnection mycon = new SqlConnection("Data Source=MMSALMANFARIS;Initial Catalog=Bookhaven;Integrated Security=True;Encrypt=False");
 
 
         public Form1()
         {
             InitializeComponent();
         }
-
 
 
         private void btn_Login_Click_1(object sender, EventArgs e)

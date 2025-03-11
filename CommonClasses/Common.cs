@@ -1,62 +1,62 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Common;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookhaven.CommonClasses
 {
     internal class Common
     {
-        dbconnection dbcon = new dbconnection();
+        private readonly dbconnection _dbcon = new dbconnection();
 
-        public void messages(string qry, string key)
+        /// <summary>
+        /// Executes a SQL query.
+        /// </summary>
+        /// <param name="query">The SQL query to execute.</param>
+        public void RunQuery(string query)
         {
             try
             {
-                switch (key.ToLower())
+                using (SqlConnection connection = _dbcon.mycon)
                 {
-                    case "insert":
-                        if (MessageBox.Show("Do you want to save?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            RunQuery(qry);
-                            MessageBox.Show("Saved Successfully", "Saved");
-                        }
-                        break;
-                    case "update":
-                        if (MessageBox.Show("Do you want to update?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            RunQuery(qry);
-                            MessageBox.Show("Updated Successfully", "Updated");
-                        }
-                        break;
-                    case "delete":
-                        if (MessageBox.Show("Do you want to delete?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            RunQuery(qry);
-                            MessageBox.Show("Deleted Successfully", "Deleted");
-                        }
-                        break;
-                    default:
-                        break;
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
                 }
             }
-            catch (Exception msg)
+            catch (Exception ex)
             {
-                MessageBox.Show(msg.Message);
+                throw new Exception("Failed to execute query: " + ex.Message, ex);
             }
         }
 
-        void RunQuery(string qry)
+        /// <summary>
+        /// Executes a parameterized SQL query.
+        /// </summary>
+        /// <param name="query">The SQL query to execute.</param>
+        /// <param name="parameters">The parameters for the query.</param>
+        public void RunParameterizedQuery(string query, SqlParameter[] parameters)
         {
-            dbcon.mycon.Open();
-            SqlCommand cmd = new SqlCommand(qry, dbcon.mycon);
-            cmd.ExecuteNonQuery();
-            dbcon.mycon.Close();
+            try
+            {
+                using (SqlConnection connection = _dbcon.mycon)
+                {
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        if (parameters != null)
+                        {
+                            cmd.Parameters.AddRange(parameters);
+                        }
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to execute parameterized query: " + ex.Message, ex);
+            }
         }
     }
-
 }

@@ -19,12 +19,6 @@ namespace Bookhaven
 
         
 
-        private void btn_emp_Click(object sender, EventArgs e)
-        {
-            Customer emp_frm = new Customer();
-            emp_frm.ShowDialog();
-        }
-
         private void btn_Sales_Click(object sender, EventArgs e)
         {
             Sales emp_sale = new Sales();
@@ -35,6 +29,12 @@ namespace Bookhaven
         {
             CustomerOrder emp_cusOrder = new CustomerOrder();
             emp_cusOrder.ShowDialog();
+        }
+
+        private void btn_cus_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer();
+            customer.ShowDialog();
         }
     }
 }

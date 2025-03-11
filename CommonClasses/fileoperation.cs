@@ -11,11 +11,7 @@ namespace Bookhaven.CommonClasses
 {
     internal class fileoperation
     {
-        dbconnection con = new dbconnection();
-
-        double leaves;
-        double totalleaves;
-    
+        dbconnection con = new dbconnection();   
 
     public void combobox(string qry, ComboBox cmb_name, string display_member, string value_member)
         {

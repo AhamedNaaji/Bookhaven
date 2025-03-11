@@ -28,7 +28,7 @@ namespace Bookhaven
 
         private void btn_addCustomer_Click(object sender, EventArgs e)
         {
-            clscus.Insertdata();
+            clscus.InsertCustomer();
         }
 
         private void txtbox_NIC_TextChanged(object sender, EventArgs e)
@@ -48,22 +48,32 @@ namespace Bookhaven
 
         private void txtbox_Number1_TextChanged(object sender, EventArgs e)
         {
-            clscus.Mobile_Number = txtbox_Number1.Text.Trim();
+            clscus.mobileNumber2 = txtbox_Number1.Text.Trim();
         }
 
         private void txtbox_Number2_TextChanged(object sender, EventArgs e)
         {
-            clscus.Mobile_Number = txtbox_Number2.Text.Trim();
+            clscus.mobileNumber2 = txtbox_Number2.Text.Trim();
         }
 
         private void btn_updateCustomer_Click(object sender, EventArgs e)
         {
-            clscus.UpdateData();
+           
         }
 
         private void btn_deleteCustomer_Click(object sender, EventArgs e)
         {
-            clscus.DeleteDate();
+          
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtbox_Email_TextChanged(object sender, EventArgs e)
+        {
+            clscus.Email = txtbox_Email.Text.Trim();
         }
     }
 }
