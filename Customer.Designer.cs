@@ -66,6 +66,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_Email = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.txtbox_Number2 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -81,14 +83,7 @@
             this.btn_addCustomer = new System.Windows.Forms.Button();
             this.btn_updateCustomer = new System.Windows.Forms.Button();
             this.btn_deleteCustomer = new System.Windows.Forms.Button();
-            this.dgv_customer = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtbox_Email = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
+            this.dgv_cus = new System.Windows.Forms.DataGridView();
             this.Totalsales_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -98,7 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cus)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -138,7 +133,7 @@
             this.Totalsales_panel.Location = new System.Drawing.Point(0, 0);
             this.Totalsales_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.Totalsales_panel.Name = "Totalsales_panel";
-            this.Totalsales_panel.Size = new System.Drawing.Size(371, 135);
+            this.Totalsales_panel.Size = new System.Drawing.Size(240, 135);
             this.Totalsales_panel.TabIndex = 0;
             // 
             // label5
@@ -214,7 +209,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 145F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1524, 145);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1001, 145);
             this.tableLayoutPanel1.TabIndex = 23;
             // 
             // cusorderRecieve_panel
@@ -225,10 +220,10 @@
             this.cusorderRecieve_panel.Controls.Add(this.label16);
             this.cusorderRecieve_panel.Controls.Add(this.label17);
             this.cusorderRecieve_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cusorderRecieve_panel.Location = new System.Drawing.Point(1141, 0);
+            this.cusorderRecieve_panel.Location = new System.Drawing.Point(749, 0);
             this.cusorderRecieve_panel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.cusorderRecieve_panel.Name = "cusorderRecieve_panel";
-            this.cusorderRecieve_panel.Size = new System.Drawing.Size(383, 135);
+            this.cusorderRecieve_panel.Size = new System.Drawing.Size(252, 135);
             this.cusorderRecieve_panel.TabIndex = 3;
             // 
             // label14
@@ -279,10 +274,10 @@
             this.outofstock_panel.Controls.Add(this.label12);
             this.outofstock_panel.Controls.Add(this.label13);
             this.outofstock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.outofstock_panel.Location = new System.Drawing.Point(760, 0);
+            this.outofstock_panel.Location = new System.Drawing.Point(499, 0);
             this.outofstock_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.outofstock_panel.Name = "outofstock_panel";
-            this.outofstock_panel.Size = new System.Drawing.Size(371, 135);
+            this.outofstock_panel.Size = new System.Drawing.Size(240, 135);
             this.outofstock_panel.TabIndex = 2;
             // 
             // label10
@@ -333,10 +328,10 @@
             this.Totalcustomer_panel.Controls.Add(this.label8);
             this.Totalcustomer_panel.Controls.Add(this.label9);
             this.Totalcustomer_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Totalcustomer_panel.Location = new System.Drawing.Point(381, 0);
+            this.Totalcustomer_panel.Location = new System.Drawing.Point(250, 0);
             this.Totalcustomer_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.Totalcustomer_panel.Name = "Totalcustomer_panel";
-            this.Totalcustomer_panel.Size = new System.Drawing.Size(369, 135);
+            this.Totalcustomer_panel.Size = new System.Drawing.Size(239, 135);
             this.Totalcustomer_panel.TabIndex = 1;
             // 
             // label6
@@ -498,13 +493,13 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 1014);
+            this.panel1.Size = new System.Drawing.Size(499, 767);
             this.panel1.TabIndex = 22;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txt_Email);
             this.panel2.Controls.Add(this.label23);
-            this.panel2.Controls.Add(this.txtbox_Email);
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.txtbox_Number2);
             this.panel2.Controls.Add(this.label21);
@@ -517,16 +512,35 @@
             this.panel2.Controls.Add(this.txtbox_NIC);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtbox_name);
-            this.panel2.Location = new System.Drawing.Point(525, 199);
+            this.panel2.Location = new System.Drawing.Point(525, 177);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(662, 352);
+            this.panel2.Size = new System.Drawing.Size(1017, 352);
             this.panel2.TabIndex = 26;
+            // 
+            // txt_Email
+            // 
+            this.txt_Email.Location = new System.Drawing.Point(692, 48);
+            this.txt_Email.Multiline = true;
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(233, 37);
+            this.txt_Email.TabIndex = 16;
+            this.txt_Email.TextChanged += new System.EventHandler(this.txt_Email_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(720, 11);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(62, 23);
+            this.label23.TabIndex = 15;
+            this.label23.Text = "Email";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(366, 280);
+            this.label22.Location = new System.Drawing.Point(366, 229);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(116, 23);
             this.label22.TabIndex = 14;
@@ -534,7 +548,7 @@
             // 
             // txtbox_Number2
             // 
-            this.txtbox_Number2.Location = new System.Drawing.Point(370, 312);
+            this.txtbox_Number2.Location = new System.Drawing.Point(370, 261);
             this.txtbox_Number2.Multiline = true;
             this.txtbox_Number2.Name = "txtbox_Number2";
             this.txtbox_Number2.Size = new System.Drawing.Size(233, 37);
@@ -545,7 +559,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(15, 280);
+            this.label21.Location = new System.Drawing.Point(15, 229);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(116, 23);
             this.label21.TabIndex = 12;
@@ -553,7 +567,7 @@
             // 
             // txtbox_Number1
             // 
-            this.txtbox_Number1.Location = new System.Drawing.Point(19, 312);
+            this.txtbox_Number1.Location = new System.Drawing.Point(19, 261);
             this.txtbox_Number1.Multiline = true;
             this.txtbox_Number1.Name = "txtbox_Number1";
             this.txtbox_Number1.Size = new System.Drawing.Size(233, 37);
@@ -638,7 +652,7 @@
             // 
             // btn_addCustomer
             // 
-            this.btn_addCustomer.Location = new System.Drawing.Point(1450, 210);
+            this.btn_addCustomer.Location = new System.Drawing.Point(1574, 195);
             this.btn_addCustomer.Name = "btn_addCustomer";
             this.btn_addCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_addCustomer.TabIndex = 27;
@@ -648,7 +662,7 @@
             // 
             // btn_updateCustomer
             // 
-            this.btn_updateCustomer.Location = new System.Drawing.Point(1450, 326);
+            this.btn_updateCustomer.Location = new System.Drawing.Point(1574, 326);
             this.btn_updateCustomer.Name = "btn_updateCustomer";
             this.btn_updateCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_updateCustomer.TabIndex = 28;
@@ -658,7 +672,7 @@
             // 
             // btn_deleteCustomer
             // 
-            this.btn_deleteCustomer.Location = new System.Drawing.Point(1450, 438);
+            this.btn_deleteCustomer.Location = new System.Drawing.Point(1587, 438);
             this.btn_deleteCustomer.Name = "btn_deleteCustomer";
             this.btn_deleteCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_deleteCustomer.TabIndex = 29;
@@ -666,83 +680,24 @@
             this.btn_deleteCustomer.UseVisualStyleBackColor = true;
             this.btn_deleteCustomer.Click += new System.EventHandler(this.btn_deleteCustomer_Click);
             // 
-            // dgv_customer
+            // dgv_cus
             // 
-            this.dgv_customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dgv_customer.Location = new System.Drawing.Point(516, 574);
-            this.dgv_customer.Name = "dgv_customer";
-            this.dgv_customer.RowHeadersWidth = 51;
-            this.dgv_customer.RowTemplate.Height = 24;
-            this.dgv_customer.Size = new System.Drawing.Size(1495, 428);
-            this.dgv_customer.TabIndex = 30;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "NIC";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "DOB";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Address";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Number 01";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Number 02";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // txtbox_Email
-            // 
-            this.txtbox_Email.Location = new System.Drawing.Point(370, 219);
-            this.txtbox_Email.Multiline = true;
-            this.txtbox_Email.Name = "txtbox_Email";
-            this.txtbox_Email.Size = new System.Drawing.Size(233, 37);
-            this.txtbox_Email.TabIndex = 15;
-            this.txtbox_Email.TextChanged += new System.EventHandler(this.txtbox_Email_TextChanged);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(358, 193);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(78, 29);
-            this.label23.TabIndex = 16;
-            this.label23.Text = "Email";
-            this.label23.Click += new System.EventHandler(this.label23_Click);
+            this.dgv_cus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_cus.Location = new System.Drawing.Point(510, 570);
+            this.dgv_cus.Name = "dgv_cus";
+            this.dgv_cus.RowHeadersWidth = 51;
+            this.dgv_cus.RowTemplate.Height = 24;
+            this.dgv_cus.Size = new System.Drawing.Size(940, 428);
+            this.dgv_cus.TabIndex = 30;
+            this.dgv_cus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_cus_CellContentClick);
+            this.dgv_cus.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_cus_CellDoubleClick);
             // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2023, 1014);
-            this.Controls.Add(this.dgv_customer);
+            this.ClientSize = new System.Drawing.Size(1500, 767);
+            this.Controls.Add(this.dgv_cus);
             this.Controls.Add(this.btn_deleteCustomer);
             this.Controls.Add(this.btn_updateCustomer);
             this.Controls.Add(this.btn_addCustomer);
@@ -752,6 +707,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Customer";
             this.Text = "Customer";
+            this.Load += new System.EventHandler(this.frm_load);
             this.Totalsales_panel.ResumeLayout(false);
             this.Totalsales_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -766,7 +722,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cus)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -821,14 +777,8 @@
         private System.Windows.Forms.Button btn_addCustomer;
         private System.Windows.Forms.Button btn_updateCustomer;
         private System.Windows.Forms.Button btn_deleteCustomer;
-        private System.Windows.Forms.DataGridView dgv_customer;
-        
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridView dgv_cus;
+        private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox txtbox_Email;
     }
 }

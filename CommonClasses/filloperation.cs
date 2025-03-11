@@ -9,9 +9,13 @@ using System.Windows.Forms;
 
 namespace Bookhaven.CommonClasses
 {
-    internal class fileoperation
+    internal class filloperation
     {
-        dbconnection con = new dbconnection();   
+        dbconnection con = new dbconnection();
+
+        double leaves;
+        double totalleaves;
+    
 
     public void combobox(string qry, ComboBox cmb_name, string display_member, string value_member)
         {
