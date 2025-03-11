@@ -112,24 +112,27 @@ namespace Bookhaven
 
         private void dgv_cus_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            clsemp.empid = Convert.ToInt32(dgv_emp.Rows[e.RowIndex].Cells[0].Value);
-            clsemp.Getdata();
-            txt_fullname.Text = clsemp.fullname;
-            txt_nic.Text = clsemp.nic.ToString();
-            txt_email.Text = clsemp.email;
-            txt_salary.Text = clsemp.salary.ToString();
-            cmb_emptype.Text = clsemp.emptype.ToString();
-            txt_allowance.Text = clsemp.allowance.ToString();
-            dtp_joiningdate.Text = clsemp.joindate.ToString();
-            cmb_jobrole.Text = clsemp.jobrole.ToString();
+            if (e.RowIndex >= 0) // Ensure a valid row is selected
+            {
+                // Get the selected customer's ID
+                int customerId = Convert.ToInt32(dgv_cus.Rows[e.RowIndex].Cells["Customer_Id"].Value);
 
-            if ("Male" == clsemp.gender)
-            {
-                rb_male.Checked = true;
-            }
-            else
-            {
-                rb_female.Checked = true;
+                // Retrieve customer data
+                clscus.Customer_Id = customerId;
+                clscus.Getdata();
+
+                // Populate form fields
+                txtbox_name.Text = clscus.Customer_Name;
+                txtbox_NIC.Text = clscus.NIC;
+                txtbox_DOB.Text = clscus.DOB;
+                txtbox_Address.Text = clscus.Address;
+                txt_Email.Text = clscus.Email;
+
+                // Populate mobile numbers (assuming two textboxes for numbers)
+                if (clscus.Mobile_Numbers.Count > 0)
+                    txtbox_Number1.Text = clscus.Mobile_Numbers[0];
+                if (clscus.Mobile_Numbers.Count > 1)
+                    txtbox_Number2.Text = clscus.Mobile_Numbers[1];
             }
         }
 
