@@ -39,6 +39,8 @@ namespace Bookhaven
                 clscus.Mobile_Numbers.Add(txtbox_Number2.Text.Trim());
 
             clscus.Insertdata();
+            frm_load(sender, e);
+
         }
 
         private void txtbox_NIC_TextChanged(object sender, EventArgs e)
@@ -68,12 +70,36 @@ namespace Bookhaven
 
         private void btn_updateCustomer_Click(object sender, EventArgs e)
         {
+            clscus.Customer_Name = txtbox_name.Text.Trim();
+            clscus.NIC = txtbox_NIC.Text.Trim();
+            clscus.DOB = txtbox_DOB.Text.Trim();
+            clscus.Address = txtbox_Address.Text.Trim();
+            clscus.Email = txt_Email.Text.Trim();
+
+            // Update mobile numbers
+            clscus.Mobile_Numbers.Clear();
+            if (!string.IsNullOrEmpty(txtbox_Number1.Text))
+                clscus.Mobile_Numbers.Add(txtbox_Number1.Text.Trim());
+            if (!string.IsNullOrEmpty(txtbox_Number2.Text))
+                clscus.Mobile_Numbers.Add(txtbox_Number2.Text.Trim());
             clscus.UpdateData();
+            frm_load(sender, e);
         }
 
         private void btn_deleteCustomer_Click(object sender, EventArgs e)
         {
+            if (dgv_cus.SelectedRows.Count > 0)
+            {
+                int customerId = Convert.ToInt32(dgv_cus.SelectedRows[0].Cells["Customer_Id"].Value);
+                clscus.Customer_Id = customerId;
+                clscus.DeleteDate();
+            }
+            else
+            {
+                MessageBox.Show("Please select a customer to delete.", "No Selection");
+            }
             clscus.DeleteDate();
+            frm_load(sender, e);
         }
 
         private void txt_Email_TextChanged(object sender, EventArgs e)
@@ -83,7 +109,7 @@ namespace Bookhaven
 
         private void frm_load(object sender, EventArgs e)
         {
-            //fill.combobox("SELECT * FROM tbl_employeetype", cmb_emptype, "emp_type", "emp_type_id");
+    
             FirstRun();
         }
         void FirstRun()
@@ -97,27 +123,56 @@ namespace Bookhaven
             txtbox_Number1.Text = "";
             txtbox_Number2.Text = "";
 
-            // Populate the customer DataGridView
-            fill.FillDataGridView("SELECT Customer_Id, Customer_Name, NIC, DOB, Address, Email FROM Customer", dgv_cus);
+            // Updated query to include mobile numbers
+            string query = @"
+        SELECT 
+            c.Customer_Id,
+            c.Customer_Name,
+            c.NIC,
+            c.DOB,
+            c.Address,
+            c.Email,
+            MAX(CASE WHEN cm.RowNum = 1 THEN cm.Mobile_Number END) AS Mobile1,
+            MAX(CASE WHEN cm.RowNum = 2 THEN cm.Mobile_Number END) AS Mobile2
+        FROM Customer c
+        LEFT JOIN (
+            SELECT 
+                Customer_Id_fk,
+                Mobile_Number,
+                ROW_NUMBER() OVER (PARTITION BY Customer_Id_fk ORDER BY CustomerMobile_Id) AS RowNum
+            FROM CustomerMobile
+        ) cm ON c.Customer_Id = cm.Customer_Id_fk
+        GROUP BY 
+            c.Customer_Id,
+            c.Customer_Name,
+            c.NIC,
+            c.DOB,
+            c.Address,
+            c.Email";
+
+            // Populate DataGridView
+            fill.FillDataGridView(query, dgv_cus);
             dgv_cus.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            // Rename columns for clarity
+            // Rename columns
             dgv_cus.Columns[0].HeaderText = "ID";
             dgv_cus.Columns[1].HeaderText = "Name";
             dgv_cus.Columns[2].HeaderText = "NIC";
             dgv_cus.Columns[3].HeaderText = "DOB";
             dgv_cus.Columns[4].HeaderText = "Address";
             dgv_cus.Columns[5].HeaderText = "Email";
+            dgv_cus.Columns[6].HeaderText = "Mobile 1";
+            dgv_cus.Columns[7].HeaderText = "Mobile 2";
         }
 
         private void dgv_cus_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Ensure a valid row is selected
+            if (e.RowIndex >= 0)
             {
-                // Get the selected customer's ID
+                // Get selected customer ID
                 int customerId = Convert.ToInt32(dgv_cus.Rows[e.RowIndex].Cells["Customer_Id"].Value);
 
-                // Retrieve customer data
+                // Load customer data
                 clscus.Customer_Id = customerId;
                 clscus.Getdata();
 
@@ -128,11 +183,9 @@ namespace Bookhaven
                 txtbox_Address.Text = clscus.Address;
                 txt_Email.Text = clscus.Email;
 
-                // Populate mobile numbers (assuming two textboxes for numbers)
-                if (clscus.Mobile_Numbers.Count > 0)
-                    txtbox_Number1.Text = clscus.Mobile_Numbers[0];
-                if (clscus.Mobile_Numbers.Count > 1)
-                    txtbox_Number2.Text = clscus.Mobile_Numbers[1];
+                // Populate mobile numbers (handle up to 2 numbers)
+                txtbox_Number1.Text = clscus.Mobile_Numbers.Count > 0 ? clscus.Mobile_Numbers[0] : "";
+                txtbox_Number2.Text = clscus.Mobile_Numbers.Count > 1 ? clscus.Mobile_Numbers[1] : "";
             }
         }
 

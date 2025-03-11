@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -39,7 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cusorderRecieve_panel = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -85,7 +81,6 @@
             this.btn_deleteCustomer = new System.Windows.Forms.Button();
             this.dgv_cus = new System.Windows.Forms.DataGridView();
             this.Totalsales_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.cusorderRecieve_panel.SuspendLayout();
             this.outofstock_panel.SuspendLayout();
@@ -133,7 +128,7 @@
             this.Totalsales_panel.Location = new System.Drawing.Point(0, 0);
             this.Totalsales_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.Totalsales_panel.Name = "Totalsales_panel";
-            this.Totalsales_panel.Size = new System.Drawing.Size(374, 135);
+            this.Totalsales_panel.Size = new System.Drawing.Size(350, 135);
             this.Totalsales_panel.TabIndex = 0;
             // 
             // label5
@@ -176,22 +171,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Total  Customers";
             // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(1442, 1203);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(2095, 733);
-            this.chart1.TabIndex = 25;
-            this.chart1.Text = "chart1";
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
@@ -209,7 +188,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 145F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1536, 145);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1441, 145);
             this.tableLayoutPanel1.TabIndex = 23;
             // 
             // cusorderRecieve_panel
@@ -220,10 +199,10 @@
             this.cusorderRecieve_panel.Controls.Add(this.label16);
             this.cusorderRecieve_panel.Controls.Add(this.label17);
             this.cusorderRecieve_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cusorderRecieve_panel.Location = new System.Drawing.Point(1150, 0);
+            this.cusorderRecieve_panel.Location = new System.Drawing.Point(1080, 0);
             this.cusorderRecieve_panel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.cusorderRecieve_panel.Name = "cusorderRecieve_panel";
-            this.cusorderRecieve_panel.Size = new System.Drawing.Size(386, 135);
+            this.cusorderRecieve_panel.Size = new System.Drawing.Size(361, 135);
             this.cusorderRecieve_panel.TabIndex = 3;
             // 
             // label14
@@ -274,10 +253,10 @@
             this.outofstock_panel.Controls.Add(this.label12);
             this.outofstock_panel.Controls.Add(this.label13);
             this.outofstock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.outofstock_panel.Location = new System.Drawing.Point(766, 0);
+            this.outofstock_panel.Location = new System.Drawing.Point(719, 0);
             this.outofstock_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.outofstock_panel.Name = "outofstock_panel";
-            this.outofstock_panel.Size = new System.Drawing.Size(374, 135);
+            this.outofstock_panel.Size = new System.Drawing.Size(351, 135);
             this.outofstock_panel.TabIndex = 2;
             // 
             // label10
@@ -328,10 +307,10 @@
             this.Totalcustomer_panel.Controls.Add(this.label8);
             this.Totalcustomer_panel.Controls.Add(this.label9);
             this.Totalcustomer_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Totalcustomer_panel.Location = new System.Drawing.Point(384, 0);
+            this.Totalcustomer_panel.Location = new System.Drawing.Point(360, 0);
             this.Totalcustomer_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.Totalcustomer_panel.Name = "Totalcustomer_panel";
-            this.Totalcustomer_panel.Size = new System.Drawing.Size(372, 135);
+            this.Totalcustomer_panel.Size = new System.Drawing.Size(349, 135);
             this.Totalcustomer_panel.TabIndex = 1;
             // 
             // label6
@@ -493,7 +472,7 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 1041);
+            this.panel1.Size = new System.Drawing.Size(499, 1006);
             this.panel1.TabIndex = 22;
             // 
             // panel2
@@ -688,7 +667,7 @@
             this.dgv_cus.Name = "dgv_cus";
             this.dgv_cus.RowHeadersWidth = 51;
             this.dgv_cus.RowTemplate.Height = 24;
-            this.dgv_cus.Size = new System.Drawing.Size(1324, 428);
+            this.dgv_cus.Size = new System.Drawing.Size(1376, 428);
             this.dgv_cus.TabIndex = 30;
             this.dgv_cus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_cus_CellContentClick);
             this.dgv_cus.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_cus_CellDoubleClick);
@@ -697,13 +676,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2035, 1041);
+            this.ClientSize = new System.Drawing.Size(1940, 1006);
             this.Controls.Add(this.dgv_cus);
             this.Controls.Add(this.btn_deleteCustomer);
             this.Controls.Add(this.btn_updateCustomer);
             this.Controls.Add(this.btn_addCustomer);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.chart1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Name = "Customer";
@@ -711,7 +689,6 @@
             this.Load += new System.EventHandler(this.frm_load);
             this.Totalsales_panel.ResumeLayout(false);
             this.Totalsales_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.cusorderRecieve_panel.ResumeLayout(false);
             this.cusorderRecieve_panel.PerformLayout();
@@ -736,7 +713,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel cusorderRecieve_panel;
         private System.Windows.Forms.Label label14;
