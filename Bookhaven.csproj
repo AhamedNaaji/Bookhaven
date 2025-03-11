@@ -75,7 +75,7 @@
     </Compile>
     <Compile Include="CommonClasses\Common.cs" />
     <Compile Include="CommonClasses\dbconnection.cs" />
-    <Compile Include="CommonClasses\fileoperation.cs" />
+    <Compile Include="CommonClasses\filloperation.cs" />
     <Compile Include="Customer.cs">
       <SubType>Form</SubType>
     </Compile>

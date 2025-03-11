@@ -133,7 +133,7 @@
             this.Totalsales_panel.Location = new System.Drawing.Point(0, 0);
             this.Totalsales_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.Totalsales_panel.Name = "Totalsales_panel";
-            this.Totalsales_panel.Size = new System.Drawing.Size(240, 135);
+            this.Totalsales_panel.Size = new System.Drawing.Size(374, 135);
             this.Totalsales_panel.TabIndex = 0;
             // 
             // label5
@@ -209,7 +209,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 145F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1001, 145);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1536, 145);
             this.tableLayoutPanel1.TabIndex = 23;
             // 
             // cusorderRecieve_panel
@@ -220,10 +220,10 @@
             this.cusorderRecieve_panel.Controls.Add(this.label16);
             this.cusorderRecieve_panel.Controls.Add(this.label17);
             this.cusorderRecieve_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cusorderRecieve_panel.Location = new System.Drawing.Point(749, 0);
+            this.cusorderRecieve_panel.Location = new System.Drawing.Point(1150, 0);
             this.cusorderRecieve_panel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.cusorderRecieve_panel.Name = "cusorderRecieve_panel";
-            this.cusorderRecieve_panel.Size = new System.Drawing.Size(252, 135);
+            this.cusorderRecieve_panel.Size = new System.Drawing.Size(386, 135);
             this.cusorderRecieve_panel.TabIndex = 3;
             // 
             // label14
@@ -274,10 +274,10 @@
             this.outofstock_panel.Controls.Add(this.label12);
             this.outofstock_panel.Controls.Add(this.label13);
             this.outofstock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.outofstock_panel.Location = new System.Drawing.Point(499, 0);
+            this.outofstock_panel.Location = new System.Drawing.Point(766, 0);
             this.outofstock_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.outofstock_panel.Name = "outofstock_panel";
-            this.outofstock_panel.Size = new System.Drawing.Size(240, 135);
+            this.outofstock_panel.Size = new System.Drawing.Size(374, 135);
             this.outofstock_panel.TabIndex = 2;
             // 
             // label10
@@ -328,10 +328,10 @@
             this.Totalcustomer_panel.Controls.Add(this.label8);
             this.Totalcustomer_panel.Controls.Add(this.label9);
             this.Totalcustomer_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Totalcustomer_panel.Location = new System.Drawing.Point(250, 0);
+            this.Totalcustomer_panel.Location = new System.Drawing.Point(384, 0);
             this.Totalcustomer_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.Totalcustomer_panel.Name = "Totalcustomer_panel";
-            this.Totalcustomer_panel.Size = new System.Drawing.Size(239, 135);
+            this.Totalcustomer_panel.Size = new System.Drawing.Size(372, 135);
             this.Totalcustomer_panel.TabIndex = 1;
             // 
             // label6
@@ -493,7 +493,7 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 767);
+            this.panel1.Size = new System.Drawing.Size(499, 1041);
             this.panel1.TabIndex = 22;
             // 
             // panel2
@@ -519,7 +519,7 @@
             // 
             // txt_Email
             // 
-            this.txt_Email.Location = new System.Drawing.Point(692, 48);
+            this.txt_Email.Location = new System.Drawing.Point(691, 45);
             this.txt_Email.Multiline = true;
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(233, 37);
@@ -530,7 +530,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(720, 11);
+            this.label23.Location = new System.Drawing.Point(688, 11);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(62, 23);
             this.label23.TabIndex = 15;
@@ -652,7 +652,7 @@
             // 
             // btn_addCustomer
             // 
-            this.btn_addCustomer.Location = new System.Drawing.Point(1574, 195);
+            this.btn_addCustomer.Location = new System.Drawing.Point(1649, 195);
             this.btn_addCustomer.Name = "btn_addCustomer";
             this.btn_addCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_addCustomer.TabIndex = 27;
@@ -662,7 +662,7 @@
             // 
             // btn_updateCustomer
             // 
-            this.btn_updateCustomer.Location = new System.Drawing.Point(1574, 326);
+            this.btn_updateCustomer.Location = new System.Drawing.Point(1649, 313);
             this.btn_updateCustomer.Name = "btn_updateCustomer";
             this.btn_updateCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_updateCustomer.TabIndex = 28;
@@ -672,7 +672,7 @@
             // 
             // btn_deleteCustomer
             // 
-            this.btn_deleteCustomer.Location = new System.Drawing.Point(1587, 438);
+            this.btn_deleteCustomer.Location = new System.Drawing.Point(1649, 438);
             this.btn_deleteCustomer.Name = "btn_deleteCustomer";
             this.btn_deleteCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_deleteCustomer.TabIndex = 29;
@@ -682,12 +682,13 @@
             // 
             // dgv_cus
             // 
+            this.dgv_cus.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_cus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_cus.Location = new System.Drawing.Point(510, 570);
+            this.dgv_cus.Location = new System.Drawing.Point(525, 555);
             this.dgv_cus.Name = "dgv_cus";
             this.dgv_cus.RowHeadersWidth = 51;
             this.dgv_cus.RowTemplate.Height = 24;
-            this.dgv_cus.Size = new System.Drawing.Size(940, 428);
+            this.dgv_cus.Size = new System.Drawing.Size(1324, 428);
             this.dgv_cus.TabIndex = 30;
             this.dgv_cus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_cus_CellContentClick);
             this.dgv_cus.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_cus_CellDoubleClick);
@@ -696,7 +697,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1500, 767);
+            this.ClientSize = new System.Drawing.Size(2035, 1041);
             this.Controls.Add(this.dgv_cus);
             this.Controls.Add(this.btn_deleteCustomer);
             this.Controls.Add(this.btn_updateCustomer);

@@ -22,7 +22,7 @@ namespace Bookhaven.AppClasses
         public string Address { get; set; }
         public string Email { get; set; }
        
-         // Replace the single Mobile_Number with a list
+       
        public List<string> Mobile_Numbers { get; set; } = new List<string>();
 
         // Keep the rest of the properties (Customer_Id, Customer_Name, etc.)
@@ -124,7 +124,6 @@ namespace Bookhaven.AppClasses
                 cmd.Parameters.AddWithValue("@Customer_Id", Customer_Id);
                 SqlDataReader rd = cmd.ExecuteReader();
 
-                // Clear existing numbers
                 Mobile_Numbers.Clear();
 
                 while (rd.Read())
@@ -136,7 +135,6 @@ namespace Bookhaven.AppClasses
                     Address = rd["Address"].ToString();
                     Email = rd["Email"].ToString();
 
-                    // Add mobile number to the list (if not null)
                     if (rd["Mobile_Number"] != DBNull.Value)
                         Mobile_Numbers.Add(rd["Mobile_Number"].ToString());
                 }

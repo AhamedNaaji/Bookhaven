@@ -15,9 +15,9 @@ namespace Bookhaven.CommonClasses
 
         double leaves;
         double totalleaves;
-    
 
-    public void combobox(string qry, ComboBox cmb_name, string display_member, string value_member)
+
+        public void combobox(string qry, ComboBox cmb_name, string display_member, string value_member)
         {
             if (con.mycon != null && con.mycon.State == ConnectionState.Closed)
             {
@@ -58,8 +58,8 @@ namespace Bookhaven.CommonClasses
             return rdr;
         }
 
-      
-       
+
+
 
         public SqlDataReader getBeginDate(string monthyear)
         {
@@ -106,6 +106,5 @@ namespace Bookhaven.CommonClasses
 
         }
 
-        
     }
 }
