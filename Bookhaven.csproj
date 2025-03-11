@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppClasses\cls_customer.cs" />
+    <Compile Include="AppClasses\cls_supplier.cs" />
     <Compile Include="Book.cs">
       <SubType>Form</SubType>
     </Compile>
