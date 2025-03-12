@@ -62,6 +62,8 @@
             this.btn_Report = new System.Windows.Forms.Button();
             this.btn_Suppliers = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtbox_Email = new System.Windows.Forms.TextBox();
             this.txtbox_Contact2 = new System.Windows.Forms.TextBox();
             this.txtbox_Contact1 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -76,8 +78,6 @@
             this.btn_deleteSupplier = new System.Windows.Forms.Button();
             this.btn_updateSupplier = new System.Windows.Forms.Button();
             this.btn_addSupplier = new System.Windows.Forms.Button();
-            this.txtbox_Email = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -105,7 +105,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1475, 192);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1431, 192);
             this.tableLayoutPanel2.TabIndex = 24;
             // 
             // panel9
@@ -116,10 +116,10 @@
             this.panel9.Controls.Add(this.label31);
             this.panel9.Controls.Add(this.label32);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(1104, 0);
+            this.panel9.Location = new System.Drawing.Point(1071, 0);
             this.panel9.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(371, 182);
+            this.panel9.Size = new System.Drawing.Size(360, 182);
             this.panel9.TabIndex = 4;
             // 
             // label29
@@ -170,10 +170,10 @@
             this.panel6.Controls.Add(this.label27);
             this.panel6.Controls.Add(this.label28);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(736, 0);
+            this.panel6.Location = new System.Drawing.Point(714, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(358, 182);
+            this.panel6.Size = new System.Drawing.Size(347, 182);
             this.panel6.TabIndex = 3;
             // 
             // label25
@@ -224,10 +224,10 @@
             this.panel5.Controls.Add(this.label23);
             this.panel5.Controls.Add(this.label24);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(368, 0);
+            this.panel5.Location = new System.Drawing.Point(357, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(358, 182);
+            this.panel5.Size = new System.Drawing.Size(347, 182);
             this.panel5.TabIndex = 2;
             // 
             // label21
@@ -281,7 +281,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(358, 182);
+            this.panel2.Size = new System.Drawing.Size(347, 182);
             this.panel2.TabIndex = 1;
             // 
             // label3
@@ -491,6 +491,24 @@
             this.panel3.Size = new System.Drawing.Size(801, 197);
             this.panel3.TabIndex = 55;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(550, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 23);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Email";
+            // 
+            // txtbox_Email
+            // 
+            this.txtbox_Email.Location = new System.Drawing.Point(554, 121);
+            this.txtbox_Email.Name = "txtbox_Email";
+            this.txtbox_Email.Size = new System.Drawing.Size(190, 22);
+            this.txtbox_Email.TabIndex = 37;
+            this.txtbox_Email.TextChanged += new System.EventHandler(this.txtbox_Email_TextChanged);
+            // 
             // txtbox_Contact2
             // 
             this.txtbox_Contact2.Location = new System.Drawing.Point(277, 121);
@@ -512,7 +530,7 @@
             this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(16, 91);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(133, 29);
+            this.label14.Size = new System.Drawing.Size(106, 23);
             this.label14.TabIndex = 34;
             this.label14.Text = "Contact 1";
             // 
@@ -622,29 +640,11 @@
             this.btn_addSupplier.UseVisualStyleBackColor = true;
             this.btn_addSupplier.Click += new System.EventHandler(this.btn_addSupplier_Click);
             // 
-            // txtbox_Email
-            // 
-            this.txtbox_Email.Location = new System.Drawing.Point(554, 121);
-            this.txtbox_Email.Name = "txtbox_Email";
-            this.txtbox_Email.Size = new System.Drawing.Size(190, 22);
-            this.txtbox_Email.TabIndex = 37;
-            this.txtbox_Email.TextChanged += new System.EventHandler(this.txtbox_Email_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(550, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 29);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Email";
-            // 
             // Suppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1968, 1022);
+            this.ClientSize = new System.Drawing.Size(1924, 1022);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dgv_Sup);
             this.Controls.Add(this.btn_deleteSupplier);

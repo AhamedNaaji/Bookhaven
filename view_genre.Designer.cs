@@ -1,0 +1,132 @@
+﻿namespace Bookhaven
+{
+    partial class view_genre
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.txtbox_genre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_add_genre = new System.Windows.Forms.Button();
+            this.dgv_genre = new System.Windows.Forms.DataGridView();
+            this.btn_update_genre = new System.Windows.Forms.Button();
+            this.btn_delete_genre = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_genre)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // txtbox_genre
+            // 
+            this.txtbox_genre.Location = new System.Drawing.Point(23, 90);
+            this.txtbox_genre.Multiline = true;
+            this.txtbox_genre.Name = "txtbox_genre";
+            this.txtbox_genre.Size = new System.Drawing.Size(331, 45);
+            this.txtbox_genre.TabIndex = 0;
+            this.txtbox_genre.TextChanged += new System.EventHandler(this.txtbox_genre_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Name";
+            // 
+            // btn_add_genre
+            // 
+            this.btn_add_genre.Location = new System.Drawing.Point(23, 527);
+            this.btn_add_genre.Name = "btn_add_genre";
+            this.btn_add_genre.Size = new System.Drawing.Size(126, 45);
+            this.btn_add_genre.TabIndex = 3;
+            this.btn_add_genre.Text = "Add Genre";
+            this.btn_add_genre.UseVisualStyleBackColor = true;
+            this.btn_add_genre.Click += new System.EventHandler(this.btn_add_genre_Click);
+            // 
+            // dgv_genre
+            // 
+            this.dgv_genre.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_genre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_genre.Location = new System.Drawing.Point(23, 185);
+            this.dgv_genre.Name = "dgv_genre";
+            this.dgv_genre.ReadOnly = true;
+            this.dgv_genre.RowHeadersWidth = 51;
+            this.dgv_genre.RowTemplate.Height = 24;
+            this.dgv_genre.Size = new System.Drawing.Size(571, 293);
+            this.dgv_genre.TabIndex = 4;
+            this.dgv_genre.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_genre_CellContentClick);
+            this.dgv_genre.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_genre_CellContentDoubleClick);
+            // 
+            // btn_update_genre
+            // 
+            this.btn_update_genre.Location = new System.Drawing.Point(215, 527);
+            this.btn_update_genre.Name = "btn_update_genre";
+            this.btn_update_genre.Size = new System.Drawing.Size(126, 45);
+            this.btn_update_genre.TabIndex = 5;
+            this.btn_update_genre.Text = "Update Genre";
+            this.btn_update_genre.UseVisualStyleBackColor = true;
+            this.btn_update_genre.Click += new System.EventHandler(this.btn_update_genre_Click);
+            // 
+            // btn_delete_genre
+            // 
+            this.btn_delete_genre.Location = new System.Drawing.Point(433, 527);
+            this.btn_delete_genre.Name = "btn_delete_genre";
+            this.btn_delete_genre.Size = new System.Drawing.Size(126, 45);
+            this.btn_delete_genre.TabIndex = 6;
+            this.btn_delete_genre.Text = "Delete Genre";
+            this.btn_delete_genre.UseVisualStyleBackColor = true;
+            this.btn_delete_genre.Click += new System.EventHandler(this.btn_delete_genre_Click);
+            // 
+            // view_genre
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(633, 641);
+            this.Controls.Add(this.btn_delete_genre);
+            this.Controls.Add(this.btn_update_genre);
+            this.Controls.Add(this.dgv_genre);
+            this.Controls.Add(this.btn_add_genre);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtbox_genre);
+            this.Name = "view_genre";
+            this.Text = "view_genre";
+            this.Load += new System.EventHandler(this.view_genre_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_genre)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox txtbox_genre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_add_genre;
+        private System.Windows.Forms.DataGridView dgv_genre;
+        private System.Windows.Forms.Button btn_update_genre;
+        private System.Windows.Forms.Button btn_delete_genre;
+    }
+}

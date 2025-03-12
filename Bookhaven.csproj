@@ -48,7 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppClasses\cls_author.cs" />
+    <Compile Include="AppClasses\cls_book.cs" />
     <Compile Include="AppClasses\cls_customer.cs" />
+    <Compile Include="AppClasses\cls_genre.cs" />
     <Compile Include="AppClasses\cls_staff.cs" />
     <Compile Include="AppClasses\cls_supplier.cs" />
     <Compile Include="Book.cs">
@@ -147,6 +150,18 @@
       <DependentUpon>Suppliers.cs</DependentUpon>
     </Compile>
     <Compile Include="System\Configuration\ConfigurationManager.cs" />
+    <Compile Include="view_author.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view_author.Designer.cs">
+      <DependentUpon>view_author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view_genre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view_genre.Designer.cs">
+      <DependentUpon>view_genre.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Book.resx">
       <DependentUpon>Book.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +216,12 @@
     <EmbeddedResource Include="Suppliers.resx">
       <DependentUpon>Suppliers.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view_author.resx">
+      <DependentUpon>view_author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view_genre.resx">
+      <DependentUpon>view_genre.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

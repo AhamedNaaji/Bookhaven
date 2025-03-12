@@ -128,7 +128,7 @@
             this.Totalsales_panel.Location = new System.Drawing.Point(0, 0);
             this.Totalsales_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.Totalsales_panel.Name = "Totalsales_panel";
-            this.Totalsales_panel.Size = new System.Drawing.Size(350, 135);
+            this.Totalsales_panel.Size = new System.Drawing.Size(346, 135);
             this.Totalsales_panel.TabIndex = 0;
             // 
             // label5
@@ -188,7 +188,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 145F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1441, 145);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1425, 145);
             this.tableLayoutPanel1.TabIndex = 23;
             // 
             // cusorderRecieve_panel
@@ -199,10 +199,10 @@
             this.cusorderRecieve_panel.Controls.Add(this.label16);
             this.cusorderRecieve_panel.Controls.Add(this.label17);
             this.cusorderRecieve_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cusorderRecieve_panel.Location = new System.Drawing.Point(1080, 0);
+            this.cusorderRecieve_panel.Location = new System.Drawing.Point(1068, 0);
             this.cusorderRecieve_panel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.cusorderRecieve_panel.Name = "cusorderRecieve_panel";
-            this.cusorderRecieve_panel.Size = new System.Drawing.Size(361, 135);
+            this.cusorderRecieve_panel.Size = new System.Drawing.Size(357, 135);
             this.cusorderRecieve_panel.TabIndex = 3;
             // 
             // label14
@@ -253,10 +253,10 @@
             this.outofstock_panel.Controls.Add(this.label12);
             this.outofstock_panel.Controls.Add(this.label13);
             this.outofstock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.outofstock_panel.Location = new System.Drawing.Point(719, 0);
+            this.outofstock_panel.Location = new System.Drawing.Point(711, 0);
             this.outofstock_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.outofstock_panel.Name = "outofstock_panel";
-            this.outofstock_panel.Size = new System.Drawing.Size(351, 135);
+            this.outofstock_panel.Size = new System.Drawing.Size(347, 135);
             this.outofstock_panel.TabIndex = 2;
             // 
             // label10
@@ -307,10 +307,10 @@
             this.Totalcustomer_panel.Controls.Add(this.label8);
             this.Totalcustomer_panel.Controls.Add(this.label9);
             this.Totalcustomer_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Totalcustomer_panel.Location = new System.Drawing.Point(360, 0);
+            this.Totalcustomer_panel.Location = new System.Drawing.Point(356, 0);
             this.Totalcustomer_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.Totalcustomer_panel.Name = "Totalcustomer_panel";
-            this.Totalcustomer_panel.Size = new System.Drawing.Size(349, 135);
+            this.Totalcustomer_panel.Size = new System.Drawing.Size(345, 135);
             this.Totalcustomer_panel.TabIndex = 1;
             // 
             // label6
@@ -676,7 +676,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1940, 1006);
+            this.ClientSize = new System.Drawing.Size(1924, 1006);
             this.Controls.Add(this.dgv_cus);
             this.Controls.Add(this.btn_deleteCustomer);
             this.Controls.Add(this.btn_updateCustomer);

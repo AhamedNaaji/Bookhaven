@@ -63,32 +63,24 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_Stock = new System.Windows.Forms.TextBox();
+            this.txt_Author = new System.Windows.Forms.TextBox();
+            this.txt_Genre = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txt_Price = new System.Windows.Forms.TextBox();
+            this.txt_Isbn = new System.Windows.Forms.TextBox();
+            this.txt_Bookname = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dgv_customer = new System.Windows.Forms.DataGridView();
+            this.dgv_books = new System.Windows.Forms.DataGridView();
             this.btn_deleteBook = new System.Windows.Forms.Button();
             this.btn_updateBook = new System.Windows.Forms.Button();
             this.btn_addBook = new System.Windows.Forms.Button();
-            this.txt_Bookname = new System.Windows.Forms.TextBox();
-            this.txt_Isbn = new System.Windows.Forms.TextBox();
-            this.txt_Price = new System.Windows.Forms.TextBox();
             this.btn_Genre = new System.Windows.Forms.Button();
             this.btn_ViewAuthors = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txt_Genre = new System.Windows.Forms.TextBox();
-            this.txt_Author = new System.Windows.Forms.TextBox();
-            this.txt_Stock = new System.Windows.Forms.TextBox();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Totalsales_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -98,7 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_books)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -488,6 +480,64 @@
             this.panel2.Size = new System.Drawing.Size(801, 197);
             this.panel2.TabIndex = 48;
             // 
+            // txt_Stock
+            // 
+            this.txt_Stock.Location = new System.Drawing.Point(554, 121);
+            this.txt_Stock.Name = "txt_Stock";
+            this.txt_Stock.Size = new System.Drawing.Size(190, 22);
+            this.txt_Stock.TabIndex = 37;
+            this.txt_Stock.TextChanged += new System.EventHandler(this.txt_Stock_TextChanged);
+            // 
+            // txt_Author
+            // 
+            this.txt_Author.Location = new System.Drawing.Point(277, 121);
+            this.txt_Author.Name = "txt_Author";
+            this.txt_Author.Size = new System.Drawing.Size(190, 22);
+            this.txt_Author.TabIndex = 36;
+            this.txt_Author.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // txt_Genre
+            // 
+            this.txt_Genre.Location = new System.Drawing.Point(20, 121);
+            this.txt_Genre.Name = "txt_Genre";
+            this.txt_Genre.Size = new System.Drawing.Size(190, 22);
+            this.txt_Genre.TabIndex = 35;
+            this.txt_Genre.TextChanged += new System.EventHandler(this.txt_Genre_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(16, 91);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(71, 23);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "Genre";
+            // 
+            // txt_Price
+            // 
+            this.txt_Price.Location = new System.Drawing.Point(277, 43);
+            this.txt_Price.Name = "txt_Price";
+            this.txt_Price.Size = new System.Drawing.Size(190, 22);
+            this.txt_Price.TabIndex = 33;
+            this.txt_Price.TextChanged += new System.EventHandler(this.txt_Price_TextChanged);
+            // 
+            // txt_Isbn
+            // 
+            this.txt_Isbn.Location = new System.Drawing.Point(554, 41);
+            this.txt_Isbn.Name = "txt_Isbn";
+            this.txt_Isbn.Size = new System.Drawing.Size(190, 22);
+            this.txt_Isbn.TabIndex = 32;
+            this.txt_Isbn.TextChanged += new System.EventHandler(this.txt_Isbn_TextChanged);
+            // 
+            // txt_Bookname
+            // 
+            this.txt_Bookname.Location = new System.Drawing.Point(19, 44);
+            this.txt_Bookname.Name = "txt_Bookname";
+            this.txt_Bookname.Size = new System.Drawing.Size(190, 22);
+            this.txt_Bookname.TabIndex = 31;
+            this.txt_Bookname.TextChanged += new System.EventHandler(this.txt_Bookname_TextChanged);
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -504,7 +554,7 @@
             this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(550, 91);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(80, 29);
+            this.label22.Size = new System.Drawing.Size(64, 23);
             this.label22.TabIndex = 14;
             this.label22.Text = "Stock";
             // 
@@ -538,24 +588,17 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Book Name";
             // 
-            // dgv_customer
+            // dgv_books
             // 
-            this.dgv_customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column6,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column7,
-            this.Column8});
-            this.dgv_customer.Location = new System.Drawing.Point(565, 579);
-            this.dgv_customer.Name = "dgv_customer";
-            this.dgv_customer.RowHeadersWidth = 51;
-            this.dgv_customer.RowTemplate.Height = 24;
-            this.dgv_customer.Size = new System.Drawing.Size(1192, 428);
-            this.dgv_customer.TabIndex = 52;
+            this.dgv_books.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgv_books.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_books.Location = new System.Drawing.Point(565, 579);
+            this.dgv_books.Name = "dgv_books";
+            this.dgv_books.RowHeadersWidth = 51;
+            this.dgv_books.RowTemplate.Height = 24;
+            this.dgv_books.Size = new System.Drawing.Size(1192, 428);
+            this.dgv_books.TabIndex = 52;
+            this.dgv_books.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_book_CellContentClick);
             // 
             // btn_deleteBook
             // 
@@ -565,6 +608,7 @@
             this.btn_deleteBook.TabIndex = 51;
             this.btn_deleteBook.Text = "Delete Book";
             this.btn_deleteBook.UseVisualStyleBackColor = true;
+            this.btn_deleteBook.Click += new System.EventHandler(this.btn_deleteBook_Click);
             // 
             // btn_updateBook
             // 
@@ -574,6 +618,7 @@
             this.btn_updateBook.TabIndex = 50;
             this.btn_updateBook.Text = "Update Book";
             this.btn_updateBook.UseVisualStyleBackColor = true;
+            this.btn_updateBook.Click += new System.EventHandler(this.btn_updateBook_Click);
             // 
             // btn_addBook
             // 
@@ -583,27 +628,7 @@
             this.btn_addBook.TabIndex = 49;
             this.btn_addBook.Text = "Add Book";
             this.btn_addBook.UseVisualStyleBackColor = true;
-            // 
-            // txt_Bookname
-            // 
-            this.txt_Bookname.Location = new System.Drawing.Point(19, 44);
-            this.txt_Bookname.Name = "txt_Bookname";
-            this.txt_Bookname.Size = new System.Drawing.Size(190, 22);
-            this.txt_Bookname.TabIndex = 31;
-            // 
-            // txt_Isbn
-            // 
-            this.txt_Isbn.Location = new System.Drawing.Point(554, 41);
-            this.txt_Isbn.Name = "txt_Isbn";
-            this.txt_Isbn.Size = new System.Drawing.Size(190, 22);
-            this.txt_Isbn.TabIndex = 32;
-            // 
-            // txt_Price
-            // 
-            this.txt_Price.Location = new System.Drawing.Point(277, 43);
-            this.txt_Price.Name = "txt_Price";
-            this.txt_Price.Size = new System.Drawing.Size(190, 22);
-            this.txt_Price.TabIndex = 33;
+            this.btn_addBook.Click += new System.EventHandler(this.btn_addBook_Click);
             // 
             // btn_Genre
             // 
@@ -613,6 +638,7 @@
             this.btn_Genre.TabIndex = 34;
             this.btn_Genre.Text = "View Genre";
             this.btn_Genre.UseVisualStyleBackColor = true;
+            this.btn_Genre.Click += new System.EventHandler(this.btn_Genre_Click);
             // 
             // btn_ViewAuthors
             // 
@@ -622,94 +648,7 @@
             this.btn_ViewAuthors.TabIndex = 53;
             this.btn_ViewAuthors.Text = "View Authors";
             this.btn_ViewAuthors.UseVisualStyleBackColor = true;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(16, 91);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(71, 23);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "Genre";
-            // 
-            // txt_Genre
-            // 
-            this.txt_Genre.Location = new System.Drawing.Point(20, 121);
-            this.txt_Genre.Name = "txt_Genre";
-            this.txt_Genre.Size = new System.Drawing.Size(190, 22);
-            this.txt_Genre.TabIndex = 35;
-            // 
-            // txt_Author
-            // 
-            this.txt_Author.Location = new System.Drawing.Point(277, 121);
-            this.txt_Author.Name = "txt_Author";
-            this.txt_Author.Size = new System.Drawing.Size(190, 22);
-            this.txt_Author.TabIndex = 36;
-            this.txt_Author.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // txt_Stock
-            // 
-            this.txt_Stock.Location = new System.Drawing.Point(554, 121);
-            this.txt_Stock.Name = "txt_Stock";
-            this.txt_Stock.Size = new System.Drawing.Size(190, 22);
-            this.txt_Stock.TabIndex = 37;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "No";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Bookname";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Price";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "ISBN";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Genre";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Author";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Stocks";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Date";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
+            this.btn_ViewAuthors.Click += new System.EventHandler(this.btn_ViewAuthors_Click);
             // 
             // Book
             // 
@@ -719,7 +658,7 @@
             this.Controls.Add(this.btn_ViewAuthors);
             this.Controls.Add(this.btn_Genre);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dgv_customer);
+            this.Controls.Add(this.dgv_books);
             this.Controls.Add(this.btn_deleteBook);
             this.Controls.Add(this.btn_updateBook);
             this.Controls.Add(this.btn_addBook);
@@ -742,7 +681,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_books)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -784,7 +723,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgv_customer;
+        private System.Windows.Forms.DataGridView dgv_books;
         private System.Windows.Forms.Button btn_deleteBook;
         private System.Windows.Forms.Button btn_updateBook;
         private System.Windows.Forms.Button btn_addBook;
@@ -797,13 +736,5 @@
         private System.Windows.Forms.Button btn_ViewAuthors;
         private System.Windows.Forms.TextBox txt_Author;
         private System.Windows.Forms.TextBox txt_Stock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }
