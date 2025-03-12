@@ -36,5 +36,35 @@ namespace Bookhaven
             Customer customer = new Customer();
             customer.ShowDialog();
         }
+
+        private void btn_Staff_Click(object sender, EventArgs e)
+        {
+            Staff staff = new Staff();
+            staff.ShowDialog();
+        }
+
+        private void btn_Book_Click(object sender, EventArgs e)
+        {
+            Book book = new Book();
+            book.ShowDialog();
+        }
+
+        private void btn_Supporder_Click(object sender, EventArgs e)
+        {
+            SupplierOrder supOrder = new SupplierOrder();
+            supOrder.ShowDialog();
+        }
+
+        private void btn_Suppliers_Click(object sender, EventArgs e)
+        {
+            Suppliers suppliers = new Suppliers();
+            suppliers.ShowDialog();
+        }
+
+        private void btn_Report_Click(object sender, EventArgs e)
+        {
+            Report report = new Report();
+            report.ShowDialog();
+        }
     }
 }
