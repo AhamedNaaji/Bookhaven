@@ -236,5 +236,39 @@ namespace Bookhaven
                 MessageBox.Show("Please select a staff member to delete.");
             }
         }
+
+        private void btn_updateStaff_Click(object sender, EventArgs e)
+        {
+            if (clsstf.Staff_Id <= 0)
+            {
+                MessageBox.Show("Please select a staff member to update.");
+                return;
+            }
+
+            // Validate required fields
+            if (string.IsNullOrWhiteSpace(txtBox_Staffname.Text) ||
+                string.IsNullOrWhiteSpace(txtBox_StaffNIC.Text) ||
+                string.IsNullOrWhiteSpace(txtBox_StaffUsername.Text) ||
+                string.IsNullOrWhiteSpace(txtBox_StaffPassword.Text) ||
+                comboStaffRole.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please fill all required fields (Name, NIC, Username, Password, Role).");
+                return;
+            }
+
+            // Populate staff object
+            clsstf.Staff_Name = txtBox_Staffname.Text.Trim();
+            clsstf.NIC = txtBox_StaffNIC.Text.Trim();
+            clsstf.Address = txtBox_StaffAddress.Text.Trim();
+            clsstf.Username = txtBox_StaffUsername.Text.Trim();
+            clsstf.Password = txtBox_StaffPassword.Text.Trim();
+            clsstf.MobileNum = txtBox_StaffMobile.Text.Trim();
+            clsstf.Email = textBox1.Text.Trim();
+            clsstf.staffRoll_Id_fk = Convert.ToInt32(comboStaffRole.SelectedValue);
+
+            // Execute update
+            clsstf.UpdateData();
+            FirstRun(); // Refresh data
+        }
     }
 }

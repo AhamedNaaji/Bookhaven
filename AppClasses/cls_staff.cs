@@ -70,67 +70,65 @@ namespace Bookhaven.AppClasses
                 conn.Close();
             }
         }
-        //public void UpdateData()
-        //{
-        //    try
-        //    {
-        //        conn.Open();
-        //        transaction = conn.BeginTransaction();
+        public void UpdateData()
+        {
+            if (Staff_Id <= 0)
+            {
+                MessageBox.Show("Please select a valid staff member to update.");
+                return;
+            }
 
-        //        // Step 1: Update Customer table
-        //        string updateSupplierQuery = @"
-        //    UPDATE Supplier 
-        //    SET Supplier_Name = @Supplier_Name, 
-        //        NIC = @NIC, 
+            try
+            {
+                conn.Open();
+                transaction = conn.BeginTransaction();
 
-        //        Address = @Address, 
-        //        Email = @Email 
-        //    WHERE Supplier_Id = @Supplier_Id";
+                string updateQuery = @"
+            UPDATE Staff SET 
+                Staff_Name = @StaffName,
+                NIC = @NIC,
+                Address = @Address,
+                Username = @Username,
+                Password = @Password,
+                MobileNum = @MobileNum,
+                Email = @Email,
+                staffRoll_Id_fk = @RoleId
+            WHERE Staff_Id = @StaffId";
 
-        //        SqlCommand cmd = new SqlCommand(updateSupplierQuery, conn, transaction);
-        //        cmd.Parameters.AddWithValue("@Supplier_Name", Supplier_Name);
-        //        cmd.Parameters.AddWithValue("@NIC", NIC);
+                SqlCommand cmd = new SqlCommand(updateQuery, conn, transaction);
+                cmd.Parameters.AddWithValue("@StaffName", Staff_Name);
+                cmd.Parameters.AddWithValue("@NIC", NIC);
+                cmd.Parameters.AddWithValue("@Address", Address);
+                cmd.Parameters.AddWithValue("@Username", Username);
+                cmd.Parameters.AddWithValue("@Password", Password); // Consider hashing
+                cmd.Parameters.AddWithValue("@MobileNum", MobileNum);
+                cmd.Parameters.AddWithValue("@Email", Email);
+                cmd.Parameters.AddWithValue("@RoleId", staffRoll_Id_fk);
+                cmd.Parameters.AddWithValue("@StaffId", Staff_Id);
 
-        //        cmd.Parameters.AddWithValue("@Address", Address);
-        //        cmd.Parameters.AddWithValue("@Email", Email);
-        //        cmd.Parameters.AddWithValue("@Supplier_Id", Supplier_Id);
-        //        cmd.ExecuteNonQuery();
+                int rowsAffected = cmd.ExecuteNonQuery();
 
-        //        // Step 2: Delete existing mobile numbers
-        //        string deleteMobileQuery = @"
-        //    DELETE FROM SupplierMobile 
-        //    WHERE Supplier_Id_fk = @Supplier_Id";
+                transaction.Commit();
 
-        //        SqlCommand deleteCmd = new SqlCommand(deleteMobileQuery, conn, transaction);
-        //        deleteCmd.Parameters.AddWithValue("@Supplier_Id", Supplier_Id);
-        //        deleteCmd.ExecuteNonQuery();
-
-        //        // Step 3: Insert new mobile numbers
-        //        foreach (string number in SupMobNumbers)
-        //        {
-        //            string insertMobileQuery = @"
-        //        INSERT INTO SupplierMobile (SupMobNumber, Supplier_Id_fk) 
-        //        VALUES (@SupMobNumber, @Supplier_Id)";
-
-        //            SqlCommand insertCmd = new SqlCommand(insertMobileQuery, conn, transaction);
-        //            insertCmd.Parameters.AddWithValue("@SupMobNumber", number);
-        //            insertCmd.Parameters.AddWithValue("@Supplier_Id", Supplier_Id);
-        //            insertCmd.ExecuteNonQuery();
-        //        }
-
-        //        transaction.Commit();
-        //        MessageBox.Show("Supplier details updated successfully!", "Success");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        transaction?.Rollback();
-        //        MessageBox.Show("Error: " + ex.Message, "Update Failed");
-        //    }
-        //    finally
-        //    {
-        //        conn.Close();
-        //    }
-        //}
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Staff details updated successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("Update failed: Staff member not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                transaction?.Rollback();
+                MessageBox.Show($"Update failed: {ex.Message}");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
         public void DeleteDate()
         {

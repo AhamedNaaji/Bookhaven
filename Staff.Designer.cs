@@ -436,6 +436,7 @@
             this.btn_updateStaff.TabIndex = 64;
             this.btn_updateStaff.Text = "Update Staff";
             this.btn_updateStaff.UseVisualStyleBackColor = true;
+            this.btn_updateStaff.Click += new System.EventHandler(this.btn_updateStaff_Click);
             // 
             // btn_addStaff
             // 
