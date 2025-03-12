@@ -426,6 +426,7 @@
             this.btn_deleteStaff.TabIndex = 65;
             this.btn_deleteStaff.Text = "Delete Staff";
             this.btn_deleteStaff.UseVisualStyleBackColor = true;
+            this.btn_deleteStaff.Click += new System.EventHandler(this.btn_deleteStaff_Click);
             // 
             // btn_updateStaff
             // 

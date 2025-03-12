@@ -214,5 +214,27 @@ namespace Bookhaven
                 clsstf.Staff_Id = Convert.ToInt32(row.Cells["Staff_Id"].Value);
             }
         }
+
+        private void btn_deleteStaff_Click(object sender, EventArgs e)
+        {
+            if (clsstf.Staff_Id > 0)
+            {
+                DialogResult confirm = MessageBox.Show(
+                    "Are you sure you want to delete this staff member?",
+                    "Confirm Delete",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (confirm == DialogResult.Yes)
+                {
+                    clsstf.DeleteDate();
+                    FirstRun(); // Refresh data
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a staff member to delete.");
+            }
+        }
     }
 }

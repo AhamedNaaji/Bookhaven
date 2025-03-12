@@ -132,38 +132,47 @@ namespace Bookhaven.AppClasses
         //    }
         //}
 
-        //public void DeleteDate()
-        //{
-        //    try
-        //    {
-        //        conn.Open();
-        //        transaction = conn.BeginTransaction();
+        public void DeleteDate()
+        {
+            if (Staff_Id <= 0)
+            {
+                MessageBox.Show("Please select a valid staff member to delete.");
+                return;
+            }
 
-        //        // Step 1: Delete related mobile numbers (due to foreign key)
-        //        string deleteMobileQuery = "DELETE FROM SupplierMobile WHERE Supplier_Id_fk = @Supplier_Id";
-        //        SqlCommand mobileCmd = new SqlCommand(deleteMobileQuery, conn, transaction);
-        //        mobileCmd.Parameters.AddWithValue("@Supplier_Id", Supplier_Id);
-        //        mobileCmd.ExecuteNonQuery();
+            try
+            {
+                conn.Open();
+                transaction = conn.BeginTransaction();
 
-        //        // Step 2: Delete the customer
-        //        string deleteCustomerQuery = "DELETE FROM Supplier WHERE Supplier_Id = @Supplier_Id";
-        //        SqlCommand customerCmd = new SqlCommand(deleteCustomerQuery, conn, transaction);
-        //        customerCmd.Parameters.AddWithValue("@Supplier_Id", Supplier_Id);
-        //        customerCmd.ExecuteNonQuery();
+                // Delete staff record
+                string deleteQuery = "DELETE FROM Staff WHERE Staff_Id = @Staff_Id";
+                SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn, transaction);
+                deleteCmd.Parameters.AddWithValue("@Staff_Id", Staff_Id);
 
-        //        transaction.Commit();
-        //        MessageBox.Show("Supplier deleted successfully!", "Success");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        transaction?.Rollback();
-        //        MessageBox.Show("Error: " + ex.Message, "Delete Failed");
-        //    }
-        //    finally
-        //    {
-        //        conn.Close();
-        //    }
-        //}
+                int rowsAffected = deleteCmd.ExecuteNonQuery();
+
+                transaction.Commit();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Staff member deleted successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("Staff member not found or already deleted.");
+                }
+            }
+            catch (Exception ex)
+            {
+                transaction?.Rollback();
+                MessageBox.Show($"Deletion failed: {ex.Message}");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
 
 
