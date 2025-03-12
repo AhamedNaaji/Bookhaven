@@ -32,39 +32,73 @@ namespace Bookhaven
             txtBox_StaffPassword.Text = "";
             comboStaffRole.Text = "";
             txtBox_StaffMobile.Text = "";
+            textBox1.Text = "";
 
-        //    // Updated query to include mobile numbers
-        //    string query = @"
-        //SELECT 
-        //    c.Staff_Id,
-        //    c.Staff_Name,
-        //    c.NIC,
-        //    c.Address,
-        //    c.Username,
-        //    c.Password,
-        //    c.MobileNum,
-        //    c.Email,
-        //    MAX(CASE WHEN cm.RowNum = 1 THEN cm.RoleName END) AS Role,
-        //FROM Supplier c
-        //LEFT JOIN (
-        //    SELECT 
-        //        staffRoll_Id_fk,
-        //        roleName,
-        //        ROW_NUMBER() OVER (PARTITION BY staffRoll_Id_fk ORDER BY rollId) AS RowNum
-        //    FROM staffRole
-        //) cm ON c.Staff_Id = cm.staffRoll_Id_fk
-        //GROUP BY 
-        //    c.Staff_Id,
-        //    c.Staff_Name,
-        //    c.NIC,
-        //    c.Address,
-        //    c.Username,
-        //    c.Password,
-        //    c.MobileNum,
-        //    c.Email";
+            //    // Updated query to include mobile numbers
+            //    string query = @"
+            //SELECT 
+            //    c.Staff_Id,
+            //    c.Staff_Name,
+            //    c.NIC,
+            //    c.Address,
+            //    c.Username,
+            //    c.Password,
+            //    c.MobileNum,
+            //    c.Email,
+            //    MAX(CASE WHEN cm.RowNum = 1 THEN cm.RoleName END) AS Role,
+            //FROM Supplier c
+            //LEFT JOIN (
+            //    SELECT 
+            //        staffRoll_Id_fk,
+            //        roleName,
+            //        ROW_NUMBER() OVER (PARTITION BY staffRoll_Id_fk ORDER BY rollId) AS RowNum
+            //    FROM staffRole
+            //) cm ON c.Staff_Id = cm.staffRoll_Id_fk
+            //GROUP BY 
+            //    c.Staff_Id,
+            //    c.Staff_Name,
+            //    c.NIC,
+            //    c.Address,
+            //    c.Username,
+            //    c.Password,
+            //    c.MobileNum,
+            //    c.Email";
 
-            fill.FillDataGridView("SELECT * FROM Staff", dgv_staff);
+
+            string query = @"
+        SELECT 
+            s.Staff_Id,
+            s.Staff_Name,
+            s.NIC,
+            s.Address,
+            s.Username,
+            s.Password,
+            s.MobileNum,
+            s.Email,
+            sr.roleName AS Role
+        FROM Staff s
+        INNER JOIN staffRole sr ON s.staffRoll_Id_fk = sr.rollId
+        ORDER BY s.Staff_Id DESC";
+
+            fill.FillDataGridView(query, dgv_staff);
             dgv_staff.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Configure columns explicitly
+            if (dgv_staff.Columns.Count > 0)
+            {
+                dgv_staff.Columns["Staff_Id"].HeaderText = "ID";
+                dgv_staff.Columns["Staff_Name"].HeaderText = "Full Name";
+                dgv_staff.Columns["NIC"].HeaderText = "NIC";
+                dgv_staff.Columns["Address"].HeaderText = "Address";
+                dgv_staff.Columns["Username"].HeaderText = "Username";
+                dgv_staff.Columns["MobileNum"].HeaderText = "Mobile";
+                dgv_staff.Columns["Email"].HeaderText = "Email";
+                dgv_staff.Columns["Role"].HeaderText = "Role";
+                dgv_staff.Columns["Password"].Visible = false; // Hide sensitive data
+            }
+
+            //fill.FillDataGridView("SELECT * FROM Staff", dgv_staff);
+            //dgv_staff.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             //// Populate DataGridView
             //fill.FillDataGridView(query, dgv_staff);
@@ -162,26 +196,23 @@ namespace Bookhaven
 
         private void dgv_staff_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex >= 0)
-            //{
-            //    // Get selected customer ID
-            //    int Staff_Id = Convert.ToInt32(dgv_staff.Rows[e.RowIndex].Cells["Staff_Id"].Value);
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgv_staff.Rows[e.RowIndex];
 
-            //    // Load customer data
-            //    clsstf.Staff_Id = Staff_Id;
-            //    clsstf.Getdata();
+                // Populate form fields using data-bound values
+                txtBox_Staffname.Text = row.Cells["Staff_Name"].Value?.ToString() ?? "";
+                txtBox_StaffNIC.Text = row.Cells["NIC"].Value?.ToString() ?? "";
+                txtBox_StaffAddress.Text = row.Cells["Address"].Value?.ToString() ?? "";
+                txtBox_StaffUsername.Text = row.Cells["Username"].Value?.ToString() ?? "";
+                txtBox_StaffPassword.Text = row.Cells["Password"].Value?.ToString() ?? "";
+                txtBox_StaffMobile.Text = row.Cells["MobileNum"].Value?.ToString() ?? "";
+                textBox1.Text = row.Cells["Email"].Value?.ToString() ?? "";
+                comboStaffRole.Text = row.Cells["Role"].Value?.ToString() ?? "";
 
-            //    // Populate form fields
-            //    txtbox_Suppliername.Text = clssup.Supplier_Name;
-            //    txtbox_NIC.Text = clssup.NIC;
-
-            //    txtbox_Address.Text = clssup.Address;
-            //    txtbox_Email.Text = clssup.Email;
-
-            //    // Populate mobile numbers (handle up to 2 numbers)
-            //    txtbox_Contact1.Text = clssup.SupMobNumbers.Count > 0 ? clssup.SupMobNumbers[0] : "";
-            //    txtbox_Contact2.Text = clssup.SupMobNumbers.Count > 1 ? clssup.SupMobNumbers[1] : "";
-            //}
+                // Set staff ID for updates
+                clsstf.Staff_Id = Convert.ToInt32(row.Cells["Staff_Id"].Value);
+            }
         }
     }
 }

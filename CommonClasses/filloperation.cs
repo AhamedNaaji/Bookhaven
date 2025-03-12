@@ -19,32 +19,50 @@ namespace Bookhaven.CommonClasses
 
         public void combobox(string qry, ComboBox cmb_name, string display_member, string value_member)
         {
-            if (con.mycon != null && con.mycon.State == ConnectionState.Closed)
+            try
             {
-                con.mycon.Open();
+                if (con.mycon.State != ConnectionState.Open)
+                    con.mycon.Open();
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(qry, con.mycon);
+                da.Fill(dt);
+                cmb_name.DisplayMember = display_member;
+                cmb_name.ValueMember = value_member;
+                cmb_name.DataSource = dt;
             }
-
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(qry, con.mycon);
-            da.Fill(dt);
-            cmb_name.DisplayMember = display_member;
-            cmb_name.ValueMember = value_member;
-            cmb_name.DataSource = dt;
-
-            con.mycon.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Combo Load Error: {ex.Message}");
+            }
+            finally
+            {
+                if (con.mycon.State == ConnectionState.Open)
+                    con.mycon.Close();
+            }
         }
 
         public void FillDataGridView(string qry, DataGridView dgv)
         {
-            if (con.mycon != null && con.mycon.State == ConnectionState.Closed)
+            try
             {
-                con.mycon.Open();
-            }
+                if (con.mycon.State != ConnectionState.Open)
+                    con.mycon.Open();
 
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(qry, con.mycon);
-            da.Fill(dt);
-            dgv.DataSource = dt;
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(qry, con.mycon);
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Data Loading Error: {ex.Message}");
+            }
+            finally
+            {
+                if (con.mycon.State == ConnectionState.Open)
+                    con.mycon.Close();
+            }
         }
 
         public SqlDataReader FillWithID(string qry)

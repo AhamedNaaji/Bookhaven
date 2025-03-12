@@ -25,9 +25,10 @@ namespace Bookhaven.AppClasses
         public string MobileNum { get; set; }
         public string Email { get; set; }
         public string roleName { get; set; }
+        public int staffRoll_Id_fk { get; set; }
 
 
-        
+
 
 
         public void Insertdata()
@@ -166,46 +167,57 @@ namespace Bookhaven.AppClasses
 
 
 
-        //public void Getdata()
-        //{
-        //    try
-        //    {
-        //        conn.Open();
-        //        string qry = @"
-        //    SELECT c.Staff_Id, s.Staff_Name, s.NIC, s.Address, s.Username, s.Password, s.MobileNum, s.Email, s.staffRoll_Id_fk 
-        //    FROM Staff s 
-        //    LEFT JOIN staffRole sr ON s.Staff_Id = sr.staffRoll_Id_fk 
-        //    WHERE s.Staff_Id = @Staff_Id";
+        public void Getdata()
+        {
+            try
+            {
+                if (conn.State != ConnectionState.Open)
+                    conn.Open();
 
-        //        SqlCommand cmd = new SqlCommand(qry, conn);
-        //        cmd.Parameters.AddWithValue("@Staff_Id", Staff_Id);
-        //        SqlDataReader rd = cmd.ExecuteReader();
+                string qry = @"
+            SELECT 
+                s.Staff_Id, 
+                s.Staff_Name, 
+                s.NIC, 
+                s.Address, 
+                s.Username, 
+                s.Password, 
+                s.MobileNum, 
+                s.Email,
+                s.staffRoll_Id_fk,
+                sr.roleName
+            FROM Staff s 
+            INNER JOIN staffRole sr ON s.staffRoll_Id_fk = sr.rollId
+            WHERE s.Staff_Id = @Staff_Id";
 
-  
+                SqlCommand cmd = new SqlCommand(qry, conn);
+                cmd.Parameters.AddWithValue("@Staff_Id", Staff_Id);
 
-        //        while (rd.Read())
-        //        {
-        //            Staff_Id = Convert.ToInt32(rd["Staff_Id"]);
-        //            Staff_Name = rd["Staff_Name"].ToString();
-        //            NIC = rd["NIC"].ToString();
-        //            Address = rd["Address"].ToString();
-        //            Username = rd["Username"].ToString();
-        //            Password = rd["Password"].ToString();
-        //            MobileNum = rd["MobileNum"].ToString();
-        //            Email = rd["Email"].ToString();
-        //            staffRoll_Id_fk = Convert.ToInt32(rd["staffRoll_Id_fk"]);
+                SqlDataReader rd = cmd.ExecuteReader();
 
-                   
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error: " + ex.Message, "Fetch Failed");
-        //    }
-        //    finally
-        //    {
-        //        conn.Close();
-        //    }
-        //}
+                if (rd.Read())
+                {
+                    Staff_Id = Convert.ToInt32(rd["Staff_Id"]);
+                    Staff_Name = rd["Staff_Name"].ToString();
+                    NIC = rd["NIC"].ToString();
+                    Address = rd["Address"].ToString();
+                    Username = rd["Username"].ToString();
+                    Password = rd["Password"].ToString();
+                    MobileNum = rd["MobileNum"].ToString();
+                    Email = rd["Email"].ToString();
+                    staffRoll_Id_fk = Convert.ToInt32(rd["staffRoll_Id_fk"]);
+                    roleName = rd["roleName"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Data Retrieval Error: {ex.Message}");
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+        }
     }
 }
