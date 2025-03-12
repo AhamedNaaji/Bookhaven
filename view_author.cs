@@ -64,11 +64,19 @@ namespace Bookhaven
         }
         private void RefreshDataGridView()
         {
+
             txtbox_author.Text = "";
             string query = "SELECT Author_Id, AuthorName FROM Author";
             filloperation fill = new filloperation();
             fill.FillDataGridView(query, dgv_author);
             dgv_author.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+        }
+           
+
+        private void view_author_Load(object sender, EventArgs e)
+        {
+            RefreshDataGridView();
         }
     }
 }

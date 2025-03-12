@@ -111,6 +111,7 @@
             this.Controls.Add(this.txtbox_author);
             this.Name = "view_author";
             this.Text = "view_author";
+            this.Load += new System.EventHandler(this.view_author_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_author)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

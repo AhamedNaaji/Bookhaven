@@ -27,11 +27,10 @@ namespace Bookhaven.AppClasses
                 conn.Open();
                 transaction = conn.BeginTransaction();
 
-                // Insert into Book table
                 string bookQuery = @"
-                    INSERT INTO Book (Price, ISBN, Book_Name, Genre_Id_fk, Discount) 
-                    VALUES (@Price, @ISBN, @Book_Name, @Genre_Id_fk, @Discount);
-                    SELECT SCOPE_IDENTITY();";
+            INSERT INTO Book (Price, ISBN, Book_Name, Genre_Id_fk, Discount) 
+            VALUES (@Price, @ISBN, @Book_Name, @Genre_Id_fk, @Discount);
+            SELECT SCOPE_IDENTITY();";
 
                 SqlCommand cmd = new SqlCommand(bookQuery, conn, transaction);
                 cmd.Parameters.AddWithValue("@Price", Price);
@@ -40,14 +39,15 @@ namespace Bookhaven.AppClasses
                 cmd.Parameters.AddWithValue("@Genre_Id_fk", Genre_Id_fk);
                 cmd.Parameters.AddWithValue("@Discount", Discount);
 
+                cmd.CommandTimeout = 60; // Increase timeout
                 int bookId = Convert.ToInt32(cmd.ExecuteScalar());
 
                 // Insert all authors
                 foreach (int authorId in Author_Ids)
                 {
                     string authorQuery = @"
-                        INSERT INTO BookAuthor (Author_Id_fk, Book_Id_fk) 
-                        VALUES (@Author_Id, @Book_Id)";
+                INSERT INTO BookAuthor (Author_Id_fk, Book_Id_fk) 
+                VALUES (@Author_Id, @Book_Id)";
 
                     SqlCommand authorCmd = new SqlCommand(authorQuery, conn, transaction);
                     authorCmd.Parameters.AddWithValue("@Author_Id", authorId);
@@ -56,12 +56,12 @@ namespace Bookhaven.AppClasses
                 }
 
                 transaction.Commit();
-                MessageBox.Show("Book details inserted successfully!", "Success");
+                MessageBox.Show("Book added successfully!", "Success");
             }
             catch (Exception ex)
             {
                 transaction?.Rollback();
-                MessageBox.Show("Error: " + ex.Message, "Insert Failed");
+                MessageBox.Show($"Error: {ex.Message}", "Insert Failed");
             }
             finally
             {
@@ -78,13 +78,13 @@ namespace Bookhaven.AppClasses
 
                 // Update Book table
                 string updateQuery = @"
-                    UPDATE Book 
-                    SET Price = @Price, 
-                        ISBN = @ISBN, 
-                        Book_Name = @Book_Name, 
-                        Genre_Id_fk = @Genre_Id_fk, 
-                        Discount = @Discount 
-                    WHERE Book_Id = @Book_Id";
+            UPDATE Book 
+            SET Price = @Price, 
+                ISBN = @ISBN, 
+                Book_Name = @Book_Name, 
+                Genre_Id_fk = @Genre_Id_fk, 
+                Discount = @Discount 
+            WHERE Book_Id = @Book_Id";
 
                 SqlCommand cmd = new SqlCommand(updateQuery, conn, transaction);
                 cmd.Parameters.AddWithValue("@Price", Price);
@@ -105,8 +105,8 @@ namespace Bookhaven.AppClasses
                 foreach (int authorId in Author_Ids)
                 {
                     string insertAuthorQuery = @"
-                        INSERT INTO BookAuthor (Author_Id_fk, Book_Id_fk) 
-                        VALUES (@Author_Id, @Book_Id)";
+                INSERT INTO BookAuthor (Author_Id_fk, Book_Id_fk) 
+                VALUES (@Author_Id, @Book_Id)";
 
                     SqlCommand insertCmd = new SqlCommand(insertAuthorQuery, conn, transaction);
                     insertCmd.Parameters.AddWithValue("@Author_Id", authorId);
@@ -115,12 +115,12 @@ namespace Bookhaven.AppClasses
                 }
 
                 transaction.Commit();
-                MessageBox.Show("Book details updated successfully!", "Success");
+                MessageBox.Show("Book updated successfully!", "Success");
             }
             catch (Exception ex)
             {
                 transaction?.Rollback();
-                MessageBox.Show("Error: " + ex.Message, "Update Failed");
+                MessageBox.Show($"Error: {ex.Message}", "Update Failed");
             }
             finally
             {
@@ -167,10 +167,10 @@ namespace Bookhaven.AppClasses
             {
                 conn.Open();
                 string qry = @"
-                    SELECT b.Book_Id, b.Price, b.ISBN, b.Book_Name, b.Genre_Id_fk, b.Discount, ba.Author_Id_fk 
-                    FROM Book b 
-                    LEFT JOIN BookAuthor ba ON b.Book_Id = ba.Book_Id_fk 
-                    WHERE b.Book_Id = @Book_Id";
+            SELECT b.Book_Id, b.Price, b.ISBN, b.Book_Name, b.Genre_Id_fk, b.Discount, ba.Author_Id_fk 
+            FROM Book b 
+            LEFT JOIN BookAuthor ba ON b.Book_Id = ba.Book_Id_fk 
+            WHERE b.Book_Id = @Book_Id";
 
                 SqlCommand cmd = new SqlCommand(qry, conn);
                 cmd.Parameters.AddWithValue("@Book_Id", Book_Id);
@@ -192,7 +192,7 @@ namespace Bookhaven.AppClasses
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Fetch Failed");
+                MessageBox.Show($"Error: {ex.Message}", "Fetch Failed");
             }
             finally
             {

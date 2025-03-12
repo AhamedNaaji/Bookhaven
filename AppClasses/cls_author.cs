@@ -109,19 +109,26 @@ namespace Bookhaven.AppClasses
 
         public void DeleteData()
         {
-            if (Author_Id <= 0)
-            {
-                MessageBox.Show("Invalid author ID");
-                return;
-            }
-
             try
             {
                 conn.Open();
                 transaction = conn.BeginTransaction();
 
-                string query = "DELETE FROM Author WHERE Author_Id = @Author_Id";
-                SqlCommand cmd = new SqlCommand(query, conn, transaction);
+                // Check if the author has associated records in BookAuthor
+                string checkQuery = "SELECT COUNT(*) FROM BookAuthor WHERE Author_Id_fk = @Author_Id";
+                SqlCommand checkCmd = new SqlCommand(checkQuery, conn, transaction);
+                checkCmd.Parameters.AddWithValue("@Author_Id", Author_Id);
+                int count = (int)checkCmd.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Cannot delete author. Author is associated with one or more books.", "Deletion Failed");
+                    return;
+                }
+
+                // Proceed with deletion
+                string deleteQuery = "DELETE FROM Author WHERE Author_Id = @Author_Id";
+                SqlCommand cmd = new SqlCommand(deleteQuery, conn, transaction);
                 cmd.Parameters.AddWithValue("@Author_Id", Author_Id);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -133,7 +140,7 @@ namespace Bookhaven.AppClasses
                 }
                 else
                 {
-                    MessageBox.Show("Author not found", "Warning");
+                    MessageBox.Show("Author not found.", "Warning");
                 }
             }
             catch (Exception ex)

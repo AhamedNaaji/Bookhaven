@@ -53,6 +53,7 @@
     <Compile Include="AppClasses\cls_customer.cs" />
     <Compile Include="AppClasses\cls_genre.cs" />
     <Compile Include="AppClasses\cls_staff.cs" />
+    <Compile Include="AppClasses\cls_stock.cs" />
     <Compile Include="AppClasses\cls_supplier.cs" />
     <Compile Include="Book.cs">
       <SubType>Form</SubType>
@@ -162,6 +163,12 @@
     <Compile Include="view_genre.Designer.cs">
       <DependentUpon>view_genre.cs</DependentUpon>
     </Compile>
+    <Compile Include="view_stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view_stock.Designer.cs">
+      <DependentUpon>view_stock.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Book.resx">
       <DependentUpon>Book.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view_genre.resx">
       <DependentUpon>view_genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view_stock.resx">
+      <DependentUpon>view_stock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
