@@ -8,7 +8,7 @@ namespace Bookhaven.AppClasses
 {
     internal class cls_sales
     {
-        private SqlConnection conn = new SqlConnection("Data Source=AFRIDI;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
+        private SqlConnection conn = new SqlConnection("Data Source=MMSALMANFARIS;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         private SqlTransaction transaction;
 
         public int Sales_Id { get; set; }

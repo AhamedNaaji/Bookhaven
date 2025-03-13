@@ -15,7 +15,7 @@ namespace Bookhaven
 
     public partial class Form1 : Form
     {
-        public SqlConnection mycon = new SqlConnection("Data Source=AFRIDI;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
+        public SqlConnection mycon = new SqlConnection("Data Source=MMSALMANFARIS;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
 
 
         public Form1()

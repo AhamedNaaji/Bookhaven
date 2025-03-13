@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_overview = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
@@ -485,16 +485,16 @@
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            chartArea7.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chart1.Legends.Add(legend7);
             this.chart1.Location = new System.Drawing.Point(1595, 1244);
             this.chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart1.Series.Add(series4);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chart1.Series.Add(series7);
             this.chart1.Size = new System.Drawing.Size(2095, 733);
             this.chart1.TabIndex = 25;
             this.chart1.Text = "chart1";
@@ -539,7 +539,6 @@
             this.comboStaff.Name = "comboStaff";
             this.comboStaff.Size = new System.Drawing.Size(200, 24);
             this.comboStaff.TabIndex = 23;
-            this.comboStaff.SelectedIndexChanged += new System.EventHandler(this.comboStaff_SelectedIndexChanged);
             // 
             // label23
             // 
@@ -557,7 +556,6 @@
             this.dateTimePickerDate.Name = "dateTimePickerDate";
             this.dateTimePickerDate.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerDate.TabIndex = 21;
-            this.dateTimePickerDate.ValueChanged += new System.EventHandler(this.dateTimePickerDate_ValueChanged);
             // 
             // labelDiscount
             // 
@@ -567,7 +565,6 @@
             this.labelDiscount.Size = new System.Drawing.Size(33, 16);
             this.labelDiscount.TabIndex = 20;
             this.labelDiscount.Text = "10%";
-            this.labelDiscount.Click += new System.EventHandler(this.labelDiscount_Click);
             // 
             // labelFinalPayment
             // 
@@ -577,17 +574,14 @@
             this.labelFinalPayment.Size = new System.Drawing.Size(45, 16);
             this.labelFinalPayment.TabIndex = 19;
             this.labelFinalPayment.Text = "950.00";
-            this.labelFinalPayment.Click += new System.EventHandler(this.labelFinalPayment_Click);
             // 
             // label_TotalAmount
             // 
             this.label_TotalAmount.AutoSize = true;
             this.label_TotalAmount.Location = new System.Drawing.Point(511, 131);
             this.label_TotalAmount.Name = "label_TotalAmount";
-            this.label_TotalAmount.Size = new System.Drawing.Size(52, 16);
+            this.label_TotalAmount.Size = new System.Drawing.Size(0, 20);
             this.label_TotalAmount.TabIndex = 18;
-            this.label_TotalAmount.Text = "1000.00";
-            this.label_TotalAmount.Click += new System.EventHandler(this.label_TotalAmount_Click);
             // 
             // numericQuantity
             // 
@@ -595,7 +589,7 @@
             this.numericQuantity.Name = "numericQuantity";
             this.numericQuantity.Size = new System.Drawing.Size(51, 22);
             this.numericQuantity.TabIndex = 17;
-            this.numericQuantity.ValueChanged += new System.EventHandler(this.numericQuantity_ValueChanged);
+            this.numericQuantity.ValueChanged += new System.EventHandler(this.numericQuantity_ValueChanged_1);
             // 
             // comboBook
             // 
@@ -604,7 +598,7 @@
             this.comboBook.Name = "comboBook";
             this.comboBook.Size = new System.Drawing.Size(232, 24);
             this.comboBook.TabIndex = 16;
-            this.comboBook.SelectedIndexChanged += new System.EventHandler(this.comboBook_SelectedIndexChanged);
+            this.comboBook.SelectedIndexChanged += new System.EventHandler(this.comboBook_SelectedIndexChanged_1);
             // 
             // comboCustomer
             // 
@@ -644,6 +638,7 @@
             this.label20.Size = new System.Drawing.Size(138, 23);
             this.label20.TabIndex = 10;
             this.label20.Text = "Total Amount";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // label19
             // 
