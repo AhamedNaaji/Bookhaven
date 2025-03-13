@@ -35,7 +35,7 @@ namespace Bookhaven
             txt_Isbn.Text = "";
             txt_Price.Text = "0";
             txtbox_discount.Text = "0";
-            txt_Stock.Text = ""; // Clear stock field
+            txt_Stock.Text = "";
 
             // Populate genre combo box
             string genreQuery = "SELECT Genre_Id, genreName FROM Genre";
@@ -48,21 +48,21 @@ namespace Bookhaven
 
             // Populate dgv_books with books and their stock details
             string bookQuery = @"
-                SELECT 
-                    b.Book_Id,
-                    b.Book_Name,
-                    b.ISBN,
-                    b.Price,
-                    b.Discount,
-                    g.genreName AS Genre,
-                    STRING_AGG(a.AuthorName, ', ') AS Authors,
-                    s.Stock_Quantity AS Stock
-                FROM Book b
-                LEFT JOIN Genre g ON b.Genre_Id_fk = g.Genre_Id
-                LEFT JOIN BookAuthor ba ON b.Book_Id = ba.Book_Id_fk
-                LEFT JOIN Author a ON ba.Author_Id_fk = a.Author_Id
-                LEFT JOIN Stock s ON b.Book_Id = s.Book_Id_fk
-                GROUP BY b.Book_Id, b.Book_Name, b.ISBN, b.Price, b.Discount, g.genreName, s.Stock_Quantity";
+        SELECT 
+            b.Book_Id,
+            b.Book_Name,
+            b.ISBN,
+            b.Price,
+            b.Discount,
+            g.genreName AS Genre,
+            STRING_AGG(a.AuthorName, ', ') AS Authors,
+            s.Stock_Quantity AS Stock
+        FROM Book b
+        LEFT JOIN Genre g ON b.Genre_Id_fk = g.Genre_Id
+        LEFT JOIN BookAuthor ba ON b.Book_Id = ba.Book_Id_fk
+        LEFT JOIN Author a ON ba.Author_Id_fk = a.Author_Id
+        LEFT JOIN Stock s ON b.Book_Id = s.Book_Id_fk
+        GROUP BY b.Book_Id, b.Book_Name, b.ISBN, b.Price, b.Discount, g.genreName, s.Stock_Quantity";
 
             fill.FillDataGridView(bookQuery, dgv_books);
             dgv_books.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

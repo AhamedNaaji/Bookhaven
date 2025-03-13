@@ -128,7 +128,9 @@ namespace Bookhaven.AppClasses
             }
         }
 
-     
+       
+
+
 
         public void DeleteDate()
         {
@@ -137,11 +139,19 @@ namespace Bookhaven.AppClasses
                 conn.Open();
                 transaction = conn.BeginTransaction();
 
+                // Step 1: Delete related stock entries (due to foreign key)
+                string deleteStockQuery = "DELETE FROM Stock WHERE Book_Id_fk = @Book_Id";
+                SqlCommand stockCmd = new SqlCommand(deleteStockQuery, conn, transaction);
+                stockCmd.Parameters.AddWithValue("@Book_Id", Book_Id);
+                stockCmd.ExecuteNonQuery();
+
+                // Step 2: Delete related authors
                 string deleteAuthorsQuery = "DELETE FROM BookAuthor WHERE Book_Id_fk = @Book_Id";
                 SqlCommand authorsCmd = new SqlCommand(deleteAuthorsQuery, conn, transaction);
                 authorsCmd.Parameters.AddWithValue("@Book_Id", Book_Id);
                 authorsCmd.ExecuteNonQuery();
 
+                // Step 3: Delete the book
                 string deleteBookQuery = "DELETE FROM Book WHERE Book_Id = @Book_Id";
                 SqlCommand bookCmd = new SqlCommand(deleteBookQuery, conn, transaction);
                 bookCmd.Parameters.AddWithValue("@Book_Id", Book_Id);
@@ -159,6 +169,7 @@ namespace Bookhaven.AppClasses
             {
                 conn.Close();
             }
+        
         }
 
         public void Getdata()
