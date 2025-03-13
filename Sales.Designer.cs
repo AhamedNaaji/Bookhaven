@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_overview = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
@@ -44,40 +44,40 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Totalsales_panel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.Totalcustomer_panel = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.outofstock_panel = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.cusorderRecieve_panel = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.lbl_Totalamount = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.lbl_Totalamount = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.btn_deleteCustomer = new System.Windows.Forms.Button();
             this.btn_updateCustomer = new System.Windows.Forms.Button();
             this.btn_addCustomer = new System.Windows.Forms.Button();
@@ -264,25 +264,15 @@
             this.Totalsales_panel.Size = new System.Drawing.Size(280, 125);
             this.Totalsales_panel.TabIndex = 0;
             // 
-            // label2
+            // label5
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 29);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Today Sales";
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(150, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 23);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "1000";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(141, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 23);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "850";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
@@ -294,15 +284,25 @@
             this.label4.Text = "Completed";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label5
+            // label1
             // 
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(141, 82);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 23);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "850";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(150, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(190, 23);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "1000";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(125, 23);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Today Sales";
             // 
             // Totalcustomer_panel
             // 
@@ -318,25 +318,15 @@
             this.Totalcustomer_panel.Size = new System.Drawing.Size(279, 125);
             this.Totalcustomer_panel.TabIndex = 1;
             // 
-            // label9
+            // label6
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(174, 29);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Weekly Sales";
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(129, 37);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(205, 23);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "1000";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(135, 78);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 23);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "850";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label7
             // 
@@ -348,15 +338,25 @@
             this.label7.Text = "Completed";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
+            // label8
             // 
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(135, 78);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 23);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "850";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(129, 37);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(205, 23);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "1000";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(139, 23);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Weekly Sales";
             // 
             // outofstock_panel
             // 
@@ -372,25 +372,15 @@
             this.outofstock_panel.Size = new System.Drawing.Size(281, 125);
             this.outofstock_panel.TabIndex = 2;
             // 
-            // label13
+            // label10
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(3, 9);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(180, 29);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Monthly Sales";
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(133, 37);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(205, 23);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "1000";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(133, 82);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(83, 23);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "850";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label11
             // 
@@ -402,15 +392,25 @@
             this.label11.Text = "Completed";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label10
+            // label12
             // 
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(133, 82);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 23);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "850";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(133, 37);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(205, 23);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "1000";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(3, 9);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(144, 23);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Monthly Sales";
             // 
             // cusorderRecieve_panel
             // 
@@ -426,25 +426,15 @@
             this.cusorderRecieve_panel.Size = new System.Drawing.Size(293, 125);
             this.cusorderRecieve_panel.TabIndex = 3;
             // 
-            // label17
+            // label14
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(3, 9);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(139, 29);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Total Sales";
-            // 
-            // label16
-            // 
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(135, 37);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(213, 23);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "1000";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(144, 82);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(96, 23);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "850";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label15
             // 
@@ -456,15 +446,25 @@
             this.label15.Text = "Completed";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label14
+            // label16
             // 
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(144, 82);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(96, 23);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "850";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(135, 37);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(213, 23);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "1000";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(3, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(111, 23);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Total Sales";
             // 
             // tableLayoutPanel1
             // 
@@ -482,22 +482,22 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 135F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1163, 135);
             this.tableLayoutPanel1.TabIndex = 23;
             // 
             // chart1
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chart1.Legends.Add(legend8);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(1595, 1244);
             this.chart1.Name = "chart1";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chart1.Series.Add(series8);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(2095, 733);
             this.chart1.TabIndex = 25;
             this.chart1.Text = "chart1";
@@ -520,6 +520,57 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(605, 309);
             this.panel2.TabIndex = 30;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(127, 223);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(33, 16);
+            this.label24.TabIndex = 20;
+            this.label24.Text = "10%";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(517, 217);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(45, 16);
+            this.label23.TabIndex = 19;
+            this.label23.Text = "950.00";
+            // 
+            // lbl_Totalamount
+            // 
+            this.lbl_Totalamount.AutoSize = true;
+            this.lbl_Totalamount.Location = new System.Drawing.Point(511, 131);
+            this.lbl_Totalamount.Name = "lbl_Totalamount";
+            this.lbl_Totalamount.Size = new System.Drawing.Size(52, 16);
+            this.lbl_Totalamount.TabIndex = 18;
+            this.lbl_Totalamount.Text = "1000.00";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(128, 130);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(51, 22);
+            this.numericUpDown1.TabIndex = 17;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(306, 43);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(232, 24);
+            this.comboBox2.TabIndex = 16;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(19, 43);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(197, 24);
+            this.comboBox1.TabIndex = 15;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -577,60 +628,9 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(15, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 29);
+            this.label3.Size = new System.Drawing.Size(104, 23);
             this.label3.TabIndex = 4;
             this.label3.Text = "Customer";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(19, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(197, 24);
-            this.comboBox1.TabIndex = 15;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(306, 43);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(232, 24);
-            this.comboBox2.TabIndex = 16;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(128, 130);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(51, 22);
-            this.numericUpDown1.TabIndex = 17;
-            // 
-            // lbl_Totalamount
-            // 
-            this.lbl_Totalamount.AutoSize = true;
-            this.lbl_Totalamount.Location = new System.Drawing.Point(511, 131);
-            this.lbl_Totalamount.Name = "lbl_Totalamount";
-            this.lbl_Totalamount.Size = new System.Drawing.Size(52, 16);
-            this.lbl_Totalamount.TabIndex = 18;
-            this.lbl_Totalamount.Text = "1000.00";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(517, 217);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(45, 16);
-            this.label23.TabIndex = 19;
-            this.label23.Text = "950.00";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(127, 223);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(33, 16);
-            this.label24.TabIndex = 20;
-            this.label24.Text = "10%";
             // 
             // btn_deleteCustomer
             // 
@@ -674,7 +674,7 @@
             this.dgv_customer.Name = "dgv_customer";
             this.dgv_customer.RowHeadersWidth = 51;
             this.dgv_customer.RowTemplate.Height = 24;
-            this.dgv_customer.Size = new System.Drawing.Size(929, 428);
+            this.dgv_customer.Size = new System.Drawing.Size(932, 428);
             this.dgv_customer.TabIndex = 34;
             // 
             // Name
@@ -739,7 +739,7 @@
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
-           
+            this.Name = "Sales";
             this.Text = "Sales";
             this.Load += new System.EventHandler(this.Sales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

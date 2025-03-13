@@ -106,5 +106,10 @@ namespace Bookhaven
                 }
             }
         }
+
+        private void view_stock_Load(object sender, EventArgs e)
+        {
+            FirstRun();
+        }
     }
 }

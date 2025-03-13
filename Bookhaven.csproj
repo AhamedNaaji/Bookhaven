@@ -50,10 +50,12 @@
   <ItemGroup>
     <Compile Include="AppClasses\cls_author.cs" />
     <Compile Include="AppClasses\cls_book.cs" />
+    <Compile Include="AppClasses\cls_cusorder.cs" />
     <Compile Include="AppClasses\cls_customer.cs" />
     <Compile Include="AppClasses\cls_genre.cs" />
     <Compile Include="AppClasses\cls_staff.cs" />
     <Compile Include="AppClasses\cls_stock.cs" />
+    <Compile Include="AppClasses\cls_suporder.cs" />
     <Compile Include="AppClasses\cls_supplier.cs" />
     <Compile Include="Book.cs">
       <SubType>Form</SubType>

@@ -28,17 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerOrder));
             this.label14 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lbl_Deliverymethod_Cusorder = new System.Windows.Forms.Label();
+            this.lbl_Processing_Cusorder = new System.Windows.Forms.Label();
+            this.lbl_Supplier_Cusorder = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.lbl_Qty_cusorder = new System.Windows.Forms.Label();
+            this.lbl_Discount_Cusorder = new System.Windows.Forms.Label();
+            this.lbl_Finalpayment_Cusorder = new System.Windows.Forms.Label();
             this.lbl_Totalamount = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_Book = new System.Windows.Forms.ComboBox();
+            this.cmb_customer = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -66,10 +73,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgv_customer = new System.Windows.Forms.DataGridView();
-            this.btn_deleteCustomer = new System.Windows.Forms.Button();
-            this.btn_updateCustomer = new System.Windows.Forms.Button();
-            this.btn_addCustomer = new System.Windows.Forms.Button();
+            this.dgv_cusOrder = new System.Windows.Forms.DataGridView();
+            this.btn_deleteorder = new System.Windows.Forms.Button();
+            this.btn_updateorder = new System.Windows.Forms.Button();
+            this.btn_makeorder = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -81,23 +88,6 @@
             this.btn_overview = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -105,7 +95,7 @@
             this.outofstock_panel.SuspendLayout();
             this.Totalcustomer_panel.SuspendLayout();
             this.Totalsales_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cusOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -122,18 +112,18 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label31);
-            this.panel2.Controls.Add(this.label30);
-            this.panel2.Controls.Add(this.label29);
+            this.panel2.Controls.Add(this.lbl_Deliverymethod_Cusorder);
+            this.panel2.Controls.Add(this.lbl_Processing_Cusorder);
+            this.panel2.Controls.Add(this.lbl_Supplier_Cusorder);
             this.panel2.Controls.Add(this.label28);
             this.panel2.Controls.Add(this.label27);
             this.panel2.Controls.Add(this.label26);
-            this.panel2.Controls.Add(this.label25);
-            this.panel2.Controls.Add(this.label24);
-            this.panel2.Controls.Add(this.label23);
+            this.panel2.Controls.Add(this.lbl_Qty_cusorder);
+            this.panel2.Controls.Add(this.lbl_Discount_Cusorder);
+            this.panel2.Controls.Add(this.lbl_Finalpayment_Cusorder);
             this.panel2.Controls.Add(this.lbl_Totalamount);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cmb_Book);
+            this.panel2.Controls.Add(this.cmb_customer);
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label20);
@@ -144,25 +134,95 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(801, 309);
             this.panel2.TabIndex = 38;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // label24
+            // lbl_Deliverymethod_Cusorder
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(326, 215);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(33, 16);
-            this.label24.TabIndex = 20;
-            this.label24.Text = "10%";
+            this.lbl_Deliverymethod_Cusorder.AutoSize = true;
+            this.lbl_Deliverymethod_Cusorder.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Deliverymethod_Cusorder.Location = new System.Drawing.Point(15, 209);
+            this.lbl_Deliverymethod_Cusorder.Name = "lbl_Deliverymethod_Cusorder";
+            this.lbl_Deliverymethod_Cusorder.Size = new System.Drawing.Size(90, 23);
+            this.lbl_Deliverymethod_Cusorder.TabIndex = 27;
+            this.lbl_Deliverymethod_Cusorder.Text = "pick up ";
             // 
-            // label23
+            // lbl_Processing_Cusorder
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(614, 209);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(45, 16);
-            this.label23.TabIndex = 19;
-            this.label23.Text = "950.00";
-            this.label23.Click += new System.EventHandler(this.label23_Click);
+            this.lbl_Processing_Cusorder.AutoSize = true;
+            this.lbl_Processing_Cusorder.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Processing_Cusorder.Location = new System.Drawing.Point(306, 121);
+            this.lbl_Processing_Cusorder.Name = "lbl_Processing_Cusorder";
+            this.lbl_Processing_Cusorder.Size = new System.Drawing.Size(114, 23);
+            this.lbl_Processing_Cusorder.TabIndex = 26;
+            this.lbl_Processing_Cusorder.Text = "Processing";
+            // 
+            // lbl_Supplier_Cusorder
+            // 
+            this.lbl_Supplier_Cusorder.AutoSize = true;
+            this.lbl_Supplier_Cusorder.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Supplier_Cusorder.Location = new System.Drawing.Point(15, 127);
+            this.lbl_Supplier_Cusorder.Name = "lbl_Supplier_Cusorder";
+            this.lbl_Supplier_Cusorder.Size = new System.Drawing.Size(109, 23);
+            this.lbl_Supplier_Cusorder.TabIndex = 25;
+            this.lbl_Supplier_Cusorder.Text = "Thasneem";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(15, 181);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(170, 23);
+            this.label28.TabIndex = 24;
+            this.label28.Text = "Delivery Method";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(306, 91);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(66, 23);
+            this.label27.TabIndex = 23;
+            this.label27.Text = "Status";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(15, 91);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(87, 23);
+            this.label26.TabIndex = 22;
+            this.label26.Text = "Supplier";
+            // 
+            // lbl_Qty_cusorder
+            // 
+            this.lbl_Qty_cusorder.AutoSize = true;
+            this.lbl_Qty_cusorder.Location = new System.Drawing.Point(614, 51);
+            this.lbl_Qty_cusorder.Name = "lbl_Qty_cusorder";
+            this.lbl_Qty_cusorder.Size = new System.Drawing.Size(14, 16);
+            this.lbl_Qty_cusorder.TabIndex = 21;
+            this.lbl_Qty_cusorder.Text = "2";
+            // 
+            // lbl_Discount_Cusorder
+            // 
+            this.lbl_Discount_Cusorder.AutoSize = true;
+            this.lbl_Discount_Cusorder.Location = new System.Drawing.Point(326, 215);
+            this.lbl_Discount_Cusorder.Name = "lbl_Discount_Cusorder";
+            this.lbl_Discount_Cusorder.Size = new System.Drawing.Size(33, 16);
+            this.lbl_Discount_Cusorder.TabIndex = 20;
+            this.lbl_Discount_Cusorder.Text = "10%";
+            // 
+            // lbl_Finalpayment_Cusorder
+            // 
+            this.lbl_Finalpayment_Cusorder.AutoSize = true;
+            this.lbl_Finalpayment_Cusorder.Location = new System.Drawing.Point(614, 209);
+            this.lbl_Finalpayment_Cusorder.Name = "lbl_Finalpayment_Cusorder";
+            this.lbl_Finalpayment_Cusorder.Size = new System.Drawing.Size(45, 16);
+            this.lbl_Finalpayment_Cusorder.TabIndex = 19;
+            this.lbl_Finalpayment_Cusorder.Text = "950.00";
+            this.lbl_Finalpayment_Cusorder.Click += new System.EventHandler(this.label23_Click);
             // 
             // lbl_Totalamount
             // 
@@ -173,21 +233,23 @@
             this.lbl_Totalamount.TabIndex = 18;
             this.lbl_Totalamount.Text = "1000.00";
             // 
-            // comboBox2
+            // cmb_Book
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(306, 43);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(232, 24);
-            this.comboBox2.TabIndex = 16;
+            this.cmb_Book.FormattingEnabled = true;
+            this.cmb_Book.Location = new System.Drawing.Point(306, 43);
+            this.cmb_Book.Name = "cmb_Book";
+            this.cmb_Book.Size = new System.Drawing.Size(232, 24);
+            this.cmb_Book.TabIndex = 16;
+            this.cmb_Book.SelectedIndexChanged += new System.EventHandler(this.cmb_Book_SelectedIndexChanged);
             // 
-            // comboBox1
+            // cmb_customer
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(19, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(197, 24);
-            this.comboBox1.TabIndex = 15;
+            this.cmb_customer.FormattingEnabled = true;
+            this.cmb_customer.Location = new System.Drawing.Point(19, 43);
+            this.cmb_customer.Name = "cmb_customer";
+            this.cmb_customer.Size = new System.Drawing.Size(197, 24);
+            this.cmb_customer.TabIndex = 15;
+            this.cmb_customer.SelectedIndexChanged += new System.EventHandler(this.cmb_customer_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -252,16 +314,16 @@
             // 
             // chart1
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chart1.Legends.Add(legend8);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(1612, 1249);
             this.chart1.Name = "chart1";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chart1.Series.Add(series8);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(2095, 733);
             this.chart1.TabIndex = 37;
             this.chart1.Text = "chart1";
@@ -282,7 +344,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 135F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1383, 135);
             this.tableLayoutPanel1.TabIndex = 36;
             // 
@@ -492,53 +554,47 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Today Orders";
             // 
-            // dgv_customer
+            // dgv_cusOrder
             // 
-            this.dgv_customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
-            this.Column6,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column7,
-            this.Column8,
-            this.Column9});
-            this.dgv_customer.Location = new System.Drawing.Point(547, 518);
-            this.dgv_customer.Name = "dgv_customer";
-            this.dgv_customer.RowHeadersWidth = 51;
-            this.dgv_customer.RowTemplate.Height = 24;
-            this.dgv_customer.Size = new System.Drawing.Size(1317, 428);
-            this.dgv_customer.TabIndex = 42;
+            this.dgv_cusOrder.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgv_cusOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_cusOrder.Location = new System.Drawing.Point(547, 518);
+            this.dgv_cusOrder.Name = "dgv_cusOrder";
+            this.dgv_cusOrder.RowHeadersWidth = 51;
+            this.dgv_cusOrder.RowTemplate.Height = 24;
+            this.dgv_cusOrder.Size = new System.Drawing.Size(1317, 428);
+            this.dgv_cusOrder.TabIndex = 42;
+            this.dgv_cusOrder.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_cusOrder_CellContentDoubleClick);
             // 
-            // btn_deleteCustomer
+            // btn_deleteorder
             // 
-            this.btn_deleteCustomer.Location = new System.Drawing.Point(1568, 383);
-            this.btn_deleteCustomer.Name = "btn_deleteCustomer";
-            this.btn_deleteCustomer.Size = new System.Drawing.Size(247, 67);
-            this.btn_deleteCustomer.TabIndex = 41;
-            this.btn_deleteCustomer.Text = "Delete Order";
-            this.btn_deleteCustomer.UseVisualStyleBackColor = true;
+            this.btn_deleteorder.Location = new System.Drawing.Point(1568, 383);
+            this.btn_deleteorder.Name = "btn_deleteorder";
+            this.btn_deleteorder.Size = new System.Drawing.Size(247, 67);
+            this.btn_deleteorder.TabIndex = 41;
+            this.btn_deleteorder.Text = "Delete Order";
+            this.btn_deleteorder.UseVisualStyleBackColor = true;
+            this.btn_deleteorder.Click += new System.EventHandler(this.btn_deleteorder_Click);
             // 
-            // btn_updateCustomer
+            // btn_updateorder
             // 
-            this.btn_updateCustomer.Location = new System.Drawing.Point(1568, 277);
-            this.btn_updateCustomer.Name = "btn_updateCustomer";
-            this.btn_updateCustomer.Size = new System.Drawing.Size(247, 67);
-            this.btn_updateCustomer.TabIndex = 40;
-            this.btn_updateCustomer.Text = "Update Order";
-            this.btn_updateCustomer.UseVisualStyleBackColor = true;
+            this.btn_updateorder.Location = new System.Drawing.Point(1568, 277);
+            this.btn_updateorder.Name = "btn_updateorder";
+            this.btn_updateorder.Size = new System.Drawing.Size(247, 67);
+            this.btn_updateorder.TabIndex = 40;
+            this.btn_updateorder.Text = "Update Order";
+            this.btn_updateorder.UseVisualStyleBackColor = true;
+            this.btn_updateorder.Click += new System.EventHandler(this.btn_updateorder_Click);
             // 
-            // btn_addCustomer
+            // btn_makeorder
             // 
-            this.btn_addCustomer.Location = new System.Drawing.Point(1568, 168);
-            this.btn_addCustomer.Name = "btn_addCustomer";
-            this.btn_addCustomer.Size = new System.Drawing.Size(247, 67);
-            this.btn_addCustomer.TabIndex = 39;
-            this.btn_addCustomer.Text = "Make Order";
-            this.btn_addCustomer.UseVisualStyleBackColor = true;
+            this.btn_makeorder.Location = new System.Drawing.Point(1568, 168);
+            this.btn_makeorder.Name = "btn_makeorder";
+            this.btn_makeorder.Size = new System.Drawing.Size(247, 67);
+            this.btn_makeorder.TabIndex = 39;
+            this.btn_makeorder.Text = "Make Order";
+            this.btn_makeorder.UseVisualStyleBackColor = true;
+            this.btn_makeorder.Click += new System.EventHandler(this.btn_makeorder_Click);
             // 
             // button1
             // 
@@ -685,162 +741,23 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(493, 878);
+            this.panel1.Size = new System.Drawing.Size(493, 996);
             this.panel1.TabIndex = 35;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(614, 51);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(14, 16);
-            this.label25.TabIndex = 21;
-            this.label25.Text = "2";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(15, 91);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(87, 23);
-            this.label26.TabIndex = 22;
-            this.label26.Text = "Supplier";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(306, 91);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(66, 23);
-            this.label27.TabIndex = 23;
-            this.label27.Text = "Status";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(15, 181);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(170, 23);
-            this.label28.TabIndex = 24;
-            this.label28.Text = "Delivery Method";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(15, 127);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(136, 29);
-            this.label29.TabIndex = 25;
-            this.label29.Text = "Thasneem";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(306, 121);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(114, 23);
-            this.label30.TabIndex = 26;
-            this.label30.Text = "Processing";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(15, 209);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(113, 29);
-            this.label31.TabIndex = 27;
-            this.label31.Text = "pick up ";
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "No";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Customer";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Book";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Quantity";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Supplier";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Status";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Total Amount";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Method";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 125;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Discount";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Payment";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 125;
             // 
             // CustomerOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1876, 878);
+            this.ClientSize = new System.Drawing.Size(1876, 996);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.dgv_customer);
-            this.Controls.Add(this.btn_deleteCustomer);
-            this.Controls.Add(this.btn_updateCustomer);
-            this.Controls.Add(this.btn_addCustomer);
+            this.Controls.Add(this.dgv_cusOrder);
+            this.Controls.Add(this.btn_deleteorder);
+            this.Controls.Add(this.btn_updateorder);
+            this.Controls.Add(this.btn_makeorder);
             this.Controls.Add(this.panel1);
-            
+            this.Name = "CustomerOrder";
             this.Text = "CustomerOrder";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -854,7 +771,7 @@
             this.Totalcustomer_panel.PerformLayout();
             this.Totalsales_panel.ResumeLayout(false);
             this.Totalsales_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cusOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -864,11 +781,11 @@
         #endregion
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lbl_Discount_Cusorder;
+        private System.Windows.Forms.Label lbl_Finalpayment_Cusorder;
         private System.Windows.Forms.Label lbl_Totalamount;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_Book;
+        private System.Windows.Forms.ComboBox cmb_customer;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
@@ -896,10 +813,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgv_customer;
-        private System.Windows.Forms.Button btn_deleteCustomer;
-        private System.Windows.Forms.Button btn_updateCustomer;
-        private System.Windows.Forms.Button btn_addCustomer;
+        private System.Windows.Forms.DataGridView dgv_cusOrder;
+        private System.Windows.Forms.Button btn_deleteorder;
+        private System.Windows.Forms.Button btn_updateorder;
+        private System.Windows.Forms.Button btn_makeorder;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -911,22 +828,12 @@
         private System.Windows.Forms.Button btn_overview;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label lbl_Qty_cusorder;
+        private System.Windows.Forms.Label lbl_Processing_Cusorder;
+        private System.Windows.Forms.Label lbl_Supplier_Cusorder;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label31;
-        private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.Label lbl_Deliverymethod_Cusorder;
     }
 }

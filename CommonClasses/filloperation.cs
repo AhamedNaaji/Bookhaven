@@ -13,9 +13,6 @@ namespace Bookhaven.CommonClasses
     {
         dbconnection con = new dbconnection();
 
-        double leaves;
-        double totalleaves;
-
 
         public void combobox(string qry, ComboBox cmb_name, string display_member, string value_member)
         {
@@ -73,23 +70,6 @@ namespace Bookhaven.CommonClasses
             }
             SqlCommand cmd = new SqlCommand(qry, con.mycon);
             SqlDataReader rdr = cmd.ExecuteReader();
-            return rdr;
-        }
-
-
-
-
-        public SqlDataReader getBeginDate(string monthyear)
-        {
-            if (con.mycon != null && con.mycon.State == ConnectionState.Closed)
-            {
-                con.mycon.Open();
-            }
-            string qry = $"SELECT * FROM tbl_setting WHERE month_year = '{monthyear}'";
-            SqlCommand cmd = new SqlCommand(qry, con.mycon);
-            SqlDataReader rdr = cmd.ExecuteReader();
-
-
             return rdr;
         }
 

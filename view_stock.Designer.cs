@@ -153,6 +153,7 @@
             this.Controls.Add(this.txt_quantity);
             this.Name = "view_stock";
             this.Text = "view_stock";
+            this.Load += new System.EventHandler(this.view_stock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_stock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
