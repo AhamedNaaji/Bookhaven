@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_overview = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
@@ -67,28 +67,25 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
+            this.comboStaff = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.lbl_Totalamount = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
+            this.labelDiscount = new System.Windows.Forms.Label();
+            this.labelFinalPayment = new System.Windows.Forms.Label();
+            this.label_TotalAmount = new System.Windows.Forms.Label();
+            this.numericQuantity = new System.Windows.Forms.NumericUpDown();
+            this.comboBook = new System.Windows.Forms.ComboBox();
+            this.comboCustomer = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_deleteCustomer = new System.Windows.Forms.Button();
-            this.btn_updateCustomer = new System.Windows.Forms.Button();
-            this.btn_addCustomer = new System.Windows.Forms.Button();
-            this.dgv_customer = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_deleteSales = new System.Windows.Forms.Button();
+            this.btn_updateSales = new System.Windows.Forms.Button();
+            this.btn_addSales = new System.Windows.Forms.Button();
+            this.dgv_sales = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.Totalsales_panel.SuspendLayout();
@@ -98,8 +95,8 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sales)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -488,16 +485,16 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(1595, 1244);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(2095, 733);
             this.chart1.TabIndex = 25;
             this.chart1.Text = "chart1";
@@ -505,11 +502,15 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label24);
+            this.panel2.Controls.Add(this.comboStaff);
             this.panel2.Controls.Add(this.label23);
-            this.panel2.Controls.Add(this.lbl_Totalamount);
-            this.panel2.Controls.Add(this.numericUpDown1);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.dateTimePickerDate);
+            this.panel2.Controls.Add(this.labelDiscount);
+            this.panel2.Controls.Add(this.labelFinalPayment);
+            this.panel2.Controls.Add(this.label_TotalAmount);
+            this.panel2.Controls.Add(this.numericQuantity);
+            this.panel2.Controls.Add(this.comboBook);
+            this.panel2.Controls.Add(this.comboCustomer);
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label20);
@@ -518,59 +519,101 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(530, 163);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(605, 309);
+            this.panel2.Size = new System.Drawing.Size(823, 309);
             this.panel2.TabIndex = 30;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(127, 223);
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(599, 124);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(33, 16);
-            this.label24.TabIndex = 20;
-            this.label24.Text = "10%";
+            this.label24.Size = new System.Drawing.Size(51, 23);
+            this.label24.TabIndex = 24;
+            this.label24.Text = "Staff";
+            // 
+            // comboStaff
+            // 
+            this.comboStaff.FormattingEnabled = true;
+            this.comboStaff.Location = new System.Drawing.Point(603, 152);
+            this.comboStaff.Name = "comboStaff";
+            this.comboStaff.Size = new System.Drawing.Size(200, 24);
+            this.comboStaff.TabIndex = 23;
+            this.comboStaff.SelectedIndexChanged += new System.EventHandler(this.comboStaff_SelectedIndexChanged);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(517, 217);
+            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(599, 11);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(45, 16);
-            this.label23.TabIndex = 19;
-            this.label23.Text = "950.00";
+            this.label23.Size = new System.Drawing.Size(56, 23);
+            this.label23.TabIndex = 22;
+            this.label23.Text = "Date";
             // 
-            // lbl_Totalamount
+            // dateTimePickerDate
             // 
-            this.lbl_Totalamount.AutoSize = true;
-            this.lbl_Totalamount.Location = new System.Drawing.Point(511, 131);
-            this.lbl_Totalamount.Name = "lbl_Totalamount";
-            this.lbl_Totalamount.Size = new System.Drawing.Size(52, 16);
-            this.lbl_Totalamount.TabIndex = 18;
-            this.lbl_Totalamount.Text = "1000.00";
+            this.dateTimePickerDate.Location = new System.Drawing.Point(603, 45);
+            this.dateTimePickerDate.Name = "dateTimePickerDate";
+            this.dateTimePickerDate.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerDate.TabIndex = 21;
+            this.dateTimePickerDate.ValueChanged += new System.EventHandler(this.dateTimePickerDate_ValueChanged);
             // 
-            // numericUpDown1
+            // labelDiscount
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(128, 130);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(51, 22);
-            this.numericUpDown1.TabIndex = 17;
+            this.labelDiscount.AutoSize = true;
+            this.labelDiscount.Location = new System.Drawing.Point(127, 223);
+            this.labelDiscount.Name = "labelDiscount";
+            this.labelDiscount.Size = new System.Drawing.Size(33, 16);
+            this.labelDiscount.TabIndex = 20;
+            this.labelDiscount.Text = "10%";
+            this.labelDiscount.Click += new System.EventHandler(this.labelDiscount_Click);
             // 
-            // comboBox2
+            // labelFinalPayment
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(306, 43);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(232, 24);
-            this.comboBox2.TabIndex = 16;
+            this.labelFinalPayment.AutoSize = true;
+            this.labelFinalPayment.Location = new System.Drawing.Point(517, 217);
+            this.labelFinalPayment.Name = "labelFinalPayment";
+            this.labelFinalPayment.Size = new System.Drawing.Size(45, 16);
+            this.labelFinalPayment.TabIndex = 19;
+            this.labelFinalPayment.Text = "950.00";
+            this.labelFinalPayment.Click += new System.EventHandler(this.labelFinalPayment_Click);
             // 
-            // comboBox1
+            // label_TotalAmount
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(19, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(197, 24);
-            this.comboBox1.TabIndex = 15;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.label_TotalAmount.AutoSize = true;
+            this.label_TotalAmount.Location = new System.Drawing.Point(511, 131);
+            this.label_TotalAmount.Name = "label_TotalAmount";
+            this.label_TotalAmount.Size = new System.Drawing.Size(52, 16);
+            this.label_TotalAmount.TabIndex = 18;
+            this.label_TotalAmount.Text = "1000.00";
+            this.label_TotalAmount.Click += new System.EventHandler(this.label_TotalAmount_Click);
+            // 
+            // numericQuantity
+            // 
+            this.numericQuantity.Location = new System.Drawing.Point(128, 130);
+            this.numericQuantity.Name = "numericQuantity";
+            this.numericQuantity.Size = new System.Drawing.Size(51, 22);
+            this.numericQuantity.TabIndex = 17;
+            this.numericQuantity.ValueChanged += new System.EventHandler(this.numericQuantity_ValueChanged);
+            // 
+            // comboBook
+            // 
+            this.comboBook.FormattingEnabled = true;
+            this.comboBook.Location = new System.Drawing.Point(306, 43);
+            this.comboBook.Name = "comboBook";
+            this.comboBook.Size = new System.Drawing.Size(232, 24);
+            this.comboBook.TabIndex = 16;
+            this.comboBook.SelectedIndexChanged += new System.EventHandler(this.comboBook_SelectedIndexChanged);
+            // 
+            // comboCustomer
+            // 
+            this.comboCustomer.FormattingEnabled = true;
+            this.comboCustomer.Location = new System.Drawing.Point(19, 43);
+            this.comboCustomer.Name = "comboCustomer";
+            this.comboCustomer.Size = new System.Drawing.Size(197, 24);
+            this.comboCustomer.TabIndex = 15;
+            this.comboCustomer.SelectedIndexChanged += new System.EventHandler(this.comboCustomer_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -632,114 +675,62 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Customer";
             // 
-            // btn_deleteCustomer
+            // btn_deleteSales
             // 
-            this.btn_deleteCustomer.Location = new System.Drawing.Point(1359, 398);
-            this.btn_deleteCustomer.Name = "btn_deleteCustomer";
-            this.btn_deleteCustomer.Size = new System.Drawing.Size(247, 67);
-            this.btn_deleteCustomer.TabIndex = 33;
-            this.btn_deleteCustomer.Text = "Delete Sales";
-            this.btn_deleteCustomer.UseVisualStyleBackColor = true;
+            this.btn_deleteSales.Location = new System.Drawing.Point(1359, 398);
+            this.btn_deleteSales.Name = "btn_deleteSales";
+            this.btn_deleteSales.Size = new System.Drawing.Size(247, 67);
+            this.btn_deleteSales.TabIndex = 33;
+            this.btn_deleteSales.Text = "Delete Sales";
+            this.btn_deleteSales.UseVisualStyleBackColor = true;
+            this.btn_deleteSales.Click += new System.EventHandler(this.btn_deleteSales_Click);
             // 
-            // btn_updateCustomer
+            // btn_updateSales
             // 
-            this.btn_updateCustomer.Location = new System.Drawing.Point(1359, 272);
-            this.btn_updateCustomer.Name = "btn_updateCustomer";
-            this.btn_updateCustomer.Size = new System.Drawing.Size(247, 67);
-            this.btn_updateCustomer.TabIndex = 32;
-            this.btn_updateCustomer.Text = "Update Sales";
-            this.btn_updateCustomer.UseVisualStyleBackColor = true;
+            this.btn_updateSales.Location = new System.Drawing.Point(1359, 272);
+            this.btn_updateSales.Name = "btn_updateSales";
+            this.btn_updateSales.Size = new System.Drawing.Size(247, 67);
+            this.btn_updateSales.TabIndex = 32;
+            this.btn_updateSales.Text = "Update Sales";
+            this.btn_updateSales.UseVisualStyleBackColor = true;
+            this.btn_updateSales.Click += new System.EventHandler(this.btn_updateSales_Click);
             // 
-            // btn_addCustomer
+            // btn_addSales
             // 
-            this.btn_addCustomer.Location = new System.Drawing.Point(1359, 163);
-            this.btn_addCustomer.Name = "btn_addCustomer";
-            this.btn_addCustomer.Size = new System.Drawing.Size(247, 67);
-            this.btn_addCustomer.TabIndex = 31;
-            this.btn_addCustomer.Text = "Make Sales";
-            this.btn_addCustomer.UseVisualStyleBackColor = true;
+            this.btn_addSales.Location = new System.Drawing.Point(1359, 163);
+            this.btn_addSales.Name = "btn_addSales";
+            this.btn_addSales.Size = new System.Drawing.Size(247, 67);
+            this.btn_addSales.TabIndex = 31;
+            this.btn_addSales.Text = "Make Sales";
+            this.btn_addSales.UseVisualStyleBackColor = true;
+            this.btn_addSales.Click += new System.EventHandler(this.btn_addSales_Click);
             // 
-            // dgv_customer
+            // dgv_sales
             // 
-            this.dgv_customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
-            this.Column6,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dgv_customer.Location = new System.Drawing.Point(530, 513);
-            this.dgv_customer.Name = "dgv_customer";
-            this.dgv_customer.RowHeadersWidth = 51;
-            this.dgv_customer.RowTemplate.Height = 24;
-            this.dgv_customer.Size = new System.Drawing.Size(932, 428);
-            this.dgv_customer.TabIndex = 34;
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "No";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Date";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Customer";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Quantity";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Total Amount";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Discount";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Payment";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
+            this.dgv_sales.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgv_sales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_sales.Location = new System.Drawing.Point(530, 513);
+            this.dgv_sales.Name = "dgv_sales";
+            this.dgv_sales.RowHeadersWidth = 51;
+            this.dgv_sales.RowTemplate.Height = 24;
+            this.dgv_sales.Size = new System.Drawing.Size(932, 428);
+            this.dgv_sales.TabIndex = 34;
+            this.dgv_sales.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sales_CellDoubleClick);
             // 
             // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1656, 1000);
-            this.Controls.Add(this.dgv_customer);
-            this.Controls.Add(this.btn_deleteCustomer);
-            this.Controls.Add(this.btn_updateCustomer);
-            this.Controls.Add(this.btn_addCustomer);
+            this.Controls.Add(this.dgv_sales);
+            this.Controls.Add(this.btn_deleteSales);
+            this.Controls.Add(this.btn_updateSales);
+            this.Controls.Add(this.btn_addSales);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
-            
+            this.Name = "Sales";
             this.Text = "Sales";
             this.Load += new System.EventHandler(this.Sales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -756,8 +747,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sales)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -804,22 +795,19 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label lbl_Totalamount;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox comboCustomer;
+        private System.Windows.Forms.Label label_TotalAmount;
+        private System.Windows.Forms.NumericUpDown numericQuantity;
+        private System.Windows.Forms.ComboBox comboBook;
+        private System.Windows.Forms.Label labelDiscount;
+        private System.Windows.Forms.Label labelFinalPayment;
+        private System.Windows.Forms.Button btn_deleteSales;
+        private System.Windows.Forms.Button btn_updateSales;
+        private System.Windows.Forms.Button btn_addSales;
+        private System.Windows.Forms.DataGridView dgv_sales;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Button btn_deleteCustomer;
-        private System.Windows.Forms.Button btn_updateCustomer;
-        private System.Windows.Forms.Button btn_addCustomer;
-        private System.Windows.Forms.DataGridView dgv_customer;
-        private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDate;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox comboStaff;
     }
 }
