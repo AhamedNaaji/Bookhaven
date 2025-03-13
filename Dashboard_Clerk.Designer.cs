@@ -60,16 +60,16 @@
             this.btn_updateBook = new System.Windows.Forms.Button();
             this.btn_addBook = new System.Windows.Forms.Button();
             this.dgv_customer = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -150,7 +150,7 @@
             this.label32.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.Location = new System.Drawing.Point(3, 9);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(330, 29);
+            this.label32.Size = new System.Drawing.Size(264, 23);
             this.label32.TabIndex = 0;
             this.label32.Text = "Customer Order Recieved";
             // 
@@ -258,7 +258,7 @@
             this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(3, 9);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(163, 29);
+            this.label24.Size = new System.Drawing.Size(130, 23);
             this.label24.TabIndex = 0;
             this.label24.Text = "Out of Stock";
             // 
@@ -328,6 +328,7 @@
             this.btn_Book.TabIndex = 5;
             this.btn_Book.Text = "Book";
             this.btn_Book.UseVisualStyleBackColor = false;
+            this.btn_Book.Click += new System.EventHandler(this.btn_Book_Click);
             // 
             // btn_Cusorder
             // 
@@ -341,6 +342,7 @@
             this.btn_Cusorder.TabIndex = 3;
             this.btn_Cusorder.Text = "Cus Order";
             this.btn_Cusorder.UseVisualStyleBackColor = false;
+            this.btn_Cusorder.Click += new System.EventHandler(this.btn_Cusorder_Click);
             // 
             // btn_Sales
             // 
@@ -354,6 +356,7 @@
             this.btn_Sales.TabIndex = 2;
             this.btn_Sales.Text = "Sales";
             this.btn_Sales.UseVisualStyleBackColor = false;
+            this.btn_Sales.Click += new System.EventHandler(this.btn_Sales_Click);
             // 
             // btn_Customer
             // 
@@ -367,6 +370,7 @@
             this.btn_Customer.TabIndex = 1;
             this.btn_Customer.Text = "Customer";
             this.btn_Customer.UseVisualStyleBackColor = false;
+            this.btn_Customer.Click += new System.EventHandler(this.btn_Customer_Click);
             // 
             // btn_overview
             // 
@@ -441,42 +445,6 @@
             this.dgv_customer.Size = new System.Drawing.Size(445, 295);
             this.dgv_customer.TabIndex = 67;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dataGridView1.Location = new System.Drawing.Point(1340, 382);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(557, 295);
-            this.dataGridView1.TabIndex = 68;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(571, 342);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 23);
-            this.label1.TabIndex = 69;
-            this.label1.Text = "Out of Stocks Books";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1336, 342);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(227, 23);
-            this.label2.TabIndex = 70;
-            this.label2.Text = "Customer Order Status";
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "No";
@@ -497,6 +465,22 @@
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.Width = 125;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView1.Location = new System.Drawing.Point(1340, 382);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(557, 295);
+            this.dataGridView1.TabIndex = 68;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -525,6 +509,26 @@
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(571, 342);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(204, 23);
+            this.label1.TabIndex = 69;
+            this.label1.Text = "Out of Stocks Books";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1336, 342);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(227, 23);
+            this.label2.TabIndex = 70;
+            this.label2.Text = "Customer Order Status";
             // 
             // Dashboard_Clerk
             // 
