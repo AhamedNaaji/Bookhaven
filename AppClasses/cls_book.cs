@@ -9,7 +9,7 @@ namespace Bookhaven.AppClasses
     internal class cls_book
     {
         Common cmn = new Common();
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-V3UAK82;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
+        internal SqlConnection conn = new SqlConnection("Data Source=DESKTOP-V3UAK82;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         SqlTransaction transaction;
 
         public int Book_Id { get; set; }
@@ -27,6 +27,7 @@ namespace Bookhaven.AppClasses
                 conn.Open();
                 transaction = conn.BeginTransaction();
 
+                // Insert into Book table
                 string bookQuery = @"
             INSERT INTO Book (Price, ISBN, Book_Name, Genre_Id_fk, Discount) 
             VALUES (@Price, @ISBN, @Book_Name, @Genre_Id_fk, @Discount);
@@ -39,10 +40,9 @@ namespace Bookhaven.AppClasses
                 cmd.Parameters.AddWithValue("@Genre_Id_fk", Genre_Id_fk);
                 cmd.Parameters.AddWithValue("@Discount", Discount);
 
-                cmd.CommandTimeout = 60; // Increase timeout
                 int bookId = Convert.ToInt32(cmd.ExecuteScalar());
 
-                // Insert all authors
+                // Insert authors
                 foreach (int authorId in Author_Ids)
                 {
                     string authorQuery = @"
@@ -128,6 +128,8 @@ namespace Bookhaven.AppClasses
             }
         }
 
+     
+
         public void DeleteDate()
         {
             try
@@ -135,13 +137,11 @@ namespace Bookhaven.AppClasses
                 conn.Open();
                 transaction = conn.BeginTransaction();
 
-                // Delete related authors
                 string deleteAuthorsQuery = "DELETE FROM BookAuthor WHERE Book_Id_fk = @Book_Id";
                 SqlCommand authorsCmd = new SqlCommand(deleteAuthorsQuery, conn, transaction);
                 authorsCmd.Parameters.AddWithValue("@Book_Id", Book_Id);
                 authorsCmd.ExecuteNonQuery();
 
-                // Delete the book
                 string deleteBookQuery = "DELETE FROM Book WHERE Book_Id = @Book_Id";
                 SqlCommand bookCmd = new SqlCommand(deleteBookQuery, conn, transaction);
                 bookCmd.Parameters.AddWithValue("@Book_Id", Book_Id);
@@ -153,7 +153,7 @@ namespace Bookhaven.AppClasses
             catch (Exception ex)
             {
                 transaction?.Rollback();
-                MessageBox.Show("Error: " + ex.Message, "Delete Failed");
+                MessageBox.Show($"Error: {ex.Message}", "Delete Failed");
             }
             finally
             {
@@ -166,17 +166,19 @@ namespace Bookhaven.AppClasses
             try
             {
                 conn.Open();
+
                 string qry = @"
-            SELECT b.Book_Id, b.Price, b.ISBN, b.Book_Name, b.Genre_Id_fk, b.Discount, ba.Author_Id_fk 
-            FROM Book b 
-            LEFT JOIN BookAuthor ba ON b.Book_Id = ba.Book_Id_fk 
-            WHERE b.Book_Id = @Book_Id";
+                    SELECT b.Book_Id, b.Price, b.ISBN, b.Book_Name, b.Genre_Id_fk, b.Discount, ba.Author_Id_fk 
+                    FROM Book b 
+                    LEFT JOIN BookAuthor ba ON b.Book_Id = ba.Book_Id_fk 
+                    WHERE b.Book_Id = @Book_Id";
 
                 SqlCommand cmd = new SqlCommand(qry, conn);
                 cmd.Parameters.AddWithValue("@Book_Id", Book_Id);
-                SqlDataReader rd = cmd.ExecuteReader();
 
+                SqlDataReader rd = cmd.ExecuteReader();
                 Author_Ids.Clear();
+
                 while (rd.Read())
                 {
                     Book_Id = Convert.ToInt32(rd["Book_Id"]);

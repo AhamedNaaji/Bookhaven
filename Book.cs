@@ -127,7 +127,7 @@ namespace Bookhaven
                 // Add selected authors
                 clsBook.Author_Ids.Add(Convert.ToInt32(cmb_author_1.SelectedValue));
                 if (cmb_author_2.SelectedIndex != -1 && cmb_author_1.SelectedValue.ToString() != cmb_author_2.SelectedValue.ToString())
-                {   
+                {
                     clsBook.Author_Ids.Add(Convert.ToInt32(cmb_author_2.SelectedValue));
                 }
 

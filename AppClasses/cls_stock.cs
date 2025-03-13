@@ -61,15 +61,13 @@ namespace Bookhaven.AppClasses
                 string query = @"
             UPDATE Stock 
             SET Stock_Quantity = @Stock_Quantity, 
-                Book_Id_fk = @Book_Id_fk, 
                 Stock_QuantityPrice = @Stock_QuantityPrice 
-            WHERE Stock_Id = @Stock_Id";
+            WHERE Book_Id_fk = @Book_Id_fk";
 
                 SqlCommand cmd = new SqlCommand(query, conn, transaction);
                 cmd.Parameters.AddWithValue("@Stock_Quantity", Stock_Quantity);
-                cmd.Parameters.AddWithValue("@Book_Id_fk", Book_Id_fk);
                 cmd.Parameters.AddWithValue("@Stock_QuantityPrice", Stock_QuantityPrice);
-                cmd.Parameters.AddWithValue("@Stock_Id", Stock_Id);
+                cmd.Parameters.AddWithValue("@Book_Id_fk", Book_Id_fk);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
                 transaction.Commit();
