@@ -40,9 +40,14 @@ namespace Bookhaven.AppClasses
                 cmd.Parameters.AddWithValue("@Genre_Id_fk", Genre_Id_fk);
                 cmd.Parameters.AddWithValue("@Discount", Discount);
 
-                int bookId = Convert.ToInt32(cmd.ExecuteScalar());
+                // Get the generated Book_Id
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    Book_Id = Convert.ToInt32(result); // Assign the generated Book_Id
+                }
 
-                // Insert authors
+                // Insert all authors
                 foreach (int authorId in Author_Ids)
                 {
                     string authorQuery = @"
@@ -51,7 +56,7 @@ namespace Bookhaven.AppClasses
 
                     SqlCommand authorCmd = new SqlCommand(authorQuery, conn, transaction);
                     authorCmd.Parameters.AddWithValue("@Author_Id", authorId);
-                    authorCmd.Parameters.AddWithValue("@Book_Id", bookId);
+                    authorCmd.Parameters.AddWithValue("@Book_Id", Book_Id);
                     authorCmd.ExecuteNonQuery();
                 }
 

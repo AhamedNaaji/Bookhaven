@@ -35,7 +35,7 @@ namespace Bookhaven
             txt_Isbn.Text = "";
             txt_Price.Text = "0";
             txtbox_discount.Text = "0";
-            txt_Stock.Text = "";
+            txt_Stock.Text = ""; // Clear stock field
 
             // Populate genre combo box
             string genreQuery = "SELECT Genre_Id, genreName FROM Genre";
