@@ -9,7 +9,7 @@ namespace Bookhaven
 {
     public partial class Sales : Form
     {
-        private SqlConnection conn = new SqlConnection("Data Source=MMSALMANFARIS;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
+        private SqlConnection conn = new SqlConnection("Data Source=DESKTOP-V3UAK82;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         filloperation fill = new filloperation(); // Declare and initialize the 'fill' object
 
         public Sales()
