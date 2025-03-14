@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Book));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -63,10 +63,17 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtbox_discount = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cmb_author_2 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cmb_author_1 = new System.Windows.Forms.ComboBox();
+            this.cmb_genre = new System.Windows.Forms.ComboBox();
             this.txt_Stock = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txt_Price = new System.Windows.Forms.TextBox();
             this.txt_Isbn = new System.Windows.Forms.TextBox();
+            this.txt_Bookname = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -78,14 +85,7 @@
             this.btn_addBook = new System.Windows.Forms.Button();
             this.btn_Genre = new System.Windows.Forms.Button();
             this.btn_ViewAuthors = new System.Windows.Forms.Button();
-            this.cmb_genre = new System.Windows.Forms.ComboBox();
-            this.cmb_author_1 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cmb_author_2 = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtbox_discount = new System.Windows.Forms.TextBox();
             this.btn_stock = new System.Windows.Forms.Button();
-            this.txt_Bookname = new System.Windows.Forms.TextBox();
             this.Totalsales_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -180,16 +180,16 @@
             // 
             // chart1
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chart1.Legends.Add(legend8);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(1692, 1243);
             this.chart1.Name = "chart1";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chart1.Series.Add(series8);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(2095, 733);
             this.chart1.TabIndex = 25;
             this.chart1.Text = "chart1";
@@ -490,6 +490,61 @@
             this.panel2.TabIndex = 48;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // txtbox_discount
+            // 
+            this.txtbox_discount.Location = new System.Drawing.Point(29, 201);
+            this.txtbox_discount.Name = "txtbox_discount";
+            this.txtbox_discount.Size = new System.Drawing.Size(190, 22);
+            this.txtbox_discount.TabIndex = 43;
+            this.txtbox_discount.TextChanged += new System.EventHandler(this.txtbox_discount_TextChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(25, 167);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(94, 23);
+            this.label16.TabIndex = 42;
+            this.label16.Text = "Discount";
+            // 
+            // cmb_author_2
+            // 
+            this.cmb_author_2.FormattingEnabled = true;
+            this.cmb_author_2.Location = new System.Drawing.Point(380, 130);
+            this.cmb_author_2.Name = "cmb_author_2";
+            this.cmb_author_2.Size = new System.Drawing.Size(121, 24);
+            this.cmb_author_2.TabIndex = 41;
+            this.cmb_author_2.SelectedIndexChanged += new System.EventHandler(this.cmb_author_2_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(376, 91);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(91, 23);
+            this.label15.TabIndex = 40;
+            this.label15.Text = "Author 2";
+            // 
+            // cmb_author_1
+            // 
+            this.cmb_author_1.FormattingEnabled = true;
+            this.cmb_author_1.Location = new System.Drawing.Point(233, 130);
+            this.cmb_author_1.Name = "cmb_author_1";
+            this.cmb_author_1.Size = new System.Drawing.Size(121, 24);
+            this.cmb_author_1.TabIndex = 39;
+            this.cmb_author_1.SelectedIndexChanged += new System.EventHandler(this.cmb_author_SelectedIndexChanged);
+            // 
+            // cmb_genre
+            // 
+            this.cmb_genre.FormattingEnabled = true;
+            this.cmb_genre.Location = new System.Drawing.Point(29, 128);
+            this.cmb_genre.Name = "cmb_genre";
+            this.cmb_genre.Size = new System.Drawing.Size(121, 24);
+            this.cmb_genre.TabIndex = 38;
+            this.cmb_genre.SelectedIndexChanged += new System.EventHandler(this.cmb_genre_SelectedIndexChanged);
+            // 
             // txt_Stock
             // 
             this.txt_Stock.Location = new System.Drawing.Point(551, 132);
@@ -523,6 +578,14 @@
             this.txt_Isbn.Size = new System.Drawing.Size(190, 22);
             this.txt_Isbn.TabIndex = 32;
             this.txt_Isbn.TextChanged += new System.EventHandler(this.txt_Isbn_TextChanged);
+            // 
+            // txt_Bookname
+            // 
+            this.txt_Bookname.Location = new System.Drawing.Point(19, 44);
+            this.txt_Bookname.Name = "txt_Bookname";
+            this.txt_Bookname.Size = new System.Drawing.Size(190, 22);
+            this.txt_Bookname.TabIndex = 31;
+            this.txt_Bookname.TextChanged += new System.EventHandler(this.txt_Bookname_TextChanged);
             // 
             // label26
             // 
@@ -640,61 +703,6 @@
             this.btn_ViewAuthors.UseVisualStyleBackColor = true;
             this.btn_ViewAuthors.Click += new System.EventHandler(this.btn_ViewAuthors_Click);
             // 
-            // cmb_genre
-            // 
-            this.cmb_genre.FormattingEnabled = true;
-            this.cmb_genre.Location = new System.Drawing.Point(29, 128);
-            this.cmb_genre.Name = "cmb_genre";
-            this.cmb_genre.Size = new System.Drawing.Size(121, 24);
-            this.cmb_genre.TabIndex = 38;
-            this.cmb_genre.SelectedIndexChanged += new System.EventHandler(this.cmb_genre_SelectedIndexChanged);
-            // 
-            // cmb_author_1
-            // 
-            this.cmb_author_1.FormattingEnabled = true;
-            this.cmb_author_1.Location = new System.Drawing.Point(233, 130);
-            this.cmb_author_1.Name = "cmb_author_1";
-            this.cmb_author_1.Size = new System.Drawing.Size(121, 24);
-            this.cmb_author_1.TabIndex = 39;
-            this.cmb_author_1.SelectedIndexChanged += new System.EventHandler(this.cmb_author_SelectedIndexChanged);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(376, 91);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(91, 23);
-            this.label15.TabIndex = 40;
-            this.label15.Text = "Author 2";
-            // 
-            // cmb_author_2
-            // 
-            this.cmb_author_2.FormattingEnabled = true;
-            this.cmb_author_2.Location = new System.Drawing.Point(380, 130);
-            this.cmb_author_2.Name = "cmb_author_2";
-            this.cmb_author_2.Size = new System.Drawing.Size(121, 24);
-            this.cmb_author_2.TabIndex = 41;
-            this.cmb_author_2.SelectedIndexChanged += new System.EventHandler(this.cmb_author_2_SelectedIndexChanged);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(25, 167);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(94, 23);
-            this.label16.TabIndex = 42;
-            this.label16.Text = "Discount";
-            // 
-            // txtbox_discount
-            // 
-            this.txtbox_discount.Location = new System.Drawing.Point(29, 201);
-            this.txtbox_discount.Name = "txtbox_discount";
-            this.txtbox_discount.Size = new System.Drawing.Size(190, 22);
-            this.txtbox_discount.TabIndex = 43;
-            this.txtbox_discount.TextChanged += new System.EventHandler(this.txtbox_discount_TextChanged);
-            // 
             // btn_stock
             // 
             this.btn_stock.Location = new System.Drawing.Point(511, 486);
@@ -704,14 +712,6 @@
             this.btn_stock.Text = "View Stocks";
             this.btn_stock.UseVisualStyleBackColor = true;
             this.btn_stock.Click += new System.EventHandler(this.btn_stock_Click);
-            // 
-            // txt_Bookname
-            // 
-            this.txt_Bookname.Location = new System.Drawing.Point(19, 44);
-            this.txt_Bookname.Name = "txt_Bookname";
-            this.txt_Bookname.Size = new System.Drawing.Size(190, 22);
-            this.txt_Bookname.TabIndex = 31;
-            this.txt_Bookname.TextChanged += new System.EventHandler(this.txt_Bookname_TextChanged);
             // 
             // Book
             // 

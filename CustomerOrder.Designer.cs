@@ -28,19 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerOrder));
             this.label14 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl_Deliverymethod_Cusorder = new System.Windows.Forms.Label();
-            this.lbl_Processing_Cusorder = new System.Windows.Forms.Label();
-            this.lbl_Supplier_Cusorder = new System.Windows.Forms.Label();
+            this.nup_Quantity = new System.Windows.Forms.NumericUpDown();
+            this.cmb_Deliverymethod = new System.Windows.Forms.ComboBox();
+            this.cmb_Suporder = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.lbl_Qty_cusorder = new System.Windows.Forms.Label();
             this.lbl_Discount_Cusorder = new System.Windows.Forms.Label();
             this.lbl_Finalpayment_Cusorder = new System.Windows.Forms.Label();
             this.lbl_Totalamount = new System.Windows.Forms.Label();
@@ -88,7 +87,11 @@
             this.btn_overview = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmb_Status = new System.Windows.Forms.ComboBox();
+            this.cmb_staff = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nup_Quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.cusorderRecieve_panel.SuspendLayout();
@@ -112,13 +115,15 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lbl_Deliverymethod_Cusorder);
-            this.panel2.Controls.Add(this.lbl_Processing_Cusorder);
-            this.panel2.Controls.Add(this.lbl_Supplier_Cusorder);
+            this.panel2.Controls.Add(this.label23);
+            this.panel2.Controls.Add(this.cmb_staff);
+            this.panel2.Controls.Add(this.cmb_Status);
+            this.panel2.Controls.Add(this.nup_Quantity);
+            this.panel2.Controls.Add(this.cmb_Deliverymethod);
+            this.panel2.Controls.Add(this.cmb_Suporder);
             this.panel2.Controls.Add(this.label28);
             this.panel2.Controls.Add(this.label27);
             this.panel2.Controls.Add(this.label26);
-            this.panel2.Controls.Add(this.lbl_Qty_cusorder);
             this.panel2.Controls.Add(this.lbl_Discount_Cusorder);
             this.panel2.Controls.Add(this.lbl_Finalpayment_Cusorder);
             this.panel2.Controls.Add(this.lbl_Totalamount);
@@ -130,41 +135,36 @@
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(619, 168);
+            this.panel2.Location = new System.Drawing.Point(518, 168);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(801, 309);
+            this.panel2.Size = new System.Drawing.Size(1000, 309);
             this.panel2.TabIndex = 38;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // lbl_Deliverymethod_Cusorder
+            // nup_Quantity
             // 
-            this.lbl_Deliverymethod_Cusorder.AutoSize = true;
-            this.lbl_Deliverymethod_Cusorder.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Deliverymethod_Cusorder.Location = new System.Drawing.Point(15, 209);
-            this.lbl_Deliverymethod_Cusorder.Name = "lbl_Deliverymethod_Cusorder";
-            this.lbl_Deliverymethod_Cusorder.Size = new System.Drawing.Size(90, 23);
-            this.lbl_Deliverymethod_Cusorder.TabIndex = 27;
-            this.lbl_Deliverymethod_Cusorder.Text = "pick up ";
+            this.nup_Quantity.Location = new System.Drawing.Point(611, 43);
+            this.nup_Quantity.Name = "nup_Quantity";
+            this.nup_Quantity.Size = new System.Drawing.Size(84, 22);
+            this.nup_Quantity.TabIndex = 45;
+            this.nup_Quantity.ValueChanged += new System.EventHandler(this.nup_Quantity_ValueChanged);
             // 
-            // lbl_Processing_Cusorder
+            // cmb_Deliverymethod
             // 
-            this.lbl_Processing_Cusorder.AutoSize = true;
-            this.lbl_Processing_Cusorder.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Processing_Cusorder.Location = new System.Drawing.Point(306, 121);
-            this.lbl_Processing_Cusorder.Name = "lbl_Processing_Cusorder";
-            this.lbl_Processing_Cusorder.Size = new System.Drawing.Size(114, 23);
-            this.lbl_Processing_Cusorder.TabIndex = 26;
-            this.lbl_Processing_Cusorder.Text = "Processing";
+            this.cmb_Deliverymethod.FormattingEnabled = true;
+            this.cmb_Deliverymethod.Location = new System.Drawing.Point(19, 215);
+            this.cmb_Deliverymethod.Name = "cmb_Deliverymethod";
+            this.cmb_Deliverymethod.Size = new System.Drawing.Size(197, 24);
+            this.cmb_Deliverymethod.TabIndex = 29;
             // 
-            // lbl_Supplier_Cusorder
+            // cmb_Suporder
             // 
-            this.lbl_Supplier_Cusorder.AutoSize = true;
-            this.lbl_Supplier_Cusorder.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Supplier_Cusorder.Location = new System.Drawing.Point(15, 127);
-            this.lbl_Supplier_Cusorder.Name = "lbl_Supplier_Cusorder";
-            this.lbl_Supplier_Cusorder.Size = new System.Drawing.Size(109, 23);
-            this.lbl_Supplier_Cusorder.TabIndex = 25;
-            this.lbl_Supplier_Cusorder.Text = "Thasneem";
+            this.cmb_Suporder.FormattingEnabled = true;
+            this.cmb_Suporder.Location = new System.Drawing.Point(17, 124);
+            this.cmb_Suporder.Name = "cmb_Suporder";
+            this.cmb_Suporder.Size = new System.Drawing.Size(197, 24);
+            this.cmb_Suporder.TabIndex = 28;
+            this.cmb_Suporder.SelectedIndexChanged += new System.EventHandler(this.cmb_Suporder_SelectedIndexChanged);
             // 
             // label28
             // 
@@ -195,15 +195,6 @@
             this.label26.Size = new System.Drawing.Size(87, 23);
             this.label26.TabIndex = 22;
             this.label26.Text = "Supplier";
-            // 
-            // lbl_Qty_cusorder
-            // 
-            this.lbl_Qty_cusorder.AutoSize = true;
-            this.lbl_Qty_cusorder.Location = new System.Drawing.Point(614, 51);
-            this.lbl_Qty_cusorder.Name = "lbl_Qty_cusorder";
-            this.lbl_Qty_cusorder.Size = new System.Drawing.Size(14, 16);
-            this.lbl_Qty_cusorder.TabIndex = 21;
-            this.lbl_Qty_cusorder.Text = "2";
             // 
             // lbl_Discount_Cusorder
             // 
@@ -314,16 +305,16 @@
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(1612, 1249);
             this.chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart1.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(2095, 733);
             this.chart1.TabIndex = 37;
             this.chart1.Text = "chart1";
@@ -744,6 +735,32 @@
             this.panel1.Size = new System.Drawing.Size(493, 996);
             this.panel1.TabIndex = 35;
             // 
+            // cmb_Status
+            // 
+            this.cmb_Status.FormattingEnabled = true;
+            this.cmb_Status.Location = new System.Drawing.Point(306, 124);
+            this.cmb_Status.Name = "cmb_Status";
+            this.cmb_Status.Size = new System.Drawing.Size(197, 24);
+            this.cmb_Status.TabIndex = 46;
+            // 
+            // cmb_staff
+            // 
+            this.cmb_staff.FormattingEnabled = true;
+            this.cmb_staff.Location = new System.Drawing.Point(751, 41);
+            this.cmb_staff.Name = "cmb_staff";
+            this.cmb_staff.Size = new System.Drawing.Size(232, 24);
+            this.cmb_staff.TabIndex = 47;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(747, 11);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(51, 23);
+            this.label23.TabIndex = 48;
+            this.label23.Text = "Staff";
+            // 
             // CustomerOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -761,6 +778,7 @@
             this.Text = "CustomerOrder";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nup_Quantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.cusorderRecieve_panel.ResumeLayout(false);
@@ -828,12 +846,14 @@
         private System.Windows.Forms.Button btn_overview;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbl_Qty_cusorder;
-        private System.Windows.Forms.Label lbl_Processing_Cusorder;
-        private System.Windows.Forms.Label lbl_Supplier_Cusorder;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label lbl_Deliverymethod_Cusorder;
+        private System.Windows.Forms.ComboBox cmb_Suporder;
+        private System.Windows.Forms.ComboBox cmb_Deliverymethod;
+        private System.Windows.Forms.NumericUpDown nup_Quantity;
+        private System.Windows.Forms.ComboBox cmb_Status;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox cmb_staff;
     }
 }
