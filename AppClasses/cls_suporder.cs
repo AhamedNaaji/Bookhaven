@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookhaven.AppClasses
@@ -24,10 +21,6 @@ namespace Bookhaven.AppClasses
         public int Status_Id_fk { get; set; }
         public float Total_Payment { get; set; }
 
-        // Properties for supOrderDetails
-        public List<SupOrderDetail> OrderDetails { get; set; } = new List<SupOrderDetail>();
-
-
         // Nested class for order details
         public class SupOrderDetail
         {
@@ -36,6 +29,8 @@ namespace Bookhaven.AppClasses
             public float Discount { get; set; }
             public float Final_Amount { get; set; }
         }
+
+        public List<SupOrderDetail> OrderDetails = new List<SupOrderDetail>();
 
         // Insert data into supOrder and supOrderDetails tables
         public void Insertdata()
@@ -46,12 +41,12 @@ namespace Bookhaven.AppClasses
                 transaction = conn.BeginTransaction();
 
                 // Step 1: Insert into supOrder table
-                string orderQuery = @"
-                    INSERT INTO supOrder (Staff_Id_fk, Supplier_Id_fk, Book_Id_fk, Date, Status_Id_fk, Total_Payment) 
+                string insertOrderQuery = @"
+                    INSERT INTO supOrder (Staff_Id_fk, Supplier_Id_fk, Book_Id_fk, Date, Status_Id_fk, Total_Payment)
                     VALUES (@Staff_Id_fk, @Supplier_Id_fk, @Book_Id_fk, @Date, @Status_Id_fk, @Total_Payment);
                     SELECT SCOPE_IDENTITY();";
 
-                SqlCommand cmd = new SqlCommand(orderQuery, conn, transaction);
+                SqlCommand cmd = new SqlCommand(insertOrderQuery, conn, transaction);
                 cmd.Parameters.AddWithValue("@Staff_Id_fk", Staff_Id_fk);
                 cmd.Parameters.AddWithValue("@Supplier_Id_fk", Supplier_Id_fk);
                 cmd.Parameters.AddWithValue("@Book_Id_fk", Book_Id_fk);
@@ -65,7 +60,7 @@ namespace Bookhaven.AppClasses
                 foreach (var detail in OrderDetails)
                 {
                     string detailQuery = @"
-                        INSERT INTO supOrderDetails (Book_Id_fk, supOrder_Id_fk, Quantity, Discount, Final_Amount) 
+                        INSERT INTO supOrderDetails (Book_Id_fk, supOrder_Id_fk, Quantity, Discount, Final_Amount)
                         VALUES (@Book_Id_fk, @supOrder_Id_fk, @Quantity, @Discount, @Final_Amount)";
 
                     SqlCommand detailCmd = new SqlCommand(detailQuery, conn, transaction);
@@ -102,13 +97,13 @@ namespace Bookhaven.AppClasses
 
                 // Step 1: Update supOrder table
                 string updateOrderQuery = @"
-                    UPDATE supOrder 
-                    SET Staff_Id_fk = @Staff_Id_fk, 
-                        Supplier_Id_fk = @Supplier_Id_fk, 
-                        Book_Id_fk = @Book_Id_fk, 
-                        Date = @Date, 
-                        Status_Id_fk = @Status_Id_fk, 
-                        Total_Payment = @Total_Payment 
+                    UPDATE supOrder
+                    SET Staff_Id_fk = @Staff_Id_fk,
+                        Supplier_Id_fk = @Supplier_Id_fk,
+                        Book_Id_fk = @Book_Id_fk,
+                        Date = @Date,
+                        Status_Id_fk = @Status_Id_fk,
+                        Total_Payment = @Total_Payment
                     WHERE supOrder_Id = @supOrder_Id";
 
                 SqlCommand cmd = new SqlCommand(updateOrderQuery, conn, transaction);
@@ -123,9 +118,7 @@ namespace Bookhaven.AppClasses
                 cmd.ExecuteNonQuery();
 
                 // Step 2: Delete existing order details
-                string deleteDetailsQuery = @"
-                    DELETE FROM supOrderDetails 
-                    WHERE supOrder_Id_fk = @supOrder_Id";
+                string deleteDetailsQuery = "DELETE FROM supOrderDetails WHERE supOrder_Id_fk = @supOrder_Id";
                 SqlCommand deleteCmd = new SqlCommand(deleteDetailsQuery, conn, transaction);
                 deleteCmd.Parameters.AddWithValue("@supOrder_Id", supOrder_Id);
                 deleteCmd.ExecuteNonQuery();
@@ -134,7 +127,7 @@ namespace Bookhaven.AppClasses
                 foreach (var detail in OrderDetails)
                 {
                     string insertDetailQuery = @"
-                        INSERT INTO supOrderDetails (Book_Id_fk, supOrder_Id_fk, Quantity, Discount, Final_Amount) 
+                        INSERT INTO supOrderDetails (Book_Id_fk, supOrder_Id_fk, Quantity, Discount, Final_Amount)
                         VALUES (@Book_Id_fk, @supOrder_Id_fk, @Quantity, @Discount, @Final_Amount)";
 
                     SqlCommand insertCmd = new SqlCommand(insertDetailQuery, conn, transaction);
@@ -169,17 +162,17 @@ namespace Bookhaven.AppClasses
                 conn.Open();
                 transaction = conn.BeginTransaction();
 
-                // Step 1: Delete related order details (due to foreign key)
+                // Step 1: Delete order details
                 string deleteDetailsQuery = "DELETE FROM supOrderDetails WHERE supOrder_Id_fk = @supOrder_Id";
-                SqlCommand detailsCmd = new SqlCommand(deleteDetailsQuery, conn, transaction);
-                detailsCmd.Parameters.AddWithValue("@supOrder_Id", supOrder_Id);
-                detailsCmd.ExecuteNonQuery();
+                SqlCommand deleteDetailsCmd = new SqlCommand(deleteDetailsQuery, conn, transaction);
+                deleteDetailsCmd.Parameters.AddWithValue("@supOrder_Id", supOrder_Id);
+                deleteDetailsCmd.ExecuteNonQuery();
 
-                // Step 2: Delete the supplier order
+                // Step 2: Delete order
                 string deleteOrderQuery = "DELETE FROM supOrder WHERE supOrder_Id = @supOrder_Id";
-                SqlCommand orderCmd = new SqlCommand(deleteOrderQuery, conn, transaction);
-                orderCmd.Parameters.AddWithValue("@supOrder_Id", supOrder_Id);
-                orderCmd.ExecuteNonQuery();
+                SqlCommand deleteOrderCmd = new SqlCommand(deleteOrderQuery, conn, transaction);
+                deleteOrderCmd.Parameters.AddWithValue("@supOrder_Id", supOrder_Id);
+                deleteOrderCmd.ExecuteNonQuery();
 
                 transaction.Commit();
                 MessageBox.Show("Supplier order deleted successfully!", "Success");
@@ -195,19 +188,15 @@ namespace Bookhaven.AppClasses
             }
         }
 
-        // Fetch data for a specific supplier order
+        // Fetch data for an existing supplier order
         public void Getdata()
         {
             try
             {
                 conn.Open();
 
-                // Step 1: Fetch main order details
-                string orderQuery = @"
-                    SELECT * 
-                    FROM supOrder 
-                    WHERE supOrder_Id = @supOrder_Id";
-
+                // Step 1: Fetch supOrder data
+                string orderQuery = "SELECT * FROM supOrder WHERE supOrder_Id = @supOrder_Id";
                 SqlCommand orderCmd = new SqlCommand(orderQuery, conn);
                 orderCmd.Parameters.AddWithValue("@supOrder_Id", supOrder_Id);
 
@@ -224,17 +213,12 @@ namespace Bookhaven.AppClasses
                 }
                 orderReader.Close();
 
-                // Step 2: Fetch order details
-                string detailsQuery = @"
-                    SELECT * 
-                    FROM supOrderDetails 
-                    WHERE supOrder_Id_fk = @supOrder_Id";
-
+                // Step 2: Fetch supOrderDetails data
+                string detailsQuery = "SELECT * FROM supOrderDetails WHERE supOrder_Id_fk = @supOrder_Id";
                 SqlCommand detailsCmd = new SqlCommand(detailsQuery, conn);
                 detailsCmd.Parameters.AddWithValue("@supOrder_Id", supOrder_Id);
 
                 SqlDataReader detailsReader = detailsCmd.ExecuteReader();
-                OrderDetails.Clear();
                 while (detailsReader.Read())
                 {
                     OrderDetails.Add(new SupOrderDetail
@@ -245,6 +229,7 @@ namespace Bookhaven.AppClasses
                         Final_Amount = Convert.ToSingle(detailsReader["Final_Amount"])
                     });
                 }
+                detailsReader.Close();
             }
             catch (Exception ex)
             {
@@ -256,5 +241,4 @@ namespace Bookhaven.AppClasses
             }
         }
     }
-
 }

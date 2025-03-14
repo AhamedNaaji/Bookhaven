@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupplierOrder));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_overview = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
@@ -66,15 +66,11 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl_exp_amount = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.lbl_Status_suporder = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.lbl_Quantity_suporder = new System.Windows.Forms.Label();
             this.lbl_Finalamount = new System.Windows.Forms.Label();
             this.cmb_book_suporder = new System.Windows.Forms.ComboBox();
             this.cmb_Suporder = new System.Windows.Forms.ComboBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -82,6 +78,13 @@
             this.btn_deleteOrder = new System.Windows.Forms.Button();
             this.btn_updateorder = new System.Windows.Forms.Button();
             this.btn_makeOrder = new System.Windows.Forms.Button();
+            this.cmb_staff = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.dtp_supplier = new System.Windows.Forms.DateTimePicker();
+            this.cmb_Status = new System.Windows.Forms.ComboBox();
+            this.nup_Quantity = new System.Windows.Forms.NumericUpDown();
+            this.label22 = new System.Windows.Forms.Label();
+            this.lbl_expectedamount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.Totalsales_panel.SuspendLayout();
@@ -92,6 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_suporder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nup_Quantity)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -480,27 +484,30 @@
             // 
             // chart1
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chart1.Legends.Add(legend7);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(1707, 1264);
             this.chart1.Name = "chart1";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chart1.Series.Add(series7);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(2095, 733);
             this.chart1.TabIndex = 25;
             this.chart1.Text = "chart1";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lbl_exp_amount);
+            this.panel2.Controls.Add(this.lbl_expectedamount);
+            this.panel2.Controls.Add(this.nup_Quantity);
+            this.panel2.Controls.Add(this.cmb_Status);
+            this.panel2.Controls.Add(this.dtp_supplier);
+            this.panel2.Controls.Add(this.label23);
+            this.panel2.Controls.Add(this.cmb_staff);
             this.panel2.Controls.Add(this.label26);
-            this.panel2.Controls.Add(this.lbl_Status_suporder);
             this.panel2.Controls.Add(this.label27);
-            this.panel2.Controls.Add(this.lbl_Quantity_suporder);
             this.panel2.Controls.Add(this.lbl_Finalamount);
             this.panel2.Controls.Add(this.cmb_book_suporder);
             this.panel2.Controls.Add(this.cmb_Suporder);
@@ -513,15 +520,6 @@
             this.panel2.Size = new System.Drawing.Size(801, 282);
             this.panel2.TabIndex = 43;
             // 
-            // lbl_exp_amount
-            // 
-            this.lbl_exp_amount.AutoSize = true;
-            this.lbl_exp_amount.Location = new System.Drawing.Point(307, 127);
-            this.lbl_exp_amount.Name = "lbl_exp_amount";
-            this.lbl_exp_amount.Size = new System.Drawing.Size(45, 16);
-            this.lbl_exp_amount.TabIndex = 29;
-            this.lbl_exp_amount.Text = "900.00";
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -532,16 +530,6 @@
             this.label26.TabIndex = 28;
             this.label26.Text = "Expected Amount";
             // 
-            // lbl_Status_suporder
-            // 
-            this.lbl_Status_suporder.AutoSize = true;
-            this.lbl_Status_suporder.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Status_suporder.Location = new System.Drawing.Point(15, 121);
-            this.lbl_Status_suporder.Name = "lbl_Status_suporder";
-            this.lbl_Status_suporder.Size = new System.Drawing.Size(114, 23);
-            this.lbl_Status_suporder.TabIndex = 26;
-            this.lbl_Status_suporder.Text = "Processing";
-            // 
             // label27
             // 
             this.label27.AutoSize = true;
@@ -551,15 +539,6 @@
             this.label27.Size = new System.Drawing.Size(66, 23);
             this.label27.TabIndex = 23;
             this.label27.Text = "Status";
-            // 
-            // lbl_Quantity_suporder
-            // 
-            this.lbl_Quantity_suporder.AutoSize = true;
-            this.lbl_Quantity_suporder.Location = new System.Drawing.Point(614, 51);
-            this.lbl_Quantity_suporder.Name = "lbl_Quantity_suporder";
-            this.lbl_Quantity_suporder.Size = new System.Drawing.Size(14, 16);
-            this.lbl_Quantity_suporder.TabIndex = 21;
-            this.lbl_Quantity_suporder.Text = "2";
             // 
             // lbl_Finalamount
             // 
@@ -587,16 +566,6 @@
             this.cmb_Suporder.Size = new System.Drawing.Size(197, 24);
             this.cmb_Suporder.TabIndex = 15;
             this.cmb_Suporder.SelectedIndexChanged += new System.EventHandler(this.cmb_Suporder_SelectedIndexChanged);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(607, 91);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(147, 23);
-            this.label22.TabIndex = 14;
-            this.label22.Text = "Final Payment";
             // 
             // label19
             // 
@@ -639,6 +608,7 @@
             this.dgv_suporder.RowTemplate.Height = 24;
             this.dgv_suporder.Size = new System.Drawing.Size(1192, 428);
             this.dgv_suporder.TabIndex = 47;
+            this.dgv_suporder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_suporder_CellContentClick);
             this.dgv_suporder.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_suporder_CellContentDoubleClick);
             // 
             // btn_deleteOrder
@@ -671,6 +641,66 @@
             this.btn_makeOrder.UseVisualStyleBackColor = true;
             this.btn_makeOrder.Click += new System.EventHandler(this.btn_makeOrder_Click);
             // 
+            // cmb_staff
+            // 
+            this.cmb_staff.FormattingEnabled = true;
+            this.cmb_staff.Location = new System.Drawing.Point(19, 198);
+            this.cmb_staff.Name = "cmb_staff";
+            this.cmb_staff.Size = new System.Drawing.Size(232, 24);
+            this.cmb_staff.TabIndex = 48;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(15, 169);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(51, 23);
+            this.label23.TabIndex = 49;
+            this.label23.Text = "Staff";
+            // 
+            // dtp_supplier
+            // 
+            this.dtp_supplier.Location = new System.Drawing.Point(306, 190);
+            this.dtp_supplier.Name = "dtp_supplier";
+            this.dtp_supplier.Size = new System.Drawing.Size(200, 22);
+            this.dtp_supplier.TabIndex = 50;
+            // 
+            // cmb_Status
+            // 
+            this.cmb_Status.FormattingEnabled = true;
+            this.cmb_Status.Location = new System.Drawing.Point(19, 124);
+            this.cmb_Status.Name = "cmb_Status";
+            this.cmb_Status.Size = new System.Drawing.Size(197, 24);
+            this.cmb_Status.TabIndex = 51;
+            // 
+            // nup_Quantity
+            // 
+            this.nup_Quantity.Location = new System.Drawing.Point(611, 45);
+            this.nup_Quantity.Name = "nup_Quantity";
+            this.nup_Quantity.Size = new System.Drawing.Size(84, 22);
+            this.nup_Quantity.TabIndex = 53;
+            this.nup_Quantity.ValueChanged += new System.EventHandler(this.nup_Quantity_ValueChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(607, 91);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(147, 23);
+            this.label22.TabIndex = 14;
+            this.label22.Text = "Final Payment";
+            // 
+            // lbl_expectedamount
+            // 
+            this.lbl_expectedamount.AutoSize = true;
+            this.lbl_expectedamount.Location = new System.Drawing.Point(312, 132);
+            this.lbl_expectedamount.Name = "lbl_expectedamount";
+            this.lbl_expectedamount.Size = new System.Drawing.Size(52, 16);
+            this.lbl_expectedamount.TabIndex = 54;
+            this.lbl_expectedamount.Text = "1800.00";
+            // 
             // SupplierOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -701,6 +731,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_suporder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nup_Quantity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -741,13 +772,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lbl_Status_suporder;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label lbl_Quantity_suporder;
         private System.Windows.Forms.Label lbl_Finalamount;
         private System.Windows.Forms.ComboBox cmb_book_suporder;
         private System.Windows.Forms.ComboBox cmb_Suporder;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label3;
@@ -755,7 +783,13 @@
         private System.Windows.Forms.Button btn_deleteOrder;
         private System.Windows.Forms.Button btn_updateorder;
         private System.Windows.Forms.Button btn_makeOrder;
-        private System.Windows.Forms.Label lbl_exp_amount;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox cmb_staff;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DateTimePicker dtp_supplier;
+        private System.Windows.Forms.ComboBox cmb_Status;
+        private System.Windows.Forms.NumericUpDown nup_Quantity;
+        private System.Windows.Forms.Label lbl_expectedamount;
+        private System.Windows.Forms.Label label22;
     }
 }
