@@ -37,8 +37,13 @@ namespace Bookhaven
 
         private void btn_Book_Click(object sender, EventArgs e)
         {
-            Book book = new Book();
+            Clerk_Book book = new Clerk_Book();
             book.ShowDialog();
+        }
+
+        private void btn_overview_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

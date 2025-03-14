@@ -1,17 +1,13 @@
-﻿using Bookhaven.CommonClasses;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookhaven.AppClasses
 {
     internal class cls_cusorder
     {
-        Common cmn = new Common();
+        public SqlConnection Connection => conn;
         SqlConnection conn = new SqlConnection("Data Source=AFRIDI;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         SqlTransaction transaction;
 
@@ -19,6 +15,7 @@ namespace Bookhaven.AppClasses
         public int CustOrder_Id { get; set; }
         public int Staff_Id_fk { get; set; }
         public int Customer_Id_fk { get; set; }
+        public int Supplier_Id_fk { get; set; } // New property for supplier
         public DateTime Date { get; set; }
         public int Status_Id_fk { get; set; }
         public float Total_Payment { get; set; }
@@ -45,14 +42,15 @@ namespace Bookhaven.AppClasses
                 transaction = conn.BeginTransaction();
 
                 // Step 1: Insert into CusOrder table
-                string orderQuery = @"
-                    INSERT INTO CusOrder (Staff_Id_fk, Customer_Id_fk, Date, Status_Id_fk, Total_Payment) 
-                    VALUES (@Staff_Id_fk, @Customer_Id_fk, @Date, @Status_Id_fk, @Total_Payment);
-                    SELECT SCOPE_IDENTITY();";
+                string insertOrderQuery = @"
+            INSERT INTO CusOrder (Staff_Id_fk, Customer_Id_fk, Supplier_Id_fk, Date, Status_Id_fk, Total_Payment)
+            VALUES (@Staff_Id_fk, @Customer_Id_fk, @Supplier_Id_fk, @Date, @Status_Id_fk, @Total_Payment);
+            SELECT SCOPE_IDENTITY();";
 
-                SqlCommand cmd = new SqlCommand(orderQuery, conn, transaction);
+                SqlCommand cmd = new SqlCommand(insertOrderQuery, conn, transaction);
                 cmd.Parameters.AddWithValue("@Staff_Id_fk", Staff_Id_fk);
                 cmd.Parameters.AddWithValue("@Customer_Id_fk", Customer_Id_fk);
+                cmd.Parameters.AddWithValue("@Supplier_Id_fk", Supplier_Id_fk); // Include Supplier_Id_fk
                 cmd.Parameters.AddWithValue("@Date", Date);
                 cmd.Parameters.AddWithValue("@Status_Id_fk", Status_Id_fk);
                 cmd.Parameters.AddWithValue("@Total_Payment", Total_Payment);
@@ -63,8 +61,8 @@ namespace Bookhaven.AppClasses
                 foreach (var detail in OrderDetails)
                 {
                     string detailQuery = @"
-                        INSERT INTO CusOrderDetails (Book_Id_fk, CustOrder_Id_fk, Quantity, DeliveryMethod, Discount, Final_Amount) 
-                        VALUES (@Book_Id_fk, @CustOrder_Id_fk, @Quantity, @DeliveryMethod, @Discount, @Final_Amount)";
+                INSERT INTO CusOrderDetails (Book_Id_fk, CustOrder_Id_fk, Quantity, DeliveryMethod, Discount, Final_Amount)
+                VALUES (@Book_Id_fk, @CustOrder_Id_fk, @Quantity, @DeliveryMethod, @Discount, @Final_Amount)";
 
                     SqlCommand detailCmd = new SqlCommand(detailQuery, conn, transaction);
                     detailCmd.Parameters.AddWithValue("@Book_Id_fk", detail.Book_Id_fk);
@@ -78,7 +76,7 @@ namespace Bookhaven.AppClasses
                 }
 
                 transaction.Commit();
-                MessageBox.Show("Customer order inserted successfully!", "Success");
+                MessageBox.Show("Order created successfully!", "Success");
             }
             catch (Exception ex)
             {
@@ -101,17 +99,19 @@ namespace Bookhaven.AppClasses
 
                 // Step 1: Update CusOrder table
                 string updateOrderQuery = @"
-                    UPDATE CusOrder 
-                    SET Staff_Id_fk = @Staff_Id_fk, 
-                        Customer_Id_fk = @Customer_Id_fk, 
-                        Date = @Date, 
-                        Status_Id_fk = @Status_Id_fk, 
-                        Total_Payment = @Total_Payment 
-                    WHERE CustOrder_Id = @CustOrder_Id";
+            UPDATE CusOrder
+            SET Staff_Id_fk = @Staff_Id_fk,
+                Customer_Id_fk = @Customer_Id_fk,
+                Supplier_Id_fk = @Supplier_Id_fk, -- Include Supplier_Id_fk
+                Date = @Date,
+                Status_Id_fk = @Status_Id_fk,
+                Total_Payment = @Total_Payment
+            WHERE CustOrder_Id = @CustOrder_Id";
 
                 SqlCommand cmd = new SqlCommand(updateOrderQuery, conn, transaction);
                 cmd.Parameters.AddWithValue("@Staff_Id_fk", Staff_Id_fk);
                 cmd.Parameters.AddWithValue("@Customer_Id_fk", Customer_Id_fk);
+                cmd.Parameters.AddWithValue("@Supplier_Id_fk", Supplier_Id_fk); // Include Supplier_Id_fk
                 cmd.Parameters.AddWithValue("@Date", Date);
                 cmd.Parameters.AddWithValue("@Status_Id_fk", Status_Id_fk);
                 cmd.Parameters.AddWithValue("@Total_Payment", Total_Payment);
@@ -129,22 +129,22 @@ namespace Bookhaven.AppClasses
                 foreach (var detail in OrderDetails)
                 {
                     string insertDetailQuery = @"
-                        INSERT INTO CusOrderDetails (Book_Id_fk, CustOrder_Id_fk, Quantity, DeliveryMethod, Discount, Final_Amount) 
-                        VALUES (@Book_Id_fk, @CustOrder_Id_fk, @Quantity, @DeliveryMethod, @Discount, @Final_Amount)";
+                INSERT INTO CusOrderDetails (Book_Id_fk, CustOrder_Id_fk, Quantity, DeliveryMethod, Discount, Final_Amount)
+                VALUES (@Book_Id_fk, @CustOrder_Id_fk, @Quantity, @DeliveryMethod, @Discount, @Final_Amount)";
 
-                    SqlCommand insertCmd = new SqlCommand(insertDetailQuery, conn, transaction);
-                    insertCmd.Parameters.AddWithValue("@Book_Id_fk", detail.Book_Id_fk);
-                    insertCmd.Parameters.AddWithValue("@CustOrder_Id_fk", CustOrder_Id);
-                    insertCmd.Parameters.AddWithValue("@Quantity", detail.Quantity);
-                    insertCmd.Parameters.AddWithValue("@DeliveryMethod", detail.DeliveryMethod);
-                    insertCmd.Parameters.AddWithValue("@Discount", detail.Discount);
-                    insertCmd.Parameters.AddWithValue("@Final_Amount", detail.Final_Amount);
+                    SqlCommand detailCmd = new SqlCommand(insertDetailQuery, conn, transaction);
+                    detailCmd.Parameters.AddWithValue("@Book_Id_fk", detail.Book_Id_fk);
+                    detailCmd.Parameters.AddWithValue("@CustOrder_Id_fk", CustOrder_Id);
+                    detailCmd.Parameters.AddWithValue("@Quantity", detail.Quantity);
+                    detailCmd.Parameters.AddWithValue("@DeliveryMethod", detail.DeliveryMethod);
+                    detailCmd.Parameters.AddWithValue("@Discount", detail.Discount);
+                    detailCmd.Parameters.AddWithValue("@Final_Amount", detail.Final_Amount);
 
-                    insertCmd.ExecuteNonQuery();
+                    detailCmd.ExecuteNonQuery();
                 }
 
                 transaction.Commit();
-                MessageBox.Show("Customer order updated successfully!", "Success");
+                MessageBox.Show("Order updated successfully!", "Success");
             }
             catch (Exception ex)
             {
@@ -190,6 +190,41 @@ namespace Bookhaven.AppClasses
                 conn.Close();
             }
         }
+        public (float Price, float Discount) GetBookDetails(int bookId)
+        {
+            try
+            {
+                conn.Open();
+                string query = @"
+                SELECT Price, Discount 
+                FROM Book 
+                WHERE Book_Id = @Book_Id";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Book_Id", bookId);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    float price = Convert.ToSingle(reader["Price"]);
+                    float discount = Convert.ToSingle(reader["Discount"]);
+                    return (price, discount);
+                }
+
+                throw new Exception("Book not found.");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error fetching book details: {ex.Message}");
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
 
         // Fetch data for a specific customer order
         public void Getdata()
@@ -213,6 +248,7 @@ namespace Bookhaven.AppClasses
                     CustOrder_Id = Convert.ToInt32(orderReader["CustOrder_Id"]);
                     Staff_Id_fk = Convert.ToInt32(orderReader["Staff_Id_fk"]);
                     Customer_Id_fk = Convert.ToInt32(orderReader["Customer_Id_fk"]);
+                    Supplier_Id_fk = Convert.ToInt32(orderReader["Supplier_Id_fk"]); // Include supplier
                     Date = Convert.ToDateTime(orderReader["Date"]);
                     Status_Id_fk = Convert.ToInt32(orderReader["Status_Id_fk"]);
                     Total_Payment = Convert.ToSingle(orderReader["Total_Payment"]);

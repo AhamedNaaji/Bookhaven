@@ -4,62 +4,83 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Bookhaven
 {
     public partial class CustomerOrder : Form
     {
         cls_cusorder clscusorder = new cls_cusorder();
+        
         filloperation fill = new filloperation();
         public CustomerOrder()
         {
             InitializeComponent();
+            nup_Quantity.ValueChanged += nup_Quantity_ValueChanged;
             FirstRun();
+            
 
         }
+
 
         void FirstRun()
         {
             // Clear form fields
             cmb_customer.SelectedIndex = -1;
             cmb_Book.SelectedIndex = -1;
-            lbl_Qty_cusorder.Text = "0";
-            lbl_Supplier_Cusorder.Text = "";
-            lbl_Processing_Cusorder.Text = "Pending";
+            nup_Quantity.Value = 1; // Default quantity
+            cmb_Status.SelectedIndex = -1; // Default status (combobox)
             lbl_Totalamount.Text = "0.0";
-            lbl_Deliverymethod_Cusorder.Text = "";
+            cmb_Deliverymethod.SelectedIndex = -1;
             lbl_Discount_Cusorder.Text = "0.0";
             lbl_Finalpayment_Cusorder.Text = "0.0";
 
-            // Populate cmb_customer (Customers)
+            // Populate combo boxes
             string customerQuery = "SELECT Customer_Id, Customer_Name FROM Customer";
             fill.combobox(customerQuery, cmb_customer, "Customer_Name", "Customer_Id");
 
-            // Populate cmb_Book (Books)
             string bookQuery = "SELECT Book_Id, Book_Name FROM Book";
             fill.combobox(bookQuery, cmb_Book, "Book_Name", "Book_Id");
 
-            // Populate dgv_cusOrder (Customer Orders)
+            string supplierQuery = "SELECT Supplier_Id, Supplier_Name FROM Supplier";
+            fill.combobox(supplierQuery, cmb_Suporder, "Supplier_Name", "Supplier_Id");
+
+            string deliveryQuery = "SELECT DISTINCT DeliveryMethod FROM CusOrderDetails";
+            fill.combobox(deliveryQuery, cmb_Deliverymethod, "DeliveryMethod", "DeliveryMethod");
+
+            string statusQuery = "SELECT statusId, status FROM orderStatus"; // Populate cmb_Status
+            fill.combobox(statusQuery, cmb_Status, "status", "statusId");
+
+            // Populate cmb_staff (Staff Names)
+            string staffQuery = "SELECT Staff_Id, Staff_Name FROM Staff";
+            fill.combobox(staffQuery, cmb_staff, "Staff_Name", "Staff_Id");
+
+           
+
+            // Populate DataGridView with existing orders
             string orderQuery = @"
-                SELECT 
-                    co.CustOrder_Id,
-                    c.Customer_Name AS Customer,
-                    b.Book_Name AS Book,
-                    cod.Quantity,
-                    cod.DeliveryMethod,
-                    cod.Discount,
-                    cod.Final_Amount,
-                    os.status AS Status
-                FROM CusOrder co
-                INNER JOIN Customer c ON co.Customer_Id_fk = c.Customer_Id
-                INNER JOIN CusOrderDetails cod ON co.CustOrder_Id = cod.CustOrder_Id_fk
-                INNER JOIN Book b ON cod.Book_Id_fk = b.Book_Id
-                INNER JOIN orderStatus os ON co.Status_Id_fk = os.statusId";
+    SELECT 
+        co.CustOrder_Id,
+        c.Customer_Name AS Customer,
+        b.Book_Name AS Book,
+        cod.Quantity,
+        cod.DeliveryMethod,
+        cod.Discount,
+        cod.Final_Amount,
+        os.status AS Status,
+        s.Supplier_Name AS Supplier -- Include supplier name
+    FROM CusOrder co
+    INNER JOIN Customer c ON co.Customer_Id_fk = c.Customer_Id
+    INNER JOIN CusOrderDetails cod ON co.CustOrder_Id = cod.CustOrder_Id_fk
+    INNER JOIN Book b ON cod.Book_Id_fk = b.Book_Id
+    INNER JOIN orderStatus os ON co.Status_Id_fk = os.statusId
+    LEFT JOIN Supplier s ON co.Supplier_Id_fk = s.Supplier_Id"; // Join with Supplier table
 
             fill.FillDataGridView(orderQuery, dgv_cusOrder);
             dgv_cusOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -73,6 +94,7 @@ namespace Bookhaven
             dgv_cusOrder.Columns[5].HeaderText = "Discount";
             dgv_cusOrder.Columns[6].HeaderText = "Final Amount";
             dgv_cusOrder.Columns[7].HeaderText = "Status";
+            dgv_cusOrder.Columns[8].HeaderText = "Supplier"; // Add supplier column
         }
 
 
@@ -107,8 +129,9 @@ namespace Bookhaven
                     // Populate form fields
                     cmb_customer.SelectedValue = clscusorder.Customer_Id_fk;
                     cmb_Book.SelectedValue = clscusorder.OrderDetails[0].Book_Id_fk;
-                    lbl_Qty_cusorder.Text = clscusorder.OrderDetails[0].Quantity.ToString();
-                    lbl_Deliverymethod_Cusorder.Text = clscusorder.OrderDetails[0].DeliveryMethod;
+                    nup_Quantity.Value = clscusorder.OrderDetails[0].Quantity;
+                    cmb_Deliverymethod.Text = clscusorder.OrderDetails[0].DeliveryMethod;
+                    cmb_staff.SelectedValue = clscusorder.Staff_Id_fk; // Populate cmb_staff
                     lbl_Discount_Cusorder.Text = clscusorder.OrderDetails[0].Discount.ToString();
                     lbl_Finalpayment_Cusorder.Text = clscusorder.OrderDetails[0].Final_Amount.ToString();
                     lbl_Totalamount.Text = clscusorder.Total_Payment.ToString();
@@ -119,40 +142,57 @@ namespace Bookhaven
                 }
             }
         }
+        
 
         private void btn_makeorder_Click(object sender, EventArgs e)
         {
             try
             {
                 // Validate inputs
-                if (cmb_customer.SelectedIndex == -1 || cmb_Book.SelectedIndex == -1)
+                if (cmb_customer.SelectedIndex == -1 || cmb_Book.SelectedIndex == -1 || cmb_staff.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Please select a customer and a book.", "Validation Error");
+                    MessageBox.Show("Please fill all required fields.", "Validation Error");
                     return;
                 }
 
-                int quantity = int.Parse(lbl_Qty_cusorder.Text);
+                int quantity = (int)nup_Quantity.Value; // Get quantity from NumericUpDown
                 if (quantity <= 0)
                 {
                     MessageBox.Show("Quantity must be greater than zero.", "Validation Error");
                     return;
                 }
 
+                // Validate and parse total payment
+                if (!float.TryParse(lbl_Finalpayment_Cusorder.Text, out float totalPayment))
+                {
+                    MessageBox.Show("Invalid total payment value.", "Validation Error");
+                    return;
+                }
+
+                // Validate and parse discount
+                string discountText = lbl_Discount_Cusorder.Text.Replace("%", "").Trim(); // Remove '%' and trim whitespace
+                if (!float.TryParse(discountText, out float discount))
+                {
+                    MessageBox.Show("Invalid discount value.", "Validation Error");
+                    return;
+                }
+
                 // Assign properties
-                clscusorder.Staff_Id_fk = 1; // Assuming the logged-in staff ID is 1
+                clscusorder.Staff_Id_fk = Convert.ToInt32(cmb_staff.SelectedValue); // Use selected staff
                 clscusorder.Customer_Id_fk = Convert.ToInt32(cmb_customer.SelectedValue);
                 clscusorder.Date = DateTime.Now;
-                clscusorder.Status_Id_fk = 1; // Assuming status 1 = "Pending"
-                clscusorder.Total_Payment = float.Parse(lbl_Finalpayment_Cusorder.Text);
+                clscusorder.Status_Id_fk = Convert.ToInt32(cmb_Status.SelectedValue); // Use selected status
+                clscusorder.Total_Payment = totalPayment;
+                clscusorder.Supplier_Id_fk = Convert.ToInt32(cmb_Suporder.SelectedValue);
 
                 // Add order details
                 clscusorder.OrderDetails.Add(new cls_cusorder.CusOrderDetail
                 {
                     Book_Id_fk = Convert.ToInt32(cmb_Book.SelectedValue),
                     Quantity = quantity,
-                    DeliveryMethod = lbl_Deliverymethod_Cusorder.Text,
-                    Discount = float.Parse(lbl_Discount_Cusorder.Text),
-                    Final_Amount = float.Parse(lbl_Finalpayment_Cusorder.Text)
+                    DeliveryMethod = cmb_Deliverymethod.Text,
+                    Discount = discount,
+                    Final_Amount = totalPayment
                 });
 
                 // Insert data
@@ -166,54 +206,80 @@ namespace Bookhaven
 
         }
 
-        private void cmb_customer_SelectedIndexChanged(object sender, EventArgs e)
+        private int GetLoggedInStaffId()
         {
-            if (cmb_customer.SelectedIndex != -1)
-            {
-                int customerId = Convert.ToInt32(cmb_customer.SelectedValue);
-                // You can fetch additional customer details here if needed
-            }
+            // Assuming the logged-in staff ID is stored in a session variable or similar
+            // Replace this with your actual implementation
+            return 1; // Hardcoded for testing purposes
         }
-
         private void cmb_Book_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmb_Book.SelectedIndex != -1)
             {
-                int bookId = Convert.ToInt32(cmb_Book.SelectedValue);
-                // Fetch book details like price, stock, etc., if needed
+                nup_Quantity_ValueChanged(sender, e); // Recalculate prices when a new book is selected
+            }
+
+        }
+
+        private void cmb_customer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_Book.SelectedIndex != -1)
+            {
+                nup_Quantity_ValueChanged(sender, e); // Recalculate prices when a new book is selected
             }
         }
+
+      
+        
 
         private void btn_updateorder_Click(object sender, EventArgs e)
         {
             try
             {
-                // Validate inputs
+                // Validate selection
                 if (clscusorder.CustOrder_Id <= 0)
                 {
                     MessageBox.Show("Please select an order to update.", "Validation Error");
                     return;
                 }
 
-                if (cmb_customer.SelectedIndex == -1 || cmb_Book.SelectedIndex == -1)
+                // Validate inputs
+                if (cmb_customer.SelectedIndex == -1 || cmb_Book.SelectedIndex == -1 || cmb_staff.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Please select a customer and a book.", "Validation Error");
+                    MessageBox.Show("Please fill all required fields.", "Validation Error");
                     return;
                 }
 
-                int quantity = int.Parse(lbl_Qty_cusorder.Text);
+                int quantity = (int)nup_Quantity.Value;
                 if (quantity <= 0)
                 {
                     MessageBox.Show("Quantity must be greater than zero.", "Validation Error");
                     return;
                 }
 
+                // Validate and parse total payment
+                if (!float.TryParse(lbl_Finalpayment_Cusorder.Text, out float totalPayment))
+                {
+                    MessageBox.Show("Invalid total payment value.", "Validation Error");
+                    return;
+                }
+
+                // Validate and parse discount
+                string discountText = lbl_Discount_Cusorder.Text.Replace("%", "").Trim(); // Remove '%' and trim whitespace
+                if (!float.TryParse(discountText, out float discount))
+                {
+                    MessageBox.Show("Invalid discount value.", "Validation Error");
+                    return;
+                }
+
                 // Assign properties
-                clscusorder.Staff_Id_fk = 1; // Assuming the logged-in staff ID is 1
+
+                clscusorder.Staff_Id_fk = Convert.ToInt32(cmb_staff.SelectedValue); // Use selected staff
                 clscusorder.Customer_Id_fk = Convert.ToInt32(cmb_customer.SelectedValue);
                 clscusorder.Date = DateTime.Now;
-                clscusorder.Status_Id_fk = 1; // Assuming status 1 = "Pending"
-                clscusorder.Total_Payment = float.Parse(lbl_Finalpayment_Cusorder.Text);
+                clscusorder.Status_Id_fk = Convert.ToInt32(cmb_Status.SelectedValue); // Use selected status
+                clscusorder.Total_Payment = totalPayment;
+                clscusorder.Supplier_Id_fk = Convert.ToInt32(cmb_Suporder.SelectedValue);
 
                 // Update order details
                 clscusorder.OrderDetails.Clear();
@@ -221,9 +287,9 @@ namespace Bookhaven
                 {
                     Book_Id_fk = Convert.ToInt32(cmb_Book.SelectedValue),
                     Quantity = quantity,
-                    DeliveryMethod = lbl_Deliverymethod_Cusorder.Text,
-                    Discount = float.Parse(lbl_Discount_Cusorder.Text),
-                    Final_Amount = float.Parse(lbl_Finalpayment_Cusorder.Text)
+                    DeliveryMethod = cmb_Deliverymethod.Text,
+                    Discount = discount,
+                    Final_Amount = totalPayment
                 });
 
                 // Update data
@@ -255,6 +321,94 @@ namespace Bookhaven
             {
                 MessageBox.Show($"Error: {ex.Message}", "Delete Failed");
             }
+        }
+
+        private void cmb_Suporder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_Suporder.SelectedIndex != -1)
+            {
+                int supplierId = Convert.ToInt32(cmb_Suporder.SelectedValue);
+                // You can fetch additional supplier details here if needed
+            }
+        }
+        private float GetBookPrice()
+        {
+            try
+            {
+                int bookId = Convert.ToInt32(cmb_Book.SelectedValue);
+
+                string query = "SELECT Price FROM Book WHERE Book_Id = @Book_Id";
+                SqlCommand cmd = new SqlCommand(query, clscusorder.Connection); // Use the public property
+                cmd.Parameters.AddWithValue("@Book_Id", bookId);
+
+                clscusorder.Connection.Open();
+                object result = cmd.ExecuteScalar();
+                clscusorder.Connection.Close();
+
+                return result != null ? Convert.ToSingle(result) : 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error fetching book price: {ex.Message}");
+            }
+        }
+
+        private float GetBookDiscount()
+        {
+            try
+            {
+                int bookId = Convert.ToInt32(cmb_Book.SelectedValue);
+
+                string query = "SELECT Discount FROM Book WHERE Book_Id = @Book_Id";
+                SqlCommand cmd = new SqlCommand(query, clscusorder.Connection); // Use the public property
+                cmd.Parameters.AddWithValue("@Book_Id", bookId);
+
+                clscusorder.Connection.Open();
+                object result = cmd.ExecuteScalar();
+                clscusorder.Connection.Close();
+
+                return result != null ? Convert.ToSingle(result) : 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error fetching book discount: {ex.Message}");
+            }
+        }
+
+        private void nup_Quantity_ValueChanged(object sender, EventArgs e)
+        {
+            // Ensure a valid book is selected
+            if (cmb_Book.SelectedValue == null || cmb_Book.SelectedValue.ToString() == "")
+            {
+                lbl_Totalamount.Text = "0.00";
+                lbl_Discount_Cusorder.Text = "0%";
+                lbl_Finalpayment_Cusorder.Text = "0.00";
+                return;
+            }
+
+            try
+            {
+                // Fetch the price and discount for the selected book
+                float price = GetBookPrice();
+                float discount = GetBookDiscount();
+
+                // Calculate total amount based on the current quantity
+                int quantity = (int)nup_Quantity.Value; // Get the current quantity from NumericUpDown
+                float totalAmount = price * quantity;
+
+                // Calculate final payment after applying the discount
+                float finalPayment = totalAmount - (totalAmount * (discount / 100));
+
+                // Update the labels dynamically
+                lbl_Totalamount.Text = totalAmount.ToString("0.00");
+                lbl_Discount_Cusorder.Text = $"{discount}%";
+                lbl_Finalpayment_Cusorder.Text = finalPayment.ToString("0.00");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error");
+            }
+
         }
     }
 }

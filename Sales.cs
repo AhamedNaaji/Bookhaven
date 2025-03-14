@@ -45,8 +45,8 @@ namespace Bookhaven
             float discount = GetBookDiscount();
             float finalPayment = totalAmount - (totalAmount * (discount / 100));
 
-            label_TotalAmount.Text = $"{totalAmount}";
-            labelFinalPayment.Text = $"{finalPayment}";
+            label_TotalAmount.Text = "{totalAmount}";
+            labelFinalPayment.Text = "{finalPayment}";
         }
 
         public bool CheckBookStock(int bookId)
