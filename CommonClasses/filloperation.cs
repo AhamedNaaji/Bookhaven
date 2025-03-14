@@ -11,7 +11,7 @@ namespace Bookhaven.CommonClasses
 {
     internal class filloperation
     {
-        dbconnection con = new dbconnection();
+        dbConnection con = new dbConnection();
 
 
         public void combobox(string qry, ComboBox cmb_name, string display_member, string value_member)

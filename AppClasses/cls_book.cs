@@ -9,7 +9,7 @@ namespace Bookhaven.AppClasses
     internal class cls_book
     {
         Common cmn = new Common();
-        internal SqlConnection conn = new SqlConnection("Data Source=DESKTOP-V3UAK82;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
+        internal SqlConnection conn = new SqlConnection("Data Source=MMSALMANFARIS;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         SqlTransaction transaction;
 
         public int Book_Id { get; set; }
@@ -18,7 +18,7 @@ namespace Bookhaven.AppClasses
         public string Book_Name { get; set; }
         public int Genre_Id_fk { get; set; }
         public float Discount { get; set; }
-        public List<int> Author_Ids { get; set; } = new List<int>();
+        public List<int> authorIds { get; set; } = new List<int>();
 
         public void Insertdata()
         {
@@ -48,7 +48,7 @@ namespace Bookhaven.AppClasses
                 }
 
                 // Insert all authors
-                foreach (int authorId in Author_Ids)
+                foreach (int authorId in authorIds)
                 {
                     string authorQuery = @"
                 INSERT INTO BookAuthor (Author_Id_fk, Book_Id_fk) 
@@ -107,7 +107,7 @@ namespace Bookhaven.AppClasses
                 deleteCmd.ExecuteNonQuery();
 
                 // Insert new authors
-                foreach (int authorId in Author_Ids)
+                foreach (int authorId in authorIds)
                 {
                     string insertAuthorQuery = @"
                 INSERT INTO BookAuthor (Author_Id_fk, Book_Id_fk) 
@@ -193,7 +193,7 @@ namespace Bookhaven.AppClasses
                 cmd.Parameters.AddWithValue("@Book_Id", Book_Id);
 
                 SqlDataReader rd = cmd.ExecuteReader();
-                Author_Ids.Clear();
+                authorIds.Clear();
 
                 while (rd.Read())
                 {
@@ -205,7 +205,7 @@ namespace Bookhaven.AppClasses
                     Discount = Convert.ToSingle(rd["Discount"]);
 
                     if (rd["Author_Id_fk"] != DBNull.Value)
-                        Author_Ids.Add(Convert.ToInt32(rd["Author_Id_fk"]));
+                        authorIds.Add(Convert.ToInt32(rd["Author_Id_fk"]));
                 }
             }
             catch (Exception ex)

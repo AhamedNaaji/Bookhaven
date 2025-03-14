@@ -5,10 +5,10 @@ using Bookhaven.CommonClasses;
 
 namespace Bookhaven.AppClasses
 {
-    internal class cls_author
+    internal class cls_Author
     {
         Common cmn = new Common();
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-V3UAK82;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
+        SqlConnection conn = new SqlConnection("Data Source=MMSALMANFARIS;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         SqlTransaction transaction;
 
         public int Author_Id { get; set; }

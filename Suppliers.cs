@@ -14,7 +14,7 @@ namespace Bookhaven
 {
     public partial class Suppliers : Form
     {
-        cls_supplier clssup = new cls_supplier();
+        cls_Supplier clssup = new cls_Supplier();
         filloperation fill = new filloperation();
         public Suppliers()
         {
@@ -96,8 +96,8 @@ namespace Bookhaven
                 txtbox_Email.Text = clssup.Email;
 
                 // Populate mobile numbers (handle up to 2 numbers)
-                txtbox_Contact1.Text = clssup.SupMobNumbers.Count > 0 ? clssup.SupMobNumbers[0] : "";
-                txtbox_Contact2.Text = clssup.SupMobNumbers.Count > 1 ? clssup.SupMobNumbers[1] : "";
+                txtbox_Contact1.Text = clssup.supMobNumbers.Count > 0 ? clssup.supMobNumbers[0] : "";
+                txtbox_Contact2.Text = clssup.supMobNumbers.Count > 1 ? clssup.supMobNumbers[1] : "";
             }
         }
 
@@ -124,14 +124,14 @@ namespace Bookhaven
         private void btn_addSupplier_Click(object sender, EventArgs e)
         {
             // Clear previous entries
-            clssup.SupMobNumbers.Clear();
+            clssup.supMobNumbers.Clear();
 
             // Add both numbers to the list (trim and validate)
             if (!string.IsNullOrEmpty(txtbox_Contact1.Text))
-                clssup.SupMobNumbers.Add(txtbox_Contact1.Text.Trim());
+                clssup.supMobNumbers.Add(txtbox_Contact1.Text.Trim());
 
             if (!string.IsNullOrEmpty(txtbox_Contact2.Text))
-                clssup.SupMobNumbers.Add(txtbox_Contact2.Text.Trim());
+                clssup.supMobNumbers.Add(txtbox_Contact2.Text.Trim());
 
             clssup.Insertdata();
             Suppliers_Load(sender, e);
@@ -152,11 +152,11 @@ namespace Bookhaven
             clssup.Email = txtbox_Email.Text.Trim();
 
             // Update mobile numbers
-            clssup.SupMobNumbers.Clear();
+            clssup.supMobNumbers.Clear();
             if (!string.IsNullOrEmpty(txtbox_Contact1.Text))
-                clssup.SupMobNumbers.Add(txtbox_Contact1.Text.Trim());
+                clssup.supMobNumbers.Add(txtbox_Contact1.Text.Trim());
             if (!string.IsNullOrEmpty(txtbox_Contact2.Text))
-                clssup.SupMobNumbers.Add(txtbox_Contact2.Text.Trim());
+                clssup.supMobNumbers.Add(txtbox_Contact2.Text.Trim());
             clssup.UpdateData();
             Suppliers_Load(sender, e);
         }

@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace Bookhaven.AppClasses
 {
-    internal class cls_supplier
+    internal class cls_Supplier
     {
         Common cmn = new Common();
-        SqlConnection conn = new SqlConnection("Data Source=DESKTOP-V3UAK82;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
+        SqlConnection conn = new SqlConnection("Data Source=MMSALMANFARIS;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         SqlTransaction transaction;
 
         public int Supplier_Id { get; set; }
@@ -22,7 +22,7 @@ namespace Bookhaven.AppClasses
         public string Email { get; set; }
 
 
-        public List<string> SupMobNumbers { get; set; } = new List<string>();
+        public List<string> supMobNumbers { get; set; } = new List<string>();
 
         // Keep the rest of the properties (Customer_Id, Customer_Name, etc.)
 
@@ -53,7 +53,7 @@ namespace Bookhaven.AppClasses
                 int Supplier_Id = Convert.ToInt32(cmd.ExecuteScalar());
 
                 // Insert all mobile numbers
-                foreach (string number in SupMobNumbers)
+                foreach (string number in supMobNumbers)
                 {
                     string mobileQuery = @"
                 INSERT INTO SupplierMobile (SupMobNumber, Supplier_Id_fk) 
@@ -114,7 +114,7 @@ namespace Bookhaven.AppClasses
                 deleteCmd.ExecuteNonQuery();
 
                 // Step 3: Insert new mobile numbers
-                foreach (string number in SupMobNumbers)
+                foreach (string number in supMobNumbers)
                 {
                     string insertMobileQuery = @"
                 INSERT INTO SupplierMobile (SupMobNumber, Supplier_Id_fk) 
@@ -191,7 +191,7 @@ namespace Bookhaven.AppClasses
                 SqlDataReader rd = cmd.ExecuteReader();
 
                 // Clear existing numbers
-                SupMobNumbers.Clear();
+                supMobNumbers.Clear();
 
                 while (rd.Read())
                 {
@@ -207,7 +207,7 @@ namespace Bookhaven.AppClasses
                     {
                         // ...
                         if (rd["SupMobNumber"] != DBNull.Value) // Use SupMobNumber instead of SupMobNumber
-                            SupMobNumbers.Add(rd["SupMobNumber"].ToString());
+                            supMobNumbers.Add(rd["SupMobNumber"].ToString());
                     }
                 }
             }

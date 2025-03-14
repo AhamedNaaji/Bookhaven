@@ -66,5 +66,39 @@ namespace Bookhaven
             Report report = new Report();
             report.ShowDialog();
         }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+                //  Show a confirmation dialog
+                DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+ 
+                    //  Close all open forms except the login form
+                    foreach (Form form in Application.OpenForms)
+                    {
+                        if (form.Name != "LoginForm") // Keep the login form open
+                        {
+                            form.Close();
+                        }
+                    }
+
+                    // Open the login form
+                    Form1 loginForm = new Form1(); 
+                    loginForm.Show();
+                }
+        }
     }
 }

@@ -48,16 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppClasses\cls_author.cs" />
-    <Compile Include="AppClasses\cls_book.cs" />
-    <Compile Include="AppClasses\cls_cusorder.cs" />
-    <Compile Include="AppClasses\cls_customer.cs" />
-    <Compile Include="AppClasses\cls_genre.cs" />
-    <Compile Include="AppClasses\cls_sales.cs" />
-    <Compile Include="AppClasses\cls_staff.cs" />
-    <Compile Include="AppClasses\cls_stock.cs" />
-    <Compile Include="AppClasses\cls_suporder.cs" />
-    <Compile Include="AppClasses\cls_supplier.cs" />
+    <Compile Include="AppClasses\cls_Author.cs" />
+    <Compile Include="AppClasses\cls_Book.cs" />
+    <Compile Include="AppClasses\cls_CusOrder.cs" />
+    <Compile Include="AppClasses\cls_Customer.cs" />
+    <Compile Include="AppClasses\cls_Genre.cs" />
+    <Compile Include="AppClasses\cls_Sales.cs" />
+    <Compile Include="AppClasses\cls_Staff.cs" />
+    <Compile Include="AppClasses\cls_Stock.cs" />
+    <Compile Include="AppClasses\cls_SupOrder.cs" />
+    <Compile Include="AppClasses\cls_Supplier.cs" />
     <Compile Include="Book.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,7 +83,7 @@
       <DependentUpon>Clerk_Sales.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonClasses\Common.cs" />
-    <Compile Include="CommonClasses\dbconnection.cs" />
+    <Compile Include="CommonClasses\dbConnection.cs" />
     <Compile Include="CommonClasses\filloperation.cs" />
     <Compile Include="Customer.cs">
       <SubType>Form</SubType>

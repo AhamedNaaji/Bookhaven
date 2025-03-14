@@ -15,7 +15,7 @@ namespace Bookhaven
 {
     public partial class Clerk_Sales : Form
     {
-        private SqlConnection conn = new SqlConnection("Data Source=DESKTOP-V3UAK82;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
+        private SqlConnection conn = new SqlConnection("Data Source=MMSALMANFARIS;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         filloperation fill = new filloperation(); // Declare and initialize the 'fill' object
         public Clerk_Sales()
         {
@@ -113,7 +113,7 @@ namespace Bookhaven
 
             if (CheckBookStock(bookId))
             {
-                cls_sales sale = new cls_sales
+                cls_Sales sale = new cls_Sales
                 {
                     Staff_Id_fk = Convert.ToInt32(comboStaff.SelectedValue),
                     Customer_Id_fk = Convert.ToInt32(comboCustomer.SelectedValue),
@@ -150,7 +150,7 @@ namespace Bookhaven
                 salesId = Convert.ToInt32(dgv_sales.CurrentRow.Cells["Sales_Id"].Value);
             }
 
-            cls_sales sale = new cls_sales
+            cls_Sales sale = new cls_Sales
             {
                 Sales_Id = salesId,
                 Staff_Id_fk = Convert.ToInt32(comboStaff.SelectedValue),
@@ -174,7 +174,7 @@ namespace Bookhaven
 
             int salesId = Convert.ToInt32(dgv_sales.SelectedRows[0].Cells["Sales_Id"].Value);
 
-            cls_sales sale = new cls_sales
+            cls_Sales sale = new cls_Sales
             {
                 Sales_Id = salesId
             };
@@ -333,7 +333,7 @@ namespace Bookhaven
                 // Populate form fields with data from the selected row
                 int salesId = Convert.ToInt32(dgv_sales.Rows[e.RowIndex].Cells["Sales_Id"].Value);
 
-                cls_sales sale = new cls_sales
+                cls_Sales sale = new cls_Sales
                 {
                     Sales_Id = salesId
                 };

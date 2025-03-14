@@ -11,7 +11,7 @@ namespace Bookhaven.CommonClasses
 {
     internal class Common
     {
-        dbconnection dbcon = new dbconnection();
+        dbConnection dbcon = new dbConnection();
 
         public void messages(string qry, string key)
         {

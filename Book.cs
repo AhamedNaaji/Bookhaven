@@ -17,7 +17,7 @@ namespace Bookhaven
     public partial class Book : Form
     {
         filloperation fill = new filloperation();
-        cls_book clsBook = new cls_book();
+        cls_book clsbook = new cls_book();
 
 
         public Book()
@@ -91,7 +91,7 @@ namespace Bookhaven
 
         private void txt_Bookname_TextChanged(object sender, EventArgs e)
         {
-            clsBook.Book_Name = txt_Bookname.Text.Trim();
+            clsbook.Book_Name = txt_Bookname.Text.Trim();
         }
 
         private void btn_Genre_Click(object sender, EventArgs e)
@@ -118,31 +118,31 @@ namespace Bookhaven
                 }
 
                 // Assign properties
-                clsBook.Book_Name = txt_Bookname.Text.Trim();
-                clsBook.ISBN = txt_Isbn.Text.Trim();
-                clsBook.Price = float.Parse(txt_Price.Text);
-                clsBook.Discount = float.Parse(txtbox_discount.Text);
-                clsBook.Genre_Id_fk = Convert.ToInt32(cmb_genre.SelectedValue);
+                clsbook.Book_Name = txt_Bookname.Text.Trim();
+                clsbook.ISBN = txt_Isbn.Text.Trim();
+                clsbook.Price = float.Parse(txt_Price.Text);
+                clsbook.Discount = float.Parse(txtbox_discount.Text);
+                clsbook.Genre_Id_fk = Convert.ToInt32(cmb_genre.SelectedValue);
 
                 // Add selected authors
-                clsBook.Author_Ids.Add(Convert.ToInt32(cmb_author_1.SelectedValue));
+                clsbook.authorIds.Add(Convert.ToInt32(cmb_author_1.SelectedValue));
                 if (cmb_author_2.SelectedIndex != -1 && cmb_author_1.SelectedValue.ToString() != cmb_author_2.SelectedValue.ToString())
                 {
-                    clsBook.Author_Ids.Add(Convert.ToInt32(cmb_author_2.SelectedValue));
+                    clsbook.authorIds.Add(Convert.ToInt32(cmb_author_2.SelectedValue));
                 }
 
                 // Insert data into Book table
-                clsBook.Insertdata();
+                clsbook.Insertdata();
 
                 // Update stock if provided
                 int stockQuantity = 0;
                 if (!string.IsNullOrEmpty(txt_Stock.Text) && int.TryParse(txt_Stock.Text, out stockQuantity))
                 {
-                    cls_stock stock = new cls_stock
+                    cls_Stock stock = new cls_Stock
                     {
                         Stock_Quantity = stockQuantity,
-                        Book_Id_fk = clsBook.Book_Id, // Use the newly inserted book's ID
-                        Stock_QuantityPrice = clsBook.Price
+                        Book_Id_fk = clsbook.Book_Id, // Use the newly inserted book's ID
+                        Stock_QuantityPrice = clsbook.Price
                     };
                     stock.Insertdata();
                 }
@@ -190,48 +190,48 @@ namespace Bookhaven
             try
             {
                 // Ensure a row is selected in the DataGridView
-                if (clsBook.Book_Id <= 0)
+                if (clsbook.Book_Id <= 0)
                 {
                     MessageBox.Show("Please select a book to update.", "No Selection");
                     return;
                 }
 
                 // Assign properties
-                clsBook.Book_Name = txt_Bookname.Text.Trim();
-                clsBook.ISBN = txt_Isbn.Text.Trim();
-                clsBook.Price = float.Parse(txt_Price.Text);
-                clsBook.Discount = float.Parse(txtbox_discount.Text);
-                clsBook.Genre_Id_fk = Convert.ToInt32(cmb_genre.SelectedValue);
+                clsbook.Book_Name = txt_Bookname.Text.Trim();
+                clsbook.ISBN = txt_Isbn.Text.Trim();
+                clsbook.Price = float.Parse(txt_Price.Text);
+                clsbook.Discount = float.Parse(txtbox_discount.Text);
+                clsbook.Genre_Id_fk = Convert.ToInt32(cmb_genre.SelectedValue);
 
                 // Add selected authors
-                clsBook.Author_Ids.Clear();
-                clsBook.Author_Ids.Add(Convert.ToInt32(cmb_author_1.SelectedValue));
+                clsbook.authorIds.Clear();
+                clsbook.authorIds.Add(Convert.ToInt32(cmb_author_1.SelectedValue));
                 if (cmb_author_2.SelectedIndex != -1 && cmb_author_1.SelectedValue.ToString() != cmb_author_2.SelectedValue.ToString())
                 {
-                    clsBook.Author_Ids.Add(Convert.ToInt32(cmb_author_2.SelectedValue));
+                    clsbook.authorIds.Add(Convert.ToInt32(cmb_author_2.SelectedValue));
                 }
 
                 // Update book data
-                clsBook.UpdateData();
+                clsbook.UpdateData();
 
                 // Update stock if provided
                 int stockQuantity = 0;
                 if (!string.IsNullOrEmpty(txt_Stock.Text) && int.TryParse(txt_Stock.Text, out stockQuantity))
                 {
-                    cls_stock stock = new cls_stock
+                    cls_Stock stock = new cls_Stock
                     {
                         Stock_Quantity = stockQuantity,
-                        Book_Id_fk = clsBook.Book_Id,
-                        Stock_QuantityPrice = clsBook.Price
+                        Book_Id_fk = clsbook.Book_Id,
+                        Stock_QuantityPrice = clsbook.Price
                     };
 
                     // Check if stock exists for this book
                     string checkQuery = "SELECT COUNT(*) FROM Stock WHERE Book_Id_fk = @Book_Id";
-                    SqlCommand checkCmd = new SqlCommand(checkQuery, clsBook.conn);
-                    checkCmd.Parameters.AddWithValue("@Book_Id", clsBook.Book_Id);
-                    clsBook.conn.Open();
+                    SqlCommand checkCmd = new SqlCommand(checkQuery, clsbook.conn);
+                    checkCmd.Parameters.AddWithValue("@Book_Id", clsbook.Book_Id);
+                    clsbook.conn.Open();
                     int count = (int)checkCmd.ExecuteScalar();
-                    clsBook.conn.Close();
+                    clsbook.conn.Close();
 
                     if (count > 0)
                     {
@@ -259,14 +259,14 @@ namespace Bookhaven
             try
             {
                 // Ensure a row is selected in the DataGridView
-                if (clsBook.Book_Id <= 0)
+                if (clsbook.Book_Id <= 0)
                 {
                     MessageBox.Show("Please select a book to delete.", "No Selection");
                     return;
                 }
 
                 // Delete book data
-                clsBook.DeleteDate();
+                clsbook.DeleteDate();
 
                 // Refresh the form
                 FirstRun();
@@ -321,27 +321,27 @@ namespace Bookhaven
                     int bookId = Convert.ToInt32(dgv_books.Rows[e.RowIndex].Cells["Book_Id"].Value);
 
                     // Load book data
-                    clsBook.Book_Id = bookId;
-                    clsBook.Getdata();
+                    clsbook.Book_Id = bookId;
+                    clsbook.Getdata();
 
                     // Populate form fields
-                    txt_Bookname.Text = clsBook.Book_Name;
-                    txt_Isbn.Text = clsBook.ISBN;
-                    txt_Price.Text = clsBook.Price.ToString();
-                    txtbox_discount.Text = clsBook.Discount.ToString();
-                    cmb_genre.SelectedValue = clsBook.Genre_Id_fk;
+                    txt_Bookname.Text = clsbook.Book_Name;
+                    txt_Isbn.Text = clsbook.ISBN;
+                    txt_Price.Text = clsbook.Price.ToString();
+                    txtbox_discount.Text = clsbook.Discount.ToString();
+                    cmb_genre.SelectedValue = clsbook.Genre_Id_fk;
 
                     // Populate authors
-                    cmb_author_1.SelectedValue = clsBook.Author_Ids.Count > 0 ? clsBook.Author_Ids[0] : -1;
-                    cmb_author_2.SelectedValue = clsBook.Author_Ids.Count > 1 ? clsBook.Author_Ids[1] : -1;
+                    cmb_author_1.SelectedValue = clsbook.authorIds.Count > 0 ? clsbook.authorIds[0] : -1;
+                    cmb_author_2.SelectedValue = clsbook.authorIds.Count > 1 ? clsbook.authorIds[1] : -1;
 
                     // Populate stock
                     string stockQuery = "SELECT Stock_Quantity FROM Stock WHERE Book_Id_fk = @Book_Id";
-                    SqlCommand stockCmd = new SqlCommand(stockQuery, clsBook.conn);
+                    SqlCommand stockCmd = new SqlCommand(stockQuery, clsbook.conn);
                     stockCmd.Parameters.AddWithValue("@Book_Id", bookId);
-                    clsBook.conn.Open();
+                    clsbook.conn.Open();
                     object stockResult = stockCmd.ExecuteScalar();
-                    clsBook.conn.Close();
+                    clsbook.conn.Close();
                     txt_Stock.Text = stockResult != null ? stockResult.ToString() : "0";
                 }
                 catch (Exception ex)

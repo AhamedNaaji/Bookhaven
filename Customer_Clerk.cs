@@ -14,7 +14,7 @@ namespace Bookhaven
 {
     public partial class Customer_Clerk : Form
     {
-        cls_customer clscus = new cls_customer();
+        cls_Customer clscus = new cls_Customer();
         filloperation fill = new filloperation();
         public Customer_Clerk()
         {
