@@ -16,7 +16,7 @@ namespace Bookhaven
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SupplierOrder());
+            Application.Run(new Dashboard_Clerk ());
         }
     }
 }

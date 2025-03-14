@@ -17,6 +17,8 @@ namespace Bookhaven
     {
         filloperation fill = new filloperation();
         cls_book clsBook = new cls_book();
+
+        private string searchTerm = string.Empty;
         public Clerk_Book()
         {
             InitializeComponent();
@@ -44,36 +46,8 @@ namespace Bookhaven
             fill.combobox(authorQuery, cmb_author_1, "AuthorName", "Author_Id");
             fill.combobox(authorQuery, cmb_author_2, "AuthorName", "Author_Id");
 
-            // Populate dgv_books with books and their stock details
-            string bookQuery = @"
-        SELECT 
-            b.Book_Id,
-            b.Book_Name,
-            b.ISBN,
-            b.Price,
-            b.Discount,
-            g.genreName AS Genre,
-            STRING_AGG(a.AuthorName, ', ') AS Authors,
-            s.Stock_Quantity AS Stock
-        FROM Book b
-        LEFT JOIN Genre g ON b.Genre_Id_fk = g.Genre_Id
-        LEFT JOIN BookAuthor ba ON b.Book_Id = ba.Book_Id_fk
-        LEFT JOIN Author a ON ba.Author_Id_fk = a.Author_Id
-        LEFT JOIN Stock s ON b.Book_Id = s.Book_Id_fk
-        GROUP BY b.Book_Id, b.Book_Name, b.ISBN, b.Price, b.Discount, g.genreName, s.Stock_Quantity";
-
-            fill.FillDataGridView(bookQuery, dgv_books);
-            dgv_books.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            // Rename columns for clarity
-            dgv_books.Columns[0].HeaderText = "ID";
-            dgv_books.Columns[1].HeaderText = "Book Name";
-            dgv_books.Columns[2].HeaderText = "ISBN";
-            dgv_books.Columns[3].HeaderText = "Price";
-            dgv_books.Columns[4].HeaderText = "Discount";
-            dgv_books.Columns[5].HeaderText = "Genre";
-            dgv_books.Columns[6].HeaderText = "Authors";
-            dgv_books.Columns[7].HeaderText = "Stock";
+            // Populate dgv_books with all books and their stock details
+            Clerk_Book_Load();
         }
 
         private void btn_addBook_Click(object sender, EventArgs e)
@@ -322,12 +296,96 @@ namespace Bookhaven
 
         private void btn_Reset_Click(object sender, EventArgs e)
         {
+            // Clear the search box
+            txtbox_search.Text = "";
 
+            // Reset the searchTerm variable
+            searchTerm = string.Empty;
+
+            // Reload all books
+            Clerk_Book_Load();
         }
 
-        private void Clerk_Book_Load(object sender, EventArgs e)
+        private void Clerk_Book_Load()
         {
+            try
+            {
+                string bookQuery;
 
+                if (!string.IsNullOrEmpty(searchTerm))
+                {
+                    // Filter books by name (case-insensitive)
+                    bookQuery = @"
+                SELECT 
+                    b.Book_Id,
+                    b.Book_Name,
+                    b.ISBN,
+                    b.Price,
+                    b.Discount,
+                    g.genreName AS Genre,
+                    STRING_AGG(a.AuthorName, ', ') AS Authors,
+                    s.Stock_Quantity AS Stock
+                FROM Book b
+                LEFT JOIN Genre g ON b.Genre_Id_fk = g.Genre_Id
+                LEFT JOIN BookAuthor ba ON b.Book_Id = ba.Book_Id_fk
+                LEFT JOIN Author a ON ba.Author_Id_fk = a.Author_Id
+                LEFT JOIN Stock s ON b.Book_Id = s.Book_Id_fk
+                WHERE b.Book_Name LIKE @SearchTerm
+                GROUP BY b.Book_Id, b.Book_Name, b.ISBN, b.Price, b.Discount, g.genreName, s.Stock_Quantity";
+                }
+                else
+                {
+                    // Load all books
+                    bookQuery = @"
+                SELECT 
+                    b.Book_Id,
+                    b.Book_Name,
+                    b.ISBN,
+                    b.Price,
+                    b.Discount,
+                    g.genreName AS Genre,
+                    STRING_AGG(a.AuthorName, ', ') AS Authors,
+                    s.Stock_Quantity AS Stock
+                FROM Book b
+                LEFT JOIN Genre g ON b.Genre_Id_fk = g.Genre_Id
+                LEFT JOIN BookAuthor ba ON b.Book_Id = ba.Book_Id_fk
+                LEFT JOIN Author a ON ba.Author_Id_fk = a.Author_Id
+                LEFT JOIN Stock s ON b.Book_Id = s.Book_Id_fk
+                GROUP BY b.Book_Id, b.Book_Name, b.ISBN, b.Price, b.Discount, g.genreName, s.Stock_Quantity";
+                }
+
+                SqlCommand cmd = new SqlCommand(bookQuery, clsBook.conn);
+
+                if (!string.IsNullOrEmpty(searchTerm))
+                {
+                    cmd.Parameters.AddWithValue("@SearchTerm", $"%{searchTerm}%");
+                }
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                System.Data.DataTable dt = new System.Data.DataTable();
+                adapter.Fill(dt);
+
+                dgv_books.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Fetch Failed");
+            }
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            // Capture the search term from the text box
+            searchTerm = txtbox_search.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                MessageBox.Show("Please enter a book name to search.", "Validation Error");
+                return;
+            }
+
+            // Load books matching the search term
+            Clerk_Book_Load();
         }
     }
 }

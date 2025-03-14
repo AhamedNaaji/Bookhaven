@@ -384,6 +384,7 @@
             this.btn_overview.TabIndex = 0;
             this.btn_overview.Text = "Overview";
             this.btn_overview.UseVisualStyleBackColor = false;
+            this.btn_overview.Click += new System.EventHandler(this.btn_overview_Click);
             // 
             // pictureBox1
             // 
