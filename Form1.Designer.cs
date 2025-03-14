@@ -41,7 +41,7 @@
             // btn_Login
             // 
             this.btn_Login.BackColor = System.Drawing.Color.Black;
-            this.btn_Login.Font = new System.Drawing.Font("Poppins", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Login.Font = new System.Drawing.Font("Poppins Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Login.ForeColor = System.Drawing.Color.White;
             this.btn_Login.Location = new System.Drawing.Point(71, 290);
             this.btn_Login.Name = "btn_Login";

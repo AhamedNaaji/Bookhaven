@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btn_Customer = new System.Windows.Forms.Button();
             this.btn_overview = new System.Windows.Forms.Button();
             this.btn_Staff = new System.Windows.Forms.Button();
@@ -39,7 +39,6 @@
             this.btn_Cusorder = new System.Windows.Forms.Button();
             this.btn_Sales = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Report = new System.Windows.Forms.Button();
             this.btn_Suppliers = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -65,7 +64,6 @@
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.makesales_btn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -88,7 +86,7 @@
             this.btn_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Customer.ForeColor = System.Drawing.Color.Black;
             this.btn_Customer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Customer.Location = new System.Drawing.Point(49, 126);
+            this.btn_Customer.Location = new System.Drawing.Point(49, 144);
             this.btn_Customer.Name = "btn_Customer";
             this.btn_Customer.Size = new System.Drawing.Size(243, 63);
             this.btn_Customer.TabIndex = 1;
@@ -115,7 +113,7 @@
             this.btn_Staff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Staff.ForeColor = System.Drawing.Color.Black;
             this.btn_Staff.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Staff.Location = new System.Drawing.Point(49, 659);
+            this.btn_Staff.Location = new System.Drawing.Point(49, 781);
             this.btn_Staff.Name = "btn_Staff";
             this.btn_Staff.Size = new System.Drawing.Size(243, 63);
             this.btn_Staff.TabIndex = 6;
@@ -129,7 +127,7 @@
             this.btn_Book.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Book.ForeColor = System.Drawing.Color.Black;
             this.btn_Book.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Book.Location = new System.Drawing.Point(49, 480);
+            this.btn_Book.Location = new System.Drawing.Point(49, 574);
             this.btn_Book.Name = "btn_Book";
             this.btn_Book.Size = new System.Drawing.Size(243, 63);
             this.btn_Book.TabIndex = 5;
@@ -143,7 +141,7 @@
             this.btn_Supporder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Supporder.ForeColor = System.Drawing.Color.Black;
             this.btn_Supporder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Supporder.Location = new System.Drawing.Point(49, 393);
+            this.btn_Supporder.Location = new System.Drawing.Point(49, 468);
             this.btn_Supporder.Name = "btn_Supporder";
             this.btn_Supporder.Size = new System.Drawing.Size(243, 63);
             this.btn_Supporder.TabIndex = 4;
@@ -157,7 +155,7 @@
             this.btn_Cusorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cusorder.ForeColor = System.Drawing.Color.Black;
             this.btn_Cusorder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Cusorder.Location = new System.Drawing.Point(49, 304);
+            this.btn_Cusorder.Location = new System.Drawing.Point(49, 359);
             this.btn_Cusorder.Name = "btn_Cusorder";
             this.btn_Cusorder.Size = new System.Drawing.Size(243, 63);
             this.btn_Cusorder.TabIndex = 3;
@@ -171,7 +169,7 @@
             this.btn_Sales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sales.ForeColor = System.Drawing.Color.Black;
             this.btn_Sales.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Sales.Location = new System.Drawing.Point(49, 215);
+            this.btn_Sales.Location = new System.Drawing.Point(49, 251);
             this.btn_Sales.Name = "btn_Sales";
             this.btn_Sales.Size = new System.Drawing.Size(243, 63);
             this.btn_Sales.TabIndex = 2;
@@ -181,10 +179,7 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_Report);
             this.panel1.Controls.Add(this.btn_Suppliers);
             this.panel1.Controls.Add(this.btn_Staff);
             this.panel1.Controls.Add(this.btn_Book);
@@ -193,25 +188,12 @@
             this.panel1.Controls.Add(this.btn_Sales);
             this.panel1.Controls.Add(this.btn_Customer);
             this.panel1.Controls.Add(this.btn_overview);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.panel1.Location = new System.Drawing.Point(0, 125);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(345, 1079);
+            this.panel1.Size = new System.Drawing.Size(355, 906);
             this.panel1.TabIndex = 12;
-            // 
-            // btn_Report
-            // 
-            this.btn_Report.BackColor = System.Drawing.Color.White;
-            this.btn_Report.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Report.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_Report.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Report.Location = new System.Drawing.Point(49, 911);
-            this.btn_Report.Name = "btn_Report";
-            this.btn_Report.Size = new System.Drawing.Size(258, 63);
-            this.btn_Report.TabIndex = 8;
-            this.btn_Report.Text = "Report";
-            this.btn_Report.UseVisualStyleBackColor = false;
-            this.btn_Report.Click += new System.EventHandler(this.btn_Report_Click);
             // 
             // btn_Suppliers
             // 
@@ -219,7 +201,7 @@
             this.btn_Suppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Suppliers.ForeColor = System.Drawing.Color.Black;
             this.btn_Suppliers.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Suppliers.Location = new System.Drawing.Point(49, 574);
+            this.btn_Suppliers.Location = new System.Drawing.Point(49, 682);
             this.btn_Suppliers.Name = "btn_Suppliers";
             this.btn_Suppliers.Size = new System.Drawing.Size(243, 60);
             this.btn_Suppliers.TabIndex = 7;
@@ -238,7 +220,7 @@
             this.tableLayoutPanel2.Controls.Add(this.panel6, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel5, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel9, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(404, 152);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(443, 210);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -462,61 +444,57 @@
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
             this.chart2.Location = new System.Drawing.Point(483, 425);
             this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart2.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
             this.chart2.Size = new System.Drawing.Size(1209, 420);
             this.chart2.TabIndex = 18;
             this.chart2.Text = "chart2";
             // 
             // makesales_btn
             // 
+            this.makesales_btn.BackColor = System.Drawing.Color.Black;
+            this.makesales_btn.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
+            this.makesales_btn.ForeColor = System.Drawing.Color.White;
             this.makesales_btn.Location = new System.Drawing.Point(795, 336);
             this.makesales_btn.Name = "makesales_btn";
             this.makesales_btn.Size = new System.Drawing.Size(274, 71);
             this.makesales_btn.TabIndex = 19;
             this.makesales_btn.Text = "Make Sales";
-            this.makesales_btn.UseVisualStyleBackColor = true;
+            this.makesales_btn.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.Black;
+            this.button4.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
+            this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(1217, 336);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(274, 71);
             this.button4.TabIndex = 20;
             this.button4.Text = "Add Customer";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(1620, 336);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(274, 71);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "Generate Report";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button6);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.ForeColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(-152, 0);
+            this.panel3.Location = new System.Drawing.Point(355, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(2030, 125);
+            this.panel3.Size = new System.Drawing.Size(1455, 156);
             this.panel3.TabIndex = 22;
             // 
             // button2
@@ -563,7 +541,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(193, 34);
+            this.label1.Location = new System.Drawing.Point(39, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(253, 60);
             this.label1.TabIndex = 8;
@@ -576,7 +554,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(1798, 31);
+            this.button1.Location = new System.Drawing.Point(1220, 42);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 63);
             this.button1.TabIndex = 9;
@@ -588,9 +566,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1878, 878);
+            this.ClientSize = new System.Drawing.Size(1810, 906);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.makesales_btn);
             this.Controls.Add(this.chart2);
@@ -627,7 +604,6 @@
         private System.Windows.Forms.Button btn_Sales;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_Suppliers;
-        private System.Windows.Forms.Button btn_Report;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label29;
@@ -652,7 +628,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Button makesales_btn;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

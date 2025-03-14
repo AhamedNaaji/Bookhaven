@@ -79,32 +79,38 @@
             // 
             // btn_deleteCustomer
             // 
+            this.btn_deleteCustomer.BackColor = System.Drawing.Color.Red;
+            this.btn_deleteCustomer.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
             this.btn_deleteCustomer.Location = new System.Drawing.Point(1506, 453);
             this.btn_deleteCustomer.Name = "btn_deleteCustomer";
             this.btn_deleteCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_deleteCustomer.TabIndex = 75;
             this.btn_deleteCustomer.Text = "Delete Customer";
-            this.btn_deleteCustomer.UseVisualStyleBackColor = true;
+            this.btn_deleteCustomer.UseVisualStyleBackColor = false;
             this.btn_deleteCustomer.Click += new System.EventHandler(this.btn_deleteCustomer_Click);
             // 
             // btn_updateCustomer
             // 
+            this.btn_updateCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_updateCustomer.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
             this.btn_updateCustomer.Location = new System.Drawing.Point(1506, 328);
             this.btn_updateCustomer.Name = "btn_updateCustomer";
             this.btn_updateCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_updateCustomer.TabIndex = 74;
             this.btn_updateCustomer.Text = "Update Customer";
-            this.btn_updateCustomer.UseVisualStyleBackColor = true;
+            this.btn_updateCustomer.UseVisualStyleBackColor = false;
             this.btn_updateCustomer.Click += new System.EventHandler(this.btn_updateCustomer_Click);
             // 
             // btn_addCustomer
             // 
+            this.btn_addCustomer.BackColor = System.Drawing.Color.Lime;
+            this.btn_addCustomer.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
             this.btn_addCustomer.Location = new System.Drawing.Point(1506, 210);
             this.btn_addCustomer.Name = "btn_addCustomer";
             this.btn_addCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_addCustomer.TabIndex = 73;
             this.btn_addCustomer.Text = "Add Customer";
-            this.btn_addCustomer.UseVisualStyleBackColor = true;
+            this.btn_addCustomer.UseVisualStyleBackColor = false;
             this.btn_addCustomer.Click += new System.EventHandler(this.btn_addCustomer_Click);
             // 
             // panel2
