@@ -45,5 +45,43 @@ namespace Bookhaven
         {
 
         }
+
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            // Display a confirmation message box
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Check the user's response
+            if (result == DialogResult.Yes)
+            {
+                // Clear session data or reset user-specific information
+                //Program.CurrentUser = null;
+
+                // Close the current Dashboard form
+                this.Close();
+
+                // Show the LoginForm
+                Form1 loginForm = new Form1();
+                loginForm.Show();
+            }
+        }
+
+        private void books_btn_Click(object sender, EventArgs e)
+        {
+            Clerk_Book book = new Clerk_Book();
+            book.ShowDialog();
+        }
+
+        private void customer_btn_Click(object sender, EventArgs e)
+        {
+            Customer_Clerk customer = new Customer_Clerk();
+            customer.ShowDialog();
+        }
+
+        private void sales_btn_Click(object sender, EventArgs e)
+        {
+            Clerk_Sales sales = new Clerk_Sales();
+            sales.ShowDialog();
+        }
     }
 }

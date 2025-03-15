@@ -30,35 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard_Clerk));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.btn_Book = new System.Windows.Forms.Button();
             this.btn_Cusorder = new System.Windows.Forms.Button();
             this.btn_Sales = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
             this.btn_overview = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_updateBook = new System.Windows.Forms.Button();
-            this.btn_addBook = new System.Windows.Forms.Button();
             this.dgv_customer = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,15 +46,37 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_Logout = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label_Total_Customers = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label_Total_Books = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label_Total_Sales = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label_Total_Customer_Orders = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.sales_btn = new System.Windows.Forms.Button();
+            this.customer_btn = new System.Windows.Forms.Button();
+            this.books_btn = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -88,271 +86,54 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.panel9, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel6, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel8, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel5, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(493, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(479, 114);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1431, 163);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1403, 163);
             this.tableLayoutPanel2.TabIndex = 24;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.panel9.Controls.Add(this.label29);
-            this.panel9.Controls.Add(this.label30);
-            this.panel9.Controls.Add(this.label31);
-            this.panel9.Controls.Add(this.label32);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(1071, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(360, 153);
-            this.panel9.TabIndex = 4;
-            // 
-            // label29
-            // 
-            this.label29.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(144, 82);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(96, 23);
-            this.label29.TabIndex = 3;
-            this.label29.Text = "850";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label30
-            // 
-            this.label30.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(21, 82);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(108, 23);
-            this.label30.TabIndex = 2;
-            this.label30.Text = "Completed";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label31
-            // 
-            this.label31.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(135, 37);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(213, 23);
-            this.label31.TabIndex = 1;
-            this.label31.Text = "1000";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(3, 9);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(264, 23);
-            this.label32.TabIndex = 0;
-            this.label32.Text = "Customer Order Recieved";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Beige;
-            this.panel6.Controls.Add(this.label25);
-            this.panel6.Controls.Add(this.label26);
-            this.panel6.Controls.Add(this.label27);
-            this.panel6.Controls.Add(this.label28);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(714, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(347, 153);
-            this.panel6.TabIndex = 3;
-            // 
-            // label25
-            // 
-            this.label25.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(133, 82);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(83, 23);
-            this.label25.TabIndex = 3;
-            this.label25.Text = "850";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label26
-            // 
-            this.label26.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(19, 82);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(108, 23);
-            this.label26.TabIndex = 2;
-            this.label26.Text = "Completed";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label27
-            // 
-            this.label27.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(133, 37);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(205, 23);
-            this.label27.TabIndex = 1;
-            this.label27.Text = "1000";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(3, 9);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(125, 23);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Total Orders";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Bisque;
-            this.panel5.Controls.Add(this.label21);
-            this.panel5.Controls.Add(this.label22);
-            this.panel5.Controls.Add(this.label23);
-            this.panel5.Controls.Add(this.label24);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(357, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(347, 153);
-            this.panel5.TabIndex = 2;
-            // 
-            // label21
-            // 
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(135, 78);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(82, 23);
-            this.label21.TabIndex = 3;
-            this.label21.Text = "850";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label22
-            // 
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(8, 80);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(108, 23);
-            this.label22.TabIndex = 2;
-            this.label22.Text = "Completed";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label23
-            // 
-            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(129, 37);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(205, 23);
-            this.label23.TabIndex = 1;
-            this.label23.Text = "1000";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(3, 9);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(130, 23);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Out of Stock";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.RosyBrown;
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.label19);
-            this.panel2.Controls.Add(this.label20);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(347, 153);
-            this.panel2.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(141, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 23);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "850";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label18
-            // 
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(3, 82);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(108, 23);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Completed";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label19
-            // 
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(150, 37);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(190, 23);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "1000";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(3, 9);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(125, 23);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Today Sales";
             // 
             // btn_Book
             // 
             this.btn_Book.BackColor = System.Drawing.Color.White;
-            this.btn_Book.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Book.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btn_Book.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_Book.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Book.Location = new System.Drawing.Point(49, 557);
+            this.btn_Book.Location = new System.Drawing.Point(74, 321);
             this.btn_Book.Name = "btn_Book";
-            this.btn_Book.Size = new System.Drawing.Size(380, 63);
+            this.btn_Book.Size = new System.Drawing.Size(259, 63);
             this.btn_Book.TabIndex = 5;
-            this.btn_Book.Text = "Book";
+            this.btn_Book.Text = "Books";
             this.btn_Book.UseVisualStyleBackColor = false;
             this.btn_Book.Click += new System.EventHandler(this.btn_Book_Click);
             // 
             // btn_Cusorder
             // 
             this.btn_Cusorder.BackColor = System.Drawing.Color.White;
-            this.btn_Cusorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cusorder.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btn_Cusorder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_Cusorder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Cusorder.Location = new System.Drawing.Point(49, 465);
+            this.btn_Cusorder.Location = new System.Drawing.Point(74, 582);
             this.btn_Cusorder.Name = "btn_Cusorder";
-            this.btn_Cusorder.Size = new System.Drawing.Size(380, 63);
+            this.btn_Cusorder.Size = new System.Drawing.Size(259, 63);
             this.btn_Cusorder.TabIndex = 3;
-            this.btn_Cusorder.Text = "Cus Order";
+            this.btn_Cusorder.Text = "Customer Orders";
             this.btn_Cusorder.UseVisualStyleBackColor = false;
             this.btn_Cusorder.Click += new System.EventHandler(this.btn_Cusorder_Click);
             // 
             // btn_Sales
             // 
             this.btn_Sales.BackColor = System.Drawing.Color.White;
-            this.btn_Sales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Sales.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btn_Sales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_Sales.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Sales.Location = new System.Drawing.Point(49, 376);
+            this.btn_Sales.Location = new System.Drawing.Point(71, 496);
             this.btn_Sales.Name = "btn_Sales";
-            this.btn_Sales.Size = new System.Drawing.Size(380, 63);
+            this.btn_Sales.Size = new System.Drawing.Size(259, 63);
             this.btn_Sales.TabIndex = 2;
             this.btn_Sales.Text = "Sales";
             this.btn_Sales.UseVisualStyleBackColor = false;
@@ -361,75 +142,30 @@
             // btn_Customer
             // 
             this.btn_Customer.BackColor = System.Drawing.Color.White;
-            this.btn_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Customer.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btn_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_Customer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Customer.Location = new System.Drawing.Point(49, 287);
+            this.btn_Customer.Location = new System.Drawing.Point(74, 408);
             this.btn_Customer.Name = "btn_Customer";
-            this.btn_Customer.Size = new System.Drawing.Size(380, 63);
+            this.btn_Customer.Size = new System.Drawing.Size(259, 63);
             this.btn_Customer.TabIndex = 1;
-            this.btn_Customer.Text = "Customer";
+            this.btn_Customer.Text = "Customers";
             this.btn_Customer.UseVisualStyleBackColor = false;
             this.btn_Customer.Click += new System.EventHandler(this.btn_Customer_Click);
             // 
             // btn_overview
             // 
-            this.btn_overview.BackColor = System.Drawing.Color.White;
-            this.btn_overview.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_overview.BackColor = System.Drawing.Color.Silver;
+            this.btn_overview.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btn_overview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_overview.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_overview.Location = new System.Drawing.Point(49, 198);
+            this.btn_overview.Location = new System.Drawing.Point(74, 233);
             this.btn_overview.Name = "btn_overview";
-            this.btn_overview.Size = new System.Drawing.Size(380, 63);
+            this.btn_overview.Size = new System.Drawing.Size(256, 63);
             this.btn_overview.TabIndex = 0;
-            this.btn_overview.Text = "Overview";
+            this.btn_overview.Text = "Dashboard";
             this.btn_overview.UseVisualStyleBackColor = false;
             this.btn_overview.Click += new System.EventHandler(this.btn_overview_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(155, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 144);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_Book);
-            this.panel1.Controls.Add(this.btn_Cusorder);
-            this.panel1.Controls.Add(this.btn_Sales);
-            this.panel1.Controls.Add(this.btn_Customer);
-            this.panel1.Controls.Add(this.btn_overview);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(493, 677);
-            this.panel1.TabIndex = 22;
-            // 
-            // btn_updateBook
-            // 
-            this.btn_updateBook.Location = new System.Drawing.Point(1340, 229);
-            this.btn_updateBook.Name = "btn_updateBook";
-            this.btn_updateBook.Size = new System.Drawing.Size(666, 67);
-            this.btn_updateBook.TabIndex = 66;
-            this.btn_updateBook.Text = "Add Customer";
-            this.btn_updateBook.UseVisualStyleBackColor = true;
-            // 
-            // btn_addBook
-            // 
-            this.btn_addBook.Location = new System.Drawing.Point(547, 229);
-            this.btn_addBook.Name = "btn_addBook";
-            this.btn_addBook.Size = new System.Drawing.Size(699, 67);
-            this.btn_addBook.TabIndex = 65;
-            this.btn_addBook.Text = "Make Sales";
-            this.btn_addBook.UseVisualStyleBackColor = true;
             // 
             // dgv_customer
             // 
@@ -439,11 +175,11 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dgv_customer.Location = new System.Drawing.Point(575, 374);
+            this.dgv_customer.Location = new System.Drawing.Point(490, 480);
             this.dgv_customer.Name = "dgv_customer";
             this.dgv_customer.RowHeadersWidth = 51;
             this.dgv_customer.RowTemplate.Height = 24;
-            this.dgv_customer.Size = new System.Drawing.Size(445, 295);
+            this.dgv_customer.Size = new System.Drawing.Size(530, 295);
             this.dgv_customer.TabIndex = 67;
             // 
             // Column1
@@ -476,11 +212,11 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dataGridView1.Location = new System.Drawing.Point(1340, 382);
+            this.dataGridView1.Location = new System.Drawing.Point(1174, 480);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(557, 295);
+            this.dataGridView1.Size = new System.Drawing.Size(572, 295);
             this.dataGridView1.TabIndex = 68;
             // 
             // dataGridViewTextBoxColumn1
@@ -515,7 +251,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(571, 342);
+            this.label1.Location = new System.Drawing.Point(496, 448);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(204, 23);
             this.label1.TabIndex = 69;
@@ -525,41 +261,285 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1336, 342);
+            this.label2.Location = new System.Drawing.Point(1170, 448);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(227, 23);
             this.label2.TabIndex = 70;
             this.label2.Text = "Customer Order Status";
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.panel3.Controls.Add(this.btn_Logout);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(458, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1466, 97);
+            this.panel3.TabIndex = 72;
+            // 
+            // btn_Logout
+            // 
+            this.btn_Logout.BackColor = System.Drawing.Color.Red;
+            this.btn_Logout.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_Logout.Location = new System.Drawing.Point(1411, 24);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(115, 45);
+            this.btn_Logout.TabIndex = 24;
+            this.btn_Logout.Text = "Logout";
+            this.btn_Logout.UseVisualStyleBackColor = false;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 28F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(11, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(374, 56);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Welcome Clerk";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "label4";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.panel4.Controls.Add(this.btn_Book);
+            this.panel4.Controls.Add(this.btn_Cusorder);
+            this.panel4.Controls.Add(this.btn_Sales);
+            this.panel4.Controls.Add(this.btn_overview);
+            this.panel4.Controls.Add(this.btn_Customer);
+            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(458, 808);
+            this.panel4.TabIndex = 71;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(93, -1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(210, 213);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.panel2.Controls.Add(this.label_Total_Customers);
+            this.panel2.Controls.Add(this.label20);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(340, 153);
+            this.panel2.TabIndex = 2;
+            // 
+            // label_Total_Customers
+            // 
+            this.label_Total_Customers.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Total_Customers.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Total_Customers.Location = new System.Drawing.Point(64, 66);
+            this.label_Total_Customers.Name = "label_Total_Customers";
+            this.label_Total_Customers.Size = new System.Drawing.Size(157, 56);
+            this.label_Total_Customers.TabIndex = 1;
+            this.label_Total_Customers.Text = "300";
+            this.label_Total_Customers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label20.Location = new System.Drawing.Point(50, 14);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(228, 34);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Total Customers";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.panel5.Controls.Add(this.label_Total_Books);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(350, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(340, 153);
+            this.panel5.TabIndex = 3;
+            // 
+            // label_Total_Books
+            // 
+            this.label_Total_Books.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Total_Books.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Total_Books.Location = new System.Drawing.Point(64, 66);
+            this.label_Total_Books.Name = "label_Total_Books";
+            this.label_Total_Books.Size = new System.Drawing.Size(157, 56);
+            this.label_Total_Books.TabIndex = 1;
+            this.label_Total_Books.Text = "300";
+            this.label_Total_Books.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(87, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(166, 34);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Total Books";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.panel1.Controls.Add(this.label_Total_Sales);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(700, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(340, 153);
+            this.panel1.TabIndex = 7;
+            // 
+            // label_Total_Sales
+            // 
+            this.label_Total_Sales.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Total_Sales.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Total_Sales.Location = new System.Drawing.Point(64, 66);
+            this.label_Total_Sales.Name = "label_Total_Sales";
+            this.label_Total_Sales.Size = new System.Drawing.Size(157, 56);
+            this.label_Total_Sales.TabIndex = 1;
+            this.label_Total_Sales.Text = "300";
+            this.label_Total_Sales.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label12.Location = new System.Drawing.Point(88, 14);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(156, 34);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Total Sales";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.panel8.Controls.Add(this.label_Total_Customer_Orders);
+            this.panel8.Controls.Add(this.label14);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(1050, 0);
+            this.panel8.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(343, 153);
+            this.panel8.TabIndex = 8;
+            // 
+            // label_Total_Customer_Orders
+            // 
+            this.label_Total_Customer_Orders.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Total_Customer_Orders.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Total_Customer_Orders.Location = new System.Drawing.Point(64, 66);
+            this.label_Total_Customer_Orders.Name = "label_Total_Customer_Orders";
+            this.label_Total_Customer_Orders.Size = new System.Drawing.Size(157, 56);
+            this.label_Total_Customer_Orders.TabIndex = 1;
+            this.label_Total_Customer_Orders.Text = "300";
+            this.label_Total_Customer_Orders.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Location = new System.Drawing.Point(15, 10);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(279, 29);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Total Customer Orders";
+            // 
+            // sales_btn
+            // 
+            this.sales_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.sales_btn.Location = new System.Drawing.Point(1248, 293);
+            this.sales_btn.Name = "sales_btn";
+            this.sales_btn.Size = new System.Drawing.Size(180, 71);
+            this.sales_btn.TabIndex = 75;
+            this.sales_btn.Text = "Make Sale";
+            this.sales_btn.UseVisualStyleBackColor = true;
+            this.sales_btn.Click += new System.EventHandler(this.sales_btn_Click);
+            // 
+            // customer_btn
+            // 
+            this.customer_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.customer_btn.Location = new System.Drawing.Point(1021, 293);
+            this.customer_btn.Name = "customer_btn";
+            this.customer_btn.Size = new System.Drawing.Size(180, 71);
+            this.customer_btn.TabIndex = 74;
+            this.customer_btn.Text = "Add Customers";
+            this.customer_btn.UseVisualStyleBackColor = true;
+            this.customer_btn.Click += new System.EventHandler(this.customer_btn_Click);
+            // 
+            // books_btn
+            // 
+            this.books_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.books_btn.Location = new System.Drawing.Point(794, 293);
+            this.books_btn.Name = "books_btn";
+            this.books_btn.Size = new System.Drawing.Size(180, 71);
+            this.books_btn.TabIndex = 73;
+            this.books_btn.Text = "Add Books";
+            this.books_btn.UseVisualStyleBackColor = true;
+            this.books_btn.Click += new System.EventHandler(this.books_btn_Click);
+            // 
             // Dashboard_Clerk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 677);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(140)))), ((int)(((byte)(137)))));
+            this.ClientSize = new System.Drawing.Size(1924, 808);
+            this.Controls.Add(this.sales_btn);
+            this.Controls.Add(this.customer_btn);
+            this.Controls.Add(this.books_btn);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dgv_customer);
-            this.Controls.Add(this.btn_updateBook);
-            this.Controls.Add(this.btn_addBook);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.panel1);
             this.Name = "Dashboard_Clerk";
             this.Text = "Dashboard_Clerk";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -568,35 +548,11 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btn_Book;
         private System.Windows.Forms.Button btn_Cusorder;
         private System.Windows.Forms.Button btn_Sales;
         private System.Windows.Forms.Button btn_Customer;
         private System.Windows.Forms.Button btn_overview;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_updateBook;
-        private System.Windows.Forms.Button btn_addBook;
         private System.Windows.Forms.DataGridView dgv_customer;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -608,5 +564,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btn_Logout;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label_Total_Customers;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label_Total_Books;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label_Total_Sales;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label_Total_Customer_Orders;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button sales_btn;
+        private System.Windows.Forms.Button customer_btn;
+        private System.Windows.Forms.Button books_btn;
     }
 }
