@@ -73,14 +73,22 @@ namespace Bookhaven
 
         private void btn_Logout_Click(object sender, EventArgs e)
         {
-            
 
-            // Close the current Dashboard form
-            this.Close();
+            // Display a confirmation message box
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Show the LoginForm
-            Form1 loginForm = new Form1();
-            loginForm.Show();
+            // Check the user's response
+            if (result == DialogResult.Yes)
+            {
+
+
+                // Close the current Dashboard form
+                this.Close();
+
+                // Show the LoginForm
+                Form1 loginForm = new Form1();
+                loginForm.Show();
+            }
         }
     }
 }
