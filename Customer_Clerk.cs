@@ -38,6 +38,7 @@ namespace Bookhaven
             if (!string.IsNullOrEmpty(txtbox_Number2.Text))
                 clscus.Mobile_Numbers.Add(txtbox_Number2.Text.Trim());
 
+            clscus.DOB = Dtp_DOB.Value;
             clscus.Insertdata();
             Customer_Clerk_Load(sender, e);
 
@@ -50,7 +51,7 @@ namespace Bookhaven
 
         private void txtbox_DOB_TextChanged(object sender, EventArgs e)
         {
-            clscus.DOB = txtbox_DOB.Text.Trim();
+          
         }
 
         private void txtbox_Address_TextChanged(object sender, EventArgs e)
@@ -67,7 +68,7 @@ namespace Bookhaven
         {
             clscus.Customer_Name = txtbox_name.Text.Trim();
             clscus.NIC = txtbox_NIC.Text.Trim();
-            clscus.DOB = txtbox_DOB.Text.Trim();
+            clscus.DOB = Dtp_DOB.Value; // Use DateTimePicker value
             clscus.Address = txtbox_Address.Text.Trim();
             clscus.Email = txt_Email.Text.Trim();
 
@@ -111,7 +112,7 @@ namespace Bookhaven
             // Clear form fields
             txtbox_name.Text = "";
             txtbox_NIC.Text = "";
-            txtbox_DOB.Text = "";
+            Dtp_DOB.Value = DateTime.Now; // Reset DateTimePicker to today's date
             txtbox_Address.Text = "";
             txt_Email.Text = "";
             txtbox_Number1.Text = "";
@@ -173,7 +174,7 @@ namespace Bookhaven
                 // Populate form fields
                 txtbox_name.Text = clscus.Customer_Name;
                 txtbox_NIC.Text = clscus.NIC;
-                txtbox_DOB.Text = clscus.DOB;
+                Dtp_DOB.Value = clscus.DOB; // Set DateTimePicker value
                 txtbox_Address.Text = clscus.Address;
                 txt_Email.Text = clscus.Email;
 
@@ -181,6 +182,12 @@ namespace Bookhaven
                 txtbox_Number1.Text = clscus.Mobile_Numbers.Count > 0 ? clscus.Mobile_Numbers[0] : "";
                 txtbox_Number2.Text = clscus.Mobile_Numbers.Count > 1 ? clscus.Mobile_Numbers[1] : "";
             }
+        }
+
+        private void Dtp_DOB_ValueChanged(object sender, EventArgs e)
+        {
+            // Automatically update the DOB property when the date changes
+            clscus.DOB = Dtp_DOB.Value;
         }
     }
 }

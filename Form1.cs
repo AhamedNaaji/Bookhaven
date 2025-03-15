@@ -26,14 +26,19 @@ namespace Bookhaven
 
         private void btn_Login_Click_1(object sender, EventArgs e)
         {
+            btn_Login.BackColor = Color.MediumAquamarine;
             try
             {
                 if (txt_Username.Text.Trim() != "" && txt_Password.Text.Trim() != "")
                 {
                     mycon.Open();
-                    string qry = "SELECT s.*, sr.Role_Name FROM Staff s " +
-                                 "INNER JOIN staffRole sr ON s.staffRoll_Id_fk = sr.staffRoll_Id " +
-                                 "WHERE s.Username = @username AND s.Password = @password";
+
+                    // Corrected SQL query
+                    string qry = @"
+                SELECT s.*, sr.roleName 
+                FROM Staff s
+                INNER JOIN staffRole sr ON s.staffRoll_Id_fk = sr.rollId
+                WHERE s.Username = @username AND s.Password = @password";
 
                     SqlCommand cmd = new SqlCommand(qry, mycon);
                     cmd.Parameters.AddWithValue("@username", txt_Username.Text.Trim());
@@ -43,15 +48,17 @@ namespace Bookhaven
 
                     if (rdr.Read())
                     {
-                        if (rdr["Role_Name"].ToString() == "Admin")
+                        // Check the role name (corrected column name)
+                        if (rdr["roleName"].ToString() == "Admin")
                         {
-                            // Assuming frm_dashboard is the correct form name
+                            // Open Admin Dashboard
                             Dashboard dashboard_frm = new Dashboard();
                             dashboard_frm.ShowDialog();
                             this.Hide();
                         }
                         else
                         {
+                            // Open Clerk Dashboard
                             Dashboard_Clerk dashboard = new Dashboard_Clerk();
                             dashboard.ShowDialog();
                             this.Hide();
@@ -75,9 +82,17 @@ namespace Bookhaven
             {
                 mycon.Close();
             }
+            
+
+
         }
 
         private void txt_Username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

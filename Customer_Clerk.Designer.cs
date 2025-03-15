@@ -50,11 +50,11 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txtbox_Address = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txtbox_DOB = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtbox_NIC = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtbox_name = new System.Windows.Forms.TextBox();
+            this.Dtp_DOB = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cus)).BeginInit();
@@ -197,6 +197,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.Dtp_DOB);
             this.panel2.Controls.Add(this.txt_Email);
             this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.label22);
@@ -206,7 +207,6 @@
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.txtbox_Address);
             this.panel2.Controls.Add(this.label19);
-            this.panel2.Controls.Add(this.txtbox_DOB);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.txtbox_NIC);
             this.panel2.Controls.Add(this.label3);
@@ -301,15 +301,6 @@
             this.label19.TabIndex = 8;
             this.label19.Text = "DOB";
             // 
-            // txtbox_DOB
-            // 
-            this.txtbox_DOB.Location = new System.Drawing.Point(19, 149);
-            this.txtbox_DOB.Multiline = true;
-            this.txtbox_DOB.Name = "txtbox_DOB";
-            this.txtbox_DOB.Size = new System.Drawing.Size(233, 37);
-            this.txtbox_DOB.TabIndex = 7;
-            this.txtbox_DOB.TextChanged += new System.EventHandler(this.txtbox_DOB_TextChanged);
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -348,11 +339,19 @@
             this.txtbox_name.TabIndex = 0;
             this.txtbox_name.TextChanged += new System.EventHandler(this.txtbox_name_TextChanged);
             // 
+            // Dtp_DOB
+            // 
+            this.Dtp_DOB.Location = new System.Drawing.Point(19, 156);
+            this.Dtp_DOB.Name = "Dtp_DOB";
+            this.Dtp_DOB.Size = new System.Drawing.Size(200, 22);
+            this.Dtp_DOB.TabIndex = 18;
+            this.Dtp_DOB.ValueChanged += new System.EventHandler(this.Dtp_DOB_ValueChanged);
+            // 
             // Customer_Clerk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1976, 699);
+            this.ClientSize = new System.Drawing.Size(1924, 699);
             this.Controls.Add(this.dgv_cus);
             this.Controls.Add(this.btn_deleteCustomer);
             this.Controls.Add(this.btn_updateCustomer);
@@ -394,10 +393,10 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtbox_Address;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtbox_DOB;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtbox_NIC;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtbox_name;
+        private System.Windows.Forms.DateTimePicker Dtp_DOB;
     }
 }

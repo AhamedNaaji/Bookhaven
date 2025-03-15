@@ -15,22 +15,16 @@ namespace Bookhaven.AppClasses
         SqlConnection conn = new SqlConnection("Data Source=DESKTOP-V3UAK82;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         SqlTransaction transaction;
 
+        // Properties
         public int Customer_Id { get; set; }
         public string Customer_Name { get; set; }
         public string NIC { get; set; }
-        public string DOB { get; set; }
+        public DateTime DOB { get; set; } // Changed from string to DateTime
         public string Address { get; set; }
         public string Email { get; set; }
-       
-       
-       public List<string> Mobile_Numbers { get; set; } = new List<string>();
+        public List<string> Mobile_Numbers { get; set; } = new List<string>();
 
-        // Keep the rest of the properties (Customer_Id, Customer_Name, etc.)
-
-
-
-
-
+        // Insert Data
         public void Insertdata()
         {
             try
@@ -40,45 +34,46 @@ namespace Bookhaven.AppClasses
 
                 // Insert into Customer table
                 string customerQuery = @"
-            INSERT INTO Customer (Customer_Name, NIC, DOB, Address, Email) 
-            VALUES (@Customer_Name, @NIC, @DOB, @Address, @Email);
-            SELECT SCOPE_IDENTITY();";
+                    INSERT INTO Customer (Customer_Name, NIC, DOB, Address, Email)
+                    VALUES (@Customer_Name, @NIC, @DOB, @Address, @Email);
+                    SELECT SCOPE_IDENTITY();";
 
                 SqlCommand cmd = new SqlCommand(customerQuery, conn, transaction);
                 cmd.Parameters.AddWithValue("@Customer_Name", Customer_Name);
                 cmd.Parameters.AddWithValue("@NIC", NIC);
-                cmd.Parameters.AddWithValue("@DOB", DOB);
+                cmd.Parameters.AddWithValue("@DOB", DOB); // Use DateTime parameter
                 cmd.Parameters.AddWithValue("@Address", Address);
                 cmd.Parameters.AddWithValue("@Email", Email);
 
-                int customerId = Convert.ToInt32(cmd.ExecuteScalar());
+                Customer_Id = Convert.ToInt32(cmd.ExecuteScalar());
 
-                // Insert all mobile numbers
+                // Insert mobile numbers
                 foreach (string number in Mobile_Numbers)
                 {
                     string mobileQuery = @"
-                INSERT INTO CustomerMobile (Mobile_Number, Customer_Id_fk) 
-                VALUES (@Mobile_Number, @Customer_Id)";
+                        INSERT INTO CustomerMobile (Customer_Id_fk, Mobile_Number)
+                        VALUES (@Customer_Id_fk, @Mobile_Number);";
 
                     SqlCommand mobileCmd = new SqlCommand(mobileQuery, conn, transaction);
+                    mobileCmd.Parameters.AddWithValue("@Customer_Id_fk", Customer_Id);
                     mobileCmd.Parameters.AddWithValue("@Mobile_Number", number);
-                    mobileCmd.Parameters.AddWithValue("@Customer_Id", customerId);
                     mobileCmd.ExecuteNonQuery();
                 }
 
                 transaction.Commit();
-                MessageBox.Show("Customer details inserted successfully!", "Success");
             }
             catch (Exception ex)
             {
                 transaction?.Rollback();
-                MessageBox.Show("Error: " + ex.Message, "Insert Failed");
+                MessageBox.Show($"Error: {ex.Message}", "Insert Failed");
             }
             finally
             {
                 conn.Close();
             }
         }
+
+        // Update Data
         public void UpdateData()
         {
             try
@@ -86,54 +81,54 @@ namespace Bookhaven.AppClasses
                 conn.Open();
                 transaction = conn.BeginTransaction();
 
-                // Step 1: Update Customer table
-                string updateCustomerQuery = @"
-            UPDATE Customer 
-            SET Customer_Name = @Customer_Name, 
-                NIC = @NIC, 
-                DOB = @DOB, 
-                Address = @Address, 
-                Email = @Email 
-            WHERE Customer_Id = @Customer_Id";
+                // Update Customer table
+                string updateQuery = @"
+                    UPDATE Customer
+                    SET Customer_Name = @Customer_Name,
+                        NIC = @NIC,
+                        DOB = @DOB,
+                        Address = @Address,
+                        Email = @Email
+                    WHERE Customer_Id = @Customer_Id;";
 
-                SqlCommand cmd = new SqlCommand(updateCustomerQuery, conn, transaction);
+                SqlCommand cmd = new SqlCommand(updateQuery, conn, transaction);
                 cmd.Parameters.AddWithValue("@Customer_Name", Customer_Name);
                 cmd.Parameters.AddWithValue("@NIC", NIC);
-                cmd.Parameters.AddWithValue("@DOB", DOB);
+                cmd.Parameters.AddWithValue("@DOB", DOB); // Use DateTime parameter
                 cmd.Parameters.AddWithValue("@Address", Address);
                 cmd.Parameters.AddWithValue("@Email", Email);
                 cmd.Parameters.AddWithValue("@Customer_Id", Customer_Id);
+
                 cmd.ExecuteNonQuery();
 
-                // Step 2: Delete existing mobile numbers
+                // Delete existing mobile numbers
                 string deleteMobileQuery = @"
-            DELETE FROM CustomerMobile 
-            WHERE Customer_Id_fk = @Customer_Id";
+                    DELETE FROM CustomerMobile
+                    WHERE Customer_Id_fk = @Customer_Id;";
 
                 SqlCommand deleteCmd = new SqlCommand(deleteMobileQuery, conn, transaction);
                 deleteCmd.Parameters.AddWithValue("@Customer_Id", Customer_Id);
                 deleteCmd.ExecuteNonQuery();
 
-                // Step 3: Insert new mobile numbers
+                // Insert new mobile numbers
                 foreach (string number in Mobile_Numbers)
                 {
                     string insertMobileQuery = @"
-                INSERT INTO CustomerMobile (Mobile_Number, Customer_Id_fk) 
-                VALUES (@Mobile_Number, @Customer_Id)";
+                        INSERT INTO CustomerMobile (Customer_Id_fk, Mobile_Number)
+                        VALUES (@Customer_Id_fk, @Mobile_Number);";
 
                     SqlCommand insertCmd = new SqlCommand(insertMobileQuery, conn, transaction);
+                    insertCmd.Parameters.AddWithValue("@Customer_Id_fk", Customer_Id);
                     insertCmd.Parameters.AddWithValue("@Mobile_Number", number);
-                    insertCmd.Parameters.AddWithValue("@Customer_Id", Customer_Id);
                     insertCmd.ExecuteNonQuery();
                 }
 
                 transaction.Commit();
-                MessageBox.Show("Customer details updated successfully!", "Success");
             }
             catch (Exception ex)
             {
                 transaction?.Rollback();
-                MessageBox.Show("Error: " + ex.Message, "Update Failed");
+                MessageBox.Show($"Error: {ex.Message}", "Update Failed");
             }
             finally
             {
@@ -141,6 +136,7 @@ namespace Bookhaven.AppClasses
             }
         }
 
+        // Delete Data
         public void DeleteDate()
         {
             try
@@ -148,25 +144,30 @@ namespace Bookhaven.AppClasses
                 conn.Open();
                 transaction = conn.BeginTransaction();
 
-                // Step 1: Delete related mobile numbers (due to foreign key)
-                string deleteMobileQuery = "DELETE FROM CustomerMobile WHERE Customer_Id_fk = @Customer_Id";
-                SqlCommand mobileCmd = new SqlCommand(deleteMobileQuery, conn, transaction);
-                mobileCmd.Parameters.AddWithValue("@Customer_Id", Customer_Id);
-                mobileCmd.ExecuteNonQuery();
+                // Delete mobile numbers
+                string deleteMobileQuery = @"
+                    DELETE FROM CustomerMobile
+                    WHERE Customer_Id_fk = @Customer_Id;";
 
-                // Step 2: Delete the customer
-                string deleteCustomerQuery = "DELETE FROM Customer WHERE Customer_Id = @Customer_Id";
-                SqlCommand customerCmd = new SqlCommand(deleteCustomerQuery, conn, transaction);
-                customerCmd.Parameters.AddWithValue("@Customer_Id", Customer_Id);
-                customerCmd.ExecuteNonQuery();
+                SqlCommand deleteMobileCmd = new SqlCommand(deleteMobileQuery, conn, transaction);
+                deleteMobileCmd.Parameters.AddWithValue("@Customer_Id", Customer_Id);
+                deleteMobileCmd.ExecuteNonQuery();
+
+                // Delete customer
+                string deleteQuery = @"
+                    DELETE FROM Customer
+                    WHERE Customer_Id = @Customer_Id;";
+
+                SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn, transaction);
+                deleteCmd.Parameters.AddWithValue("@Customer_Id", Customer_Id);
+                deleteCmd.ExecuteNonQuery();
 
                 transaction.Commit();
-                MessageBox.Show("Customer deleted successfully!", "Success");
             }
             catch (Exception ex)
             {
                 transaction?.Rollback();
-                MessageBox.Show("Error: " + ex.Message, "Delete Failed");
+                MessageBox.Show($"Error: {ex.Message}", "Delete Failed");
             }
             finally
             {
@@ -174,43 +175,53 @@ namespace Bookhaven.AppClasses
             }
         }
 
-
-
+        // Fetch Data
         public void Getdata()
         {
             try
             {
                 conn.Open();
-                string qry = @"
-            SELECT c.Customer_Id, c.Customer_Name, c.NIC, c.DOB, c.Address, c.Email, cm.Mobile_Number 
-            FROM Customer c 
-            LEFT JOIN CustomerMobile cm ON c.Customer_Id = cm.Customer_Id_fk 
-            WHERE c.Customer_Id = @Customer_Id";
 
-                SqlCommand cmd = new SqlCommand(qry, conn);
+                // Fetch customer details
+                string query = @"
+                    SELECT Customer_Name, NIC, DOB, Address, Email
+                    FROM Customer
+                    WHERE Customer_Id = @Customer_Id;";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Customer_Id", Customer_Id);
-                SqlDataReader rd = cmd.ExecuteReader();
 
-                // Clear existing numbers
-                Mobile_Numbers.Clear();
-
-                while (rd.Read())
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
                 {
-                    Customer_Id = Convert.ToInt32(rd["Customer_Id"]);
-                    Customer_Name = rd["Customer_Name"].ToString();
-                    NIC = rd["NIC"].ToString();
-                    DOB = rd["DOB"].ToString();
-                    Address = rd["Address"].ToString();
-                    Email = rd["Email"].ToString();
-
-                    // Add mobile number to the list (if not null)
-                    if (rd["Mobile_Number"] != DBNull.Value)
-                        Mobile_Numbers.Add(rd["Mobile_Number"].ToString());
+                    Customer_Name = reader["Customer_Name"].ToString();
+                    NIC = reader["NIC"].ToString();
+                    DOB = Convert.ToDateTime(reader["DOB"]); // Use DateTime conversion
+                    Address = reader["Address"].ToString();
+                    Email = reader["Email"].ToString();
                 }
+                reader.Close();
+
+                // Fetch mobile numbers
+                string mobileQuery = @"
+                    SELECT Mobile_Number
+                    FROM CustomerMobile
+                    WHERE Customer_Id_fk = @Customer_Id;";
+
+                SqlCommand mobileCmd = new SqlCommand(mobileQuery, conn);
+                mobileCmd.Parameters.AddWithValue("@Customer_Id", Customer_Id);
+
+                SqlDataReader mobileReader = mobileCmd.ExecuteReader();
+                Mobile_Numbers.Clear();
+                while (mobileReader.Read())
+                {
+                    Mobile_Numbers.Add(mobileReader["Mobile_Number"].ToString());
+                }
+                mobileReader.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Fetch Failed");
+                MessageBox.Show($"Error: {ex.Message}", "Fetch Failed");
             }
             finally
             {
@@ -218,6 +229,4 @@ namespace Bookhaven.AppClasses
             }
         }
     }
-    
-
 }

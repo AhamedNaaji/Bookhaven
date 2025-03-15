@@ -3,6 +3,7 @@ using Bookhaven.CommonClasses;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Bookhaven
@@ -360,6 +361,16 @@ namespace Bookhaven
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error");
             }
+        }
+
+        private void dateTimePickerDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Sales_Click(object sender, EventArgs e)
+        {
+            btn_Sales.BackColor = Color.MediumAquamarine;
         }
     }
 }

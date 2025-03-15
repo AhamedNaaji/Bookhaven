@@ -28,7 +28,6 @@ namespace Bookhaven
 
         private void btn_addCustomer_Click(object sender, EventArgs e)
         {
-            // Clear previous entries
             clscus.Mobile_Numbers.Clear();
 
             // Add both numbers to the list (trim and validate)
@@ -37,6 +36,9 @@ namespace Bookhaven
 
             if (!string.IsNullOrEmpty(txtbox_Number2.Text))
                 clscus.Mobile_Numbers.Add(txtbox_Number2.Text.Trim());
+
+            // Set DOB from DateTimePicker
+            clscus.DOB = Dtp_DOB.Value;
 
             clscus.Insertdata();
             frm_load(sender, e);
@@ -50,7 +52,7 @@ namespace Bookhaven
 
         private void txtbox_DOB_TextChanged(object sender, EventArgs e)
         {
-            clscus.DOB = txtbox_DOB.Text.Trim();
+          
         }
 
         private void txtbox_Address_TextChanged(object sender, EventArgs e)
@@ -72,8 +74,8 @@ namespace Bookhaven
         {
             clscus.Customer_Name = txtbox_name.Text.Trim();
             clscus.NIC = txtbox_NIC.Text.Trim();
-            clscus.DOB = txtbox_DOB.Text.Trim();
-            clscus.Address = txtbox_Address.Text.Trim();
+            clscus.DOB = Dtp_DOB.Value; 
+           clscus.Address = txtbox_Address.Text.Trim();
             clscus.Email = txt_Email.Text.Trim();
 
             // Update mobile numbers
@@ -117,7 +119,7 @@ namespace Bookhaven
             // Clear form fields
             txtbox_name.Text = "";
             txtbox_NIC.Text = "";
-            txtbox_DOB.Text = "";
+            Dtp_DOB.Value = DateTime.Now; // Reset DateTimePicker to today's date
             txtbox_Address.Text = "";
             txt_Email.Text = "";
             txtbox_Number1.Text = "";
@@ -179,7 +181,7 @@ namespace Bookhaven
                 // Populate form fields
                 txtbox_name.Text = clscus.Customer_Name;
                 txtbox_NIC.Text = clscus.NIC;
-                txtbox_DOB.Text = clscus.DOB;
+                Dtp_DOB.Value = clscus.DOB; // Set DateTimePicker value
                 txtbox_Address.Text = clscus.Address;
                 txt_Email.Text = clscus.Email;
 
@@ -192,6 +194,16 @@ namespace Bookhaven
         private void dgv_cus_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Dtp_Dob_ValueChanged(object sender, EventArgs e)
+        {
+            clscus.DOB = Dtp_DOB.Value;
+        }
+
+        private void btn_Customer_Click(object sender, EventArgs e)
+        {
+            btn_Customer.BackColor = Color.MediumAquamarine;
         }
     }
 }

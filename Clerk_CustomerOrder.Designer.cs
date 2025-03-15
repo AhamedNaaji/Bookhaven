@@ -80,6 +80,7 @@
             this.btn_Cusorder.TabIndex = 3;
             this.btn_Cusorder.Text = "Cus Order";
             this.btn_Cusorder.UseVisualStyleBackColor = false;
+            this.btn_Cusorder.Click += new System.EventHandler(this.btn_Cusorder_Click);
             // 
             // btn_Customer
             // 
@@ -419,7 +420,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2022, 918);
+            this.ClientSize = new System.Drawing.Size(1924, 918);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgv_cusOrder);
             this.Controls.Add(this.btn_deleteorder);
