@@ -472,6 +472,7 @@
             this.Controls.Add(this.chart1);
             this.Name = "Clerk_Book";
             this.Text = "Clerk_Book";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

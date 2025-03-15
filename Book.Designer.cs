@@ -731,6 +731,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Book";
             this.Text = "Book";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Totalsales_panel.ResumeLayout(false);
             this.Totalsales_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();

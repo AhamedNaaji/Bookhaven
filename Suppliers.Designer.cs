@@ -654,6 +654,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Suppliers";
             this.Text = "Suppliers";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Suppliers_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel9.ResumeLayout(false);

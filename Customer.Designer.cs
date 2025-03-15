@@ -686,6 +686,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Customer";
             this.Text = "Customer";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_load);
             this.Totalsales_panel.ResumeLayout(false);
             this.Totalsales_panel.PerformLayout();

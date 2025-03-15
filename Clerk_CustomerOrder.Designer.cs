@@ -419,7 +419,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2022, 918);
+            this.ClientSize = new System.Drawing.Size(1924, 918);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgv_cusOrder);
             this.Controls.Add(this.btn_deleteorder);
@@ -428,6 +428,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Clerk_CustomerOrder";
             this.Text = "Clerk_CustomerOrder";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

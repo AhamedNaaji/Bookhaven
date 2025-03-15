@@ -611,6 +611,7 @@
             this.Controls.Add(this.btn_addStaff);
             this.Name = "Staff";
             this.Text = "Staff";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Staff_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -34,6 +34,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerOrder));
             this.label14 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.cmb_staff = new System.Windows.Forms.ComboBox();
+            this.cmb_Status = new System.Windows.Forms.ComboBox();
             this.nup_Quantity = new System.Windows.Forms.NumericUpDown();
             this.cmb_Deliverymethod = new System.Windows.Forms.ComboBox();
             this.cmb_Suporder = new System.Windows.Forms.ComboBox();
@@ -87,9 +90,6 @@
             this.btn_overview = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cmb_Status = new System.Windows.Forms.ComboBox();
-            this.cmb_staff = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nup_Quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -140,6 +140,32 @@
             this.panel2.Size = new System.Drawing.Size(1000, 309);
             this.panel2.TabIndex = 38;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(747, 11);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(51, 23);
+            this.label23.TabIndex = 48;
+            this.label23.Text = "Staff";
+            // 
+            // cmb_staff
+            // 
+            this.cmb_staff.FormattingEnabled = true;
+            this.cmb_staff.Location = new System.Drawing.Point(751, 41);
+            this.cmb_staff.Name = "cmb_staff";
+            this.cmb_staff.Size = new System.Drawing.Size(232, 24);
+            this.cmb_staff.TabIndex = 47;
+            // 
+            // cmb_Status
+            // 
+            this.cmb_Status.FormattingEnabled = true;
+            this.cmb_Status.Location = new System.Drawing.Point(306, 124);
+            this.cmb_Status.Name = "cmb_Status";
+            this.cmb_Status.Size = new System.Drawing.Size(197, 24);
+            this.cmb_Status.TabIndex = 46;
             // 
             // nup_Quantity
             // 
@@ -735,32 +761,6 @@
             this.panel1.Size = new System.Drawing.Size(493, 996);
             this.panel1.TabIndex = 35;
             // 
-            // cmb_Status
-            // 
-            this.cmb_Status.FormattingEnabled = true;
-            this.cmb_Status.Location = new System.Drawing.Point(306, 124);
-            this.cmb_Status.Name = "cmb_Status";
-            this.cmb_Status.Size = new System.Drawing.Size(197, 24);
-            this.cmb_Status.TabIndex = 46;
-            // 
-            // cmb_staff
-            // 
-            this.cmb_staff.FormattingEnabled = true;
-            this.cmb_staff.Location = new System.Drawing.Point(751, 41);
-            this.cmb_staff.Name = "cmb_staff";
-            this.cmb_staff.Size = new System.Drawing.Size(232, 24);
-            this.cmb_staff.TabIndex = 47;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(747, 11);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(51, 23);
-            this.label23.TabIndex = 48;
-            this.label23.Text = "Staff";
-            // 
             // CustomerOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -776,6 +776,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "CustomerOrder";
             this.Text = "CustomerOrder";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nup_Quantity)).EndInit();

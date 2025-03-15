@@ -381,6 +381,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Clerk_Sales";
             this.Text = "Clerk_Sales";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Clerk_Sales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
