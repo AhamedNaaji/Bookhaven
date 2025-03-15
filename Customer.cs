@@ -16,9 +16,12 @@ namespace Bookhaven
     {
         cls_customer clscus = new cls_customer();
         filloperation fill = new filloperation();
+
         public Customer()
         {
             InitializeComponent();
+            // Initialize the DateTimePicker to today's date
+            dateTimePickerDOB.Value = DateTime.Today;
         }
 
         private void txtbox_name_TextChanged(object sender, EventArgs e)
@@ -30,17 +33,15 @@ namespace Bookhaven
         {
             // Clear previous entries
             clscus.Mobile_Numbers.Clear();
-
             // Add both numbers to the list (trim and validate)
             if (!string.IsNullOrEmpty(txtbox_Number1.Text))
                 clscus.Mobile_Numbers.Add(txtbox_Number1.Text.Trim());
-
             if (!string.IsNullOrEmpty(txtbox_Number2.Text))
                 clscus.Mobile_Numbers.Add(txtbox_Number2.Text.Trim());
-
+            // Set DOB from DateTimePicker
+            clscus.DOB = dateTimePickerDOB.Value.ToString("yyyy-MM-dd");
             clscus.Insertdata();
             frm_load(sender, e);
-
         }
 
         private void txtbox_NIC_TextChanged(object sender, EventArgs e)
@@ -48,9 +49,9 @@ namespace Bookhaven
             clscus.NIC = txtbox_NIC.Text.Trim();
         }
 
-        private void txtbox_DOB_TextChanged(object sender, EventArgs e)
+        private void dateTimePickerDOB_ValueChanged(object sender, EventArgs e)
         {
-            clscus.DOB = txtbox_DOB.Text.Trim();
+            clscus.DOB = dateTimePickerDOB.Value.ToString("yyyy-MM-dd");
         }
 
         private void txtbox_Address_TextChanged(object sender, EventArgs e)
@@ -60,22 +61,21 @@ namespace Bookhaven
 
         private void txtbox_Number1_TextChanged(object sender, EventArgs e)
         {
-            //clscus.Mobile_Number = txtbox_Number1.Text.Trim();
+            // No need to set clscus.Mobile_Number here
         }
 
         private void txtbox_Number2_TextChanged(object sender, EventArgs e)
         {
-            //clscus.Mobile_Number = txtbox_Number2.Text.Trim();
+            // No need to set clscus.Mobile_Number here
         }
 
         private void btn_updateCustomer_Click(object sender, EventArgs e)
         {
             clscus.Customer_Name = txtbox_name.Text.Trim();
             clscus.NIC = txtbox_NIC.Text.Trim();
-            clscus.DOB = txtbox_DOB.Text.Trim();
+            clscus.DOB = dateTimePickerDOB.Value.ToString("yyyy-MM-dd");
             clscus.Address = txtbox_Address.Text.Trim();
             clscus.Email = txt_Email.Text.Trim();
-
             // Update mobile numbers
             clscus.Mobile_Numbers.Clear();
             if (!string.IsNullOrEmpty(txtbox_Number1.Text))
@@ -98,7 +98,6 @@ namespace Bookhaven
             {
                 MessageBox.Show("Please select a customer to delete.", "No Selection");
             }
-            clscus.DeleteDate();
             frm_load(sender, e);
         }
 
@@ -109,20 +108,19 @@ namespace Bookhaven
 
         private void frm_load(object sender, EventArgs e)
         {
-    
             FirstRun();
         }
+
         void FirstRun()
         {
             // Clear form fields
             txtbox_name.Text = "";
             txtbox_NIC.Text = "";
-            txtbox_DOB.Text = "";
+            dateTimePickerDOB.Value = DateTime.Today; // Set to today's date
             txtbox_Address.Text = "";
             txt_Email.Text = "";
             txtbox_Number1.Text = "";
             txtbox_Number2.Text = "";
-
             // Updated query to include mobile numbers
             string query = @"
         SELECT 
@@ -149,11 +147,9 @@ namespace Bookhaven
             c.DOB,
             c.Address,
             c.Email";
-
             // Populate DataGridView
             fill.FillDataGridView(query, dgv_cus);
             dgv_cus.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
             // Rename columns
             dgv_cus.Columns[0].HeaderText = "ID";
             dgv_cus.Columns[1].HeaderText = "Name";
@@ -171,18 +167,15 @@ namespace Bookhaven
             {
                 // Get selected customer ID
                 int customerId = Convert.ToInt32(dgv_cus.Rows[e.RowIndex].Cells["Customer_Id"].Value);
-
                 // Load customer data
                 clscus.Customer_Id = customerId;
                 clscus.Getdata();
-
                 // Populate form fields
                 txtbox_name.Text = clscus.Customer_Name;
                 txtbox_NIC.Text = clscus.NIC;
-                txtbox_DOB.Text = clscus.DOB;
+                dateTimePickerDOB.Value = DateTime.Parse(clscus.DOB);
                 txtbox_Address.Text = clscus.Address;
                 txt_Email.Text = clscus.Email;
-
                 // Populate mobile numbers (handle up to 2 numbers)
                 txtbox_Number1.Text = clscus.Mobile_Numbers.Count > 0 ? clscus.Mobile_Numbers[0] : "";
                 txtbox_Number2.Text = clscus.Mobile_Numbers.Count > 1 ? clscus.Mobile_Numbers[1] : "";
@@ -191,7 +184,78 @@ namespace Bookhaven
 
         private void dgv_cus_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // No need to handle this event unless you have specific actions
+        }
 
+        private void btn_Dashboard_Click(object sender, EventArgs e)
+        {
+            Dashboard dshboard = new Dashboard();
+            dshboard.ShowDialog();
+        }
+
+        private void btn_Staffs_Click(object sender, EventArgs e)
+        {
+            Staff stffs = new Staff();
+            stffs.ShowDialog();
+        }
+
+        private void btn_Customers_Click(object sender, EventArgs e)
+        {
+            Customer customers = new Customer();
+            customers.ShowDialog();
+        }
+
+        private void btn_Suppliers_Click(object sender, EventArgs e)
+        {
+            Suppliers supplier = new Suppliers();
+            supplier.ShowDialog();
+        }
+
+        private void btn_Books_Click(object sender, EventArgs e)
+        {
+            Book books = new Book();
+            books.ShowDialog();
+        }
+
+        private void btn_Sales_Click(object sender, EventArgs e)
+        {
+            Sales sale = new Sales();
+            sale.ShowDialog();
+        }
+
+        private void btn_CustomerOrders_Click(object sender, EventArgs e)
+        {
+            CustomerOrder cusOrders = new CustomerOrder();
+            cusOrders.ShowDialog();
+        }
+
+        private void btn_SupplierOrders_Click(object sender, EventArgs e)
+        {
+            SupplierOrder supOrders = new SupplierOrder();
+            supOrders.ShowDialog();
+        }
+
+        private void btn_Reports_Click(object sender, EventArgs e)
+        {
+            Report reports = new Report();
+            reports.ShowDialog();
+        }
+
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            // Display a confirmation message box
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            // Check the user's response
+            if (result == DialogResult.Yes)
+            {
+                // Clear session data or reset user-specific information
+                // Program.CurrentUser = null;
+                // Close the current Dashboard form
+                this.Close();
+                // Show the LoginForm
+                Form1 loginForm = new Form1();
+                loginForm.Show();
+            }
         }
     }
 }
