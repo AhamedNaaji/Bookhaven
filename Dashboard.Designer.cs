@@ -200,7 +200,7 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel1.Location = new System.Drawing.Point(910, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(267, 766);
+            this.panel1.Size = new System.Drawing.Size(267, 773);
             this.panel1.TabIndex = 12;
             // 
             // btn_Suppliers
@@ -219,7 +219,8 @@
             // 
             // lbl_Totalsales
             // 
-            this.lbl_Totalsales.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_Totalsales.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Totalsales.ForeColor = System.Drawing.Color.White;
             this.lbl_Totalsales.Location = new System.Drawing.Point(53, 57);
             this.lbl_Totalsales.Name = "lbl_Totalsales";
             this.lbl_Totalsales.Size = new System.Drawing.Size(95, 23);
@@ -230,16 +231,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(53, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 24);
+            this.label2.Size = new System.Drawing.Size(111, 26);
             this.label2.TabIndex = 0;
             this.label2.Text = "Total Sales";
             // 
             // lbl_TotalCustomer
             // 
-            this.lbl_TotalCustomer.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_TotalCustomer.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TotalCustomer.ForeColor = System.Drawing.Color.White;
             this.lbl_TotalCustomer.Location = new System.Drawing.Point(33, 57);
             this.lbl_TotalCustomer.Name = "lbl_TotalCustomer";
             this.lbl_TotalCustomer.Size = new System.Drawing.Size(94, 23);
@@ -251,10 +254,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label9.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label9.Location = new System.Drawing.Point(21, 18);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(149, 24);
+            this.label9.Size = new System.Drawing.Size(162, 26);
             this.label9.TabIndex = 0;
             this.label9.Text = "Total Customers";
             // 
@@ -272,7 +276,8 @@
             // 
             // lbl_Outofstock
             // 
-            this.lbl_Outofstock.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_Outofstock.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Outofstock.ForeColor = System.Drawing.Color.White;
             this.lbl_Outofstock.Location = new System.Drawing.Point(38, 57);
             this.lbl_Outofstock.Name = "lbl_Outofstock";
             this.lbl_Outofstock.Size = new System.Drawing.Size(82, 23);
@@ -283,10 +288,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label13.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(38, 18);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(120, 24);
+            this.label13.Size = new System.Drawing.Size(126, 26);
             this.label13.TabIndex = 0;
             this.label13.Text = "Out of Stock";
             // 
@@ -296,6 +302,7 @@
             this.outofstock_panel.Controls.Add(this.lbl_Outofstock);
             this.outofstock_panel.Controls.Add(this.label13);
             this.outofstock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.outofstock_panel.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
             this.outofstock_panel.Location = new System.Drawing.Point(451, 0);
             this.outofstock_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.outofstock_panel.Name = "outofstock_panel";
@@ -304,7 +311,8 @@
             // 
             // label16
             // 
-            this.label16.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label16.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(66, 57);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(77, 23);
@@ -315,10 +323,11 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label17.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(-6, 9);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(229, 24);
+            this.label17.Size = new System.Drawing.Size(257, 26);
             this.label17.TabIndex = 0;
             this.label17.Text = "Customer Order Recieved";
             // 
@@ -394,7 +403,8 @@
             // 
             // label27
             // 
-            this.label27.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label27.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.White;
             this.label27.Location = new System.Drawing.Point(164, 53);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(63, 23);
@@ -406,10 +416,11 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label28.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.White;
             this.label28.Location = new System.Drawing.Point(142, 20);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(115, 24);
+            this.label28.Size = new System.Drawing.Size(128, 26);
             this.label28.TabIndex = 0;
             this.label28.Text = "Total Orders";
             // 
@@ -427,7 +438,8 @@
             // 
             // label23
             // 
-            this.label23.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label23.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.White;
             this.label23.Location = new System.Drawing.Point(133, 53);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(109, 23);
@@ -438,16 +450,18 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label24.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.White;
             this.label24.Location = new System.Drawing.Point(133, 20);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(132, 24);
+            this.label24.Size = new System.Drawing.Size(143, 26);
             this.label24.TabIndex = 0;
             this.label24.Text = "Today Earning";
             // 
             // makesales_btn
             // 
             this.makesales_btn.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.makesales_btn.ForeColor = System.Drawing.Color.Red;
             this.makesales_btn.Location = new System.Drawing.Point(19, 689);
             this.makesales_btn.Name = "makesales_btn";
             this.makesales_btn.Size = new System.Drawing.Size(352, 52);
@@ -459,6 +473,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button4.Location = new System.Drawing.Point(548, 693);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(281, 52);
@@ -495,7 +510,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1177, 766);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1177, 773);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.makesales_btn);

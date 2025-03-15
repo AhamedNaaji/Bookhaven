@@ -157,7 +157,7 @@
             this.panel1.Controls.Add(this.btn_overview);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.panel1.Location = new System.Drawing.Point(1008, 0);
+            this.panel1.Location = new System.Drawing.Point(1001, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(282, 632);
             this.panel1.TabIndex = 22;
@@ -293,7 +293,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1008, 88);
+            this.panel3.Size = new System.Drawing.Size(1001, 88);
             this.panel3.TabIndex = 73;
             // 
             // btn_logout
@@ -352,7 +352,8 @@
             // 
             // label16
             // 
-            this.label16.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label16.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
+            this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(66, 57);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(77, 23);
@@ -363,10 +364,11 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label17.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
+            this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(-6, 9);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(229, 24);
+            this.label17.Size = new System.Drawing.Size(257, 26);
             this.label17.TabIndex = 0;
             this.label17.Text = "Customer Order Recieved";
             // 
@@ -384,7 +386,8 @@
             // 
             // lbl_Outofstock
             // 
-            this.lbl_Outofstock.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_Outofstock.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_Outofstock.ForeColor = System.Drawing.Color.White;
             this.lbl_Outofstock.Location = new System.Drawing.Point(38, 57);
             this.lbl_Outofstock.Name = "lbl_Outofstock";
             this.lbl_Outofstock.Size = new System.Drawing.Size(82, 23);
@@ -395,10 +398,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label13.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
+            this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(38, 18);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(120, 24);
+            this.label13.Size = new System.Drawing.Size(126, 26);
             this.label13.TabIndex = 0;
             this.label13.Text = "Out of Stock";
             // 
@@ -416,7 +420,8 @@
             // 
             // lbl_TotalCustomer
             // 
-            this.lbl_TotalCustomer.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_TotalCustomer.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_TotalCustomer.ForeColor = System.Drawing.Color.White;
             this.lbl_TotalCustomer.Location = new System.Drawing.Point(33, 57);
             this.lbl_TotalCustomer.Name = "lbl_TotalCustomer";
             this.lbl_TotalCustomer.Size = new System.Drawing.Size(94, 23);
@@ -427,10 +432,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label9.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(21, 18);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(149, 24);
+            this.label9.Size = new System.Drawing.Size(162, 26);
             this.label9.TabIndex = 0;
             this.label9.Text = "Total Customers";
             // 
@@ -448,7 +454,8 @@
             // 
             // lbl_Totalsales
             // 
-            this.lbl_Totalsales.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_Totalsales.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_Totalsales.ForeColor = System.Drawing.Color.White;
             this.lbl_Totalsales.Location = new System.Drawing.Point(53, 57);
             this.lbl_Totalsales.Name = "lbl_Totalsales";
             this.lbl_Totalsales.Size = new System.Drawing.Size(95, 23);
@@ -459,10 +466,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(53, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 24);
+            this.label3.Size = new System.Drawing.Size(111, 26);
             this.label3.TabIndex = 0;
             this.label3.Text = "Total Sales";
             // 
@@ -470,7 +478,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1290, 632);
+            this.ClientSize = new System.Drawing.Size(1283, 632);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label2);

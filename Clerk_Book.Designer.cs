@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clerk_Book));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clerk_Book));
             this.btn_ViewAuthors = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtbox_discount = new System.Windows.Forms.TextBox();
@@ -50,13 +50,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Book = new System.Windows.Forms.Button();
-            this.btn_Cusorder = new System.Windows.Forms.Button();
-            this.btn_Sales = new System.Windows.Forms.Button();
-            this.btn_Customer = new System.Windows.Forms.Button();
-            this.btn_overview = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Genre = new System.Windows.Forms.Button();
             this.dgv_books = new System.Windows.Forms.DataGridView();
             this.btn_deleteBook = new System.Windows.Forms.Button();
@@ -67,18 +60,30 @@
             this.txtbox_search = new System.Windows.Forms.TextBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.btn_Reset = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_logout = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Book = new System.Windows.Forms.Button();
+            this.btn_Cusorder = new System.Windows.Forms.Button();
+            this.btn_Sales = new System.Windows.Forms.Button();
+            this.btn_Customer = new System.Windows.Forms.Button();
+            this.btn_overview = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_books)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_ViewAuthors
             // 
-            this.btn_ViewAuthors.Location = new System.Drawing.Point(969, 359);
+            this.btn_ViewAuthors.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_ViewAuthors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_ViewAuthors.Location = new System.Drawing.Point(573, 428);
             this.btn_ViewAuthors.Name = "btn_ViewAuthors";
-            this.btn_ViewAuthors.Size = new System.Drawing.Size(190, 48);
+            this.btn_ViewAuthors.Size = new System.Drawing.Size(217, 55);
             this.btn_ViewAuthors.TabIndex = 64;
             this.btn_ViewAuthors.Text = "View Authors";
             this.btn_ViewAuthors.UseVisualStyleBackColor = true;
@@ -102,7 +107,7 @@
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(530, 80);
+            this.panel2.Location = new System.Drawing.Point(19, 158);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(801, 257);
             this.panel2.TabIndex = 59;
@@ -251,103 +256,13 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Book Name";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_Book);
-            this.panel1.Controls.Add(this.btn_Cusorder);
-            this.panel1.Controls.Add(this.btn_Sales);
-            this.panel1.Controls.Add(this.btn_Customer);
-            this.panel1.Controls.Add(this.btn_overview);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(493, 761);
-            this.panel1.TabIndex = 55;
-            // 
-            // btn_Book
-            // 
-            this.btn_Book.BackColor = System.Drawing.Color.LightGray;
-            this.btn_Book.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Book.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_Book.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Book.Location = new System.Drawing.Point(55, 651);
-            this.btn_Book.Name = "btn_Book";
-            this.btn_Book.Size = new System.Drawing.Size(380, 63);
-            this.btn_Book.TabIndex = 10;
-            this.btn_Book.Text = "Book";
-            this.btn_Book.UseVisualStyleBackColor = false;
-            // 
-            // btn_Cusorder
-            // 
-            this.btn_Cusorder.BackColor = System.Drawing.Color.White;
-            this.btn_Cusorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cusorder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_Cusorder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Cusorder.Location = new System.Drawing.Point(55, 559);
-            this.btn_Cusorder.Name = "btn_Cusorder";
-            this.btn_Cusorder.Size = new System.Drawing.Size(380, 63);
-            this.btn_Cusorder.TabIndex = 9;
-            this.btn_Cusorder.Text = "Cus Order";
-            this.btn_Cusorder.UseVisualStyleBackColor = false;
-            // 
-            // btn_Sales
-            // 
-            this.btn_Sales.BackColor = System.Drawing.Color.White;
-            this.btn_Sales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_Sales.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Sales.Location = new System.Drawing.Point(55, 470);
-            this.btn_Sales.Name = "btn_Sales";
-            this.btn_Sales.Size = new System.Drawing.Size(380, 63);
-            this.btn_Sales.TabIndex = 8;
-            this.btn_Sales.Text = "Sales";
-            this.btn_Sales.UseVisualStyleBackColor = false;
-            // 
-            // btn_Customer
-            // 
-            this.btn_Customer.BackColor = System.Drawing.Color.White;
-            this.btn_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_Customer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Customer.Location = new System.Drawing.Point(55, 381);
-            this.btn_Customer.Name = "btn_Customer";
-            this.btn_Customer.Size = new System.Drawing.Size(380, 63);
-            this.btn_Customer.TabIndex = 7;
-            this.btn_Customer.Text = "Customer";
-            this.btn_Customer.UseVisualStyleBackColor = false;
-            // 
-            // btn_overview
-            // 
-            this.btn_overview.BackColor = System.Drawing.Color.White;
-            this.btn_overview.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_overview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_overview.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_overview.Location = new System.Drawing.Point(55, 292);
-            this.btn_overview.Name = "btn_overview";
-            this.btn_overview.Size = new System.Drawing.Size(380, 63);
-            this.btn_overview.TabIndex = 6;
-            this.btn_overview.Text = "Overview";
-            this.btn_overview.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(155, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 144);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // btn_Genre
             // 
-            this.btn_Genre.Location = new System.Drawing.Point(738, 359);
+            this.btn_Genre.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_Genre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_Genre.Location = new System.Drawing.Point(314, 428);
             this.btn_Genre.Name = "btn_Genre";
-            this.btn_Genre.Size = new System.Drawing.Size(190, 48);
+            this.btn_Genre.Size = new System.Drawing.Size(217, 55);
             this.btn_Genre.TabIndex = 58;
             this.btn_Genre.Text = "View Genre";
             this.btn_Genre.UseVisualStyleBackColor = true;
@@ -357,22 +272,24 @@
             // 
             this.dgv_books.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgv_books.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_books.Location = new System.Drawing.Point(530, 440);
+            this.dgv_books.Location = new System.Drawing.Point(19, 486);
             this.dgv_books.MultiSelect = false;
             this.dgv_books.Name = "dgv_books";
             this.dgv_books.RowHeadersWidth = 51;
             this.dgv_books.RowTemplate.Height = 24;
             this.dgv_books.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_books.Size = new System.Drawing.Size(801, 275);
+            this.dgv_books.Size = new System.Drawing.Size(1046, 243);
             this.dgv_books.TabIndex = 63;
             this.dgv_books.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_books_CellContentClick);
             this.dgv_books.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_books_CellContentDoubleClick);
             // 
             // btn_deleteBook
             // 
-            this.btn_deleteBook.Location = new System.Drawing.Point(1384, 165);
+            this.btn_deleteBook.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_deleteBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_deleteBook.Location = new System.Drawing.Point(843, 348);
             this.btn_deleteBook.Name = "btn_deleteBook";
-            this.btn_deleteBook.Size = new System.Drawing.Size(247, 67);
+            this.btn_deleteBook.Size = new System.Drawing.Size(222, 67);
             this.btn_deleteBook.TabIndex = 62;
             this.btn_deleteBook.Text = "Delete Book";
             this.btn_deleteBook.UseVisualStyleBackColor = true;
@@ -380,9 +297,11 @@
             // 
             // btn_updateBook
             // 
-            this.btn_updateBook.Location = new System.Drawing.Point(1384, 72);
+            this.btn_updateBook.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_updateBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_updateBook.Location = new System.Drawing.Point(843, 249);
             this.btn_updateBook.Name = "btn_updateBook";
-            this.btn_updateBook.Size = new System.Drawing.Size(247, 67);
+            this.btn_updateBook.Size = new System.Drawing.Size(222, 67);
             this.btn_updateBook.TabIndex = 61;
             this.btn_updateBook.Text = "Update Book";
             this.btn_updateBook.UseVisualStyleBackColor = true;
@@ -390,9 +309,11 @@
             // 
             // btn_addBook
             // 
-            this.btn_addBook.Location = new System.Drawing.Point(1384, 270);
+            this.btn_addBook.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_addBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_addBook.Location = new System.Drawing.Point(843, 150);
             this.btn_addBook.Name = "btn_addBook";
-            this.btn_addBook.Size = new System.Drawing.Size(247, 67);
+            this.btn_addBook.Size = new System.Drawing.Size(222, 67);
             this.btn_addBook.TabIndex = 60;
             this.btn_addBook.Text = "Add Book";
             this.btn_addBook.UseVisualStyleBackColor = true;
@@ -400,9 +321,11 @@
             // 
             // btn_stock
             // 
-            this.btn_stock.Location = new System.Drawing.Point(549, 359);
+            this.btn_stock.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_stock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_stock.Location = new System.Drawing.Point(48, 428);
             this.btn_stock.Name = "btn_stock";
-            this.btn_stock.Size = new System.Drawing.Size(161, 48);
+            this.btn_stock.Size = new System.Drawing.Size(217, 52);
             this.btn_stock.TabIndex = 65;
             this.btn_stock.Text = "View Stocks";
             this.btn_stock.UseVisualStyleBackColor = true;
@@ -426,15 +349,18 @@
             // 
             // txtbox_search
             // 
-            this.txtbox_search.Location = new System.Drawing.Point(530, 37);
+            this.txtbox_search.Location = new System.Drawing.Point(19, 104);
+            this.txtbox_search.Multiline = true;
             this.txtbox_search.Name = "txtbox_search";
-            this.txtbox_search.Size = new System.Drawing.Size(190, 22);
+            this.txtbox_search.Size = new System.Drawing.Size(218, 40);
             this.txtbox_search.TabIndex = 44;
             this.txtbox_search.TextChanged += new System.EventHandler(this.txtbox_search_TextChanged);
             // 
             // btn_Search
             // 
-            this.btn_Search.Location = new System.Drawing.Point(738, 28);
+            this.btn_Search.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_Search.Location = new System.Drawing.Point(282, 104);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(190, 40);
             this.btn_Search.TabIndex = 66;
@@ -444,7 +370,9 @@
             // 
             // btn_Reset
             // 
-            this.btn_Reset.Location = new System.Drawing.Point(954, 28);
+            this.btn_Reset.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_Reset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_Reset.Location = new System.Drawing.Point(507, 104);
             this.btn_Reset.Name = "btn_Reset";
             this.btn_Reset.Size = new System.Drawing.Size(190, 40);
             this.btn_Reset.TabIndex = 67;
@@ -452,17 +380,132 @@
             this.btn_Reset.UseVisualStyleBackColor = true;
             this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(131)))), ((int)(((byte)(146)))));
+            this.panel3.Controls.Add(this.btn_logout);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1078, 88);
+            this.panel3.TabIndex = 75;
+            // 
+            // btn_logout
+            // 
+            this.btn_logout.BackColor = System.Drawing.Color.Red;
+            this.btn_logout.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_logout.Location = new System.Drawing.Point(19, 12);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(174, 52);
+            this.btn_logout.TabIndex = 23;
+            this.btn_logout.Text = "Logout";
+            this.btn_logout.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(984, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(89, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(69)))), ((int)(((byte)(89)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btn_Book);
+            this.panel1.Controls.Add(this.btn_Cusorder);
+            this.panel1.Controls.Add(this.btn_Sales);
+            this.panel1.Controls.Add(this.btn_Customer);
+            this.panel1.Controls.Add(this.btn_overview);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.panel1.Location = new System.Drawing.Point(1078, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(282, 732);
+            this.panel1.TabIndex = 74;
+            // 
+            // btn_Book
+            // 
+            this.btn_Book.BackColor = System.Drawing.Color.White;
+            this.btn_Book.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_Book.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_Book.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Book.Location = new System.Drawing.Point(23, 636);
+            this.btn_Book.Name = "btn_Book";
+            this.btn_Book.Size = new System.Drawing.Size(237, 63);
+            this.btn_Book.TabIndex = 5;
+            this.btn_Book.Text = "Book";
+            this.btn_Book.UseVisualStyleBackColor = false;
+            // 
+            // btn_Cusorder
+            // 
+            this.btn_Cusorder.BackColor = System.Drawing.Color.White;
+            this.btn_Cusorder.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_Cusorder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_Cusorder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Cusorder.Location = new System.Drawing.Point(23, 472);
+            this.btn_Cusorder.Name = "btn_Cusorder";
+            this.btn_Cusorder.Size = new System.Drawing.Size(237, 63);
+            this.btn_Cusorder.TabIndex = 3;
+            this.btn_Cusorder.Text = "Cus Order";
+            this.btn_Cusorder.UseVisualStyleBackColor = false;
+            // 
+            // btn_Sales
+            // 
+            this.btn_Sales.BackColor = System.Drawing.Color.White;
+            this.btn_Sales.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_Sales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_Sales.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Sales.Location = new System.Drawing.Point(23, 160);
+            this.btn_Sales.Name = "btn_Sales";
+            this.btn_Sales.Size = new System.Drawing.Size(237, 63);
+            this.btn_Sales.TabIndex = 2;
+            this.btn_Sales.Text = "Sales";
+            this.btn_Sales.UseVisualStyleBackColor = false;
+            // 
+            // btn_Customer
+            // 
+            this.btn_Customer.BackColor = System.Drawing.Color.White;
+            this.btn_Customer.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_Customer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Customer.Location = new System.Drawing.Point(23, 306);
+            this.btn_Customer.Name = "btn_Customer";
+            this.btn_Customer.Size = new System.Drawing.Size(237, 63);
+            this.btn_Customer.TabIndex = 1;
+            this.btn_Customer.Text = "Customer";
+            this.btn_Customer.UseVisualStyleBackColor = false;
+            // 
+            // btn_overview
+            // 
+            this.btn_overview.BackColor = System.Drawing.Color.White;
+            this.btn_overview.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_overview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_overview.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_overview.Location = new System.Drawing.Point(23, 24);
+            this.btn_overview.Name = "btn_overview";
+            this.btn_overview.Size = new System.Drawing.Size(237, 63);
+            this.btn_overview.TabIndex = 0;
+            this.btn_overview.Text = "Overview";
+            this.btn_overview.UseVisualStyleBackColor = false;
+            // 
             // Clerk_Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1724, 761);
+            this.ClientSize = new System.Drawing.Size(1360, 732);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Reset);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.txtbox_search);
             this.Controls.Add(this.btn_ViewAuthors);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_Genre);
             this.Controls.Add(this.dgv_books);
             this.Controls.Add(this.btn_deleteBook);
@@ -472,12 +515,14 @@
             this.Controls.Add(this.chart1);
             this.Name = "Clerk_Book";
             this.Text = "Clerk_Book";
+            this.Load += new System.EventHandler(this.Clerk_Book_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_books)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,8 +548,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_Genre;
         private System.Windows.Forms.DataGridView dgv_books;
         private System.Windows.Forms.Button btn_deleteBook;
@@ -512,13 +555,17 @@
         private System.Windows.Forms.Button btn_addBook;
         private System.Windows.Forms.Button btn_stock;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.TextBox txtbox_search;
+        private System.Windows.Forms.Button btn_Search;
+        private System.Windows.Forms.Button btn_Reset;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_Book;
         private System.Windows.Forms.Button btn_Cusorder;
         private System.Windows.Forms.Button btn_Sales;
         private System.Windows.Forms.Button btn_Customer;
         private System.Windows.Forms.Button btn_overview;
-        private System.Windows.Forms.TextBox txtbox_search;
-        private System.Windows.Forms.Button btn_Search;
-        private System.Windows.Forms.Button btn_Reset;
     }
 }

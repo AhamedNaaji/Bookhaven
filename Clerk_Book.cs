@@ -387,5 +387,10 @@ namespace Bookhaven
             // Load books matching the search term
             Clerk_Book_Load();
         }
+
+        private void Clerk_Book_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
