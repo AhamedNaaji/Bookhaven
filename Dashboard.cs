@@ -70,5 +70,17 @@ namespace Bookhaven
             Report reports = new Report();
             reports.ShowDialog();
         }
+
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            
+
+            // Close the current Dashboard form
+            this.Close();
+
+            // Show the LoginForm
+            Form1 loginForm = new Form1();
+            loginForm.Show();
+        }
     }
 }
