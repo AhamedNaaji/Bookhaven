@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btn_Customers = new System.Windows.Forms.Button();
             this.btn_Dashboard = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -74,6 +74,8 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -421,17 +423,17 @@
             // 
             // chart2
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chart2.Legends.Add(legend8);
+            chartArea1.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
             this.chart2.Location = new System.Drawing.Point(581, 442);
             this.chart2.Name = "chart2";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chart2.Series.Add(series8);
-            this.chart2.Size = new System.Drawing.Size(894, 351);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart2.Series.Add(series1);
+            this.chart2.Size = new System.Drawing.Size(924, 351);
             this.chart2.TabIndex = 18;
             this.chart2.Text = "chart2";
             // 
@@ -440,29 +442,29 @@
             this.makesales_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.makesales_btn.Location = new System.Drawing.Point(581, 335);
             this.makesales_btn.Name = "makesales_btn";
-            this.makesales_btn.Size = new System.Drawing.Size(274, 71);
+            this.makesales_btn.Size = new System.Drawing.Size(180, 71);
             this.makesales_btn.TabIndex = 19;
-            this.makesales_btn.Text = "Make Sales";
+            this.makesales_btn.Text = "Add Books";
             this.makesales_btn.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(882, 335);
+            this.button4.Location = new System.Drawing.Point(767, 335);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(274, 71);
+            this.button4.Size = new System.Drawing.Size(180, 71);
             this.button4.TabIndex = 20;
-            this.button4.Text = "Add Customer";
+            this.button4.Text = "Add Customers";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.button5.Location = new System.Drawing.Point(1172, 335);
+            this.button5.Location = new System.Drawing.Point(953, 335);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(274, 71);
+            this.button5.Size = new System.Drawing.Size(180, 71);
             this.button5.TabIndex = 21;
-            this.button5.Text = "Generate Report";
+            this.button5.Text = "Add   Suppliers";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // panel3
@@ -610,12 +612,34 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "Total Supplier Orders";
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(1139, 335);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(180, 71);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Make Sale";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.button3.Location = new System.Drawing.Point(1325, 335);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(180, 71);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "Add Staffs";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(140)))), ((int)(((byte)(137)))));
             this.ClientSize = new System.Drawing.Size(1924, 1011);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -695,5 +719,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
