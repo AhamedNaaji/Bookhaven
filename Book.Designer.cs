@@ -71,11 +71,15 @@
             this.btn_Sales = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
             this.btn_overview = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_books)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // chart1
@@ -112,15 +116,15 @@
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(417, 213);
+            this.panel2.Location = new System.Drawing.Point(406, 194);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(801, 257);
+            this.panel2.Size = new System.Drawing.Size(826, 277);
             this.panel2.TabIndex = 48;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // txtbox_discount
             // 
-            this.txtbox_discount.Location = new System.Drawing.Point(29, 201);
+            this.txtbox_discount.Location = new System.Drawing.Point(31, 206);
             this.txtbox_discount.Name = "txtbox_discount";
             this.txtbox_discount.Size = new System.Drawing.Size(190, 22);
             this.txtbox_discount.TabIndex = 43;
@@ -129,139 +133,143 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label16.Location = new System.Drawing.Point(25, 167);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(94, 23);
+            this.label16.Size = new System.Drawing.Size(111, 36);
             this.label16.TabIndex = 42;
             this.label16.Text = "Discount";
             // 
             // cmb_author_2
             // 
             this.cmb_author_2.FormattingEnabled = true;
-            this.cmb_author_2.Location = new System.Drawing.Point(380, 130);
+            this.cmb_author_2.Location = new System.Drawing.Point(512, 130);
             this.cmb_author_2.Name = "cmb_author_2";
-            this.cmb_author_2.Size = new System.Drawing.Size(121, 24);
+            this.cmb_author_2.Size = new System.Drawing.Size(190, 24);
             this.cmb_author_2.TabIndex = 41;
             this.cmb_author_2.SelectedIndexChanged += new System.EventHandler(this.cmb_author_2_SelectedIndexChanged);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(376, 91);
+            this.label15.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.label15.Location = new System.Drawing.Point(506, 91);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(91, 23);
+            this.label15.Size = new System.Drawing.Size(108, 36);
             this.label15.TabIndex = 40;
             this.label15.Text = "Author 2";
             // 
             // cmb_author_1
             // 
             this.cmb_author_1.FormattingEnabled = true;
-            this.cmb_author_1.Location = new System.Drawing.Point(233, 130);
+            this.cmb_author_1.Location = new System.Drawing.Point(274, 130);
             this.cmb_author_1.Name = "cmb_author_1";
-            this.cmb_author_1.Size = new System.Drawing.Size(121, 24);
+            this.cmb_author_1.Size = new System.Drawing.Size(190, 24);
             this.cmb_author_1.TabIndex = 39;
             this.cmb_author_1.SelectedIndexChanged += new System.EventHandler(this.cmb_author_SelectedIndexChanged);
             // 
             // cmb_genre
             // 
             this.cmb_genre.FormattingEnabled = true;
-            this.cmb_genre.Location = new System.Drawing.Point(29, 128);
+            this.cmb_genre.Location = new System.Drawing.Point(19, 130);
             this.cmb_genre.Name = "cmb_genre";
-            this.cmb_genre.Size = new System.Drawing.Size(121, 24);
+            this.cmb_genre.Size = new System.Drawing.Size(214, 24);
             this.cmb_genre.TabIndex = 38;
             this.cmb_genre.SelectedIndexChanged += new System.EventHandler(this.cmb_genre_SelectedIndexChanged);
             // 
             // txt_Stock
             // 
-            this.txt_Stock.Location = new System.Drawing.Point(551, 132);
+            this.txt_Stock.Location = new System.Drawing.Point(274, 201);
+            this.txt_Stock.Multiline = true;
             this.txt_Stock.Name = "txt_Stock";
-            this.txt_Stock.Size = new System.Drawing.Size(190, 22);
+            this.txt_Stock.Size = new System.Drawing.Size(190, 42);
             this.txt_Stock.TabIndex = 37;
             this.txt_Stock.TextChanged += new System.EventHandler(this.txt_Stock_TextChanged);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(25, 91);
+            this.label14.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.label14.Location = new System.Drawing.Point(13, 91);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(71, 23);
+            this.label14.Size = new System.Drawing.Size(80, 36);
             this.label14.TabIndex = 34;
             this.label14.Text = "Genre";
             // 
             // txt_Price
             // 
-            this.txt_Price.Location = new System.Drawing.Point(277, 43);
+            this.txt_Price.Location = new System.Drawing.Point(274, 44);
+            this.txt_Price.Multiline = true;
             this.txt_Price.Name = "txt_Price";
-            this.txt_Price.Size = new System.Drawing.Size(190, 22);
+            this.txt_Price.Size = new System.Drawing.Size(190, 44);
             this.txt_Price.TabIndex = 33;
             this.txt_Price.TextChanged += new System.EventHandler(this.txt_Price_TextChanged);
             // 
             // txt_Isbn
             // 
-            this.txt_Isbn.Location = new System.Drawing.Point(554, 41);
+            this.txt_Isbn.Location = new System.Drawing.Point(512, 44);
+            this.txt_Isbn.Multiline = true;
             this.txt_Isbn.Name = "txt_Isbn";
-            this.txt_Isbn.Size = new System.Drawing.Size(190, 22);
+            this.txt_Isbn.Size = new System.Drawing.Size(190, 44);
             this.txt_Isbn.TabIndex = 32;
             this.txt_Isbn.TextChanged += new System.EventHandler(this.txt_Isbn_TextChanged);
             // 
             // txt_Bookname
             // 
             this.txt_Bookname.Location = new System.Drawing.Point(19, 44);
+            this.txt_Bookname.Multiline = true;
             this.txt_Bookname.Name = "txt_Bookname";
-            this.txt_Bookname.Size = new System.Drawing.Size(190, 22);
+            this.txt_Bookname.Size = new System.Drawing.Size(214, 44);
             this.txt_Bookname.TabIndex = 31;
             this.txt_Bookname.TextChanged += new System.EventHandler(this.txt_Bookname_TextChanged);
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(229, 91);
+            this.label26.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.label26.Location = new System.Drawing.Point(268, 91);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(91, 23);
+            this.label26.Size = new System.Drawing.Size(103, 36);
             this.label26.TabIndex = 28;
             this.label26.Text = "Author 1";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(550, 91);
+            this.label22.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.label22.Location = new System.Drawing.Point(268, 162);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(64, 23);
+            this.label22.Size = new System.Drawing.Size(75, 36);
             this.label22.TabIndex = 14;
             this.label22.Text = "Stock";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(550, 9);
+            this.label19.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.label19.Location = new System.Drawing.Point(506, 9);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(53, 23);
+            this.label19.Size = new System.Drawing.Size(63, 36);
             this.label19.TabIndex = 8;
             this.label19.Text = "ISBN";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(279, 11);
+            this.label18.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.label18.Location = new System.Drawing.Point(268, 9);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(58, 23);
+            this.label18.Size = new System.Drawing.Size(69, 36);
             this.label18.TabIndex = 6;
             this.label18.Text = "Price";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(15, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 23);
+            this.label3.Size = new System.Drawing.Size(140, 36);
             this.label3.TabIndex = 4;
             this.label3.Text = "Book Name";
             // 
@@ -269,13 +277,13 @@
             // 
             this.dgv_books.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgv_books.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_books.Location = new System.Drawing.Point(417, 569);
+            this.dgv_books.Location = new System.Drawing.Point(406, 520);
             this.dgv_books.MultiSelect = false;
             this.dgv_books.Name = "dgv_books";
             this.dgv_books.RowHeadersWidth = 51;
             this.dgv_books.RowTemplate.Height = 24;
             this.dgv_books.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_books.Size = new System.Drawing.Size(1090, 275);
+            this.dgv_books.Size = new System.Drawing.Size(826, 324);
             this.dgv_books.TabIndex = 52;
             this.dgv_books.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_book_CellContentClick);
             this.dgv_books.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_books_CellContentDoubleClick);
@@ -283,62 +291,80 @@
             // 
             // btn_deleteBook
             // 
-            this.btn_deleteBook.Location = new System.Drawing.Point(1224, 321);
+            this.btn_deleteBook.BackColor = System.Drawing.Color.Red;
+            this.btn_deleteBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_deleteBook.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
+            this.btn_deleteBook.Location = new System.Drawing.Point(19, 107);
             this.btn_deleteBook.Name = "btn_deleteBook";
-            this.btn_deleteBook.Size = new System.Drawing.Size(247, 67);
+            this.btn_deleteBook.Size = new System.Drawing.Size(237, 67);
             this.btn_deleteBook.TabIndex = 51;
             this.btn_deleteBook.Text = "Delete Book";
-            this.btn_deleteBook.UseVisualStyleBackColor = true;
+            this.btn_deleteBook.UseVisualStyleBackColor = false;
             this.btn_deleteBook.Click += new System.EventHandler(this.btn_deleteBook_Click);
             // 
             // btn_updateBook
             // 
-            this.btn_updateBook.Location = new System.Drawing.Point(1224, 214);
+            this.btn_updateBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_updateBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_updateBook.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
+            this.btn_updateBook.Location = new System.Drawing.Point(19, 20);
             this.btn_updateBook.Name = "btn_updateBook";
-            this.btn_updateBook.Size = new System.Drawing.Size(247, 67);
+            this.btn_updateBook.Size = new System.Drawing.Size(237, 67);
             this.btn_updateBook.TabIndex = 50;
             this.btn_updateBook.Text = "Update Book";
-            this.btn_updateBook.UseVisualStyleBackColor = true;
+            this.btn_updateBook.UseVisualStyleBackColor = false;
             this.btn_updateBook.Click += new System.EventHandler(this.btn_updateBook_Click);
             // 
             // btn_addBook
             // 
-            this.btn_addBook.Location = new System.Drawing.Point(1238, 440);
+            this.btn_addBook.BackColor = System.Drawing.Color.Lime;
+            this.btn_addBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_addBook.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
+            this.btn_addBook.Location = new System.Drawing.Point(19, 187);
             this.btn_addBook.Name = "btn_addBook";
-            this.btn_addBook.Size = new System.Drawing.Size(247, 67);
+            this.btn_addBook.Size = new System.Drawing.Size(237, 67);
             this.btn_addBook.TabIndex = 49;
             this.btn_addBook.Text = "Add Book";
-            this.btn_addBook.UseVisualStyleBackColor = true;
+            this.btn_addBook.UseVisualStyleBackColor = false;
             this.btn_addBook.Click += new System.EventHandler(this.btn_addBook_Click);
             // 
             // btn_Genre
             // 
-            this.btn_Genre.Location = new System.Drawing.Point(581, 500);
+            this.btn_Genre.BackColor = System.Drawing.Color.Black;
+            this.btn_Genre.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
+            this.btn_Genre.ForeColor = System.Drawing.Color.White;
+            this.btn_Genre.Location = new System.Drawing.Point(21, 121);
             this.btn_Genre.Name = "btn_Genre";
-            this.btn_Genre.Size = new System.Drawing.Size(190, 48);
+            this.btn_Genre.Size = new System.Drawing.Size(237, 70);
             this.btn_Genre.TabIndex = 34;
             this.btn_Genre.Text = "View Genre";
-            this.btn_Genre.UseVisualStyleBackColor = true;
+            this.btn_Genre.UseVisualStyleBackColor = false;
             this.btn_Genre.Click += new System.EventHandler(this.btn_Genre_Click);
             // 
             // btn_ViewAuthors
             // 
-            this.btn_ViewAuthors.Location = new System.Drawing.Point(797, 500);
+            this.btn_ViewAuthors.BackColor = System.Drawing.Color.Black;
+            this.btn_ViewAuthors.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
+            this.btn_ViewAuthors.ForeColor = System.Drawing.Color.White;
+            this.btn_ViewAuthors.Location = new System.Drawing.Point(21, 226);
             this.btn_ViewAuthors.Name = "btn_ViewAuthors";
-            this.btn_ViewAuthors.Size = new System.Drawing.Size(190, 48);
+            this.btn_ViewAuthors.Size = new System.Drawing.Size(237, 70);
             this.btn_ViewAuthors.TabIndex = 53;
             this.btn_ViewAuthors.Text = "View Authors";
-            this.btn_ViewAuthors.UseVisualStyleBackColor = true;
+            this.btn_ViewAuthors.UseVisualStyleBackColor = false;
             this.btn_ViewAuthors.Click += new System.EventHandler(this.btn_ViewAuthors_Click);
             // 
             // btn_stock
             // 
-            this.btn_stock.Location = new System.Drawing.Point(406, 500);
+            this.btn_stock.BackColor = System.Drawing.Color.Black;
+            this.btn_stock.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
+            this.btn_stock.ForeColor = System.Drawing.Color.White;
+            this.btn_stock.Location = new System.Drawing.Point(21, 26);
             this.btn_stock.Name = "btn_stock";
-            this.btn_stock.Size = new System.Drawing.Size(161, 48);
+            this.btn_stock.Size = new System.Drawing.Size(237, 70);
             this.btn_stock.TabIndex = 54;
             this.btn_stock.Text = "View Stocks";
-            this.btn_stock.UseVisualStyleBackColor = true;
+            this.btn_stock.UseVisualStyleBackColor = false;
             this.btn_stock.Click += new System.EventHandler(this.btn_stock_Click);
             // 
             // panel3
@@ -353,7 +379,7 @@
             this.panel3.ForeColor = System.Drawing.Color.Black;
             this.panel3.Location = new System.Drawing.Point(355, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1569, 156);
+            this.panel3.Size = new System.Drawing.Size(1231, 133);
             this.panel3.TabIndex = 56;
             // 
             // button1
@@ -362,7 +388,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(1220, 42);
+            this.button1.Location = new System.Drawing.Point(1002, 34);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 63);
             this.button1.TabIndex = 9;
@@ -374,9 +400,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(39, 45);
+            this.label1.Location = new System.Drawing.Point(41, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 60);
+            this.label1.Size = new System.Drawing.Size(245, 58);
             this.label1.TabIndex = 8;
             this.label1.Text = "Book Heaven";
             // 
@@ -434,7 +460,7 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(355, 1055);
+            this.panel1.Size = new System.Drawing.Size(355, 896);
             this.panel1.TabIndex = 55;
             // 
             // btn_Suppliers
@@ -541,21 +567,37 @@
             this.btn_overview.Text = "Dashboard";
             this.btn_overview.UseVisualStyleBackColor = false;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btn_stock);
+            this.panel4.Controls.Add(this.btn_ViewAuthors);
+            this.panel4.Controls.Add(this.btn_Genre);
+            this.panel4.Location = new System.Drawing.Point(1269, 520);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(275, 324);
+            this.panel4.TabIndex = 57;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btn_deleteBook);
+            this.panel5.Controls.Add(this.btn_updateBook);
+            this.panel5.Controls.Add(this.btn_addBook);
+            this.panel5.Location = new System.Drawing.Point(1271, 194);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(273, 277);
+            this.panel5.TabIndex = 58;
+            // 
             // Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ClientSize = new System.Drawing.Size(1586, 896);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btn_stock);
-            this.Controls.Add(this.btn_ViewAuthors);
-            this.Controls.Add(this.btn_Genre);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgv_books);
-            this.Controls.Add(this.btn_deleteBook);
-            this.Controls.Add(this.btn_updateBook);
-            this.Controls.Add(this.btn_addBook);
             this.Controls.Add(this.chart1);
             this.Name = "Book";
             this.Text = "Book";
@@ -566,6 +608,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -611,5 +655,7 @@
         private System.Windows.Forms.Button btn_Sales;
         private System.Windows.Forms.Button btn_Customer;
         private System.Windows.Forms.Button btn_overview;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
     }
 }

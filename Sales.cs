@@ -361,5 +361,15 @@ namespace Bookhaven
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error");
             }
         }
+
+        private void dgv_sales_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

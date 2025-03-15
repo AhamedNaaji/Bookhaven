@@ -41,6 +41,7 @@
             // btn_Login
             // 
             this.btn_Login.BackColor = System.Drawing.Color.Black;
+            this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Login.Font = new System.Drawing.Font("Poppins Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Login.ForeColor = System.Drawing.Color.White;
             this.btn_Login.Location = new System.Drawing.Point(71, 290);
@@ -95,7 +96,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(40, 164);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(354, 60);
+            this.label1.Size = new System.Drawing.Size(343, 58);
             this.label1.TabIndex = 8;
             this.label1.Text = "Login Book Heaven";
             // 

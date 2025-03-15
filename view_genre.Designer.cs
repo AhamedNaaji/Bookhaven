@@ -39,72 +39,78 @@
             // 
             // txtbox_genre
             // 
-            this.txtbox_genre.Location = new System.Drawing.Point(23, 90);
+            this.txtbox_genre.Location = new System.Drawing.Point(36, 91);
             this.txtbox_genre.Multiline = true;
             this.txtbox_genre.Name = "txtbox_genre";
-            this.txtbox_genre.Size = new System.Drawing.Size(331, 45);
+            this.txtbox_genre.Size = new System.Drawing.Size(473, 45);
             this.txtbox_genre.TabIndex = 0;
             this.txtbox_genre.TextChanged += new System.EventHandler(this.txtbox_genre_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 47);
+            this.label1.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(32, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 20);
+            this.label1.Size = new System.Drawing.Size(199, 36);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Name";
+            this.label1.Text = "Genre Book Type";
             // 
             // btn_add_genre
             // 
-            this.btn_add_genre.Location = new System.Drawing.Point(23, 527);
+            this.btn_add_genre.BackColor = System.Drawing.Color.Lime;
+            this.btn_add_genre.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
+            this.btn_add_genre.Location = new System.Drawing.Point(36, 528);
             this.btn_add_genre.Name = "btn_add_genre";
-            this.btn_add_genre.Size = new System.Drawing.Size(126, 45);
+            this.btn_add_genre.Size = new System.Drawing.Size(135, 45);
             this.btn_add_genre.TabIndex = 3;
-            this.btn_add_genre.Text = "Add Genre";
-            this.btn_add_genre.UseVisualStyleBackColor = true;
+            this.btn_add_genre.Text = "Add";
+            this.btn_add_genre.UseVisualStyleBackColor = false;
             this.btn_add_genre.Click += new System.EventHandler(this.btn_add_genre_Click);
             // 
             // dgv_genre
             // 
             this.dgv_genre.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_genre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_genre.Location = new System.Drawing.Point(23, 185);
+            this.dgv_genre.Location = new System.Drawing.Point(36, 181);
             this.dgv_genre.Name = "dgv_genre";
             this.dgv_genre.ReadOnly = true;
             this.dgv_genre.RowHeadersWidth = 51;
             this.dgv_genre.RowTemplate.Height = 24;
-            this.dgv_genre.Size = new System.Drawing.Size(571, 293);
+            this.dgv_genre.Size = new System.Drawing.Size(473, 293);
             this.dgv_genre.TabIndex = 4;
             this.dgv_genre.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_genre_CellContentClick);
             this.dgv_genre.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_genre_CellContentDoubleClick);
             // 
             // btn_update_genre
             // 
-            this.btn_update_genre.Location = new System.Drawing.Point(215, 527);
+            this.btn_update_genre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_update_genre.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
+            this.btn_update_genre.Location = new System.Drawing.Point(188, 528);
             this.btn_update_genre.Name = "btn_update_genre";
-            this.btn_update_genre.Size = new System.Drawing.Size(126, 45);
+            this.btn_update_genre.Size = new System.Drawing.Size(161, 45);
             this.btn_update_genre.TabIndex = 5;
             this.btn_update_genre.Text = "Update Genre";
-            this.btn_update_genre.UseVisualStyleBackColor = true;
+            this.btn_update_genre.UseVisualStyleBackColor = false;
             this.btn_update_genre.Click += new System.EventHandler(this.btn_update_genre_Click);
             // 
             // btn_delete_genre
             // 
-            this.btn_delete_genre.Location = new System.Drawing.Point(433, 527);
+            this.btn_delete_genre.BackColor = System.Drawing.Color.Red;
+            this.btn_delete_genre.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
+            this.btn_delete_genre.Location = new System.Drawing.Point(372, 528);
             this.btn_delete_genre.Name = "btn_delete_genre";
-            this.btn_delete_genre.Size = new System.Drawing.Size(126, 45);
+            this.btn_delete_genre.Size = new System.Drawing.Size(137, 45);
             this.btn_delete_genre.TabIndex = 6;
             this.btn_delete_genre.Text = "Delete Genre";
-            this.btn_delete_genre.UseVisualStyleBackColor = true;
+            this.btn_delete_genre.UseVisualStyleBackColor = false;
             this.btn_delete_genre.Click += new System.EventHandler(this.btn_delete_genre_Click);
             // 
             // view_genre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 641);
+            this.ClientSize = new System.Drawing.Size(546, 596);
             this.Controls.Add(this.btn_delete_genre);
             this.Controls.Add(this.btn_update_genre);
             this.Controls.Add(this.dgv_genre);

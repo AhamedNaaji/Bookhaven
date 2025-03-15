@@ -62,10 +62,12 @@
             this.btn_Sales = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
             this.btn_overview = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cus)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -86,7 +88,7 @@
             this.panel2.Controls.Add(this.txtbox_name);
             this.panel2.Location = new System.Drawing.Point(404, 198);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1017, 352);
+            this.panel2.Size = new System.Drawing.Size(1017, 318);
             this.panel2.TabIndex = 26;
             // 
             // txt_Email
@@ -101,20 +103,20 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label23.Location = new System.Drawing.Point(688, 11);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(62, 23);
+            this.label23.Size = new System.Drawing.Size(75, 36);
             this.label23.TabIndex = 15;
             this.label23.Text = "Email";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label22.Location = new System.Drawing.Point(366, 229);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(116, 23);
+            this.label22.Size = new System.Drawing.Size(136, 36);
             this.label22.TabIndex = 14;
             this.label22.Text = "Number 02";
             // 
@@ -130,10 +132,10 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label21.Location = new System.Drawing.Point(15, 229);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(116, 23);
+            this.label21.Size = new System.Drawing.Size(131, 36);
             this.label21.TabIndex = 12;
             this.label21.Text = "Number 01";
             // 
@@ -149,10 +151,10 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label20.Location = new System.Drawing.Point(366, 117);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(88, 23);
+            this.label20.Size = new System.Drawing.Size(106, 36);
             this.label20.TabIndex = 10;
             this.label20.Text = "Address";
             // 
@@ -168,10 +170,10 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label19.Location = new System.Drawing.Point(15, 117);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(53, 23);
+            this.label19.Size = new System.Drawing.Size(61, 36);
             this.label19.TabIndex = 8;
             this.label19.Text = "DOB";
             // 
@@ -187,10 +189,10 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label18.Location = new System.Drawing.Point(366, 11);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(47, 23);
+            this.label18.Size = new System.Drawing.Size(52, 36);
             this.label18.TabIndex = 6;
             this.label18.Text = "NIC";
             // 
@@ -206,10 +208,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(15, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 23);
+            this.label3.Size = new System.Drawing.Size(80, 36);
             this.label3.TabIndex = 4;
             this.label3.Text = "Name";
             // 
@@ -225,8 +227,9 @@
             // btn_addCustomer
             // 
             this.btn_addCustomer.BackColor = System.Drawing.Color.Lime;
+            this.btn_addCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_addCustomer.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
-            this.btn_addCustomer.Location = new System.Drawing.Point(1528, 216);
+            this.btn_addCustomer.Location = new System.Drawing.Point(19, 23);
             this.btn_addCustomer.Name = "btn_addCustomer";
             this.btn_addCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_addCustomer.TabIndex = 27;
@@ -237,8 +240,9 @@
             // btn_updateCustomer
             // 
             this.btn_updateCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_updateCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_updateCustomer.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
-            this.btn_updateCustomer.Location = new System.Drawing.Point(1528, 334);
+            this.btn_updateCustomer.Location = new System.Drawing.Point(19, 128);
             this.btn_updateCustomer.Name = "btn_updateCustomer";
             this.btn_updateCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_updateCustomer.TabIndex = 28;
@@ -249,8 +253,9 @@
             // btn_deleteCustomer
             // 
             this.btn_deleteCustomer.BackColor = System.Drawing.Color.Red;
+            this.btn_deleteCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_deleteCustomer.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
-            this.btn_deleteCustomer.Location = new System.Drawing.Point(1528, 459);
+            this.btn_deleteCustomer.Location = new System.Drawing.Point(19, 232);
             this.btn_deleteCustomer.Name = "btn_deleteCustomer";
             this.btn_deleteCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_deleteCustomer.TabIndex = 29;
@@ -262,11 +267,11 @@
             // 
             this.dgv_cus.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_cus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_cus.Location = new System.Drawing.Point(404, 576);
+            this.dgv_cus.Location = new System.Drawing.Point(404, 557);
             this.dgv_cus.Name = "dgv_cus";
             this.dgv_cus.RowHeadersWidth = 51;
             this.dgv_cus.RowTemplate.Height = 24;
-            this.dgv_cus.Size = new System.Drawing.Size(1376, 268);
+            this.dgv_cus.Size = new System.Drawing.Size(1338, 287);
             this.dgv_cus.TabIndex = 30;
             this.dgv_cus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_cus_CellContentClick);
             this.dgv_cus.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_cus_CellDoubleClick);
@@ -283,7 +288,7 @@
             this.panel3.ForeColor = System.Drawing.Color.Black;
             this.panel3.Location = new System.Drawing.Point(355, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1569, 156);
+            this.panel3.Size = new System.Drawing.Size(1427, 156);
             this.panel3.TabIndex = 32;
             // 
             // button1
@@ -292,7 +297,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(1220, 42);
+            this.button1.Location = new System.Drawing.Point(1200, 45);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 63);
             this.button1.TabIndex = 9;
@@ -306,7 +311,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(39, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 60);
+            this.label1.Size = new System.Drawing.Size(245, 58);
             this.label1.TabIndex = 8;
             this.label1.Text = "Book Heaven";
             // 
@@ -364,7 +369,7 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(355, 1006);
+            this.panel1.Size = new System.Drawing.Size(355, 885);
             this.panel1.TabIndex = 31;
             // 
             // btn_Suppliers
@@ -471,17 +476,25 @@
             this.btn_overview.Text = "Dashboard";
             this.btn_overview.UseVisualStyleBackColor = false;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btn_deleteCustomer);
+            this.panel4.Controls.Add(this.btn_addCustomer);
+            this.panel4.Controls.Add(this.btn_updateCustomer);
+            this.panel4.Location = new System.Drawing.Point(1460, 195);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(282, 321);
+            this.panel4.TabIndex = 33;
+            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1006);
+            this.ClientSize = new System.Drawing.Size(1782, 885);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgv_cus);
-            this.Controls.Add(this.btn_deleteCustomer);
-            this.Controls.Add(this.btn_updateCustomer);
-            this.Controls.Add(this.btn_addCustomer);
             this.Controls.Add(this.panel2);
             this.Name = "Customer";
             this.Text = "Customer";
@@ -492,6 +505,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -531,5 +545,6 @@
         private System.Windows.Forms.Button btn_Sales;
         private System.Windows.Forms.Button btn_Customer;
         private System.Windows.Forms.Button btn_overview;
+        private System.Windows.Forms.Panel panel4;
     }
 }

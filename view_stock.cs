@@ -111,5 +111,20 @@ namespace Bookhaven
         {
             FirstRun();
         }
+
+        private void dgv_stock_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_quantity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

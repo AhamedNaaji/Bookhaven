@@ -63,8 +63,7 @@ namespace Bookhaven
 
         private void btn_Report_Click(object sender, EventArgs e)
         {
-            Report report = new Report();
-            report.ShowDialog();
+
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

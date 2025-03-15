@@ -60,10 +60,12 @@
             this.btn_Sales = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
             this.btn_overview = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sup)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -80,18 +82,18 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(481, 230);
+            this.panel3.Location = new System.Drawing.Point(404, 209);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(801, 197);
+            this.panel3.Size = new System.Drawing.Size(801, 293);
             this.panel3.TabIndex = 55;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(550, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 23);
+            this.label2.Size = new System.Drawing.Size(75, 36);
             this.label2.TabIndex = 38;
             this.label2.Text = "Email";
             // 
@@ -121,10 +123,10 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label14.Location = new System.Drawing.Point(16, 91);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(106, 23);
+            this.label14.Size = new System.Drawing.Size(117, 36);
             this.label14.TabIndex = 34;
             this.label14.Text = "Contact 1";
             // 
@@ -155,40 +157,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(279, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 23);
+            this.label1.Size = new System.Drawing.Size(122, 36);
             this.label1.TabIndex = 28;
             this.label1.Text = "Contact 2";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(550, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 23);
+            this.label4.Size = new System.Drawing.Size(106, 36);
             this.label4.TabIndex = 8;
             this.label4.Text = "Address";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(279, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 23);
+            this.label5.Size = new System.Drawing.Size(52, 36);
             this.label5.TabIndex = 6;
             this.label5.Text = "NIC";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(15, 11);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(153, 23);
+            this.label6.Size = new System.Drawing.Size(177, 36);
             this.label6.TabIndex = 4;
             this.label6.Text = "Supplier Name";
             // 
@@ -196,42 +198,48 @@
             // 
             this.dgv_Sup.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgv_Sup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Sup.Location = new System.Drawing.Point(481, 628);
+            this.dgv_Sup.Location = new System.Drawing.Point(404, 534);
             this.dgv_Sup.Name = "dgv_Sup";
             this.dgv_Sup.RowHeadersWidth = 51;
             this.dgv_Sup.RowTemplate.Height = 24;
-            this.dgv_Sup.Size = new System.Drawing.Size(1192, 319);
+            this.dgv_Sup.Size = new System.Drawing.Size(1156, 319);
             this.dgv_Sup.TabIndex = 59;
             this.dgv_Sup.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sup_CellDoubleClick);
             // 
             // btn_deleteSupplier
             // 
-            this.btn_deleteSupplier.Location = new System.Drawing.Point(1426, 493);
+            this.btn_deleteSupplier.BackColor = System.Drawing.Color.Red;
+            this.btn_deleteSupplier.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
+            this.btn_deleteSupplier.Location = new System.Drawing.Point(27, 201);
             this.btn_deleteSupplier.Name = "btn_deleteSupplier";
             this.btn_deleteSupplier.Size = new System.Drawing.Size(247, 67);
             this.btn_deleteSupplier.TabIndex = 58;
             this.btn_deleteSupplier.Text = "Delete Suppliers";
-            this.btn_deleteSupplier.UseVisualStyleBackColor = true;
+            this.btn_deleteSupplier.UseVisualStyleBackColor = false;
             this.btn_deleteSupplier.Click += new System.EventHandler(this.btn_deleteSupplier_Click);
             // 
             // btn_updateSupplier
             // 
-            this.btn_updateSupplier.Location = new System.Drawing.Point(1426, 387);
+            this.btn_updateSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_updateSupplier.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
+            this.btn_updateSupplier.Location = new System.Drawing.Point(27, 110);
             this.btn_updateSupplier.Name = "btn_updateSupplier";
             this.btn_updateSupplier.Size = new System.Drawing.Size(247, 67);
             this.btn_updateSupplier.TabIndex = 57;
             this.btn_updateSupplier.Text = "Update Suppliers";
-            this.btn_updateSupplier.UseVisualStyleBackColor = true;
+            this.btn_updateSupplier.UseVisualStyleBackColor = false;
             this.btn_updateSupplier.Click += new System.EventHandler(this.btn_updateSupplier_Click);
             // 
             // btn_addSupplier
             // 
-            this.btn_addSupplier.Location = new System.Drawing.Point(1426, 278);
+            this.btn_addSupplier.BackColor = System.Drawing.Color.Lime;
+            this.btn_addSupplier.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
+            this.btn_addSupplier.Location = new System.Drawing.Point(27, 26);
             this.btn_addSupplier.Name = "btn_addSupplier";
             this.btn_addSupplier.Size = new System.Drawing.Size(247, 67);
             this.btn_addSupplier.TabIndex = 56;
             this.btn_addSupplier.Text = "Add Suppliers";
-            this.btn_addSupplier.UseVisualStyleBackColor = true;
+            this.btn_addSupplier.UseVisualStyleBackColor = false;
             this.btn_addSupplier.Click += new System.EventHandler(this.btn_addSupplier_Click);
             // 
             // panel1
@@ -246,7 +254,7 @@
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(355, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1569, 156);
+            this.panel1.Size = new System.Drawing.Size(1263, 156);
             this.panel1.TabIndex = 61;
             // 
             // button1
@@ -255,7 +263,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(1220, 42);
+            this.button1.Location = new System.Drawing.Point(1018, 45);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 63);
             this.button1.TabIndex = 9;
@@ -269,7 +277,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(39, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(253, 60);
+            this.label3.Size = new System.Drawing.Size(245, 58);
             this.label3.TabIndex = 8;
             this.label3.Text = "Book Heaven";
             // 
@@ -327,7 +335,7 @@
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(355, 1022);
+            this.panel2.Size = new System.Drawing.Size(355, 891);
             this.panel2.TabIndex = 60;
             // 
             // btn_Suppliers
@@ -434,18 +442,26 @@
             this.btn_overview.Text = "Dashboard";
             this.btn_overview.UseVisualStyleBackColor = false;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btn_updateSupplier);
+            this.panel4.Controls.Add(this.btn_addSupplier);
+            this.panel4.Controls.Add(this.btn_deleteSupplier);
+            this.panel4.Location = new System.Drawing.Point(1254, 204);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(306, 298);
+            this.panel4.TabIndex = 62;
+            // 
             // Suppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1022);
+            this.ClientSize = new System.Drawing.Size(1618, 891);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dgv_Sup);
-            this.Controls.Add(this.btn_deleteSupplier);
-            this.Controls.Add(this.btn_updateSupplier);
-            this.Controls.Add(this.btn_addSupplier);
+            this.Controls.Add(this.panel4);
             this.Name = "Suppliers";
             this.Text = "Suppliers";
             this.Load += new System.EventHandler(this.Suppliers_Load);
@@ -455,6 +471,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -492,5 +509,6 @@
         private System.Windows.Forms.Button btn_Sales;
         private System.Windows.Forms.Button btn_Customer;
         private System.Windows.Forms.Button btn_overview;
+        private System.Windows.Forms.Panel panel4;
     }
 }
