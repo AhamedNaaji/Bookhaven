@@ -39,6 +39,7 @@
             // 
             // txtbox_genre
             // 
+            this.txtbox_genre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_genre.Location = new System.Drawing.Point(23, 90);
             this.txtbox_genre.Multiline = true;
             this.txtbox_genre.Name = "txtbox_genre";
@@ -49,15 +50,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(19, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 20);
+            this.label1.Size = new System.Drawing.Size(165, 33);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Name";
+            this.label1.Text = "Genre Name";
             // 
             // btn_add_genre
             // 
+            this.btn_add_genre.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
             this.btn_add_genre.Location = new System.Drawing.Point(23, 527);
             this.btn_add_genre.Name = "btn_add_genre";
             this.btn_add_genre.Size = new System.Drawing.Size(126, 45);
@@ -82,9 +84,10 @@
             // 
             // btn_update_genre
             // 
+            this.btn_update_genre.Font = new System.Drawing.Font("Century Gothic", 9.8F, System.Drawing.FontStyle.Bold);
             this.btn_update_genre.Location = new System.Drawing.Point(215, 527);
             this.btn_update_genre.Name = "btn_update_genre";
-            this.btn_update_genre.Size = new System.Drawing.Size(126, 45);
+            this.btn_update_genre.Size = new System.Drawing.Size(139, 45);
             this.btn_update_genre.TabIndex = 5;
             this.btn_update_genre.Text = "Update Genre";
             this.btn_update_genre.UseVisualStyleBackColor = true;
@@ -92,7 +95,8 @@
             // 
             // btn_delete_genre
             // 
-            this.btn_delete_genre.Location = new System.Drawing.Point(433, 527);
+            this.btn_delete_genre.Font = new System.Drawing.Font("Century Gothic", 9.8F, System.Drawing.FontStyle.Bold);
+            this.btn_delete_genre.Location = new System.Drawing.Point(425, 527);
             this.btn_delete_genre.Name = "btn_delete_genre";
             this.btn_delete_genre.Size = new System.Drawing.Size(126, 45);
             this.btn_delete_genre.TabIndex = 6;
@@ -104,6 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(140)))), ((int)(((byte)(137)))));
             this.ClientSize = new System.Drawing.Size(633, 641);
             this.Controls.Add(this.btn_delete_genre);
             this.Controls.Add(this.btn_update_genre);

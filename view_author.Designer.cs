@@ -39,6 +39,7 @@
             // 
             // btn_delete_author
             // 
+            this.btn_delete_author.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btn_delete_author.Location = new System.Drawing.Point(442, 506);
             this.btn_delete_author.Name = "btn_delete_author";
             this.btn_delete_author.Size = new System.Drawing.Size(126, 45);
@@ -49,6 +50,7 @@
             // 
             // btn_update_author
             // 
+            this.btn_update_author.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btn_update_author.Location = new System.Drawing.Point(224, 506);
             this.btn_update_author.Name = "btn_update_author";
             this.btn_update_author.Size = new System.Drawing.Size(126, 45);
@@ -71,6 +73,7 @@
             // 
             // btn_add_author
             // 
+            this.btn_add_author.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btn_add_author.Location = new System.Drawing.Point(32, 506);
             this.btn_add_author.Name = "btn_add_author";
             this.btn_add_author.Size = new System.Drawing.Size(126, 45);
@@ -82,15 +85,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(28, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 20);
+            this.label1.Size = new System.Drawing.Size(155, 27);
             this.label1.TabIndex = 8;
             this.label1.Text = "Author_Name";
             // 
             // txtbox_author
             // 
+            this.txtbox_author.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_author.Location = new System.Drawing.Point(32, 69);
             this.txtbox_author.Multiline = true;
             this.txtbox_author.Name = "txtbox_author";
@@ -102,6 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(140)))), ((int)(((byte)(137)))));
             this.ClientSize = new System.Drawing.Size(626, 576);
             this.Controls.Add(this.btn_delete_author);
             this.Controls.Add(this.btn_update_author);
