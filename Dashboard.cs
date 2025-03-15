@@ -70,11 +70,5 @@ namespace Bookhaven
             Report reports = new Report();
             reports.ShowDialog();
         }
-
-        
-
-        
-
-        
     }
 }
