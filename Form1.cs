@@ -21,6 +21,8 @@ namespace Bookhaven
         public Form1()
         {
             InitializeComponent();
+            // Set the AcceptButton property to btn_Login
+            this.AcceptButton = btn_Login;
         }
 
 
@@ -52,6 +54,11 @@ namespace Bookhaven
                         {
                             // Open Admin Dashboard
                             Dashboard dashboard_frm = new Dashboard();
+                            dashboard_frm.FormClosed += (s, args) =>
+                            {
+                                // When the dashboard form is closed, show the login form again
+                                this.Show();
+                            };
                             dashboard_frm.ShowDialog();
                             this.Hide();
                         }
@@ -59,6 +66,11 @@ namespace Bookhaven
                         {
                             // Open Clerk Dashboard
                             Dashboard_Clerk dashboard = new Dashboard_Clerk();
+                            dashboard.FormClosed += (s, args) =>
+                            {
+                                // When the dashboard form is closed, show the login form again
+                                this.Show();
+                            };
                             dashboard.ShowDialog();
                             this.Hide();
                         }
@@ -83,9 +95,6 @@ namespace Bookhaven
             }
         }
 
-        private void txt_Username_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
