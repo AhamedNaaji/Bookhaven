@@ -271,9 +271,78 @@ namespace Bookhaven
             FirstRun(); // Refresh data
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        private void btn_Dashboard_Click(object sender, EventArgs e)
         {
+            Dashboard dshboard = new Dashboard();
+            dshboard.ShowDialog();
+        }
 
+        private void btn_Staffs_Click(object sender, EventArgs e)
+        {
+            Staff stffs = new Staff();
+            stffs.ShowDialog();
+        }
+
+        private void btn_Customers_Click(object sender, EventArgs e)
+        {
+            Customer customers = new Customer();
+            customers.ShowDialog();
+        }
+
+        private void btn_Suppliers_Click(object sender, EventArgs e)
+        {
+            Suppliers supplier = new Suppliers();
+            supplier.ShowDialog();
+        }
+
+        private void btn_Books_Click(object sender, EventArgs e)
+        {
+            Book books = new Book();
+            books.ShowDialog();
+        }
+
+        private void btn_Sales_Click(object sender, EventArgs e)
+        {
+            Sales sale = new Sales();
+            sale.ShowDialog();
+        }
+
+        private void btn_CustomerOrders_Click(object sender, EventArgs e)
+        {
+            CustomerOrder cusOrders = new CustomerOrder();
+            cusOrders.ShowDialog();
+        }
+
+        private void btn_SupplierOrders_Click(object sender, EventArgs e)
+        {
+            SupplierOrder supOrders = new SupplierOrder();
+            supOrders.ShowDialog();
+        }
+
+        private void btn_Reports_Click(object sender, EventArgs e)
+        {
+            Report reports = new Report();
+            reports.ShowDialog();
+        }
+
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            // Display a confirmation message box
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Confirm Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Check the user's response
+            if (result == DialogResult.Yes)
+            {
+                // Clear session data or reset user-specific information
+                //Program.CurrentUser = null;
+
+                // Close the current Dashboard form
+                this.Close();
+
+                // Show the LoginForm
+                Form1 loginForm = new Form1();
+                loginForm.Show();
+            }
         }
     }
 }

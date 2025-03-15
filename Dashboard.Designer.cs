@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btn_Customers = new System.Windows.Forms.Button();
             this.btn_Dashboard = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,41 +44,44 @@
             this.btn_Reports = new System.Windows.Forms.Button();
             this.btn_Suppliers = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label_Total_Supplier_Orders = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label_Total_Customer_Orders = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label_Total_Sales = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label_Total_Staffs = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label_Total_Suppliers = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label_Total_Books = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
+            this.label_Total_Customers = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.makesales_btn = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.books_btn = new System.Windows.Forms.Button();
+            this.customer_btn = new System.Windows.Forms.Button();
+            this.supplier_btn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.sales_btn = new System.Windows.Forms.Button();
+            this.staffs_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -86,9 +89,6 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Customers
@@ -107,7 +107,7 @@
             // 
             // btn_Dashboard
             // 
-            this.btn_Dashboard.BackColor = System.Drawing.Color.White;
+            this.btn_Dashboard.BackColor = System.Drawing.Color.Silver;
             this.btn_Dashboard.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Dashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_Dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -267,6 +267,108 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(325, 688);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.panel11.Controls.Add(this.label_Total_Supplier_Orders);
+            this.panel11.Controls.Add(this.label16);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Location = new System.Drawing.Point(0, 344);
+            this.panel11.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(315, 162);
+            this.panel11.TabIndex = 8;
+            // 
+            // label_Total_Supplier_Orders
+            // 
+            this.label_Total_Supplier_Orders.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Total_Supplier_Orders.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Total_Supplier_Orders.Location = new System.Drawing.Point(64, 66);
+            this.label_Total_Supplier_Orders.Name = "label_Total_Supplier_Orders";
+            this.label_Total_Supplier_Orders.Size = new System.Drawing.Size(157, 56);
+            this.label_Total_Supplier_Orders.TabIndex = 1;
+            this.label_Total_Supplier_Orders.Text = "300";
+            this.label_Total_Supplier_Orders.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label16.Location = new System.Drawing.Point(32, 13);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(262, 29);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Total Supplier Orders";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.panel8.Controls.Add(this.label_Total_Customer_Orders);
+            this.panel8.Controls.Add(this.label14);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 172);
+            this.panel8.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(315, 162);
+            this.panel8.TabIndex = 7;
+            // 
+            // label_Total_Customer_Orders
+            // 
+            this.label_Total_Customer_Orders.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Total_Customer_Orders.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Total_Customer_Orders.Location = new System.Drawing.Point(64, 66);
+            this.label_Total_Customer_Orders.Name = "label_Total_Customer_Orders";
+            this.label_Total_Customer_Orders.Size = new System.Drawing.Size(157, 56);
+            this.label_Total_Customer_Orders.TabIndex = 1;
+            this.label_Total_Customer_Orders.Text = "300";
+            this.label_Total_Customer_Orders.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Location = new System.Drawing.Point(15, 10);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(279, 29);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Total Customer Orders";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.panel4.Controls.Add(this.label_Total_Sales);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(315, 162);
+            this.panel4.TabIndex = 6;
+            // 
+            // label_Total_Sales
+            // 
+            this.label_Total_Sales.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Total_Sales.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Total_Sales.Location = new System.Drawing.Point(64, 66);
+            this.label_Total_Sales.Name = "label_Total_Sales";
+            this.label_Total_Sales.Size = new System.Drawing.Size(157, 56);
+            this.label_Total_Sales.TabIndex = 1;
+            this.label_Total_Sales.Text = "300";
+            this.label_Total_Sales.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label12.Location = new System.Drawing.Point(88, 14);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(156, 34);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Total Sales";
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 4;
@@ -288,7 +390,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
-            this.panel7.Controls.Add(this.label10);
+            this.panel7.Controls.Add(this.label_Total_Staffs);
             this.panel7.Controls.Add(this.label11);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(966, 0);
@@ -297,16 +399,16 @@
             this.panel7.Size = new System.Drawing.Size(315, 164);
             this.panel7.TabIndex = 4;
             // 
-            // label10
+            // label_Total_Staffs
             // 
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(64, 66);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(157, 56);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "300";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label_Total_Staffs.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Total_Staffs.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Total_Staffs.Location = new System.Drawing.Point(64, 66);
+            this.label_Total_Staffs.Name = "label_Total_Staffs";
+            this.label_Total_Staffs.Size = new System.Drawing.Size(157, 56);
+            this.label_Total_Staffs.TabIndex = 1;
+            this.label_Total_Staffs.Text = "300";
+            this.label_Total_Staffs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label11
             // 
@@ -322,7 +424,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
-            this.panel6.Controls.Add(this.label7);
+            this.panel6.Controls.Add(this.label_Total_Suppliers);
             this.panel6.Controls.Add(this.label9);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(644, 0);
@@ -331,16 +433,16 @@
             this.panel6.Size = new System.Drawing.Size(312, 164);
             this.panel6.TabIndex = 3;
             // 
-            // label7
+            // label_Total_Suppliers
             // 
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(64, 66);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(157, 56);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "300";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label_Total_Suppliers.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Total_Suppliers.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Total_Suppliers.Location = new System.Drawing.Point(64, 66);
+            this.label_Total_Suppliers.Name = "label_Total_Suppliers";
+            this.label_Total_Suppliers.Size = new System.Drawing.Size(157, 56);
+            this.label_Total_Suppliers.TabIndex = 1;
+            this.label_Total_Suppliers.Text = "300";
+            this.label_Total_Suppliers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label9
             // 
@@ -356,7 +458,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
-            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label_Total_Books);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(322, 0);
@@ -365,16 +467,16 @@
             this.panel5.Size = new System.Drawing.Size(312, 164);
             this.panel5.TabIndex = 2;
             // 
-            // label3
+            // label_Total_Books
             // 
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(64, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 56);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "300";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label_Total_Books.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Total_Books.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Total_Books.Location = new System.Drawing.Point(64, 66);
+            this.label_Total_Books.Name = "label_Total_Books";
+            this.label_Total_Books.Size = new System.Drawing.Size(157, 56);
+            this.label_Total_Books.TabIndex = 1;
+            this.label_Total_Books.Text = "300";
+            this.label_Total_Books.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
             // 
@@ -390,7 +492,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
-            this.panel2.Controls.Add(this.label19);
+            this.panel2.Controls.Add(this.label_Total_Customers);
             this.panel2.Controls.Add(this.label20);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -399,16 +501,16 @@
             this.panel2.Size = new System.Drawing.Size(312, 164);
             this.panel2.TabIndex = 1;
             // 
-            // label19
+            // label_Total_Customers
             // 
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label19.Location = new System.Drawing.Point(64, 66);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(157, 56);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "300";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label_Total_Customers.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Total_Customers.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_Total_Customers.Location = new System.Drawing.Point(64, 66);
+            this.label_Total_Customers.Name = "label_Total_Customers";
+            this.label_Total_Customers.Size = new System.Drawing.Size(157, 56);
+            this.label_Total_Customers.TabIndex = 1;
+            this.label_Total_Customers.Text = "300";
+            this.label_Total_Customers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label20
             // 
@@ -423,49 +525,52 @@
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart2.Legends.Add(legend3);
             this.chart2.Location = new System.Drawing.Point(581, 442);
             this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart2.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart2.Series.Add(series3);
             this.chart2.Size = new System.Drawing.Size(924, 351);
             this.chart2.TabIndex = 18;
             this.chart2.Text = "chart2";
             // 
-            // makesales_btn
+            // books_btn
             // 
-            this.makesales_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.makesales_btn.Location = new System.Drawing.Point(581, 335);
-            this.makesales_btn.Name = "makesales_btn";
-            this.makesales_btn.Size = new System.Drawing.Size(180, 71);
-            this.makesales_btn.TabIndex = 19;
-            this.makesales_btn.Text = "Add Books";
-            this.makesales_btn.UseVisualStyleBackColor = true;
+            this.books_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.books_btn.Location = new System.Drawing.Point(581, 335);
+            this.books_btn.Name = "books_btn";
+            this.books_btn.Size = new System.Drawing.Size(180, 71);
+            this.books_btn.TabIndex = 19;
+            this.books_btn.Text = "Add Books";
+            this.books_btn.UseVisualStyleBackColor = true;
+            this.books_btn.Click += new System.EventHandler(this.books_btn_Click);
             // 
-            // button4
+            // customer_btn
             // 
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(767, 335);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(180, 71);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "Add Customers";
-            this.button4.UseVisualStyleBackColor = true;
+            this.customer_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.customer_btn.Location = new System.Drawing.Point(767, 335);
+            this.customer_btn.Name = "customer_btn";
+            this.customer_btn.Size = new System.Drawing.Size(180, 71);
+            this.customer_btn.TabIndex = 20;
+            this.customer_btn.Text = "Add Customers";
+            this.customer_btn.UseVisualStyleBackColor = true;
+            this.customer_btn.Click += new System.EventHandler(this.customer_btn_Click);
             // 
-            // button5
+            // supplier_btn
             // 
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.button5.Location = new System.Drawing.Point(953, 335);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(180, 71);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "Add   Suppliers";
-            this.button5.UseVisualStyleBackColor = true;
+            this.supplier_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.supplier_btn.Location = new System.Drawing.Point(953, 335);
+            this.supplier_btn.Name = "supplier_btn";
+            this.supplier_btn.Size = new System.Drawing.Size(180, 71);
+            this.supplier_btn.TabIndex = 21;
+            this.supplier_btn.Text = "Add   Suppliers";
+            this.supplier_btn.UseVisualStyleBackColor = true;
+            this.supplier_btn.Click += new System.EventHandler(this.supplier_btn_Click);
             // 
             // panel3
             // 
@@ -511,127 +616,27 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // panel4
+            // sales_btn
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(315, 162);
-            this.panel4.TabIndex = 6;
+            this.sales_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.sales_btn.Location = new System.Drawing.Point(1139, 335);
+            this.sales_btn.Name = "sales_btn";
+            this.sales_btn.Size = new System.Drawing.Size(180, 71);
+            this.sales_btn.TabIndex = 23;
+            this.sales_btn.Text = "Make Sale";
+            this.sales_btn.UseVisualStyleBackColor = true;
+            this.sales_btn.Click += new System.EventHandler(this.sales_btn_Click);
             // 
-            // label5
+            // staffs_btn
             // 
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(64, 66);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(157, 56);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "300";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(88, 14);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(156, 34);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Total Sales";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
-            this.panel8.Controls.Add(this.label13);
-            this.panel8.Controls.Add(this.label14);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(0, 172);
-            this.panel8.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(315, 162);
-            this.panel8.TabIndex = 7;
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label13.Location = new System.Drawing.Point(64, 66);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(157, 56);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "300";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(15, 10);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(279, 29);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Total Customer Orders";
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
-            this.panel11.Controls.Add(this.label15);
-            this.panel11.Controls.Add(this.label16);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(0, 344);
-            this.panel11.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(315, 162);
-            this.panel11.TabIndex = 8;
-            // 
-            // label15
-            // 
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label15.Location = new System.Drawing.Point(64, 66);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(157, 56);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "300";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label16.Location = new System.Drawing.Point(32, 13);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(262, 29);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Total Supplier Orders";
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(1139, 335);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 71);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "Make Sale";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(1325, 335);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 71);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "Add Staffs";
-            this.button3.UseVisualStyleBackColor = true;
+            this.staffs_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.staffs_btn.Location = new System.Drawing.Point(1325, 335);
+            this.staffs_btn.Name = "staffs_btn";
+            this.staffs_btn.Size = new System.Drawing.Size(180, 71);
+            this.staffs_btn.TabIndex = 24;
+            this.staffs_btn.Text = "Add Staffs";
+            this.staffs_btn.UseVisualStyleBackColor = true;
+            this.staffs_btn.Click += new System.EventHandler(this.staffs_btn_Click);
             // 
             // Dashboard
             // 
@@ -639,12 +644,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(140)))), ((int)(((byte)(137)))));
             this.ClientSize = new System.Drawing.Size(1924, 1011);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.staffs_btn);
+            this.Controls.Add(this.sales_btn);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.makesales_btn);
+            this.Controls.Add(this.supplier_btn);
+            this.Controls.Add(this.customer_btn);
+            this.Controls.Add(this.books_btn);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -655,6 +660,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -667,12 +678,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -692,35 +697,35 @@
         private System.Windows.Forms.Button btn_Reports;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label_Total_Customers;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.Button makesales_btn;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button books_btn;
+        private System.Windows.Forms.Button customer_btn;
+        private System.Windows.Forms.Button supplier_btn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn_Logout;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label_Total_Staffs;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label_Total_Suppliers;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label_Total_Books;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label_Total_Supplier_Orders;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label_Total_Customer_Orders;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label_Total_Sales;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button sales_btn;
+        private System.Windows.Forms.Button staffs_btn;
     }
 }
