@@ -39,76 +39,91 @@
             // 
             // btn_delete_author
             // 
-            this.btn_delete_author.Location = new System.Drawing.Point(442, 506);
+            this.btn_delete_author.BackColor = System.Drawing.Color.Crimson;
+            this.btn_delete_author.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_delete_author.Location = new System.Drawing.Point(1045, 330);
+            this.btn_delete_author.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btn_delete_author.Name = "btn_delete_author";
-            this.btn_delete_author.Size = new System.Drawing.Size(126, 45);
+            this.btn_delete_author.Size = new System.Drawing.Size(205, 56);
             this.btn_delete_author.TabIndex = 12;
             this.btn_delete_author.Text = "Delete ";
-            this.btn_delete_author.UseVisualStyleBackColor = true;
+            this.btn_delete_author.UseVisualStyleBackColor = false;
             this.btn_delete_author.Click += new System.EventHandler(this.btn_delete_author_Click);
             // 
             // btn_update_author
             // 
-            this.btn_update_author.Location = new System.Drawing.Point(224, 506);
+            this.btn_update_author.BackColor = System.Drawing.Color.Cyan;
+            this.btn_update_author.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_update_author.Location = new System.Drawing.Point(1045, 180);
+            this.btn_update_author.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btn_update_author.Name = "btn_update_author";
-            this.btn_update_author.Size = new System.Drawing.Size(126, 45);
+            this.btn_update_author.Size = new System.Drawing.Size(205, 56);
             this.btn_update_author.TabIndex = 11;
             this.btn_update_author.Text = "Update ";
-            this.btn_update_author.UseVisualStyleBackColor = true;
+            this.btn_update_author.UseVisualStyleBackColor = false;
             this.btn_update_author.Click += new System.EventHandler(this.btn_update_author_Click);
             // 
             // dgv_author
             // 
             this.dgv_author.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_author.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_author.Location = new System.Drawing.Point(32, 164);
+            this.dgv_author.Location = new System.Drawing.Point(52, 180);
+            this.dgv_author.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dgv_author.Name = "dgv_author";
             this.dgv_author.RowHeadersWidth = 51;
             this.dgv_author.RowTemplate.Height = 24;
-            this.dgv_author.Size = new System.Drawing.Size(571, 293);
+            this.dgv_author.Size = new System.Drawing.Size(928, 206);
             this.dgv_author.TabIndex = 10;
             this.dgv_author.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_author_CellContentDoubleClick);
             // 
             // btn_add_author
             // 
-            this.btn_add_author.Location = new System.Drawing.Point(32, 506);
+            this.btn_add_author.BackColor = System.Drawing.Color.PaleGreen;
+            this.btn_add_author.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_add_author.ForeColor = System.Drawing.Color.Black;
+            this.btn_add_author.Location = new System.Drawing.Point(1045, 39);
+            this.btn_add_author.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btn_add_author.Name = "btn_add_author";
-            this.btn_add_author.Size = new System.Drawing.Size(126, 45);
+            this.btn_add_author.Size = new System.Drawing.Size(205, 56);
             this.btn_add_author.TabIndex = 9;
             this.btn_add_author.Text = "Add ";
-            this.btn_add_author.UseVisualStyleBackColor = true;
+            this.btn_add_author.UseVisualStyleBackColor = false;
             this.btn_add_author.Click += new System.EventHandler(this.btn_add_author_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 26);
+            this.label1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(46, 39);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 20);
+            this.label1.Size = new System.Drawing.Size(133, 24);
             this.label1.TabIndex = 8;
             this.label1.Text = "Author_Name";
             // 
             // txtbox_author
             // 
-            this.txtbox_author.Location = new System.Drawing.Point(32, 69);
+            this.txtbox_author.Location = new System.Drawing.Point(52, 86);
+            this.txtbox_author.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtbox_author.Multiline = true;
             this.txtbox_author.Name = "txtbox_author";
-            this.txtbox_author.Size = new System.Drawing.Size(331, 45);
+            this.txtbox_author.Size = new System.Drawing.Size(925, 55);
             this.txtbox_author.TabIndex = 7;
             this.txtbox_author.TextChanged += new System.EventHandler(this.txtbox_author_TextChanged);
             // 
             // view_author
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 576);
+            this.ClientSize = new System.Drawing.Size(1287, 419);
             this.Controls.Add(this.btn_delete_author);
             this.Controls.Add(this.btn_update_author);
             this.Controls.Add(this.dgv_author);
             this.Controls.Add(this.btn_add_author);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtbox_author);
+            this.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "view_author";
             this.Text = "view_author";
             this.Load += new System.EventHandler(this.view_author_Load);

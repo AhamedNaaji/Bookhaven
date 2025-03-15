@@ -20,10 +20,12 @@ namespace Bookhaven
         cls_book clsBook = new cls_book();
 
 
+
         public Book()
         {
             InitializeComponent();
             FirstRun();
+            btn_Book.BackColor = Color.MediumAquamarine;
         }
         void FirstRun()
         {
@@ -362,9 +364,14 @@ namespace Bookhaven
             if (dgv_books.SelectedRows.Count > 0)
             {
                 // Highlight the selected row
-                dgv_books.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightBlue;
+                dgv_books.SelectedRows[0].DefaultCellStyle.BackColor = Color.Beige;
             }
             
+        }
+
+        private void btn_Book_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

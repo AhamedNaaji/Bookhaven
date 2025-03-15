@@ -24,7 +24,8 @@ namespace Bookhaven
             InitializeComponent();
             nup_Quantity.ValueChanged += nup_Quantity_ValueChanged;
             FirstRun();
-            
+            btn_Cusorder.BackColor = Color.MediumAquamarine;
+
 
         }
 
@@ -408,6 +409,11 @@ namespace Bookhaven
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error");
             }
+
+        }
+
+        private void btn_Cusorder_Click(object sender, EventArgs e)
+        {
 
         }
     }

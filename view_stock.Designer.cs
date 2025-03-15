@@ -43,96 +43,105 @@
             // 
             // btn_delete_stock
             // 
-            this.btn_delete_stock.Location = new System.Drawing.Point(468, 503);
+            this.btn_delete_stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_delete_stock.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_delete_stock.Location = new System.Drawing.Point(706, 336);
             this.btn_delete_stock.Name = "btn_delete_stock";
             this.btn_delete_stock.Size = new System.Drawing.Size(126, 45);
             this.btn_delete_stock.TabIndex = 18;
             this.btn_delete_stock.Text = "Delete ";
-            this.btn_delete_stock.UseVisualStyleBackColor = true;
+            this.btn_delete_stock.UseVisualStyleBackColor = false;
             // 
             // btn_update_stock
             // 
-            this.btn_update_stock.Location = new System.Drawing.Point(250, 503);
+            this.btn_update_stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_update_stock.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_update_stock.Location = new System.Drawing.Point(706, 187);
             this.btn_update_stock.Name = "btn_update_stock";
             this.btn_update_stock.Size = new System.Drawing.Size(126, 45);
             this.btn_update_stock.TabIndex = 17;
             this.btn_update_stock.Text = "Update ";
-            this.btn_update_stock.UseVisualStyleBackColor = true;
+            this.btn_update_stock.UseVisualStyleBackColor = false;
             this.btn_update_stock.Click += new System.EventHandler(this.btn_update_stock_Click);
             // 
             // dgv_stock
             // 
             this.dgv_stock.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_stock.Location = new System.Drawing.Point(58, 156);
+            this.dgv_stock.Location = new System.Drawing.Point(45, 88);
             this.dgv_stock.Name = "dgv_stock";
             this.dgv_stock.RowHeadersWidth = 51;
             this.dgv_stock.RowTemplate.Height = 24;
-            this.dgv_stock.Size = new System.Drawing.Size(571, 293);
+            this.dgv_stock.Size = new System.Drawing.Size(595, 293);
             this.dgv_stock.TabIndex = 16;
             this.dgv_stock.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_stock_CellContentDoubleClick);
             // 
             // btn_add_stock
             // 
-            this.btn_add_stock.Location = new System.Drawing.Point(58, 503);
+            this.btn_add_stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_add_stock.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_add_stock.Location = new System.Drawing.Point(706, 50);
             this.btn_add_stock.Name = "btn_add_stock";
             this.btn_add_stock.Size = new System.Drawing.Size(126, 45);
             this.btn_add_stock.TabIndex = 15;
             this.btn_add_stock.Text = "Add ";
-            this.btn_add_stock.UseVisualStyleBackColor = true;
+            this.btn_add_stock.UseVisualStyleBackColor = false;
             this.btn_add_stock.Click += new System.EventHandler(this.btn_add_stock_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(235, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 20);
+            this.label1.Size = new System.Drawing.Size(60, 24);
             this.label1.TabIndex = 14;
             this.label1.Text = "Stock";
             // 
             // txt_quantity
             // 
-            this.txt_quantity.Location = new System.Drawing.Point(239, 66);
+            this.txt_quantity.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.txt_quantity.Location = new System.Drawing.Point(229, 50);
             this.txt_quantity.Multiline = true;
             this.txt_quantity.Name = "txt_quantity";
-            this.txt_quantity.Size = new System.Drawing.Size(187, 45);
+            this.txt_quantity.Size = new System.Drawing.Size(187, 32);
             this.txt_quantity.TabIndex = 13;
             // 
             // txt_price
             // 
-            this.txt_price.Location = new System.Drawing.Point(468, 66);
+            this.txt_price.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.txt_price.Location = new System.Drawing.Point(453, 50);
             this.txt_price.Multiline = true;
             this.txt_price.Name = "txt_price";
-            this.txt_price.Size = new System.Drawing.Size(187, 45);
+            this.txt_price.Size = new System.Drawing.Size(187, 32);
             this.txt_price.TabIndex = 19;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(464, 23);
+            this.label2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(449, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 20);
+            this.label2.Size = new System.Drawing.Size(53, 24);
             this.label2.TabIndex = 20;
             this.label2.Text = "Price";
             // 
             // cmb_book
             // 
+            this.cmb_book.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
             this.cmb_book.FormattingEnabled = true;
-            this.cmb_book.Location = new System.Drawing.Point(45, 76);
+            this.cmb_book.Location = new System.Drawing.Point(45, 50);
             this.cmb_book.Name = "cmb_book";
-            this.cmb_book.Size = new System.Drawing.Size(139, 24);
+            this.cmb_book.Size = new System.Drawing.Size(139, 32);
             this.cmb_book.TabIndex = 21;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(71, 37);
+            this.label3.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(41, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 20);
+            this.label3.Size = new System.Drawing.Size(62, 24);
             this.label3.TabIndex = 22;
             this.label3.Text = "Books";
             // 
@@ -140,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 644);
+            this.ClientSize = new System.Drawing.Size(861, 394);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmb_book);
             this.Controls.Add(this.label2);

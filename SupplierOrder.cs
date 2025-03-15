@@ -330,5 +330,10 @@ namespace Bookhaven
         {
 
         }
+
+        private void SupplierOrder_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
