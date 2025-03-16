@@ -17,6 +17,12 @@ namespace Bookhaven
             InitializeComponent();
         }
 
+        private void btn_Dashboard_Click(object sender, EventArgs e)
+        {
+            Dashboard_Clerk dasclerk = new Dashboard_Clerk();
+            dasclerk.ShowDialog();
+        }
+
         private void btn_Customer_Click(object sender, EventArgs e)
         {
             Customer_Clerk customer = new Customer_Clerk();
@@ -79,10 +85,6 @@ namespace Bookhaven
             sales.ShowDialog();
         }
 
-        private void btn_Dashboard_Click(object sender, EventArgs e)
-        {
-            Dashboard_Clerk dasclerk = new Dashboard_Clerk();
-            dasclerk.ShowDialog();
-        }
+        
     }
 }

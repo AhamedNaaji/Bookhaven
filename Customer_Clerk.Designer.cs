@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer_Clerk));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_overview = new System.Windows.Forms.Button();
-            this.btn_Customer = new System.Windows.Forms.Button();
-            this.btn_Sales = new System.Windows.Forms.Button();
-            this.btn_Cusorder = new System.Windows.Forms.Button();
-            this.btn_Book = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dgv_cus = new System.Windows.Forms.DataGridView();
             this.btn_deleteCustomer = new System.Windows.Forms.Button();
             this.btn_updateCustomer = new System.Windows.Forms.Button();
@@ -55,109 +48,29 @@
             this.txtbox_NIC = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtbox_name = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_Logout = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_Book = new System.Windows.Forms.Button();
+            this.btn_Cusorder = new System.Windows.Forms.Button();
+            this.btn_Sales = new System.Windows.Forms.Button();
+            this.btn_dashboard = new System.Windows.Forms.Button();
+            this.btn_Customer = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cus)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(155, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(152, 144);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btn_overview
-            // 
-            this.btn_overview.BackColor = System.Drawing.Color.White;
-            this.btn_overview.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_overview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_overview.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_overview.Location = new System.Drawing.Point(49, 198);
-            this.btn_overview.Name = "btn_overview";
-            this.btn_overview.Size = new System.Drawing.Size(380, 63);
-            this.btn_overview.TabIndex = 0;
-            this.btn_overview.Text = "Overview";
-            this.btn_overview.UseVisualStyleBackColor = false;
-            // 
-            // btn_Customer
-            // 
-            this.btn_Customer.BackColor = System.Drawing.Color.LightGray;
-            this.btn_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_Customer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Customer.Location = new System.Drawing.Point(49, 287);
-            this.btn_Customer.Name = "btn_Customer";
-            this.btn_Customer.Size = new System.Drawing.Size(380, 63);
-            this.btn_Customer.TabIndex = 1;
-            this.btn_Customer.Text = "Customer";
-            this.btn_Customer.UseVisualStyleBackColor = false;
-            // 
-            // btn_Sales
-            // 
-            this.btn_Sales.BackColor = System.Drawing.Color.White;
-            this.btn_Sales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_Sales.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Sales.Location = new System.Drawing.Point(49, 376);
-            this.btn_Sales.Name = "btn_Sales";
-            this.btn_Sales.Size = new System.Drawing.Size(380, 63);
-            this.btn_Sales.TabIndex = 2;
-            this.btn_Sales.Text = "Sales";
-            this.btn_Sales.UseVisualStyleBackColor = false;
-            // 
-            // btn_Cusorder
-            // 
-            this.btn_Cusorder.BackColor = System.Drawing.Color.White;
-            this.btn_Cusorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cusorder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_Cusorder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Cusorder.Location = new System.Drawing.Point(49, 465);
-            this.btn_Cusorder.Name = "btn_Cusorder";
-            this.btn_Cusorder.Size = new System.Drawing.Size(380, 63);
-            this.btn_Cusorder.TabIndex = 3;
-            this.btn_Cusorder.Text = "Cus Order";
-            this.btn_Cusorder.UseVisualStyleBackColor = false;
-            // 
-            // btn_Book
-            // 
-            this.btn_Book.BackColor = System.Drawing.Color.White;
-            this.btn_Book.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Book.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_Book.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Book.Location = new System.Drawing.Point(49, 557);
-            this.btn_Book.Name = "btn_Book";
-            this.btn_Book.Size = new System.Drawing.Size(380, 63);
-            this.btn_Book.TabIndex = 5;
-            this.btn_Book.Text = "Book";
-            this.btn_Book.UseVisualStyleBackColor = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_Book);
-            this.panel1.Controls.Add(this.btn_Cusorder);
-            this.panel1.Controls.Add(this.btn_Sales);
-            this.panel1.Controls.Add(this.btn_Customer);
-            this.panel1.Controls.Add(this.btn_overview);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(493, 699);
-            this.panel1.TabIndex = 71;
             // 
             // dgv_cus
             // 
             this.dgv_cus.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_cus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_cus.Location = new System.Drawing.Point(525, 426);
+            this.dgv_cus.Location = new System.Drawing.Point(525, 560);
             this.dgv_cus.Name = "dgv_cus";
             this.dgv_cus.RowHeadersWidth = 51;
             this.dgv_cus.RowTemplate.Height = 24;
@@ -167,7 +80,8 @@
             // 
             // btn_deleteCustomer
             // 
-            this.btn_deleteCustomer.Location = new System.Drawing.Point(1649, 309);
+            this.btn_deleteCustomer.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_deleteCustomer.Location = new System.Drawing.Point(1118, 473);
             this.btn_deleteCustomer.Name = "btn_deleteCustomer";
             this.btn_deleteCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_deleteCustomer.TabIndex = 75;
@@ -177,7 +91,8 @@
             // 
             // btn_updateCustomer
             // 
-            this.btn_updateCustomer.Location = new System.Drawing.Point(1649, 184);
+            this.btn_updateCustomer.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_updateCustomer.Location = new System.Drawing.Point(824, 473);
             this.btn_updateCustomer.Name = "btn_updateCustomer";
             this.btn_updateCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_updateCustomer.TabIndex = 74;
@@ -187,7 +102,8 @@
             // 
             // btn_addCustomer
             // 
-            this.btn_addCustomer.Location = new System.Drawing.Point(1649, 66);
+            this.btn_addCustomer.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_addCustomer.Location = new System.Drawing.Point(525, 473);
             this.btn_addCustomer.Name = "btn_addCustomer";
             this.btn_addCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_addCustomer.TabIndex = 73;
@@ -211,9 +127,9 @@
             this.panel2.Controls.Add(this.txtbox_NIC);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtbox_name);
-            this.panel2.Location = new System.Drawing.Point(525, 48);
+            this.panel2.Location = new System.Drawing.Point(525, 138);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1017, 352);
+            this.panel2.Size = new System.Drawing.Size(1017, 313);
             this.panel2.TabIndex = 72;
             // 
             // txt_Email
@@ -348,39 +264,175 @@
             this.txtbox_name.TabIndex = 0;
             this.txtbox_name.TextChanged += new System.EventHandler(this.txtbox_name_TextChanged);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.panel3.Controls.Add(this.btn_Logout);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(458, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1466, 97);
+            this.panel3.TabIndex = 104;
+            // 
+            // btn_Logout
+            // 
+            this.btn_Logout.BackColor = System.Drawing.Color.Red;
+            this.btn_Logout.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_Logout.Location = new System.Drawing.Point(1411, 24);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(115, 45);
+            this.btn_Logout.TabIndex = 24;
+            this.btn_Logout.Text = "Logout";
+            this.btn_Logout.UseVisualStyleBackColor = false;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 28F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(11, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(374, 56);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Welcome Clerk";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 16);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "label4";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.panel4.Controls.Add(this.btn_Book);
+            this.panel4.Controls.Add(this.btn_Cusorder);
+            this.panel4.Controls.Add(this.btn_Sales);
+            this.panel4.Controls.Add(this.btn_dashboard);
+            this.panel4.Controls.Add(this.btn_Customer);
+            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(458, 844);
+            this.panel4.TabIndex = 103;
+            // 
+            // btn_Book
+            // 
+            this.btn_Book.BackColor = System.Drawing.Color.White;
+            this.btn_Book.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_Book.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_Book.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Book.Location = new System.Drawing.Point(74, 321);
+            this.btn_Book.Name = "btn_Book";
+            this.btn_Book.Size = new System.Drawing.Size(259, 63);
+            this.btn_Book.TabIndex = 5;
+            this.btn_Book.Text = "Books";
+            this.btn_Book.UseVisualStyleBackColor = false;
+            this.btn_Book.Click += new System.EventHandler(this.btn_Book_Click);
+            // 
+            // btn_Cusorder
+            // 
+            this.btn_Cusorder.BackColor = System.Drawing.Color.White;
+            this.btn_Cusorder.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_Cusorder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_Cusorder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Cusorder.Location = new System.Drawing.Point(74, 582);
+            this.btn_Cusorder.Name = "btn_Cusorder";
+            this.btn_Cusorder.Size = new System.Drawing.Size(259, 63);
+            this.btn_Cusorder.TabIndex = 3;
+            this.btn_Cusorder.Text = "Customer Orders";
+            this.btn_Cusorder.UseVisualStyleBackColor = false;
+            this.btn_Cusorder.Click += new System.EventHandler(this.btn_Cusorder_Click);
+            // 
+            // btn_Sales
+            // 
+            this.btn_Sales.BackColor = System.Drawing.Color.White;
+            this.btn_Sales.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_Sales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_Sales.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Sales.Location = new System.Drawing.Point(71, 496);
+            this.btn_Sales.Name = "btn_Sales";
+            this.btn_Sales.Size = new System.Drawing.Size(259, 63);
+            this.btn_Sales.TabIndex = 2;
+            this.btn_Sales.Text = "Sales";
+            this.btn_Sales.UseVisualStyleBackColor = false;
+            this.btn_Sales.Click += new System.EventHandler(this.btn_Sales_Click);
+            // 
+            // btn_dashboard
+            // 
+            this.btn_dashboard.BackColor = System.Drawing.Color.White;
+            this.btn_dashboard.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_dashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_dashboard.Location = new System.Drawing.Point(74, 233);
+            this.btn_dashboard.Name = "btn_dashboard";
+            this.btn_dashboard.Size = new System.Drawing.Size(256, 63);
+            this.btn_dashboard.TabIndex = 0;
+            this.btn_dashboard.Text = "Dashboard";
+            this.btn_dashboard.UseVisualStyleBackColor = false;
+            this.btn_dashboard.Click += new System.EventHandler(this.btn_dashboard_Click);
+            // 
+            // btn_Customer
+            // 
+            this.btn_Customer.BackColor = System.Drawing.Color.Silver;
+            this.btn_Customer.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_Customer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_Customer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Customer.Location = new System.Drawing.Point(74, 408);
+            this.btn_Customer.Name = "btn_Customer";
+            this.btn_Customer.Size = new System.Drawing.Size(259, 63);
+            this.btn_Customer.TabIndex = 1;
+            this.btn_Customer.Text = "Customers";
+            this.btn_Customer.UseVisualStyleBackColor = false;
+            this.btn_Customer.Click += new System.EventHandler(this.btn_Customer_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(93, -1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(210, 213);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
             // Customer_Clerk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 699);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(140)))), ((int)(((byte)(137)))));
+            this.ClientSize = new System.Drawing.Size(1924, 844);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.dgv_cus);
             this.Controls.Add(this.btn_deleteCustomer);
             this.Controls.Add(this.btn_updateCustomer);
             this.Controls.Add(this.btn_addCustomer);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Name = "Customer_Clerk";
             this.Text = "Customer_Clerk";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Customer_Clerk_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cus)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_overview;
-        private System.Windows.Forms.Button btn_Customer;
-        private System.Windows.Forms.Button btn_Sales;
-        private System.Windows.Forms.Button btn_Cusorder;
-        private System.Windows.Forms.Button btn_Book;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgv_cus;
         private System.Windows.Forms.Button btn_deleteCustomer;
         private System.Windows.Forms.Button btn_updateCustomer;
@@ -400,5 +452,16 @@
         private System.Windows.Forms.TextBox txtbox_NIC;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtbox_name;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btn_Logout;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btn_Book;
+        private System.Windows.Forms.Button btn_Cusorder;
+        private System.Windows.Forms.Button btn_Sales;
+        private System.Windows.Forms.Button btn_dashboard;
+        private System.Windows.Forms.Button btn_Customer;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

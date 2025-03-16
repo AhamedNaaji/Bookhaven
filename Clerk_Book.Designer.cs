@@ -437,7 +437,7 @@
             // 
             // btn_Book
             // 
-            this.btn_Book.BackColor = System.Drawing.Color.White;
+            this.btn_Book.BackColor = System.Drawing.Color.Silver;
             this.btn_Book.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btn_Book.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_Book.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -479,7 +479,7 @@
             // 
             // btn_dashboard
             // 
-            this.btn_dashboard.BackColor = System.Drawing.Color.Silver;
+            this.btn_dashboard.BackColor = System.Drawing.Color.White;
             this.btn_dashboard.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btn_dashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.btn_dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -489,6 +489,7 @@
             this.btn_dashboard.TabIndex = 0;
             this.btn_dashboard.Text = "Dashboard";
             this.btn_dashboard.UseVisualStyleBackColor = false;
+            this.btn_dashboard.Click += new System.EventHandler(this.btn_dashboard_Click);
             // 
             // btn_Customer
             // 

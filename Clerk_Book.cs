@@ -431,5 +431,11 @@ namespace Bookhaven
                 loginForm.Show();
             }
         }
+
+        private void btn_dashboard_Click(object sender, EventArgs e)
+        {
+            Dashboard_Clerk dasclerk = new Dashboard_Clerk();
+            dasclerk.ShowDialog();
+        }
     }
 }
