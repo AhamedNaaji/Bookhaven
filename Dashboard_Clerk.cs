@@ -41,11 +41,6 @@ namespace Bookhaven
             book.ShowDialog();
         }
 
-        private void btn_overview_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_Logout_Click(object sender, EventArgs e)
         {
             // Display a confirmation message box
@@ -82,6 +77,12 @@ namespace Bookhaven
         {
             Clerk_Sales sales = new Clerk_Sales();
             sales.ShowDialog();
+        }
+
+        private void btn_Dashboard_Click(object sender, EventArgs e)
+        {
+            Dashboard_Clerk dasclerk = new Dashboard_Clerk();
+            dasclerk.ShowDialog();
         }
     }
 }
