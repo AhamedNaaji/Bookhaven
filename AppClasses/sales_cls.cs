@@ -23,25 +23,29 @@ namespace Bookhaven.AppClasses
             {
                 conn.Open();
                 transaction = conn.BeginTransaction();
+
                 // Round Total_Payment to two decimal places
                 Total_Payment = (float)Math.Round(Total_Payment, 2);
+
                 // Insert into Sales table
                 string salesQuery = @"
-                    INSERT INTO Sales (Staff_Id_fk, Customer_Id_fk, Date, Total_Payment)
-                    VALUES (@Staff_Id_fk, @Customer_Id_fk, @Date, @Total_Payment);
-                    SELECT SCOPE_IDENTITY();";
+            INSERT INTO Sales (Staff_Id_fk, Customer_Id_fk, Date, Total_Payment)
+            VALUES (@Staff_Id_fk, @Customer_Id_fk, @Date, @Total_Payment);
+            SELECT SCOPE_IDENTITY();";
                 SqlCommand salesCmd = new SqlCommand(salesQuery, conn, transaction);
                 salesCmd.Parameters.AddWithValue("@Staff_Id_fk", Staff_Id_fk);
                 salesCmd.Parameters.AddWithValue("@Customer_Id_fk", Customer_Id_fk);
                 salesCmd.Parameters.AddWithValue("@Date", Date);
                 salesCmd.Parameters.AddWithValue("@Total_Payment", Total_Payment);
+
                 int salesId = Convert.ToInt32(salesCmd.ExecuteScalar());
+
                 // Insert into SalesDetails table
                 foreach (var detail in SalesDetailsList)
                 {
                     string detailsQuery = @"
-                        INSERT INTO SalesDetails (Book_Id_fk, Sales_Id_fk, Price, Quantity, Discount, Total_Amount)
-                        VALUES (@Book_Id_fk, @Sales_Id_fk, @Price, @Quantity, @Discount, @Total_Amount);";
+                INSERT INTO SalesDetails (Book_Id_fk, Sales_Id_fk, Price, Quantity, Discount, Total_Amount)
+                VALUES (@Book_Id_fk, @Sales_Id_fk, @Price, @Quantity, @Discount, @Total_Amount);";
                     SqlCommand detailsCmd = new SqlCommand(detailsQuery, conn, transaction);
                     detailsCmd.Parameters.AddWithValue("@Book_Id_fk", detail.Book_Id_fk);
                     detailsCmd.Parameters.AddWithValue("@Sales_Id_fk", salesId);
@@ -51,6 +55,7 @@ namespace Bookhaven.AppClasses
                     detailsCmd.Parameters.AddWithValue("@Total_Amount", detail.Total_Amount);
                     detailsCmd.ExecuteNonQuery();
                 }
+
                 transaction.Commit();
                 MessageBox.Show("Sale added successfully!", "Success");
             }
@@ -71,15 +76,18 @@ namespace Bookhaven.AppClasses
             {
                 conn.Open();
                 transaction = conn.BeginTransaction();
+
+                // Round Total_Payment to two decimal places
                 Total_Payment = (float)Math.Round(Total_Payment, 2);
+
                 // Update Sales table
                 string updateQuery = @"
-                    UPDATE Sales 
-                    SET Staff_Id_fk = @Staff_Id_fk,
-                        Customer_Id_fk = @Customer_Id_fk,
-                        Date = @Date,
-                        Total_Payment = @Total_Payment
-                    WHERE Sales_Id = @Sales_Id";
+            UPDATE Sales 
+            SET Staff_Id_fk = @Staff_Id_fk,
+                Customer_Id_fk = @Customer_Id_fk,
+                Date = @Date,
+                Total_Payment = @Total_Payment
+            WHERE Sales_Id = @Sales_Id";
                 SqlCommand updateCmd = new SqlCommand(updateQuery, conn, transaction);
                 updateCmd.Parameters.AddWithValue("@Staff_Id_fk", Staff_Id_fk);
                 updateCmd.Parameters.AddWithValue("@Customer_Id_fk", Customer_Id_fk);
@@ -87,17 +95,19 @@ namespace Bookhaven.AppClasses
                 updateCmd.Parameters.AddWithValue("@Total_Payment", Total_Payment);
                 updateCmd.Parameters.AddWithValue("@Sales_Id", Sales_Id);
                 updateCmd.ExecuteNonQuery();
+
                 // Delete existing SalesDetails
                 string deleteDetailsQuery = "DELETE FROM SalesDetails WHERE Sales_Id_fk = @Sales_Id";
                 SqlCommand deleteCmd = new SqlCommand(deleteDetailsQuery, conn, transaction);
                 deleteCmd.Parameters.AddWithValue("@Sales_Id", Sales_Id);
                 deleteCmd.ExecuteNonQuery();
+
                 // Insert updated SalesDetails
                 foreach (var detail in SalesDetailsList)
                 {
                     string insertDetailsQuery = @"
-                        INSERT INTO SalesDetails (Book_Id_fk, Sales_Id_fk, Price, Quantity, Discount, Total_Amount)
-                        VALUES (@Book_Id_fk, @Sales_Id_fk, @Price, @Quantity, @Discount, @Total_Amount);";
+                INSERT INTO SalesDetails (Book_Id_fk, Sales_Id_fk, Price, Quantity, Discount, Total_Amount)
+                VALUES (@Book_Id_fk, @Sales_Id_fk, @Price, @Quantity, @Discount, @Total_Amount);";
                     SqlCommand insertCmd = new SqlCommand(insertDetailsQuery, conn, transaction);
                     insertCmd.Parameters.AddWithValue("@Book_Id_fk", detail.Book_Id_fk);
                     insertCmd.Parameters.AddWithValue("@Sales_Id_fk", Sales_Id);
@@ -107,6 +117,7 @@ namespace Bookhaven.AppClasses
                     insertCmd.Parameters.AddWithValue("@Total_Amount", detail.Total_Amount);
                     insertCmd.ExecuteNonQuery();
                 }
+
                 transaction.Commit();
                 MessageBox.Show("Sale updated successfully!", "Success");
             }

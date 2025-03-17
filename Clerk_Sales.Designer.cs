@@ -130,16 +130,16 @@
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(580, 315);
+            this.panel2.Location = new System.Drawing.Point(580, 302);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(823, 257);
+            this.panel2.Size = new System.Drawing.Size(641, 251);
             this.panel2.TabIndex = 84;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(599, 11);
+            this.label23.Location = new System.Drawing.Point(15, 46);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(56, 23);
             this.label23.TabIndex = 22;
@@ -147,7 +147,7 @@
             // 
             // dateTimePickerDate
             // 
-            this.dateTimePickerDate.Location = new System.Drawing.Point(603, 45);
+            this.dateTimePickerDate.Location = new System.Drawing.Point(19, 80);
             this.dateTimePickerDate.Name = "dateTimePickerDate";
             this.dateTimePickerDate.Size = new System.Drawing.Size(200, 27);
             this.dateTimePickerDate.TabIndex = 21;
@@ -181,7 +181,7 @@
             // comboCustomer
             // 
             this.comboCustomer.FormattingEnabled = true;
-            this.comboCustomer.Location = new System.Drawing.Point(19, 43);
+            this.comboCustomer.Location = new System.Drawing.Point(19, 157);
             this.comboCustomer.Name = "comboCustomer";
             this.comboCustomer.Size = new System.Drawing.Size(197, 28);
             this.comboCustomer.TabIndex = 15;
@@ -220,7 +220,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 11);
+            this.label3.Location = new System.Drawing.Point(15, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 23);
             this.label3.TabIndex = 4;
@@ -411,7 +411,7 @@
             this.dgv_cart.Name = "dgv_cart";
             this.dgv_cart.RowHeadersWidth = 51;
             this.dgv_cart.RowTemplate.Height = 24;
-            this.dgv_cart.Size = new System.Drawing.Size(308, 182);
+            this.dgv_cart.Size = new System.Drawing.Size(817, 182);
             this.dgv_cart.TabIndex = 107;
             this.dgv_cart.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_cart_CellContentDoubleClick);
             // 

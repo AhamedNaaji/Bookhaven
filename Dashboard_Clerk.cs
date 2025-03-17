@@ -16,6 +16,24 @@ namespace Bookhaven
             currentStaffId = staffId;
             LoadCounts();
             LoadRecentSales();
+
+            // Attach the CellFormatting event handler for dgv_recent_sales
+            dgv_recent_sales.CellFormatting += dgv_recent_sales_CellFormatting;
+        }
+
+        private void dgv_recent_sales_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Check if the column being formatted is the "Total Payment" column
+            if (dgv_recent_sales.Columns[e.ColumnIndex].Name == "Total_Payment")
+            {
+                // Ensure the value is not null and is a valid number
+                if (e.Value != null && float.TryParse(e.Value.ToString(), out float totalPayment))
+                {
+                    // Format the value to two decimal places
+                    e.Value = totalPayment.ToString("F2");
+                    e.FormattingApplied = true;
+                }
+            }
         }
 
         private void LoadCounts()

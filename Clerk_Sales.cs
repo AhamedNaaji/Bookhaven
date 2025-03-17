@@ -46,6 +46,24 @@ namespace Bookhaven
             fill.combobox("SELECT Book_Id, Book_Name FROM Book", comboBook, "Book_Name", "Book_Id");
             // Load sales data
             LoadSalesData();
+
+            // Attach the CellFormatting event handler
+            dgv_sales.CellFormatting += dgv_sales_CellFormatting;
+        }
+
+        private void dgv_sales_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Check if the column being formatted is the "Total Payment" column
+            if (dgv_sales.Columns[e.ColumnIndex].Name == "Total_Payment")
+            {
+                // Ensure the value is not null and is a valid number
+                if (e.Value != null && float.TryParse(e.Value.ToString(), out float totalPayment))
+                {
+                    // Format the value to two decimal places
+                    e.Value = totalPayment.ToString("F2");
+                    e.FormattingApplied = true;
+                }
+            }
         }
 
         private void LoadSalesData()
@@ -78,8 +96,10 @@ namespace Bookhaven
             float totalAmount = cartItems.Sum(item => item.Total_Amount);
             float discount = cartItems.Sum(item => item.Total_Amount * (item.Discount / 100));
             float finalPayment = totalAmount - discount;
-            label_TotalAmount.Text = $"{totalAmount:F2}"; // Format to two decimal places
-            labelFinalPayment.Text = $"{finalPayment:F2}"; // Format to two decimal places
+
+            // Format to two decimal places
+            label_TotalAmount.Text = $"{totalAmount:F2}";
+            labelFinalPayment.Text = $"{finalPayment:F2}";
         }
 
         public bool CheckBookStock(int bookId, int quantity)
@@ -592,9 +612,8 @@ namespace Bookhaven
                     }
 
                     // Update the item's quantity and recalculate total amount
-                    selectedItem.Quantity = newQuantity;
-                    selectedItem.Total_Amount = selectedItem.Price * newQuantity;
-                    selectedItem.Total_Amount -= selectedItem.Total_Amount * (selectedItem.Discount / 100);
+                    selectedItem.Total_Amount = (float)Math.Round(selectedItem.Price * selectedItem.Quantity, 2);
+                    selectedItem.Total_Amount -= (float)Math.Round(selectedItem.Total_Amount * (selectedItem.Discount / 100), 2);
 
                     // Refresh the DataGridView and update the final payment display
                     dgv_cart.DataSource = null;
