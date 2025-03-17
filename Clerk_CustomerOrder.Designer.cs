@@ -150,6 +150,7 @@
             this.cmb_Suporder.Name = "cmb_Suporder";
             this.cmb_Suporder.Size = new System.Drawing.Size(197, 24);
             this.cmb_Suporder.TabIndex = 28;
+            this.cmb_Suporder.Visible = false;
             this.cmb_Suporder.SelectedIndexChanged += new System.EventHandler(this.cmb_Suporder_SelectedIndexChanged);
             // 
             // label28
@@ -458,6 +459,7 @@
             this.btn_Cusorder.TabIndex = 3;
             this.btn_Cusorder.Text = "Customer Order";
             this.btn_Cusorder.UseVisualStyleBackColor = false;
+            this.btn_Cusorder.Click += new System.EventHandler(this.btn_Cusorder_Click);
             // 
             // btn_Sales
             // 

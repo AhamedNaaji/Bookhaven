@@ -194,7 +194,7 @@
             // lbl_Discount_Cusorder
             // 
             this.lbl_Discount_Cusorder.AutoSize = true;
-            this.lbl_Discount_Cusorder.Location = new System.Drawing.Point(326, 215);
+            this.lbl_Discount_Cusorder.Location = new System.Drawing.Point(309, 218);
             this.lbl_Discount_Cusorder.Name = "lbl_Discount_Cusorder";
             this.lbl_Discount_Cusorder.Size = new System.Drawing.Size(33, 16);
             this.lbl_Discount_Cusorder.TabIndex = 20;
@@ -203,7 +203,7 @@
             // lbl_Finalpayment_Cusorder
             // 
             this.lbl_Finalpayment_Cusorder.AutoSize = true;
-            this.lbl_Finalpayment_Cusorder.Location = new System.Drawing.Point(614, 209);
+            this.lbl_Finalpayment_Cusorder.Location = new System.Drawing.Point(608, 218);
             this.lbl_Finalpayment_Cusorder.Name = "lbl_Finalpayment_Cusorder";
             this.lbl_Finalpayment_Cusorder.Size = new System.Drawing.Size(45, 16);
             this.lbl_Finalpayment_Cusorder.TabIndex = 19;
@@ -241,7 +241,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(613, 172);
+            this.label22.Location = new System.Drawing.Point(607, 181);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(171, 36);
             this.label22.TabIndex = 14;
@@ -377,7 +377,7 @@
             this.panel3.ForeColor = System.Drawing.Color.Black;
             this.panel3.Location = new System.Drawing.Point(355, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1521, 156);
+            this.panel3.Size = new System.Drawing.Size(1407, 156);
             this.panel3.TabIndex = 44;
             // 
             // button1
@@ -386,7 +386,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(1220, 42);
+            this.button1.Location = new System.Drawing.Point(1178, 43);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 63);
             this.button1.TabIndex = 9;
@@ -579,7 +579,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1876, 894);
+            this.ClientSize = new System.Drawing.Size(1762, 894);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);

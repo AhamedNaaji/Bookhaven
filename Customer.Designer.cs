@@ -114,7 +114,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(366, 229);
+            this.label22.Location = new System.Drawing.Point(17, 227);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(136, 36);
             this.label22.TabIndex = 14;
@@ -122,7 +122,7 @@
             // 
             // txtbox_Number2
             // 
-            this.txtbox_Number2.Location = new System.Drawing.Point(370, 261);
+            this.txtbox_Number2.Location = new System.Drawing.Point(21, 259);
             this.txtbox_Number2.Multiline = true;
             this.txtbox_Number2.Name = "txtbox_Number2";
             this.txtbox_Number2.Size = new System.Drawing.Size(233, 37);
@@ -133,7 +133,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label21.Location = new System.Drawing.Point(15, 229);
+            this.label21.Location = new System.Drawing.Point(690, 117);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(131, 36);
             this.label21.TabIndex = 12;
@@ -141,7 +141,7 @@
             // 
             // txtbox_Number1
             // 
-            this.txtbox_Number1.Location = new System.Drawing.Point(19, 261);
+            this.txtbox_Number1.Location = new System.Drawing.Point(694, 149);
             this.txtbox_Number1.Multiline = true;
             this.txtbox_Number1.Name = "txtbox_Number1";
             this.txtbox_Number1.Size = new System.Drawing.Size(233, 37);

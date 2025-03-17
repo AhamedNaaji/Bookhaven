@@ -17,6 +17,7 @@ namespace Bookhaven
     {
         public SqlConnection mycon = new SqlConnection("Data Source=MMSALMANFARIS;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
 
+        public string user;
 
         public Form1()
         {
@@ -34,10 +35,10 @@ namespace Bookhaven
 
                     // Corrected SQL query
                     string qry = @"
-                    SELECT s.*, sr.roleName 
-                    FROM Staff s
-                    INNER JOIN staffRole sr ON s.staffRoll_Id_fk = sr.rollId
-                    WHERE s.Username = @username AND s.Password = @password";
+                SELECT s.Staff_Id, s.Username, sr.roleName 
+                FROM Staff s
+                INNER JOIN staffRole sr ON s.staffRoll_Id_fk = sr.rollId
+                WHERE s.Username = @username AND s.Password = @password";
 
                     SqlCommand cmd = new SqlCommand(qry, mycon);
                     cmd.Parameters.AddWithValue("@username", txt_Username.Text.Trim());
@@ -47,20 +48,20 @@ namespace Bookhaven
 
                     if (rdr.Read())
                     {
-                        // Check the role name (corrected column name)
-                        if (rdr["roleName"].ToString() == "Admin")
-                        {
-                            // Open Admin Dashboard
-                            Dashboard dashboard_frm = new Dashboard();
-                            dashboard_frm.ShowDialog();
-                            this.Hide();
+                        int staffId = Convert.ToInt32(rdr["Staff_Id"]);
+                        string roleName = rdr["roleName"].ToString();
 
+                        // Open the appropriate dashboard based on role
+                        if (roleName == "Admin")
+                        {
+                            Sales salse = new Sales(staffId); // Pass staffId to the dashboard
+                            salse.ShowDialog();
+                            this.Hide();
                         }
                         else
                         {
-                            // Open Clerk Dashboard
-                            Dashboard_Clerk dashboard = new Dashboard_Clerk();
-                            dashboard.ShowDialog();
+                            Clerk_Sales sales_clerk = new Clerk_Sales(staffId); // Pass staffId to the dashboard
+                            sales_clerk.ShowDialog();
                             this.Hide();
                         }
                     }
@@ -83,8 +84,8 @@ namespace Bookhaven
                 mycon.Close();
             }
         }
-
-        private void txt_Username_TextChanged(object sender, EventArgs e)
+        
+        void txt_Username_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -124,9 +124,10 @@
             // 
             // txtbox_discount
             // 
-            this.txtbox_discount.Location = new System.Drawing.Point(31, 206);
+            this.txtbox_discount.Location = new System.Drawing.Point(19, 210);
+            this.txtbox_discount.Multiline = true;
             this.txtbox_discount.Name = "txtbox_discount";
-            this.txtbox_discount.Size = new System.Drawing.Size(190, 22);
+            this.txtbox_discount.Size = new System.Drawing.Size(214, 37);
             this.txtbox_discount.TabIndex = 43;
             this.txtbox_discount.TextChanged += new System.EventHandler(this.txtbox_discount_TextChanged);
             // 
@@ -134,7 +135,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(25, 167);
+            this.label16.Location = new System.Drawing.Point(15, 171);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(111, 36);
             this.label16.TabIndex = 42;
@@ -179,10 +180,10 @@
             // 
             // txt_Stock
             // 
-            this.txt_Stock.Location = new System.Drawing.Point(274, 201);
+            this.txt_Stock.Location = new System.Drawing.Point(274, 210);
             this.txt_Stock.Multiline = true;
             this.txt_Stock.Name = "txt_Stock";
-            this.txt_Stock.Size = new System.Drawing.Size(190, 42);
+            this.txt_Stock.Size = new System.Drawing.Size(190, 37);
             this.txt_Stock.TabIndex = 37;
             this.txt_Stock.TextChanged += new System.EventHandler(this.txt_Stock_TextChanged);
             // 
@@ -237,7 +238,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(268, 162);
+            this.label22.Location = new System.Drawing.Point(268, 171);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(75, 36);
             this.label22.TabIndex = 14;

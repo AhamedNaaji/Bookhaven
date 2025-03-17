@@ -71,7 +71,7 @@
             // 
             this.dgv_cus.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_cus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_cus.Location = new System.Drawing.Point(382, 570);
+            this.dgv_cus.Location = new System.Drawing.Point(382, 546);
             this.dgv_cus.Name = "dgv_cus";
             this.dgv_cus.RowHeadersWidth = 51;
             this.dgv_cus.RowTemplate.Height = 24;
@@ -84,7 +84,7 @@
             this.btn_deleteCustomer.BackColor = System.Drawing.Color.Red;
             this.btn_deleteCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_deleteCustomer.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
-            this.btn_deleteCustomer.Location = new System.Drawing.Point(22, 258);
+            this.btn_deleteCustomer.Location = new System.Drawing.Point(22, 220);
             this.btn_deleteCustomer.Name = "btn_deleteCustomer";
             this.btn_deleteCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_deleteCustomer.TabIndex = 75;
@@ -97,7 +97,7 @@
             this.btn_updateCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btn_updateCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_updateCustomer.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
-            this.btn_updateCustomer.Location = new System.Drawing.Point(22, 142);
+            this.btn_updateCustomer.Location = new System.Drawing.Point(22, 121);
             this.btn_updateCustomer.Name = "btn_updateCustomer";
             this.btn_updateCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_updateCustomer.TabIndex = 74;
@@ -136,12 +136,12 @@
             this.panel2.Controls.Add(this.txtbox_name);
             this.panel2.Location = new System.Drawing.Point(382, 192);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(981, 352);
+            this.panel2.Size = new System.Drawing.Size(981, 317);
             this.panel2.TabIndex = 72;
             // 
             // txt_Email
             // 
-            this.txt_Email.Location = new System.Drawing.Point(691, 45);
+            this.txt_Email.Location = new System.Drawing.Point(691, 57);
             this.txt_Email.Multiline = true;
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(233, 37);
@@ -152,7 +152,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label23.Location = new System.Drawing.Point(688, 11);
+            this.label23.Location = new System.Drawing.Point(688, 23);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(75, 36);
             this.label23.TabIndex = 15;
@@ -162,7 +162,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(366, 229);
+            this.label22.Location = new System.Drawing.Point(17, 216);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(136, 36);
             this.label22.TabIndex = 14;
@@ -170,7 +170,7 @@
             // 
             // txtbox_Number2
             // 
-            this.txtbox_Number2.Location = new System.Drawing.Point(370, 261);
+            this.txtbox_Number2.Location = new System.Drawing.Point(21, 248);
             this.txtbox_Number2.Multiline = true;
             this.txtbox_Number2.Name = "txtbox_Number2";
             this.txtbox_Number2.Size = new System.Drawing.Size(233, 37);
@@ -180,7 +180,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label21.Location = new System.Drawing.Point(15, 229);
+            this.label21.Location = new System.Drawing.Point(687, 119);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(131, 36);
             this.label21.TabIndex = 12;
@@ -188,7 +188,7 @@
             // 
             // txtbox_Number1
             // 
-            this.txtbox_Number1.Location = new System.Drawing.Point(19, 261);
+            this.txtbox_Number1.Location = new System.Drawing.Point(691, 151);
             this.txtbox_Number1.Multiline = true;
             this.txtbox_Number1.Name = "txtbox_Number1";
             this.txtbox_Number1.Size = new System.Drawing.Size(233, 37);
@@ -199,7 +199,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label20.Location = new System.Drawing.Point(366, 117);
+            this.label20.Location = new System.Drawing.Point(366, 119);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(106, 36);
             this.label20.TabIndex = 10;
@@ -207,7 +207,7 @@
             // 
             // txtbox_Address
             // 
-            this.txtbox_Address.Location = new System.Drawing.Point(370, 149);
+            this.txtbox_Address.Location = new System.Drawing.Point(370, 151);
             this.txtbox_Address.Multiline = true;
             this.txtbox_Address.Name = "txtbox_Address";
             this.txtbox_Address.Size = new System.Drawing.Size(233, 37);
@@ -218,7 +218,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(15, 117);
+            this.label19.Location = new System.Drawing.Point(15, 119);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(61, 36);
             this.label19.TabIndex = 8;
@@ -226,7 +226,7 @@
             // 
             // txtbox_DOB
             // 
-            this.txtbox_DOB.Location = new System.Drawing.Point(19, 149);
+            this.txtbox_DOB.Location = new System.Drawing.Point(19, 151);
             this.txtbox_DOB.Multiline = true;
             this.txtbox_DOB.Name = "txtbox_DOB";
             this.txtbox_DOB.Size = new System.Drawing.Size(233, 37);
@@ -237,7 +237,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(366, 11);
+            this.label18.Location = new System.Drawing.Point(366, 23);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(52, 36);
             this.label18.TabIndex = 6;
@@ -245,7 +245,7 @@
             // 
             // txtbox_NIC
             // 
-            this.txtbox_NIC.Location = new System.Drawing.Point(370, 43);
+            this.txtbox_NIC.Location = new System.Drawing.Point(370, 55);
             this.txtbox_NIC.Multiline = true;
             this.txtbox_NIC.Name = "txtbox_NIC";
             this.txtbox_NIC.Size = new System.Drawing.Size(233, 37);
@@ -256,7 +256,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(15, 11);
+            this.label3.Location = new System.Drawing.Point(15, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 36);
             this.label3.TabIndex = 4;
@@ -264,7 +264,7 @@
             // 
             // txtbox_name
             // 
-            this.txtbox_name.Location = new System.Drawing.Point(19, 43);
+            this.txtbox_name.Location = new System.Drawing.Point(19, 55);
             this.txtbox_name.Multiline = true;
             this.txtbox_name.Name = "txtbox_name";
             this.txtbox_name.Size = new System.Drawing.Size(233, 37);
@@ -350,7 +350,7 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(354, 827);
+            this.panel1.Size = new System.Drawing.Size(354, 799);
             this.panel1.TabIndex = 77;
             // 
             // btn_Book
@@ -436,14 +436,14 @@
             this.panel4.Controls.Add(this.btn_updateCustomer);
             this.panel4.Location = new System.Drawing.Point(1407, 190);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(290, 353);
+            this.panel4.Size = new System.Drawing.Size(290, 319);
             this.panel4.TabIndex = 79;
             // 
             // Customer_Clerk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1726, 827);
+            this.ClientSize = new System.Drawing.Size(1726, 799);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);

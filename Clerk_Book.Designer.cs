@@ -139,9 +139,9 @@
             // cmb_author_2
             // 
             this.cmb_author_2.FormattingEnabled = true;
-            this.cmb_author_2.Location = new System.Drawing.Point(380, 130);
+            this.cmb_author_2.Location = new System.Drawing.Point(506, 132);
             this.cmb_author_2.Name = "cmb_author_2";
-            this.cmb_author_2.Size = new System.Drawing.Size(121, 24);
+            this.cmb_author_2.Size = new System.Drawing.Size(190, 24);
             this.cmb_author_2.TabIndex = 41;
             this.cmb_author_2.SelectedIndexChanged += new System.EventHandler(this.cmb_author_2_SelectedIndexChanged);
             // 
@@ -149,7 +149,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(376, 91);
+            this.label15.Location = new System.Drawing.Point(502, 95);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(108, 36);
             this.label15.TabIndex = 40;
@@ -158,24 +158,24 @@
             // cmb_author_1
             // 
             this.cmb_author_1.FormattingEnabled = true;
-            this.cmb_author_1.Location = new System.Drawing.Point(233, 130);
+            this.cmb_author_1.Location = new System.Drawing.Point(275, 130);
             this.cmb_author_1.Name = "cmb_author_1";
-            this.cmb_author_1.Size = new System.Drawing.Size(121, 24);
+            this.cmb_author_1.Size = new System.Drawing.Size(190, 24);
             this.cmb_author_1.TabIndex = 39;
             this.cmb_author_1.SelectedIndexChanged += new System.EventHandler(this.cmb_author_1_SelectedIndexChanged);
             // 
             // cmb_genre
             // 
             this.cmb_genre.FormattingEnabled = true;
-            this.cmb_genre.Location = new System.Drawing.Point(29, 128);
+            this.cmb_genre.Location = new System.Drawing.Point(19, 130);
             this.cmb_genre.Name = "cmb_genre";
-            this.cmb_genre.Size = new System.Drawing.Size(121, 24);
+            this.cmb_genre.Size = new System.Drawing.Size(190, 24);
             this.cmb_genre.TabIndex = 38;
             this.cmb_genre.SelectedIndexChanged += new System.EventHandler(this.cmb_genre_SelectedIndexChanged);
             // 
             // txt_Stock
             // 
-            this.txt_Stock.Location = new System.Drawing.Point(551, 132);
+            this.txt_Stock.Location = new System.Drawing.Point(272, 198);
             this.txt_Stock.Name = "txt_Stock";
             this.txt_Stock.Size = new System.Drawing.Size(190, 22);
             this.txt_Stock.TabIndex = 37;
@@ -185,7 +185,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(25, 91);
+            this.label14.Location = new System.Drawing.Point(15, 93);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(80, 36);
             this.label14.TabIndex = 34;
@@ -200,7 +200,7 @@
             // 
             // txt_Isbn
             // 
-            this.txt_Isbn.Location = new System.Drawing.Point(554, 41);
+            this.txt_Isbn.Location = new System.Drawing.Point(506, 43);
             this.txt_Isbn.Name = "txt_Isbn";
             this.txt_Isbn.Size = new System.Drawing.Size(190, 22);
             this.txt_Isbn.TabIndex = 32;
@@ -217,7 +217,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label26.Location = new System.Drawing.Point(229, 91);
+            this.label26.Location = new System.Drawing.Point(269, 93);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(103, 36);
             this.label26.TabIndex = 28;
@@ -227,7 +227,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(550, 91);
+            this.label22.Location = new System.Drawing.Point(271, 157);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(75, 36);
             this.label22.TabIndex = 14;
@@ -237,7 +237,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(550, 9);
+            this.label19.Location = new System.Drawing.Point(502, 11);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(63, 36);
             this.label19.TabIndex = 8;
