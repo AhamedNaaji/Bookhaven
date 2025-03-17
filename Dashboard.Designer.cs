@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btn_Customers = new System.Windows.Forms.Button();
             this.btn_Dashboard = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -66,7 +63,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label_Total_Customers = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.books_btn = new System.Windows.Forms.Button();
             this.customer_btn = new System.Windows.Forms.Button();
             this.supplier_btn = new System.Windows.Forms.Button();
@@ -76,6 +72,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.sales_btn = new System.Windows.Forms.Button();
             this.staffs_btn = new System.Windows.Forms.Button();
+            this.dgv_recent_sales = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -87,8 +85,8 @@
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_recent_sales)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Customers
@@ -523,22 +521,6 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "Total Customers";
             // 
-            // chart2
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(581, 442);
-            this.chart2.Name = "chart2";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(924, 351);
-            this.chart2.TabIndex = 18;
-            this.chart2.Text = "chart2";
-            // 
             // books_btn
             // 
             this.books_btn.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
@@ -638,19 +620,40 @@
             this.staffs_btn.UseVisualStyleBackColor = true;
             this.staffs_btn.Click += new System.EventHandler(this.staffs_btn_Click);
             // 
+            // dgv_recent_sales
+            // 
+            this.dgv_recent_sales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_recent_sales.Location = new System.Drawing.Point(581, 479);
+            this.dgv_recent_sales.Name = "dgv_recent_sales";
+            this.dgv_recent_sales.RowHeadersWidth = 51;
+            this.dgv_recent_sales.RowTemplate.Height = 24;
+            this.dgv_recent_sales.Size = new System.Drawing.Size(956, 532);
+            this.dgv_recent_sales.TabIndex = 25;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(575, 442);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(188, 34);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Recent Sales";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(140)))), ((int)(((byte)(137)))));
             this.ClientSize = new System.Drawing.Size(1924, 1011);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dgv_recent_sales);
             this.Controls.Add(this.staffs_btn);
             this.Controls.Add(this.sales_btn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.supplier_btn);
             this.Controls.Add(this.customer_btn);
             this.Controls.Add(this.books_btn);
-            this.Controls.Add(this.chart2);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
@@ -675,10 +678,11 @@
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_recent_sales)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -699,7 +703,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label_Total_Customers;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Button books_btn;
         private System.Windows.Forms.Button customer_btn;
         private System.Windows.Forms.Button supplier_btn;
@@ -727,5 +730,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button sales_btn;
         private System.Windows.Forms.Button staffs_btn;
+        private System.Windows.Forms.DataGridView dgv_recent_sales;
+        private System.Windows.Forms.Label label2;
     }
 }

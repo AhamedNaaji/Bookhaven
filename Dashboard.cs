@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -12,6 +13,24 @@ namespace Bookhaven
         {
             InitializeComponent();
             LoadCounts();
+            LoadRecentSales(); // Load recent sales data
+
+            dgv_recent_sales.CellFormatting += dgv_recent_sales_CellFormatting;
+        }
+
+        private void dgv_recent_sales_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Check if the column being formatted is the "Total Payment" column
+            if (dgv_recent_sales.Columns[e.ColumnIndex].Name == "Total_Payment")
+            {
+                // Ensure the value is not null and is a valid number
+                if (e.Value != null && float.TryParse(e.Value.ToString(), out float totalPayment))
+                {
+                    // Format the value to two decimal places
+                    e.Value = totalPayment.ToString("F2");
+                    e.FormattingApplied = true;
+                }
+            }
         }
 
         private void LoadCounts()
@@ -56,6 +75,51 @@ namespace Bookhaven
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 return (int)command.ExecuteScalar();
+            }
+        }
+
+        private void LoadRecentSales()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Query to get all sales data with customer and staff names
+                    string query = @"
+                        SELECT 
+                            s.Sales_Id,
+                            st.Staff_Name AS Staff,
+                            c.Customer_Name AS Customer,
+                            s.Date,
+                            s.Total_Payment
+                        FROM Sales s
+                        INNER JOIN Staff st ON s.Staff_Id_fk = st.Staff_Id
+                        INNER JOIN Customer c ON s.Customer_Id_fk = c.Customer_Id
+                        ORDER BY s.Date DESC";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+
+                        // Bind the data to the DataGridView
+                        dgv_recent_sales.DataSource = dt;
+
+                        // Rename columns for clarity
+                        dgv_recent_sales.Columns[0].HeaderText = "Sales ID";
+                        dgv_recent_sales.Columns[1].HeaderText = "Staff Name";
+                        dgv_recent_sales.Columns[2].HeaderText = "Customer Name";
+                        dgv_recent_sales.Columns[3].HeaderText = "Date";
+                        dgv_recent_sales.Columns[4].HeaderText = "Total Payment";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while loading recent sales: " + ex.Message);
+                }
             }
         }
 
@@ -122,7 +186,7 @@ namespace Bookhaven
             if (result == DialogResult.Yes)
             {
                 // Clear session data or reset user-specific information
-                //Program.CurrentUser = null;
+                // Program.CurrentUser = null;
 
                 // Close the current Dashboard form
                 this.Close();
