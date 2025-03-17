@@ -16,9 +16,12 @@ namespace Bookhaven
     {
         cls_Customer clscus = new cls_Customer();
         filloperation fill = new filloperation();
-        public Customer_Clerk()
+
+        private int _staffId;
+        public Customer_Clerk(int staffId)
         {
             InitializeComponent();
+            _staffId = staffId;
         }
 
         private void txtbox_name_TextChanged(object sender, EventArgs e)
@@ -181,6 +184,30 @@ namespace Bookhaven
                 txtbox_Number1.Text = clscus.Mobile_Numbers.Count > 0 ? clscus.Mobile_Numbers[0] : "";
                 txtbox_Number2.Text = clscus.Mobile_Numbers.Count > 1 ? clscus.Mobile_Numbers[1] : "";
             }
+        }
+
+        private void btn_Customer_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer(_staffId);
+            customer.ShowDialog();
+        }
+
+        private void btn_Sales_Click(object sender, EventArgs e)
+        {
+            Sales sales = new Sales(_staffId);
+            sales.ShowDialog();
+        }
+
+        private void btn_Cusorder_Click(object sender, EventArgs e)
+        {
+            CustomerOrder customerOrder = new CustomerOrder(_staffId);
+            customerOrder.ShowDialog();
+        }
+
+        private void btn_Book_Click(object sender, EventArgs e)
+        {
+            Book book = new Book(_staffId);
+            book.ShowDialog();
         }
     }
 }

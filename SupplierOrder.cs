@@ -18,14 +18,17 @@ namespace Bookhaven
         SqlConnection conn = new SqlConnection("Data Source=MMSALMANFARIS;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         cls_SupOrder clssuporder = new cls_SupOrder();
         filloperation fill = new filloperation();
-        public SupplierOrder()
+
+        private int _staffId;
+
+        public SupplierOrder(int staffId)
         {
             InitializeComponent();
+            _staffId = staffId;
             // Attach event handlers
             nup_Quantity.ValueChanged += nup_Quantity_ValueChanged;
             cmb_book_suporder.SelectedIndexChanged += cmb_book_suporder_SelectedIndexChanged;
 
-            FirstRun();
             FirstRun();
         }
 
@@ -327,6 +330,53 @@ namespace Bookhaven
         }
 
         private void dgv_suporder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_Customer_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer(_staffId);
+            customer.ShowDialog();
+        }
+
+        private void btn_Sales_Click(object sender, EventArgs e)
+        {
+            Sales sales = new Sales(_staffId);
+            sales.ShowDialog();
+        }
+
+        private void btn_Cusorder_Click(object sender, EventArgs e)
+        {
+            CustomerOrder customer = new CustomerOrder(_staffId);
+            customer.ShowDialog();
+        }
+
+        private void btn_Supporder_Click(object sender, EventArgs e)
+        {
+            SupplierOrder supplierOrder = new SupplierOrder(_staffId);
+            supplierOrder.ShowDialog();
+        }
+
+        private void btn_Book_Click(object sender, EventArgs e)
+        {
+            Book book = new Book(_staffId);
+            book.ShowDialog();
+        }
+
+        private void btn_Suppliers_Click(object sender, EventArgs e)
+        {
+            Suppliers suppliers = new Suppliers(_staffId);
+            suppliers.ShowDialog();
+        }
+
+        private void btn_Staff_Click(object sender, EventArgs e)
+        {
+            Staff staff = new Staff(_staffId);
+            staff.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
 
         }

@@ -17,9 +17,13 @@ namespace Bookhaven
     {
         filloperation fill = new filloperation();
         cls_Staff clsstf = new cls_Staff();
-        public Staff()
+        private int _staffId;
+
+
+        public Staff(int staffId)
         {
             InitializeComponent();
+            _staffId = staffId;
         }
 
         void FirstRun()
@@ -274,6 +278,48 @@ namespace Bookhaven
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btn_Customer_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer(_staffId);
+            customer.ShowDialog();
+        }
+
+        private void btn_Sales_Click(object sender, EventArgs e)
+        {
+            Sales sales = new Sales(_staffId);
+            sales.ShowDialog();
+        }
+
+        private void btn_Cusorder_Click(object sender, EventArgs e)
+        {
+            CustomerOrder customerOrder = new CustomerOrder(_staffId);
+            customerOrder.ShowDialog();
+        }
+
+        private void btn_Supporder_Click(object sender, EventArgs e)
+        {
+            SupplierOrder supplierOrder = new SupplierOrder(_staffId);
+            supplierOrder.ShowDialog();
+        }
+
+        private void btn_Book_Click(object sender, EventArgs e)
+        {
+            Book book = new Book(_staffId);
+            book.ShowDialog();
+        }
+
+        private void btn_Suppliers_Click(object sender, EventArgs e)
+        {
+            Suppliers suppliers = new Suppliers(_staffId);
+            suppliers.ShowDialog();
+        }
+
+        private void btn_Staff_Click(object sender, EventArgs e)
+        {
+            Staff staff = new Staff(_staffId);
+            staff.ShowDialog();
         }
     }
 }

@@ -16,9 +16,14 @@ namespace Bookhaven
     {
         cls_Customer clscus = new cls_Customer();
         filloperation fill = new filloperation();
-        public Customer()
+
+        private int _staffId;
+
+
+        public Customer(int staffId)
         {
             InitializeComponent();
+            _staffId = staffId;
         }
 
         private void txtbox_name_TextChanged(object sender, EventArgs e)
@@ -40,7 +45,6 @@ namespace Bookhaven
 
             clscus.Insertdata();
             frm_load(sender, e);
-
         }
 
         private void txtbox_NIC_TextChanged(object sender, EventArgs e)
@@ -192,6 +196,54 @@ namespace Bookhaven
         private void dgv_cus_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btn_Customer_Click(object sender, EventArgs e)
+        {
+            Customer cstmr = new Customer(_staffId);
+            cstmr.ShowDialog();
+        }
+
+        private void btn_Sales_Click(object sender, EventArgs e)
+        {
+            Sales sales = new Sales(_staffId);
+            sales.ShowDialog();
+        }
+
+        private void btn_Cusorder_Click(object sender, EventArgs e)
+        {
+            Customer cusorder = new Customer(_staffId);
+            cusorder.ShowDialog();
+        }
+
+        private void btn_Supporder_Click(object sender, EventArgs e)
+        {
+            SupplierOrder splrOrd = new SupplierOrder(_staffId);
+            splrOrd.ShowDialog();
+        }
+
+        private void btn_Book_Click(object sender, EventArgs e)
+        {
+            Book book = new Book(_staffId);
+            book.ShowDialog();
+        }
+
+        private void btn_Suppliers_Click(object sender, EventArgs e)
+        {
+            Suppliers suppliers = new Suppliers(_staffId);
+            suppliers.ShowDialog();
+        }
+
+        private void btn_Staff_Click(object sender, EventArgs e)
+        {
+            Staff staff = new Staff(_staffId);
+            staff.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Report report = new Report();
+            report.ShowDialog();
         }
     }
 }

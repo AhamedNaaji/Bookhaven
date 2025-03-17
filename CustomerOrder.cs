@@ -19,13 +19,15 @@ namespace Bookhaven
         cls_CusOrder clscusorder = new cls_CusOrder();
         
         filloperation fill = new filloperation();
-        public CustomerOrder()
+
+        private int _staffId;
+
+        public CustomerOrder(int staffId)
         {
+            _staffId = staffId;
             InitializeComponent();
             nup_Quantity.ValueChanged += nup_Quantity_ValueChanged;
             FirstRun();
-            
-
         }
 
 
@@ -408,6 +410,53 @@ namespace Bookhaven
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error");
             }
+
+        }
+
+        private void btn_Customer_Click(object sender, EventArgs e)
+        {
+            Customer cstmr = new Customer(_staffId);
+            cstmr.ShowDialog();
+        }
+
+        private void btn_Sales_Click(object sender, EventArgs e)
+        {
+            Sales sale = new Sales(_staffId);
+            sale.ShowDialog();
+        }
+
+        private void btn_Cusorder_Click(object sender, EventArgs e)
+        {
+            CustomerOrder customerOrder = new CustomerOrder(_staffId);
+            customerOrder.ShowDialog();
+        }
+
+        private void btn_Supporder_Click(object sender, EventArgs e)
+        {
+            SupplierOrder supplierOrder = new SupplierOrder(_staffId);
+            supplierOrder.ShowDialog();
+        }
+
+        private void btn_Book_Click(object sender, EventArgs e)
+        {
+            Book book = new Book(_staffId);
+            book.ShowDialog();
+        }
+
+        private void btn_Suppliers_Click(object sender, EventArgs e)
+        {
+            Suppliers suppliers = new Suppliers(_staffId);
+            suppliers.ShowDialog(); 
+        }
+
+        private void btn_Staff_Click(object sender, EventArgs e)
+        {
+            Staff staff = new Staff(_staffId);
+            staff.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -39,7 +39,7 @@ namespace Bookhaven.CommonClasses
             }
         }
 
-        public void FillDataGridView(string qry, DataGridView dgv)
+        public void FillDataGridView(string qry, DataGridView dgv, SqlParameter[] parameters = null)
         {
             try
             {
@@ -47,7 +47,15 @@ namespace Bookhaven.CommonClasses
                     con.mycon.Open();
 
                 DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(qry, con.mycon);
+                SqlCommand cmd = new SqlCommand(qry, con.mycon);
+
+                // Add parameters to the command if provided
+                if (parameters != null)
+                {
+                    cmd.Parameters.AddRange(parameters);
+                }
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 dgv.DataSource = dt;
             }

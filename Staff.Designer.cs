@@ -63,8 +63,8 @@
             this.btn_Cusorder = new System.Windows.Forms.Button();
             this.btn_Sales = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
-            this.btn_overview = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_staff)).BeginInit();
             this.panel1.SuspendLayout();
@@ -378,6 +378,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.btn_Suppliers);
             this.panel2.Controls.Add(this.btn_Staff);
             this.panel2.Controls.Add(this.btn_Book);
@@ -385,7 +386,6 @@
             this.panel2.Controls.Add(this.btn_Cusorder);
             this.panel2.Controls.Add(this.btn_Sales);
             this.panel2.Controls.Add(this.btn_Customer);
-            this.panel2.Controls.Add(this.btn_overview);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -399,12 +399,13 @@
             this.btn_Suppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Suppliers.ForeColor = System.Drawing.Color.Black;
             this.btn_Suppliers.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Suppliers.Location = new System.Drawing.Point(49, 682);
+            this.btn_Suppliers.Location = new System.Drawing.Point(49, 583);
             this.btn_Suppliers.Name = "btn_Suppliers";
             this.btn_Suppliers.Size = new System.Drawing.Size(243, 60);
             this.btn_Suppliers.TabIndex = 7;
             this.btn_Suppliers.Text = "Suppliers Details";
             this.btn_Suppliers.UseVisualStyleBackColor = false;
+            this.btn_Suppliers.Click += new System.EventHandler(this.btn_Suppliers_Click);
             // 
             // btn_Staff
             // 
@@ -412,12 +413,13 @@
             this.btn_Staff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Staff.ForeColor = System.Drawing.Color.Black;
             this.btn_Staff.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Staff.Location = new System.Drawing.Point(49, 781);
+            this.btn_Staff.Location = new System.Drawing.Point(49, 682);
             this.btn_Staff.Name = "btn_Staff";
             this.btn_Staff.Size = new System.Drawing.Size(243, 63);
             this.btn_Staff.TabIndex = 6;
             this.btn_Staff.Text = "Staff Details";
             this.btn_Staff.UseVisualStyleBackColor = false;
+            this.btn_Staff.Click += new System.EventHandler(this.btn_Staff_Click);
             // 
             // btn_Book
             // 
@@ -425,12 +427,13 @@
             this.btn_Book.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Book.ForeColor = System.Drawing.Color.Black;
             this.btn_Book.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Book.Location = new System.Drawing.Point(49, 574);
+            this.btn_Book.Location = new System.Drawing.Point(49, 475);
             this.btn_Book.Name = "btn_Book";
             this.btn_Book.Size = new System.Drawing.Size(243, 63);
             this.btn_Book.TabIndex = 5;
             this.btn_Book.Text = "Book Details";
             this.btn_Book.UseVisualStyleBackColor = false;
+            this.btn_Book.Click += new System.EventHandler(this.btn_Book_Click);
             // 
             // btn_Supporder
             // 
@@ -438,12 +441,13 @@
             this.btn_Supporder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Supporder.ForeColor = System.Drawing.Color.Black;
             this.btn_Supporder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Supporder.Location = new System.Drawing.Point(49, 468);
+            this.btn_Supporder.Location = new System.Drawing.Point(49, 369);
             this.btn_Supporder.Name = "btn_Supporder";
             this.btn_Supporder.Size = new System.Drawing.Size(243, 63);
             this.btn_Supporder.TabIndex = 4;
             this.btn_Supporder.Text = "Supplier Order";
             this.btn_Supporder.UseVisualStyleBackColor = false;
+            this.btn_Supporder.Click += new System.EventHandler(this.btn_Supporder_Click);
             // 
             // btn_Cusorder
             // 
@@ -451,12 +455,13 @@
             this.btn_Cusorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cusorder.ForeColor = System.Drawing.Color.Black;
             this.btn_Cusorder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Cusorder.Location = new System.Drawing.Point(49, 359);
+            this.btn_Cusorder.Location = new System.Drawing.Point(49, 260);
             this.btn_Cusorder.Name = "btn_Cusorder";
             this.btn_Cusorder.Size = new System.Drawing.Size(243, 63);
             this.btn_Cusorder.TabIndex = 3;
             this.btn_Cusorder.Text = "Customer Order";
             this.btn_Cusorder.UseVisualStyleBackColor = false;
+            this.btn_Cusorder.Click += new System.EventHandler(this.btn_Cusorder_Click);
             // 
             // btn_Sales
             // 
@@ -464,12 +469,13 @@
             this.btn_Sales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sales.ForeColor = System.Drawing.Color.Black;
             this.btn_Sales.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Sales.Location = new System.Drawing.Point(49, 251);
+            this.btn_Sales.Location = new System.Drawing.Point(49, 152);
             this.btn_Sales.Name = "btn_Sales";
             this.btn_Sales.Size = new System.Drawing.Size(243, 63);
             this.btn_Sales.TabIndex = 2;
             this.btn_Sales.Text = "Sales Details";
             this.btn_Sales.UseVisualStyleBackColor = false;
+            this.btn_Sales.Click += new System.EventHandler(this.btn_Sales_Click);
             // 
             // btn_Customer
             // 
@@ -477,25 +483,13 @@
             this.btn_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Customer.ForeColor = System.Drawing.Color.Black;
             this.btn_Customer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Customer.Location = new System.Drawing.Point(49, 144);
+            this.btn_Customer.Location = new System.Drawing.Point(49, 45);
             this.btn_Customer.Name = "btn_Customer";
             this.btn_Customer.Size = new System.Drawing.Size(243, 63);
             this.btn_Customer.TabIndex = 1;
             this.btn_Customer.Text = "Customer Details";
             this.btn_Customer.UseVisualStyleBackColor = false;
-            // 
-            // btn_overview
-            // 
-            this.btn_overview.BackColor = System.Drawing.Color.White;
-            this.btn_overview.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_overview.ForeColor = System.Drawing.Color.Black;
-            this.btn_overview.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_overview.Location = new System.Drawing.Point(49, 37);
-            this.btn_overview.Name = "btn_overview";
-            this.btn_overview.Size = new System.Drawing.Size(243, 63);
-            this.btn_overview.TabIndex = 0;
-            this.btn_overview.Text = "Dashboard";
-            this.btn_overview.UseVisualStyleBackColor = false;
+            this.btn_Customer.Click += new System.EventHandler(this.btn_Customer_Click);
             // 
             // panel4
             // 
@@ -505,6 +499,19 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(303, 315);
             this.panel4.TabIndex = 69;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.Location = new System.Drawing.Point(49, 781);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(243, 63);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Report";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // Staff
             // 
@@ -567,7 +574,7 @@
         private System.Windows.Forms.Button btn_Cusorder;
         private System.Windows.Forms.Button btn_Sales;
         private System.Windows.Forms.Button btn_Customer;
-        private System.Windows.Forms.Button btn_overview;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button button4;
     }
 }

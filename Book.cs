@@ -19,9 +19,11 @@ namespace Bookhaven
         filloperation fill = new filloperation();
         cls_book clsbook = new cls_book();
 
+        private int _staffId;
 
-        public Book()
+        public Book( int staffId)
         {
+            _staffId = staffId;
             InitializeComponent();
             FirstRun();
         }
@@ -359,12 +361,49 @@ namespace Bookhaven
 
         private void dgv_books_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgv_books.SelectedRows.Count > 0)
-            {
-                // Highlight the selected row
-                dgv_books.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightBlue;
-            }
             
+        }
+
+        private void btn_Customer_Click(object sender, EventArgs e)
+        {
+            Customer cstmr = new Customer(_staffId);
+            cstmr.ShowDialog();
+        }
+
+        private void btn_Sales_Click(object sender, EventArgs e)
+        {
+            Sales sale = new Sales(_staffId);
+            sale.ShowDialog();
+        }
+
+        private void btn_Cusorder_Click(object sender, EventArgs e)
+        {
+            Customer cusorder = new Customer(_staffId);
+            cusorder.ShowDialog();
+        }
+
+        private void btn_Supporder_Click(object sender, EventArgs e)
+        {
+            SupplierOrder supplierOrder = new SupplierOrder(_staffId);
+            supplierOrder.ShowDialog();
+        }
+
+        private void btn_Book_Click(object sender, EventArgs e)
+        {
+            Book book = new Book(_staffId);
+            book.ShowDialog();
+        }
+
+        private void btn_Suppliers_Click(object sender, EventArgs e)
+        {
+            Suppliers suppliers = new Suppliers(_staffId);
+            suppliers.ShowDialog();
+        }
+
+        private void btn_Staff_Click(object sender, EventArgs e)
+        {
+            Staff staff = new Staff(_staffId);
+            staff.ShowDialog();
         }
     }
 }

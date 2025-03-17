@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelDiscount = new System.Windows.Forms.Label();
@@ -63,10 +63,10 @@
             this.btn_Cusorder = new System.Windows.Forms.Button();
             this.btn_Sales = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
-            this.btn_overview = new System.Windows.Forms.Button();
             this.dgv_books = new System.Windows.Forms.DataGridView();
             this.btnAddBook = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).BeginInit();
@@ -78,16 +78,16 @@
             // 
             // chart1
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
+            chartArea16.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea16);
+            legend16.Name = "Legend1";
+            this.chart1.Legends.Add(legend16);
             this.chart1.Location = new System.Drawing.Point(2493, 1944);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chart1.Series.Add(series5);
+            series16.ChartArea = "ChartArea1";
+            series16.Legend = "Legend1";
+            series16.Name = "Series1";
+            this.chart1.Series.Add(series16);
             this.chart1.Size = new System.Drawing.Size(3274, 1145);
             this.chart1.TabIndex = 25;
             this.chart1.Text = "chart1";
@@ -356,6 +356,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.btn_Suppliers);
             this.panel1.Controls.Add(this.btn_Staff);
             this.panel1.Controls.Add(this.btn_Book);
@@ -363,7 +364,6 @@
             this.panel1.Controls.Add(this.btn_Cusorder);
             this.panel1.Controls.Add(this.btn_Sales);
             this.panel1.Controls.Add(this.btn_Customer);
-            this.panel1.Controls.Add(this.btn_overview);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -377,12 +377,13 @@
             this.btn_Suppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Suppliers.ForeColor = System.Drawing.Color.Black;
             this.btn_Suppliers.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Suppliers.Location = new System.Drawing.Point(49, 682);
+            this.btn_Suppliers.Location = new System.Drawing.Point(49, 575);
             this.btn_Suppliers.Name = "btn_Suppliers";
             this.btn_Suppliers.Size = new System.Drawing.Size(243, 60);
             this.btn_Suppliers.TabIndex = 7;
             this.btn_Suppliers.Text = "Suppliers Details";
             this.btn_Suppliers.UseVisualStyleBackColor = false;
+            this.btn_Suppliers.Click += new System.EventHandler(this.btn_Suppliers_Click);
             // 
             // btn_Staff
             // 
@@ -390,12 +391,13 @@
             this.btn_Staff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Staff.ForeColor = System.Drawing.Color.Black;
             this.btn_Staff.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Staff.Location = new System.Drawing.Point(49, 781);
+            this.btn_Staff.Location = new System.Drawing.Point(49, 674);
             this.btn_Staff.Name = "btn_Staff";
             this.btn_Staff.Size = new System.Drawing.Size(243, 63);
             this.btn_Staff.TabIndex = 6;
             this.btn_Staff.Text = "Staff Details";
             this.btn_Staff.UseVisualStyleBackColor = false;
+            this.btn_Staff.Click += new System.EventHandler(this.btn_Staff_Click);
             // 
             // btn_Book
             // 
@@ -403,12 +405,13 @@
             this.btn_Book.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Book.ForeColor = System.Drawing.Color.Black;
             this.btn_Book.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Book.Location = new System.Drawing.Point(49, 574);
+            this.btn_Book.Location = new System.Drawing.Point(49, 475);
             this.btn_Book.Name = "btn_Book";
             this.btn_Book.Size = new System.Drawing.Size(243, 63);
             this.btn_Book.TabIndex = 5;
             this.btn_Book.Text = "Book Details";
             this.btn_Book.UseVisualStyleBackColor = false;
+            this.btn_Book.Click += new System.EventHandler(this.btn_Book_Click);
             // 
             // btn_Supporder
             // 
@@ -416,12 +419,13 @@
             this.btn_Supporder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Supporder.ForeColor = System.Drawing.Color.Black;
             this.btn_Supporder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Supporder.Location = new System.Drawing.Point(49, 468);
+            this.btn_Supporder.Location = new System.Drawing.Point(49, 369);
             this.btn_Supporder.Name = "btn_Supporder";
             this.btn_Supporder.Size = new System.Drawing.Size(243, 63);
             this.btn_Supporder.TabIndex = 4;
             this.btn_Supporder.Text = "Supplier Order";
             this.btn_Supporder.UseVisualStyleBackColor = false;
+            this.btn_Supporder.Click += new System.EventHandler(this.btn_Supporder_Click);
             // 
             // btn_Cusorder
             // 
@@ -429,12 +433,13 @@
             this.btn_Cusorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cusorder.ForeColor = System.Drawing.Color.Black;
             this.btn_Cusorder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Cusorder.Location = new System.Drawing.Point(49, 359);
+            this.btn_Cusorder.Location = new System.Drawing.Point(49, 260);
             this.btn_Cusorder.Name = "btn_Cusorder";
             this.btn_Cusorder.Size = new System.Drawing.Size(243, 63);
             this.btn_Cusorder.TabIndex = 3;
             this.btn_Cusorder.Text = "Customer Order";
             this.btn_Cusorder.UseVisualStyleBackColor = false;
+            this.btn_Cusorder.Click += new System.EventHandler(this.btn_Cusorder_Click);
             // 
             // btn_Sales
             // 
@@ -442,12 +447,13 @@
             this.btn_Sales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sales.ForeColor = System.Drawing.Color.Black;
             this.btn_Sales.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Sales.Location = new System.Drawing.Point(49, 251);
+            this.btn_Sales.Location = new System.Drawing.Point(49, 152);
             this.btn_Sales.Name = "btn_Sales";
             this.btn_Sales.Size = new System.Drawing.Size(243, 63);
             this.btn_Sales.TabIndex = 2;
             this.btn_Sales.Text = "Sales Details";
             this.btn_Sales.UseVisualStyleBackColor = false;
+            this.btn_Sales.Click += new System.EventHandler(this.btn_Sales_Click);
             // 
             // btn_Customer
             // 
@@ -455,25 +461,13 @@
             this.btn_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Customer.ForeColor = System.Drawing.Color.Black;
             this.btn_Customer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Customer.Location = new System.Drawing.Point(49, 144);
+            this.btn_Customer.Location = new System.Drawing.Point(49, 45);
             this.btn_Customer.Name = "btn_Customer";
             this.btn_Customer.Size = new System.Drawing.Size(243, 63);
             this.btn_Customer.TabIndex = 1;
             this.btn_Customer.Text = "Customer Details";
             this.btn_Customer.UseVisualStyleBackColor = false;
-            // 
-            // btn_overview
-            // 
-            this.btn_overview.BackColor = System.Drawing.Color.White;
-            this.btn_overview.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_overview.ForeColor = System.Drawing.Color.Black;
-            this.btn_overview.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_overview.Location = new System.Drawing.Point(49, 37);
-            this.btn_overview.Name = "btn_overview";
-            this.btn_overview.Size = new System.Drawing.Size(243, 63);
-            this.btn_overview.TabIndex = 0;
-            this.btn_overview.Text = "Dashboard";
-            this.btn_overview.UseVisualStyleBackColor = false;
+            this.btn_Customer.Click += new System.EventHandler(this.btn_Customer_Click);
             // 
             // dgv_books
             // 
@@ -482,7 +476,7 @@
             this.dgv_books.Name = "dgv_books";
             this.dgv_books.RowHeadersWidth = 51;
             this.dgv_books.RowTemplate.Height = 24;
-            this.dgv_books.Size = new System.Drawing.Size(520, 345);
+            this.dgv_books.Size = new System.Drawing.Size(520, 145);
             this.dgv_books.TabIndex = 37;
             this.dgv_books.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_books_CellContentClick);
             // 
@@ -490,7 +484,7 @@
             // 
             this.btnAddBook.BackColor = System.Drawing.Color.Lime;
             this.btnAddBook.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
-            this.btnAddBook.Location = new System.Drawing.Point(1214, 573);
+            this.btnAddBook.Location = new System.Drawing.Point(1214, 370);
             this.btnAddBook.Name = "btnAddBook";
             this.btnAddBook.Size = new System.Drawing.Size(251, 64);
             this.btnAddBook.TabIndex = 38;
@@ -502,13 +496,27 @@
             // 
             this.button4.BackColor = System.Drawing.Color.Red;
             this.button4.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
-            this.button4.Location = new System.Drawing.Point(1488, 573);
+            this.button4.Location = new System.Drawing.Point(1488, 370);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(246, 69);
             this.button4.TabIndex = 39;
             this.button4.Text = "Remove Book";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.btnRemoveBook_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.Location = new System.Drawing.Point(49, 775);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(243, 63);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Report";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Sales
             // 
@@ -575,10 +583,10 @@
         private System.Windows.Forms.Button btn_Cusorder;
         private System.Windows.Forms.Button btn_Sales;
         private System.Windows.Forms.Button btn_Customer;
-        private System.Windows.Forms.Button btn_overview;
         private System.Windows.Forms.DataGridView dgv_books;
         //private System.Windows.Forms.Button btnRemoveBook;
         private System.Windows.Forms.Button btnAddBook;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

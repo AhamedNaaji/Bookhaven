@@ -3,6 +3,7 @@ using Bookhaven.CommonClasses;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.DirectoryServices.ActiveDirectory;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -471,6 +472,53 @@ namespace Bookhaven
         }
 
         private void dgv_books_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_Customer_Click(object sender, EventArgs e)
+        {
+            Customer cstms = new Customer(_staffId);
+            cstms.ShowDialog();
+        }
+
+        private void btn_Sales_Click(object sender, EventArgs e)
+        {
+            Sales sale = new Sales(_staffId);
+            sale.ShowDialog();
+        }
+
+        private void btn_Cusorder_Click(object sender, EventArgs e)
+        {
+            Customer cusorder = new Customer(_staffId);
+            cusorder.ShowDialog();
+        }
+
+        private void btn_Supporder_Click(object sender, EventArgs e)
+        {
+            SupplierOrder spplyOrder = new SupplierOrder(_staffId);
+            spplyOrder.ShowDialog();
+        }
+
+        private void btn_Book_Click(object sender, EventArgs e)
+        {
+            Book book = new Book(_staffId);
+            book.ShowDialog();
+        }
+
+        private void btn_Suppliers_Click(object sender, EventArgs e)
+        {
+            Suppliers suppliers = new Suppliers(_staffId);
+            suppliers.ShowDialog();
+        }
+
+        private void btn_Staff_Click(object sender, EventArgs e)
+        {
+            Staff staff = new Staff(_staffId);
+            staff.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }

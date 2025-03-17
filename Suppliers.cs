@@ -16,8 +16,11 @@ namespace Bookhaven
     {
         cls_Supplier clssup = new cls_Supplier();
         filloperation fill = new filloperation();
-        public Suppliers()
+        private int _staffId;
+
+        public Suppliers(int staffId)
         {
+            _staffId = staffId;
             InitializeComponent();
         }
 
@@ -175,6 +178,47 @@ namespace Bookhaven
             }
             clssup.DeleteDate();
             Suppliers_Load(sender, e);
+        }
+
+        private void btn_Customer_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer(_staffId);
+            customer.ShowDialog();
+        }
+
+        private void btn_Sales_Click(object sender, EventArgs e)
+        {
+            Sales sales = new Sales(_staffId);
+            sales.ShowDialog();
+        }
+
+        private void btn_Cusorder_Click(object sender, EventArgs e)
+        {
+            CustomerOrder customerOrder = new CustomerOrder(_staffId); customerOrder.ShowDialog();
+        }
+
+        private void btn_Supporder_Click(object sender, EventArgs e)
+        {
+            SupplierOrder supplierOrder = new SupplierOrder(_staffId);
+            supplierOrder.ShowDialog();
+        }
+
+        private void btn_Book_Click(object sender, EventArgs e)
+        {
+            Book book = new Book(_staffId);
+            book.ShowDialog();
+        }
+
+        private void btn_Suppliers_Click(object sender, EventArgs e)
+        {
+            SupplierOrder supplierOrder1 = new SupplierOrder(_staffId);
+            supplierOrder1.ShowDialog();
+        }
+
+        private void btn_Staff_Click(object sender, EventArgs e)
+        {
+            Staff staff = new Staff(_staffId);
+            staff.ShowDialog();
         }
     }
 }
