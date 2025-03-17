@@ -2,6 +2,7 @@
 using Bookhaven.CommonClasses;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -17,15 +18,25 @@ namespace Bookhaven
         private SqlConnection conn = new SqlConnection("Data Source=AFRIDI;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         filloperation fill = new filloperation(); // Declare and initialize the 'fill' object
         private int currentStaffId;
+        private List<SalesDetail> cartItems = new List<SalesDetail>();
 
         public Clerk_Sales(int staffId)
         {
             InitializeComponent();
             currentStaffId = staffId;
+            InitializeCartDataGridView();
         }
 
-        private void comboCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        private void InitializeCartDataGridView()
         {
+            // Initialize the DataGridView for the cart
+            dgv_cart.AutoGenerateColumns = false;
+            dgv_cart.Columns.Add(new DataGridViewTextBoxColumn { Name = "Book_Id", HeaderText = "Book ID", DataPropertyName = "Book_Id_fk" });
+            dgv_cart.Columns.Add(new DataGridViewTextBoxColumn { Name = "Book_Name", HeaderText = "Book Name", DataPropertyName = "Book_Name" });
+            dgv_cart.Columns.Add(new DataGridViewTextBoxColumn { Name = "Price", HeaderText = "Price", DataPropertyName = "Price" });
+            dgv_cart.Columns.Add(new DataGridViewTextBoxColumn { Name = "Quantity", HeaderText = "Quantity", DataPropertyName = "Quantity" });
+            dgv_cart.Columns.Add(new DataGridViewTextBoxColumn { Name = "Discount", HeaderText = "Discount", DataPropertyName = "Discount" });
+            dgv_cart.Columns.Add(new DataGridViewTextBoxColumn { Name = "Total_Amount", HeaderText = "Total Amount", DataPropertyName = "Total_Amount" });
         }
 
         private void Clerk_Sales_Load(object sender, EventArgs e)
@@ -33,8 +44,6 @@ namespace Bookhaven
             // Populate combo boxes
             fill.combobox("SELECT Customer_Id, Customer_Name FROM Customer", comboCustomer, "Customer_Name", "Customer_Id");
             fill.combobox("SELECT Book_Id, Book_Name FROM Book", comboBook, "Book_Name", "Book_Id");
-            // No need to populate comboStaff since we are using the logged-in staff ID
-            // fill.combobox("SELECT Staff_Id, Staff_Name FROM Staff", comboStaff, "Staff_Name", "Staff_Id");
             // Load sales data
             LoadSalesData();
         }
@@ -66,14 +75,14 @@ namespace Bookhaven
 
         private void UpdateFinalPaymentDisplay()
         {
-            float totalAmount = CalculateTotalAmount();
-            float discount = GetBookDiscount();
-            float finalPayment = totalAmount - (totalAmount * (discount / 100));
-            label_TotalAmount.Text = $"{totalAmount}";
-            labelFinalPayment.Text = $"{finalPayment}";
+            float totalAmount = cartItems.Sum(item => item.Total_Amount);
+            float discount = cartItems.Sum(item => item.Total_Amount * (item.Discount / 100));
+            float finalPayment = totalAmount - discount;
+            label_TotalAmount.Text = $"{totalAmount:F2}"; // Format to two decimal places
+            labelFinalPayment.Text = $"{finalPayment:F2}"; // Format to two decimal places
         }
 
-        public bool CheckBookStock(int bookId)
+        public bool CheckBookStock(int bookId, int quantity)
         {
             string query = "SELECT Stock_Quantity FROM Stock WHERE Book_Id_fk = @BookId";
             using (SqlCommand command = new SqlCommand(query, conn))
@@ -89,9 +98,9 @@ namespace Bookhaven
                         while (reader.Read())
                         {
                             int stockQuantity = reader.GetInt32(0);
-                            if (stockQuantity < 1)
+                            if (stockQuantity < quantity)
                             {
-                                MessageBox.Show("The book is out of stock.");
+                                MessageBox.Show("Insufficient stock for the selected book.");
                                 return false;
                             }
                         }
@@ -119,33 +128,68 @@ namespace Bookhaven
 
         private void btn_addSales_Click(object sender, EventArgs e)
         {
-            int bookId = Convert.ToInt32(comboBook.SelectedValue);
-            if (CheckBookStock(bookId))
+            if (comboCustomer.SelectedIndex == -1)
             {
-                sales_cls sale = new sales_cls
-                {
-                    Staff_Id_fk = currentStaffId, // Use the logged-in staff ID
-                    Customer_Id_fk = Convert.ToInt32(comboCustomer.SelectedValue),
-                    Date = dateTimePickerDate.Value,
-                    Total_Payment = CalculateFinalPayment(),
-                    SalesDetailsList = GetSalesDetails()
-                };
-                sale.Insertdata();
-                LoadSalesData();
+                MessageBox.Show("Please select a customer.", "Validation Error");
+                return;
             }
+
+            if (cartItems.Count == 0)
+            {
+                MessageBox.Show("Please add books to the cart before making a sale.", "Validation Error");
+                return;
+            }
+
+            float totalPayment;
+            if (!float.TryParse(label_TotalAmount.Text.Replace("$", "").Trim(), out totalPayment))
+            {
+                MessageBox.Show("Invalid total payment value.", "Validation Error");
+                return;
+            }
+
+            float finalPayment;
+            if (!float.TryParse(labelFinalPayment.Text.Replace("$", "").Trim(), out finalPayment))
+            {
+                MessageBox.Show("Invalid final payment value.", "Validation Error");
+                return;
+            }
+
+            sales_cls sale = new sales_cls
+            {
+                Staff_Id_fk = currentStaffId, // Use the logged-in staff ID
+                Customer_Id_fk = Convert.ToInt32(comboCustomer.SelectedValue),
+                Date = dateTimePickerDate.Value,
+                Total_Payment = finalPayment,
+                SalesDetailsList = cartItems
+            };
+
+            sale.Insertdata();
+            LoadSalesData();
+            cartItems.Clear(); // Clear the cart after inserting the sale
+            dgv_cart.DataSource = null; // Clear the DataGridView
+            UpdateFinalPaymentDisplay(); // Reset the payment labels
         }
 
         private void btn_updateSales_Click(object sender, EventArgs e)
         {
-            // Debugging: Log the selection state
-            Console.WriteLine($"Selected Rows Count: {dgv_sales.SelectedRows.Count}");
-            Console.WriteLine($"Current Row Index: {dgv_sales.CurrentRow?.Index}");
             if (dgv_sales.SelectedRows.Count == 0 && dgv_sales.CurrentRow == null)
             {
                 MessageBox.Show("Please select a sale to update.", "No Selection");
                 return;
             }
-            // Proceed with updating the selected sale
+
+            if (comboCustomer.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a customer.", "Validation Error");
+                return;
+            }
+
+            if (cartItems.Count == 0)
+            {
+                MessageBox.Show("Please add books to the cart before updating the sale.", "Validation Error");
+                return;
+            }
+
             int salesId;
             if (dgv_sales.SelectedRows.Count > 0)
             {
@@ -155,17 +199,36 @@ namespace Bookhaven
             {
                 salesId = Convert.ToInt32(dgv_sales.CurrentRow.Cells["Sales_Id"].Value);
             }
+
+            float totalPayment;
+            if (!float.TryParse(label_TotalAmount.Text.Replace("$", "").Trim(), out totalPayment))
+            {
+                MessageBox.Show("Invalid total payment value.", "Validation Error");
+                return;
+            }
+
+            float finalPayment;
+            if (!float.TryParse(labelFinalPayment.Text.Replace("$", "").Trim(), out finalPayment))
+            {
+                MessageBox.Show("Invalid final payment value.", "Validation Error");
+                return;
+            }
+
             sales_cls sale = new sales_cls
             {
                 Sales_Id = salesId,
                 Staff_Id_fk = currentStaffId, // Use the logged-in staff ID
                 Customer_Id_fk = Convert.ToInt32(comboCustomer.SelectedValue),
                 Date = dateTimePickerDate.Value,
-                Total_Payment = CalculateFinalPayment(),
-                SalesDetailsList = GetSalesDetails()
+                Total_Payment = finalPayment,
+                SalesDetailsList = cartItems
             };
+
             sale.UpdateData();
             LoadSalesData();
+            cartItems.Clear(); // Clear the cart after updating the sale
+            dgv_cart.DataSource = null; // Clear the DataGridView
+            UpdateFinalPaymentDisplay(); // Reset the payment labels
         }
 
         private void btn_deleteSales_Click(object sender, EventArgs e)
@@ -175,89 +238,65 @@ namespace Bookhaven
                 MessageBox.Show("Please select a sale to delete.", "No Selection");
                 return;
             }
+
             int salesId = Convert.ToInt32(dgv_sales.SelectedRows[0].Cells["Sales_Id"].Value);
             sales_cls sale = new sales_cls
             {
                 Sales_Id = salesId
             };
+
             sale.DeleteData();
             LoadSalesData();
         }
 
-        private List<SalesDetail> GetSalesDetails()
-        {
-            var details = new List<SalesDetail>
-            {
-                new SalesDetail
-                {
-                    Book_Id_fk = Convert.ToInt32(comboBook.SelectedValue),
-                    Price = GetBookPrice(),
-                    Quantity = (int)numericQuantity.Value,
-                    Discount = GetBookDiscount(),
-                    Total_Amount = CalculateTotalAmount()
-                }
-            };
-            return details;
-        }
-
         private float GetBookPrice()
         {
-            return ExecuteScalarQuery<float>("SELECT Price FROM Book WHERE Book_Id = @Book_Id",
-                new SqlParameter[] { new SqlParameter("@Book_Id", comboBook.SelectedValue) });
+            try
+            {
+                int bookId = Convert.ToInt32(comboBook.SelectedValue);
+                string query = "SELECT Price FROM Book WHERE Book_Id = @Book_Id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Book_Id", bookId);
+                if (conn.State != System.Data.ConnectionState.Open)
+                    conn.Open();
+                object result = cmd.ExecuteScalar();
+                conn.Close();
+                return result != null ? Convert.ToSingle(result) : 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error fetching book price: {ex.Message}");
+            }
         }
 
         private float GetBookDiscount()
         {
-            return ExecuteScalarQuery<float>("SELECT Discount FROM Book WHERE Book_Id = @Book_Id",
-                new SqlParameter[] { new SqlParameter("@Book_Id", comboBook.SelectedValue) });
-        }
-
-        private float CalculateTotalAmount()
-        {
-            float price = GetBookPrice();
-            int quantity = (int)numericQuantity.Value;
-            return price * quantity;
-        }
-
-        private float CalculateFinalPayment()
-        {
-            float totalAmount = CalculateTotalAmount();
-            float discount = GetBookDiscount();
-            return totalAmount - (totalAmount * (discount / 100));
-        }
-
-        private T ExecuteScalarQuery<T>(string query, SqlParameter[] parameters)
-        {
             try
             {
+                int bookId = Convert.ToInt32(comboBook.SelectedValue);
+                string query = "SELECT Discount FROM Book WHERE Book_Id = @Book_Id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Book_Id", bookId);
                 if (conn.State != System.Data.ConnectionState.Open)
                     conn.Open();
-                SqlCommand cmd = new SqlCommand(query, conn);
-                if (parameters != null)
-                    cmd.Parameters.AddRange(parameters);
                 object result = cmd.ExecuteScalar();
-                return result != null ? (T)Convert.ChangeType(result, typeof(T)) : default(T);
+                conn.Close();
+                return result != null ? Convert.ToSingle(result) : 0;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Database Error: {ex.Message}");
-                return default(T);
-            }
-            finally
-            {
-                if (conn.State == System.Data.ConnectionState.Open)
-                    conn.Close();
+                throw new Exception($"Error fetching book discount: {ex.Message}");
             }
         }
 
-        private void comboBook_SelectedIndexChanged(object sender, EventArgs e)
+        private void nup_Quantity_ValueChanged(object sender, EventArgs e)
         {
             // Ensure a valid book is selected
             if (comboBook.SelectedValue == null || comboBook.SelectedValue.ToString() == "")
             {
-                label_TotalAmount.Text = "Total Amount: $0.00";
+                label_TotalAmount.Text = "Total Amount: 0.00";
                 labelDiscount.Text = "Discount: 0%";
-                labelFinalPayment.Text = "Final Payment: $0.00";
+                labelFinalPayment.Text = "Final Payment: 0.00";
                 return;
             }
             try
@@ -266,7 +305,7 @@ namespace Bookhaven
                 float price = GetBookPrice();
                 float discount = GetBookDiscount();
                 // Calculate total amount based on the current quantity
-                int quantity = (int)numericQuantity.Value;
+                int quantity = (int)numericQuantity.Value; // Get the current quantity from NumericUpDown
                 float totalAmount = price * quantity;
                 // Calculate final payment after applying the discount
                 float finalPayment = totalAmount - (totalAmount * (discount / 100));
@@ -281,30 +320,95 @@ namespace Bookhaven
             }
         }
 
-        private void numericQuantity_ValueChanged(object sender, EventArgs e)
+        private void btn_add_books_Click(object sender, EventArgs e)
         {
-            // Ensure a valid book is selected
-            if (comboBook.SelectedValue == null || comboBook.SelectedValue.ToString() == "")
+            if (comboBook.SelectedIndex == -1)
             {
-                label_TotalAmount.Text = "0.00";
-                labelDiscount.Text = "0%";
-                labelFinalPayment.Text = "0.00";
+                MessageBox.Show("Please select a book.", "Validation Error");
                 return;
             }
+
+            int bookId = Convert.ToInt32(comboBook.SelectedValue);
+            int quantity = (int)numericQuantity.Value;
+            if (quantity <= 0)
+            {
+                MessageBox.Show("Quantity must be greater than zero.", "Validation Error");
+                return;
+            }
+
+            if (!CheckBookStock(bookId, quantity))
+            {
+                return;
+            }
+
+            float price = GetBookPrice();
+            float discount = GetBookDiscount();
+            float totalAmount = price * quantity;
+            float finalAmount = totalAmount - (totalAmount * (discount / 100));
+
+            // Check if the book is already in the cart
+            var existingItem = cartItems.FirstOrDefault(item => item.Book_Id_fk == bookId);
+            if (existingItem != null)
+            {
+                // Update the existing item
+                existingItem.Quantity = quantity; // Set to new quantity
+                existingItem.Total_Amount = existingItem.Price * existingItem.Quantity;
+                existingItem.Total_Amount -= existingItem.Total_Amount * (existingItem.Discount / 100);
+            }
+            else
+            {
+                // Add a new item to the cart
+                cartItems.Add(new SalesDetail
+                {
+                    Book_Id_fk = bookId,
+                    Book_Name = comboBook.Text,
+                    Price = price,
+                    Quantity = quantity,
+                    Discount = discount,
+                    Total_Amount = finalAmount
+                });
+            }
+
+            // Bind the cart items to the DataGridView
+            dgv_cart.DataSource = null;
+            dgv_cart.DataSource = cartItems.ToList();
+            UpdateFinalPaymentDisplay();
+        }
+
+        private void btn_remove_books_Click(object sender, EventArgs e)
+        {
+            // Ensure a row is selected in the DataGridView
+            if (dgv_cart.SelectedRows.Count == 0 && dgv_cart.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a book to remove from the cart.", "No Selection");
+                return;
+            }
+
             try
             {
-                // Fetch the price and discount for the selected book
-                float price = GetBookPrice();
-                float discount = GetBookDiscount();
-                // Calculate total amount based on the current quantity
-                int quantity = (int)numericQuantity.Value;
-                float totalAmount = price * quantity;
-                // Calculate final payment after applying the discount
-                float finalPayment = totalAmount - (totalAmount * (discount / 100));
-                // Update the labels dynamically
-                label_TotalAmount.Text = $"{totalAmount}";
-                labelDiscount.Text = $"{discount}%";
-                labelFinalPayment.Text = $"{finalPayment}";
+                int bookId;
+                if (dgv_cart.SelectedRows.Count > 0)
+                {
+                    // Use SelectedRows if available
+                    bookId = Convert.ToInt32(dgv_cart.SelectedRows[0].Cells["Book_Id"].Value);
+                }
+                else
+                {
+                    // Fallback to CurrentRow
+                    bookId = Convert.ToInt32(dgv_cart.CurrentRow.Cells["Book_Id"].Value);
+                }
+
+                // Remove the item from the cartItems list
+                var itemToRemove = cartItems.FirstOrDefault(item => item.Book_Id_fk == bookId);
+                if (itemToRemove != null)
+                {
+                    cartItems.Remove(itemToRemove);
+                }
+
+                // Refresh the DataGridView and update the final payment display
+                dgv_cart.DataSource = null;
+                dgv_cart.DataSource = cartItems.ToList();
+                UpdateFinalPaymentDisplay();
             }
             catch (Exception ex)
             {
@@ -316,25 +420,83 @@ namespace Bookhaven
         {
             if (e.RowIndex >= 0)
             {
-                // Select the clicked row
-                dgv_sales.ClearSelection();
-                dgv_sales.Rows[e.RowIndex].Selected = true;
-                // Populate form fields with data from the selected row
-                int salesId = Convert.ToInt32(dgv_sales.Rows[e.RowIndex].Cells["Sales_Id"].Value);
-                sales_cls sale = new sales_cls
+                try
                 {
-                    Sales_Id = salesId
-                };
-                sale.Getdata();
-                // Populate form fields
-                comboCustomer.SelectedValue = sale.Customer_Id_fk;
-                dateTimePickerDate.Value = sale.Date;
-                numericQuantity.Value = sale.SalesDetailsList[0].Quantity;
-                comboBook.SelectedValue = sale.SalesDetailsList[0].Book_Id_fk;
-                // No need to set comboStaff since we are using the logged-in staff ID
-                // comboStaff.SelectedValue = sale.Staff_Id_fk;
-                // Update the UI dynamically
-                UpdateFinalPaymentDisplay();
+                    // Get selected order ID
+                    int salesId = Convert.ToInt32(dgv_sales.Rows[e.RowIndex].Cells["Sales_Id"].Value);
+                    // Load order data
+                    sales_cls sale = new sales_cls
+                    {
+                        Sales_Id = salesId
+                    };
+                    sale.Getdata();
+                    // Populate form fields
+                    comboCustomer.SelectedValue = sale.Customer_Id_fk;
+                    dateTimePickerDate.Value = sale.Date;
+                    // Clear the cart
+                    cartItems.Clear();
+                    // Add the sale details to the cart
+                    foreach (var detail in sale.SalesDetailsList)
+                    {
+                        cartItems.Add(new SalesDetail
+                        {
+                            Book_Id_fk = detail.Book_Id_fk,
+                            Book_Name = GetBookName(detail.Book_Id_fk),
+                            Price = detail.Price,
+                            Quantity = detail.Quantity,
+                            Discount = detail.Discount,
+                            Total_Amount = detail.Total_Amount
+                        });
+                    }
+                    // Bind the cart items to the DataGridView
+                    dgv_cart.DataSource = null;
+                    dgv_cart.DataSource = cartItems.ToList();
+                    UpdateFinalPaymentDisplay();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}", "Fetch Failed");
+                }
+            }
+        }
+
+        private void dgv_cart_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Get the selected book ID
+                int bookId = Convert.ToInt32(dgv_cart.Rows[e.RowIndex].Cells["Book_Id"].Value);
+                // Get the selected book from the cart
+                var selectedItem = cartItems.FirstOrDefault(item => item.Book_Id_fk == bookId);
+                if (selectedItem != null)
+                {
+                    // Set the selected item's quantity to the numericUpDown control
+                    numericQuantity.Value = selectedItem.Quantity;
+                    // Set the selected book to the comboBook control
+                    comboBook.SelectedValue = selectedItem.Book_Id_fk;
+                }
+            }
+        }
+
+        private string GetBookName(int bookId)
+        {
+            string query = "SELECT Book_Name FROM Book WHERE Book_Id = @Book_Id";
+            using (SqlCommand command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@Book_Id", bookId);
+                try
+                {
+                    if (conn.State != System.Data.ConnectionState.Open)
+                        conn.Open();
+                    object result = command.ExecuteScalar();
+                    conn.Close();
+                    return result != null ? result.ToString() : "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Database Error: {ex.Message}");
+                    return "";
+                }
             }
         }
 
@@ -346,8 +508,8 @@ namespace Bookhaven
 
         private void btn_Sales_Click(object sender, EventArgs e)
         {
-            Clerk_Sales salesForm = new Clerk_Sales(currentStaffId);
-            salesForm.ShowDialog();
+            Clerk_Sales sales = new Clerk_Sales(currentStaffId);
+            sales.ShowDialog();
         }
 
         private void btn_Cusorder_Click(object sender, EventArgs e)
@@ -386,6 +548,64 @@ namespace Bookhaven
         {
             Dashboard_Clerk dasclerk = new Dashboard_Clerk(currentStaffId);
             dasclerk.ShowDialog();
+        }
+
+        private void btn_update_books_Click(object sender, EventArgs e)
+        {
+            // Ensure a row is selected in the DataGridView
+            if (dgv_cart.SelectedRows.Count == 0 && dgv_cart.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a book to update.", "No Selection");
+                return;
+            }
+
+            try
+            {
+                int bookId;
+                if (dgv_cart.SelectedRows.Count > 0)
+                {
+                    // Use SelectedRows if available
+                    bookId = Convert.ToInt32(dgv_cart.SelectedRows[0].Cells["Book_Id"].Value);
+                }
+                else
+                {
+                    // Fallback to CurrentRow
+                    bookId = Convert.ToInt32(dgv_cart.CurrentRow.Cells["Book_Id"].Value);
+                }
+
+                // Find the corresponding item in the cartItems list
+                var selectedItem = cartItems.FirstOrDefault(item => item.Book_Id_fk == bookId);
+                if (selectedItem != null)
+                {
+                    // Update the quantity from the numericUpDown control
+                    int newQuantity = (int)numericQuantity.Value;
+                    if (newQuantity <= 0)
+                    {
+                        MessageBox.Show("Quantity must be greater than zero.", "Validation Error");
+                        return;
+                    }
+
+                    // Check stock availability
+                    if (!CheckBookStock(selectedItem.Book_Id_fk, newQuantity))
+                    {
+                        return;
+                    }
+
+                    // Update the item's quantity and recalculate total amount
+                    selectedItem.Quantity = newQuantity;
+                    selectedItem.Total_Amount = selectedItem.Price * newQuantity;
+                    selectedItem.Total_Amount -= selectedItem.Total_Amount * (selectedItem.Discount / 100);
+
+                    // Refresh the DataGridView and update the final payment display
+                    dgv_cart.DataSource = null;
+                    dgv_cart.DataSource = cartItems.ToList();
+                    UpdateFinalPaymentDisplay();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error");
+            }
         }
     }
 }

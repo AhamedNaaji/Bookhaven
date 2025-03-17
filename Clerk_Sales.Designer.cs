@@ -39,15 +39,15 @@
             this.labelDiscount = new System.Windows.Forms.Label();
             this.labelFinalPayment = new System.Windows.Forms.Label();
             this.label_TotalAmount = new System.Windows.Forms.Label();
-            this.numericQuantity = new System.Windows.Forms.NumericUpDown();
-            this.comboBook = new System.Windows.Forms.ComboBox();
             this.comboCustomer = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericQuantity = new System.Windows.Forms.NumericUpDown();
+            this.comboBook = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -59,19 +59,24 @@
             this.btn_dashboard = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dgv_cart = new System.Windows.Forms.DataGridView();
+            this.btn_add_books = new System.Windows.Forms.Button();
+            this.btn_remove_books = new System.Windows.Forms.Button();
+            this.btn_update_books = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sales)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cart)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_sales
             // 
             this.dgv_sales.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgv_sales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_sales.Location = new System.Drawing.Point(580, 512);
+            this.dgv_sales.Location = new System.Drawing.Point(580, 671);
             this.dgv_sales.Name = "dgv_sales";
             this.dgv_sales.RowHeadersWidth = 51;
             this.dgv_sales.RowTemplate.Height = 24;
@@ -82,7 +87,7 @@
             // btn_deleteSales
             // 
             this.btn_deleteSales.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btn_deleteSales.Location = new System.Drawing.Point(1136, 408);
+            this.btn_deleteSales.Location = new System.Drawing.Point(1136, 578);
             this.btn_deleteSales.Name = "btn_deleteSales";
             this.btn_deleteSales.Size = new System.Drawing.Size(247, 67);
             this.btn_deleteSales.TabIndex = 87;
@@ -93,7 +98,7 @@
             // btn_updateSales
             // 
             this.btn_updateSales.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btn_updateSales.Location = new System.Drawing.Point(858, 408);
+            this.btn_updateSales.Location = new System.Drawing.Point(860, 578);
             this.btn_updateSales.Name = "btn_updateSales";
             this.btn_updateSales.Size = new System.Drawing.Size(247, 67);
             this.btn_updateSales.TabIndex = 86;
@@ -104,7 +109,7 @@
             // btn_addSales
             // 
             this.btn_addSales.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btn_addSales.Location = new System.Drawing.Point(580, 408);
+            this.btn_addSales.Location = new System.Drawing.Point(580, 582);
             this.btn_addSales.Name = "btn_addSales";
             this.btn_addSales.Size = new System.Drawing.Size(247, 67);
             this.btn_addSales.TabIndex = 85;
@@ -119,19 +124,15 @@
             this.panel2.Controls.Add(this.labelDiscount);
             this.panel2.Controls.Add(this.labelFinalPayment);
             this.panel2.Controls.Add(this.label_TotalAmount);
-            this.panel2.Controls.Add(this.numericQuantity);
-            this.panel2.Controls.Add(this.comboBook);
             this.panel2.Controls.Add(this.comboCustomer);
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.label20);
-            this.panel2.Controls.Add(this.label19);
-            this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(580, 121);
+            this.panel2.Location = new System.Drawing.Point(580, 315);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(823, 281);
+            this.panel2.Size = new System.Drawing.Size(823, 257);
             this.panel2.TabIndex = 84;
             // 
             // label23
@@ -177,23 +178,6 @@
             this.label_TotalAmount.Size = new System.Drawing.Size(0, 20);
             this.label_TotalAmount.TabIndex = 18;
             // 
-            // numericQuantity
-            // 
-            this.numericQuantity.Location = new System.Drawing.Point(128, 130);
-            this.numericQuantity.Name = "numericQuantity";
-            this.numericQuantity.Size = new System.Drawing.Size(51, 27);
-            this.numericQuantity.TabIndex = 17;
-            this.numericQuantity.ValueChanged += new System.EventHandler(this.numericQuantity_ValueChanged);
-            // 
-            // comboBook
-            // 
-            this.comboBook.FormattingEnabled = true;
-            this.comboBook.Location = new System.Drawing.Point(306, 43);
-            this.comboBook.Name = "comboBook";
-            this.comboBook.Size = new System.Drawing.Size(232, 28);
-            this.comboBook.TabIndex = 16;
-            this.comboBook.SelectedIndexChanged += new System.EventHandler(this.comboBook_SelectedIndexChanged);
-            // 
             // comboCustomer
             // 
             this.comboCustomer.FormattingEnabled = true;
@@ -201,7 +185,6 @@
             this.comboCustomer.Name = "comboCustomer";
             this.comboCustomer.Size = new System.Drawing.Size(197, 28);
             this.comboCustomer.TabIndex = 15;
-            this.comboCustomer.SelectedIndexChanged += new System.EventHandler(this.comboCustomer_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -233,26 +216,6 @@
             this.label20.TabIndex = 10;
             this.label20.Text = "Total Amount";
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(15, 129);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(93, 23);
-            this.label19.TabIndex = 8;
-            this.label19.Text = "Quantity";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(312, 11);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(60, 23);
-            this.label18.TabIndex = 6;
-            this.label18.Text = "Book";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -262,6 +225,43 @@
             this.label3.Size = new System.Drawing.Size(104, 23);
             this.label3.TabIndex = 4;
             this.label3.Text = "Customer";
+            // 
+            // numericQuantity
+            // 
+            this.numericQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericQuantity.Location = new System.Drawing.Point(830, 146);
+            this.numericQuantity.Name = "numericQuantity";
+            this.numericQuantity.Size = new System.Drawing.Size(51, 30);
+            this.numericQuantity.TabIndex = 17;
+            // 
+            // comboBook
+            // 
+            this.comboBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBook.FormattingEnabled = true;
+            this.comboBook.Location = new System.Drawing.Point(564, 149);
+            this.comboBook.Name = "comboBook";
+            this.comboBook.Size = new System.Drawing.Size(232, 28);
+            this.comboBook.TabIndex = 16;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(824, 100);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(130, 34);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "Quantity";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(558, 100);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(83, 34);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "Book";
             // 
             // panel3
             // 
@@ -403,19 +403,72 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
+            // dgv_cart
+            // 
+            this.dgv_cart.AllowUserToOrderColumns = true;
+            this.dgv_cart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_cart.Location = new System.Drawing.Point(1095, 114);
+            this.dgv_cart.Name = "dgv_cart";
+            this.dgv_cart.RowHeadersWidth = 51;
+            this.dgv_cart.RowTemplate.Height = 24;
+            this.dgv_cart.Size = new System.Drawing.Size(308, 182);
+            this.dgv_cart.TabIndex = 107;
+            this.dgv_cart.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_cart_CellContentDoubleClick);
+            // 
+            // btn_add_books
+            // 
+            this.btn_add_books.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_add_books.Location = new System.Drawing.Point(564, 189);
+            this.btn_add_books.Name = "btn_add_books";
+            this.btn_add_books.Size = new System.Drawing.Size(135, 67);
+            this.btn_add_books.TabIndex = 108;
+            this.btn_add_books.Text = "Add Book";
+            this.btn_add_books.UseVisualStyleBackColor = true;
+            this.btn_add_books.Click += new System.EventHandler(this.btn_add_books_Click);
+            // 
+            // btn_remove_books
+            // 
+            this.btn_remove_books.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_remove_books.Location = new System.Drawing.Point(860, 189);
+            this.btn_remove_books.Name = "btn_remove_books";
+            this.btn_remove_books.Size = new System.Drawing.Size(139, 67);
+            this.btn_remove_books.TabIndex = 109;
+            this.btn_remove_books.Text = "Remove Book";
+            this.btn_remove_books.UseVisualStyleBackColor = true;
+            this.btn_remove_books.Click += new System.EventHandler(this.btn_remove_books_Click);
+            // 
+            // btn_update_books
+            // 
+            this.btn_update_books.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_update_books.Location = new System.Drawing.Point(711, 189);
+            this.btn_update_books.Name = "btn_update_books";
+            this.btn_update_books.Size = new System.Drawing.Size(135, 67);
+            this.btn_update_books.TabIndex = 110;
+            this.btn_update_books.Text = "Update Book";
+            this.btn_update_books.UseVisualStyleBackColor = true;
+            this.btn_update_books.Click += new System.EventHandler(this.btn_update_books_Click);
+            // 
             // Clerk_Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(140)))), ((int)(((byte)(137)))));
             this.ClientSize = new System.Drawing.Size(1924, 988);
+            this.Controls.Add(this.btn_update_books);
+            this.Controls.Add(this.btn_remove_books);
+            this.Controls.Add(this.btn_add_books);
+            this.Controls.Add(this.dgv_cart);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.numericQuantity);
             this.Controls.Add(this.dgv_sales);
             this.Controls.Add(this.btn_deleteSales);
             this.Controls.Add(this.btn_updateSales);
+            this.Controls.Add(this.comboBook);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.btn_addSales);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label18);
             this.Name = "Clerk_Sales";
             this.Text = "Clerk_Sales";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -428,7 +481,9 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cart)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -463,5 +518,9 @@
         private System.Windows.Forms.Button btn_dashboard;
         private System.Windows.Forms.Button btn_Customer;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridView dgv_cart;
+        private System.Windows.Forms.Button btn_add_books;
+        private System.Windows.Forms.Button btn_remove_books;
+        private System.Windows.Forms.Button btn_update_books;
     }
 }
