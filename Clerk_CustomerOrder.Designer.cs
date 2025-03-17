@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clerk_CustomerOrder));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.cmb_staff = new System.Windows.Forms.ComboBox();
             this.cmb_Status = new System.Windows.Forms.ComboBox();
             this.nup_Quantity = new System.Windows.Forms.NumericUpDown();
             this.cmb_Deliverymethod = new System.Windows.Forms.ComboBox();
@@ -75,8 +73,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label23);
-            this.panel2.Controls.Add(this.cmb_staff);
             this.panel2.Controls.Add(this.cmb_Status);
             this.panel2.Controls.Add(this.nup_Quantity);
             this.panel2.Controls.Add(this.cmb_Deliverymethod);
@@ -98,26 +94,8 @@
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(549, 164);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 253);
+            this.panel2.Size = new System.Drawing.Size(791, 253);
             this.panel2.TabIndex = 96;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(747, 11);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(51, 23);
-            this.label23.TabIndex = 48;
-            this.label23.Text = "Staff";
-            // 
-            // cmb_staff
-            // 
-            this.cmb_staff.FormattingEnabled = true;
-            this.cmb_staff.Location = new System.Drawing.Point(751, 41);
-            this.cmb_staff.Name = "cmb_staff";
-            this.cmb_staff.Size = new System.Drawing.Size(232, 28);
-            this.cmb_staff.TabIndex = 47;
             // 
             // cmb_Status
             // 
@@ -502,8 +480,6 @@
 
         #endregion
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ComboBox cmb_staff;
         private System.Windows.Forms.ComboBox cmb_Status;
         private System.Windows.Forms.NumericUpDown nup_Quantity;
         private System.Windows.Forms.ComboBox cmb_Deliverymethod;

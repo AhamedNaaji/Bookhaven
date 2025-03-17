@@ -16,9 +16,9 @@ namespace Bookhaven
     public partial class Clerk_CustomerOrder : Form
     {
         cusorder_cls clscusorder = new cusorder_cls();
-
         filloperation fill = new filloperation();
         private int currentStaffId;
+
         public Clerk_CustomerOrder(int staffId)
         {
             InitializeComponent();
@@ -33,8 +33,8 @@ namespace Bookhaven
             {
                 nup_Quantity_ValueChanged(sender, e); // Recalculate prices when a new book is selected
             }
-
         }
+
         void FirstRun()
         {
             // Clear form fields
@@ -46,29 +46,17 @@ namespace Bookhaven
             cmb_Deliverymethod.SelectedIndex = -1;
             lbl_Discount_Cusorder.Text = "0.0";
             lbl_Finalpayment_Cusorder.Text = "0.0";
-
             // Populate combo boxes
             string customerQuery = "SELECT Customer_Id, Customer_Name FROM Customer";
             fill.combobox(customerQuery, cmb_customer, "Customer_Name", "Customer_Id");
-
             string bookQuery = "SELECT Book_Id, Book_Name FROM Book";
             fill.combobox(bookQuery, cmb_Book, "Book_Name", "Book_Id");
-
             string supplierQuery = "SELECT Supplier_Id, Supplier_Name FROM Supplier";
             fill.combobox(supplierQuery, cmb_Suporder, "Supplier_Name", "Supplier_Id");
-
             string deliveryQuery = "SELECT DISTINCT DeliveryMethod FROM CusOrderDetails";
             fill.combobox(deliveryQuery, cmb_Deliverymethod, "DeliveryMethod", "DeliveryMethod");
-
             string statusQuery = "SELECT statusId, status FROM orderStatus"; // Populate cmb_Status
             fill.combobox(statusQuery, cmb_Status, "status", "statusId");
-
-            // Populate cmb_staff (Staff Names)
-            string staffQuery = "SELECT Staff_Id, Staff_Name FROM Staff";
-            fill.combobox(staffQuery, cmb_staff, "Staff_Name", "Staff_Id");
-
-
-
             // Populate DataGridView with existing orders
             string orderQuery = @"
     SELECT 
@@ -87,10 +75,8 @@ namespace Bookhaven
     INNER JOIN Book b ON cod.Book_Id_fk = b.Book_Id
     INNER JOIN orderStatus os ON co.Status_Id_fk = os.statusId
     LEFT JOIN Supplier s ON co.Supplier_Id_fk = s.Supplier_Id"; // Join with Supplier table
-
             fill.FillDataGridView(orderQuery, dgv_cusOrder);
             dgv_cusOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
             // Rename columns for clarity
             dgv_cusOrder.Columns[0].HeaderText = "Order ID";
             dgv_cusOrder.Columns[1].HeaderText = "Customer";
@@ -111,17 +97,14 @@ namespace Bookhaven
                 {
                     // Get selected order ID
                     int orderId = Convert.ToInt32(dgv_cusOrder.Rows[e.RowIndex].Cells["CustOrder_Id"].Value);
-
                     // Load order data
                     clscusorder.CustOrder_Id = orderId;
                     clscusorder.Getdata();
-
                     // Populate form fields
                     cmb_customer.SelectedValue = clscusorder.Customer_Id_fk;
                     cmb_Book.SelectedValue = clscusorder.OrderDetails[0].Book_Id_fk;
                     nup_Quantity.Value = clscusorder.OrderDetails[0].Quantity;
                     cmb_Deliverymethod.Text = clscusorder.OrderDetails[0].DeliveryMethod;
-                    cmb_staff.SelectedValue = clscusorder.Staff_Id_fk; // Populate cmb_staff
                     lbl_Discount_Cusorder.Text = clscusorder.OrderDetails[0].Discount.ToString();
                     lbl_Finalpayment_Cusorder.Text = clscusorder.OrderDetails[0].Final_Amount.ToString();
                     lbl_Totalamount.Text = clscusorder.Total_Payment.ToString();
@@ -138,26 +121,23 @@ namespace Bookhaven
             try
             {
                 // Validate inputs
-                if (cmb_customer.SelectedIndex == -1 || cmb_Book.SelectedIndex == -1 || cmb_staff.SelectedIndex == -1)
+                if (cmb_customer.SelectedIndex == -1 || cmb_Book.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please fill all required fields.", "Validation Error");
                     return;
                 }
-
                 int quantity = (int)nup_Quantity.Value; // Get quantity from NumericUpDown
                 if (quantity <= 0)
                 {
                     MessageBox.Show("Quantity must be greater than zero.", "Validation Error");
                     return;
                 }
-
                 // Validate and parse total payment
                 if (!float.TryParse(lbl_Finalpayment_Cusorder.Text, out float totalPayment))
                 {
                     MessageBox.Show("Invalid total payment value.", "Validation Error");
                     return;
                 }
-
                 // Validate and parse discount
                 string discountText = lbl_Discount_Cusorder.Text.Replace("%", "").Trim(); // Remove '%' and trim whitespace
                 if (!float.TryParse(discountText, out float discount))
@@ -165,15 +145,13 @@ namespace Bookhaven
                     MessageBox.Show("Invalid discount value.", "Validation Error");
                     return;
                 }
-
                 // Assign properties
-                clscusorder.Staff_Id_fk = Convert.ToInt32(cmb_staff.SelectedValue); // Use selected staff
+                clscusorder.Staff_Id_fk = currentStaffId; // Use the logged-in staff ID
                 clscusorder.Customer_Id_fk = Convert.ToInt32(cmb_customer.SelectedValue);
                 clscusorder.Date = DateTime.Now;
                 clscusorder.Status_Id_fk = Convert.ToInt32(cmb_Status.SelectedValue); // Use selected status
                 clscusorder.Total_Payment = totalPayment;
                 clscusorder.Supplier_Id_fk = Convert.ToInt32(cmb_Suporder.SelectedValue);
-
                 // Add order details
                 clscusorder.OrderDetails.Add(new cusorder_cls.CusOrderDetail
                 {
@@ -183,7 +161,6 @@ namespace Bookhaven
                     Discount = discount,
                     Final_Amount = totalPayment
                 });
-
                 // Insert data
                 clscusorder.Insertdata();
                 FirstRun(); // Refresh the form
@@ -212,28 +189,24 @@ namespace Bookhaven
                     MessageBox.Show("Please select an order to update.", "Validation Error");
                     return;
                 }
-
                 // Validate inputs
-                if (cmb_customer.SelectedIndex == -1 || cmb_Book.SelectedIndex == -1 || cmb_staff.SelectedIndex == -1)
+                if (cmb_customer.SelectedIndex == -1 || cmb_Book.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please fill all required fields.", "Validation Error");
                     return;
                 }
-
                 int quantity = (int)nup_Quantity.Value;
                 if (quantity <= 0)
                 {
                     MessageBox.Show("Quantity must be greater than zero.", "Validation Error");
                     return;
                 }
-
                 // Validate and parse total payment
                 if (!float.TryParse(lbl_Finalpayment_Cusorder.Text, out float totalPayment))
                 {
                     MessageBox.Show("Invalid total payment value.", "Validation Error");
                     return;
                 }
-
                 // Validate and parse discount
                 string discountText = lbl_Discount_Cusorder.Text.Replace("%", "").Trim(); // Remove '%' and trim whitespace
                 if (!float.TryParse(discountText, out float discount))
@@ -241,16 +214,13 @@ namespace Bookhaven
                     MessageBox.Show("Invalid discount value.", "Validation Error");
                     return;
                 }
-
                 // Assign properties
-
-                clscusorder.Staff_Id_fk = Convert.ToInt32(cmb_staff.SelectedValue); // Use selected staff
+                clscusorder.Staff_Id_fk = currentStaffId; // Use the logged-in staff ID
                 clscusorder.Customer_Id_fk = Convert.ToInt32(cmb_customer.SelectedValue);
                 clscusorder.Date = DateTime.Now;
                 clscusorder.Status_Id_fk = Convert.ToInt32(cmb_Status.SelectedValue); // Use selected status
                 clscusorder.Total_Payment = totalPayment;
                 clscusorder.Supplier_Id_fk = Convert.ToInt32(cmb_Suporder.SelectedValue);
-
                 // Update order details
                 clscusorder.OrderDetails.Clear();
                 clscusorder.OrderDetails.Add(new cusorder_cls.CusOrderDetail
@@ -261,7 +231,6 @@ namespace Bookhaven
                     Discount = discount,
                     Final_Amount = totalPayment
                 });
-
                 // Update data
                 clscusorder.UpdateData();
                 FirstRun(); // Refresh the form
@@ -282,7 +251,6 @@ namespace Bookhaven
                     MessageBox.Show("Please select an order to delete.", "Validation Error");
                     return;
                 }
-
                 // Delete data
                 clscusorder.DeleteData();
                 FirstRun(); // Refresh the form
@@ -301,20 +269,18 @@ namespace Bookhaven
                 // You can fetch additional supplier details here if needed
             }
         }
+
         private float GetBookPrice()
         {
             try
             {
                 int bookId = Convert.ToInt32(cmb_Book.SelectedValue);
-
                 string query = "SELECT Price FROM Book WHERE Book_Id = @Book_Id";
                 SqlCommand cmd = new SqlCommand(query, clscusorder.Connection); // Use the public property
                 cmd.Parameters.AddWithValue("@Book_Id", bookId);
-
                 clscusorder.Connection.Open();
                 object result = cmd.ExecuteScalar();
                 clscusorder.Connection.Close();
-
                 return result != null ? Convert.ToSingle(result) : 0;
             }
             catch (Exception ex)
@@ -328,15 +294,12 @@ namespace Bookhaven
             try
             {
                 int bookId = Convert.ToInt32(cmb_Book.SelectedValue);
-
                 string query = "SELECT Discount FROM Book WHERE Book_Id = @Book_Id";
                 SqlCommand cmd = new SqlCommand(query, clscusorder.Connection); // Use the public property
                 cmd.Parameters.AddWithValue("@Book_Id", bookId);
-
                 clscusorder.Connection.Open();
                 object result = cmd.ExecuteScalar();
                 clscusorder.Connection.Close();
-
                 return result != null ? Convert.ToSingle(result) : 0;
             }
             catch (Exception ex)
@@ -355,20 +318,16 @@ namespace Bookhaven
                 lbl_Finalpayment_Cusorder.Text = "0.00";
                 return;
             }
-
             try
             {
                 // Fetch the price and discount for the selected book
                 float price = GetBookPrice();
                 float discount = GetBookDiscount();
-
                 // Calculate total amount based on the current quantity
                 int quantity = (int)nup_Quantity.Value; // Get the current quantity from NumericUpDown
                 float totalAmount = price * quantity;
-
                 // Calculate final payment after applying the discount
                 float finalPayment = totalAmount - (totalAmount * (discount / 100));
-
                 // Update the labels dynamically
                 lbl_Totalamount.Text = totalAmount.ToString("0.00");
                 lbl_Discount_Cusorder.Text = $"{discount}%";
@@ -413,7 +372,7 @@ namespace Bookhaven
             if (result == DialogResult.Yes)
             {
                 // Clear session data or reset user-specific information
-                //Program.CurrentUser = null;
+                // Program.CurrentUser = null;
 
                 // Close the current Dashboard form
                 this.Close();
@@ -426,7 +385,7 @@ namespace Bookhaven
 
         private void btn_dashboard_Click_1(object sender, EventArgs e)
         {
-            Dashboard_Clerk dasclerk = new Dashboard_Clerk(Form1.CurrentStaffId);
+            Dashboard_Clerk dasclerk = new Dashboard_Clerk(currentStaffId);
             dasclerk.ShowDialog();
         }
     }
