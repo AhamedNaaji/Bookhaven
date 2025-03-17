@@ -5,20 +5,21 @@ using Bookhaven.CommonClasses;
 
 namespace Bookhaven.AppClasses
 {
-    internal class cls_author
+    internal class genre_cls
     {
         Common cmn = new Common();
         SqlConnection conn = new SqlConnection("Data Source=AFRIDI;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         SqlTransaction transaction;
 
-        public int Author_Id { get; set; }
-        public string AuthorName { get; set; }
+        // Add Genre_Id property
+        public int Genre_Id { get; set; }
+        public string genreName { get; set; }
 
         public void Insertdata()
         {
-            if (string.IsNullOrEmpty(AuthorName))
+            if (string.IsNullOrEmpty(genreName))
             {
-                MessageBox.Show("Author name cannot be empty");
+                MessageBox.Show("Genre name cannot be empty");
                 return;
             }
 
@@ -28,22 +29,22 @@ namespace Bookhaven.AppClasses
                 transaction = conn.BeginTransaction();
 
                 string query = @"
-                    INSERT INTO Author (AuthorName) 
-                    VALUES (@AuthorName);
-                    SELECT SCOPE_IDENTITY();";
+                    INSERT INTO Genre (genreName) 
+                    VALUES (@genreName);
+                    SELECT SCOPE_IDENTITY()";
 
                 SqlCommand cmd = new SqlCommand(query, conn, transaction);
-                cmd.Parameters.AddWithValue("@AuthorName", AuthorName);
+                cmd.Parameters.AddWithValue("@genreName", genreName);
 
-                // Get inserted Author_Id
+                // Get inserted Genre_Id
                 object result = cmd.ExecuteScalar();
                 if (result != null)
                 {
-                    Author_Id = Convert.ToInt32(result);
+                    Genre_Id = Convert.ToInt32(result);
                 }
 
                 transaction.Commit();
-                MessageBox.Show("Author added successfully!", "Success");
+                MessageBox.Show("Genre added successfully!", "Success");
             }
             catch (Exception ex)
             {
@@ -58,15 +59,15 @@ namespace Bookhaven.AppClasses
 
         public void UpdateData()
         {
-            if (Author_Id <= 0)
+            if (Genre_Id <= 0)
             {
-                MessageBox.Show("Invalid author ID");
+                MessageBox.Show("Invalid genre ID");
                 return;
             }
 
-            if (string.IsNullOrEmpty(AuthorName))
+            if (string.IsNullOrEmpty(genreName))
             {
-                MessageBox.Show("Author name cannot be empty");
+                MessageBox.Show("Genre name cannot be empty");
                 return;
             }
 
@@ -76,24 +77,24 @@ namespace Bookhaven.AppClasses
                 transaction = conn.BeginTransaction();
 
                 string query = @"
-                    UPDATE Author 
-                    SET AuthorName = @AuthorName
-                    WHERE Author_Id = @Author_Id";
+                    UPDATE Genre 
+                    SET genreName = @genreName
+                    WHERE Genre_Id = @Genre_Id";
 
                 SqlCommand cmd = new SqlCommand(query, conn, transaction);
-                cmd.Parameters.AddWithValue("@AuthorName", AuthorName);
-                cmd.Parameters.AddWithValue("@Author_Id", Author_Id);
+                cmd.Parameters.AddWithValue("@genreName", genreName);
+                cmd.Parameters.AddWithValue("@Genre_Id", Genre_Id);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
                 transaction.Commit();
 
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show("Author updated successfully!", "Success");
+                    MessageBox.Show("Genre updated successfully!", "Success");
                 }
                 else
                 {
-                    MessageBox.Show("Author not found", "Warning");
+                    MessageBox.Show("Genre not found", "Warning");
                 }
             }
             catch (Exception ex)
@@ -109,38 +110,31 @@ namespace Bookhaven.AppClasses
 
         public void DeleteData()
         {
+            if (Genre_Id <= 0)
+            {
+                MessageBox.Show("Invalid genre ID");
+                return;
+            }
+
             try
             {
                 conn.Open();
                 transaction = conn.BeginTransaction();
 
-                // Check if the author has associated records in BookAuthor
-                string checkQuery = "SELECT COUNT(*) FROM BookAuthor WHERE Author_Id_fk = @Author_Id";
-                SqlCommand checkCmd = new SqlCommand(checkQuery, conn, transaction);
-                checkCmd.Parameters.AddWithValue("@Author_Id", Author_Id);
-                int count = (int)checkCmd.ExecuteScalar();
-
-                if (count > 0)
-                {
-                    MessageBox.Show("Cannot delete author. Author is associated with one or more books.", "Deletion Failed");
-                    return;
-                }
-
-                // Proceed with deletion
-                string deleteQuery = "DELETE FROM Author WHERE Author_Id = @Author_Id";
-                SqlCommand cmd = new SqlCommand(deleteQuery, conn, transaction);
-                cmd.Parameters.AddWithValue("@Author_Id", Author_Id);
+                string query = "DELETE FROM Genre WHERE Genre_Id = @Genre_Id";
+                SqlCommand cmd = new SqlCommand(query, conn, transaction);
+                cmd.Parameters.AddWithValue("@Genre_Id", Genre_Id);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
                 transaction.Commit();
 
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show("Author deleted successfully!", "Success");
+                    MessageBox.Show("Genre deleted successfully!", "Success");
                 }
                 else
                 {
-                    MessageBox.Show("Author not found.", "Warning");
+                    MessageBox.Show("Genre not found", "Warning");
                 }
             }
             catch (Exception ex)
@@ -154,30 +148,31 @@ namespace Bookhaven.AppClasses
             }
         }
 
-        public void GetAuthorById()
+        public void GetGenreById()
         {
-            if (Author_Id <= 0)
+            if (Genre_Id <= 0)
             {
-                MessageBox.Show("Invalid author ID");
+                MessageBox.Show("Invalid genre ID");
                 return;
             }
 
             try
             {
                 conn.Open();
-                string query = "SELECT * FROM Author WHERE Author_Id = @Author_Id";
+                string query = "SELECT * FROM Genre WHERE Genre_Id = @Genre_Id";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@Author_Id", Author_Id);
+                cmd.Parameters.AddWithValue("@Genre_Id", Genre_Id);
 
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    Author_Id = Convert.ToInt32(dr["Author_Id"]);
-                    AuthorName = dr["AuthorName"].ToString();
+                    // Ensure Genre_Id is assigned (though it's already set)
+                    Genre_Id = Convert.ToInt32(dr["Genre_Id"]);
+                    genreName = dr["genreName"].ToString();
                 }
                 else
                 {
-                    MessageBox.Show("Author not found", "Warning");
+                    MessageBox.Show("Genre not found", "Warning");
                 }
             }
             catch (Exception ex)

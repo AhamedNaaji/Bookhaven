@@ -14,7 +14,7 @@ namespace Bookhaven
 {
     public partial class view_author : Form
     {
-        cls_author clsauthor = new cls_author();
+        author_cls clsauthor = new author_cls();
       
         public view_author()
         {

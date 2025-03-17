@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Bookhaven.AppClasses
 {
-    internal class cls_stock
+    internal class stock_cls
     {
         SqlConnection conn = new SqlConnection("Data Source=AFRIDI;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         SqlTransaction transaction;

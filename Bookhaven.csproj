@@ -48,16 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppClasses\cls_author.cs" />
-    <Compile Include="AppClasses\cls_book.cs" />
-    <Compile Include="AppClasses\cls_cusorder.cs" />
-    <Compile Include="AppClasses\cls_customer.cs" />
-    <Compile Include="AppClasses\cls_genre.cs" />
-    <Compile Include="AppClasses\cls_sales.cs" />
-    <Compile Include="AppClasses\cls_staff.cs" />
-    <Compile Include="AppClasses\cls_stock.cs" />
-    <Compile Include="AppClasses\cls_suporder.cs" />
-    <Compile Include="AppClasses\cls_supplier.cs" />
+    <Compile Include="AppClasses\author_cls.cs" />
+    <Compile Include="AppClasses\book_cls.cs" />
+    <Compile Include="AppClasses\cusorder_cls.cs" />
+    <Compile Include="AppClasses\customer_cls.cs" />
+    <Compile Include="AppClasses\genre_cls.cs" />
+    <Compile Include="AppClasses\sales_cls.cs" />
+    <Compile Include="AppClasses\staff_cls.cs" />
+    <Compile Include="AppClasses\stock_cls.cs" />
+    <Compile Include="AppClasses\suporder_cls.cs" />
+    <Compile Include="AppClasses\supplier_cls.cs" />
     <Compile Include="Book.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -16,7 +16,7 @@ namespace Bookhaven
     public partial class Clerk_Book : Form
     {
         filloperation fill = new filloperation();
-        cls_book clsBook = new cls_book();
+        book_cls clsBook = new book_cls();
 
         private string searchTerm = string.Empty;
         public Clerk_Book()
@@ -88,7 +88,7 @@ namespace Bookhaven
                 int stockQuantity = 0;
                 if (!string.IsNullOrEmpty(txt_Stock.Text) && int.TryParse(txt_Stock.Text, out stockQuantity))
                 {
-                    cls_stock stock = new cls_stock
+                    stock_cls stock = new stock_cls
                     {
                         Stock_Quantity = stockQuantity,
                         Book_Id_fk = clsBook.Book_Id, // Use the newly inserted book's ID
@@ -139,7 +139,7 @@ namespace Bookhaven
                 int stockQuantity = 0;
                 if (!string.IsNullOrEmpty(txt_Stock.Text) && int.TryParse(txt_Stock.Text, out stockQuantity))
                 {
-                    cls_stock stock = new cls_stock
+                    stock_cls stock = new stock_cls
                     {
                         Stock_Quantity = stockQuantity,
                         Book_Id_fk = clsBook.Book_Id,
@@ -421,9 +421,18 @@ namespace Bookhaven
             if (result == DialogResult.Yes)
             {
                 // Clear session data or reset user-specific information
-                //Program.CurrentUser = null;
+                // Program.CurrentUser = null;
 
-                // Close the current Dashboard form
+                // Close all open forms except the login form
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form != this) // Ensure the current form (Dashboard) is closed
+                    {
+                        form.Close();
+                    }
+                }
+
+                // Optionally, you can also close the current form explicitly
                 this.Close();
 
                 // Show the LoginForm

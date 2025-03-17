@@ -82,7 +82,7 @@
             // btn_ViewAuthors
             // 
             this.btn_ViewAuthors.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btn_ViewAuthors.Location = new System.Drawing.Point(919, 137);
+            this.btn_ViewAuthors.Location = new System.Drawing.Point(975, 137);
             this.btn_ViewAuthors.Name = "btn_ViewAuthors";
             this.btn_ViewAuthors.Size = new System.Drawing.Size(190, 48);
             this.btn_ViewAuthors.TabIndex = 64;
@@ -261,7 +261,7 @@
             // btn_Genre
             // 
             this.btn_Genre.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btn_Genre.Location = new System.Drawing.Point(706, 137);
+            this.btn_Genre.Location = new System.Drawing.Point(749, 137);
             this.btn_Genre.Name = "btn_Genre";
             this.btn_Genre.Size = new System.Drawing.Size(190, 48);
             this.btn_Genre.TabIndex = 58;
@@ -322,7 +322,7 @@
             this.btn_stock.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
             this.btn_stock.Location = new System.Drawing.Point(527, 137);
             this.btn_stock.Name = "btn_stock";
-            this.btn_stock.Size = new System.Drawing.Size(161, 48);
+            this.btn_stock.Size = new System.Drawing.Size(182, 48);
             this.btn_stock.TabIndex = 65;
             this.btn_stock.Text = "View Stocks";
             this.btn_stock.UseVisualStyleBackColor = true;

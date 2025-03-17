@@ -16,7 +16,7 @@ namespace Bookhaven
 {
     public partial class CustomerOrder : Form
     {
-        cls_cusorder clscusorder = new cls_cusorder();
+        cusorder_cls clscusorder = new cusorder_cls();
         
         filloperation fill = new filloperation();
         public CustomerOrder()
@@ -186,7 +186,7 @@ namespace Bookhaven
                 clscusorder.Supplier_Id_fk = Convert.ToInt32(cmb_Suporder.SelectedValue);
 
                 // Add order details
-                clscusorder.OrderDetails.Add(new cls_cusorder.CusOrderDetail
+                clscusorder.OrderDetails.Add(new cusorder_cls.CusOrderDetail
                 {
                     Book_Id_fk = Convert.ToInt32(cmb_Book.SelectedValue),
                     Quantity = quantity,
@@ -283,7 +283,7 @@ namespace Bookhaven
 
                 // Update order details
                 clscusorder.OrderDetails.Clear();
-                clscusorder.OrderDetails.Add(new cls_cusorder.CusOrderDetail
+                clscusorder.OrderDetails.Add(new cusorder_cls.CusOrderDetail
                 {
                     Book_Id_fk = Convert.ToInt32(cmb_Book.SelectedValue),
                     Quantity = quantity,

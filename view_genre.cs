@@ -14,7 +14,7 @@ namespace Bookhaven
 {
     public partial class view_genre : Form
     {
-        cls_genre clsgenre = new cls_genre();
+        genre_cls clsgenre = new genre_cls();
         filloperation fill = new filloperation();
         public view_genre()
         {

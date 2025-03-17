@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Bookhaven.AppClasses
 {
-    internal class cls_book
+    internal class book_cls
     {
         Common cmn = new Common();
         internal SqlConnection conn = new SqlConnection("Data Source=AFRIDI;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");

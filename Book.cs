@@ -17,7 +17,7 @@ namespace Bookhaven
     public partial class Book : Form
     {
         filloperation fill = new filloperation();
-        cls_book clsBook = new cls_book();
+        book_cls clsBook = new book_cls();
 
 
         public Book()
@@ -138,7 +138,7 @@ namespace Bookhaven
                 int stockQuantity = 0;
                 if (!string.IsNullOrEmpty(txt_Stock.Text) && int.TryParse(txt_Stock.Text, out stockQuantity))
                 {
-                    cls_stock stock = new cls_stock
+                    stock_cls stock = new stock_cls
                     {
                         Stock_Quantity = stockQuantity,
                         Book_Id_fk = clsBook.Book_Id, // Use the newly inserted book's ID
@@ -218,7 +218,7 @@ namespace Bookhaven
                 int stockQuantity = 0;
                 if (!string.IsNullOrEmpty(txt_Stock.Text) && int.TryParse(txt_Stock.Text, out stockQuantity))
                 {
-                    cls_stock stock = new cls_stock
+                    stock_cls stock = new stock_cls
                     {
                         Stock_Quantity = stockQuantity,
                         Book_Id_fk = clsBook.Book_Id,

@@ -14,7 +14,7 @@ namespace Bookhaven
 {
     public partial class view_stock : Form
     {
-        cls_stock clsstock = new cls_stock();
+        stock_cls clsstock = new stock_cls();
         filloperation fill = new filloperation();
         public view_stock()
         {
@@ -53,7 +53,7 @@ namespace Bookhaven
 
         private void btn_add_stock_Click(object sender, EventArgs e)
         {
-            cls_stock clsstock = new cls_stock();
+            stock_cls clsstock = new stock_cls();
 
             // Assign properties
             clsstock.Stock_Quantity = int.Parse(txt_quantity.Text);
@@ -67,7 +67,7 @@ namespace Bookhaven
 
         private void btn_update_stock_Click(object sender, EventArgs e)
         {
-            cls_stock clsstock = new cls_stock();
+            stock_cls clsstock = new stock_cls();
 
             // Assign properties
             //clsstock.Stock_Id = Convert.ToInt32(txt_stock_id.Text); // Hidden field for Stock_Id
@@ -90,7 +90,7 @@ namespace Bookhaven
                     int stockId = Convert.ToInt32(dgv_stock.Rows[e.RowIndex].Cells["Stock_Id"].Value);
 
                     // Load stock data
-                    cls_stock clsstock = new cls_stock();
+                    stock_cls clsstock = new stock_cls();
                     clsstock.Stock_Id = stockId;
                     clsstock.GetStockById();
 

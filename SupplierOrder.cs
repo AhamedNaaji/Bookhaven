@@ -16,7 +16,7 @@ namespace Bookhaven
     public partial class SupplierOrder : Form
     {
         SqlConnection conn = new SqlConnection("Data Source=AFRIDI;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
-        cls_suporder clssuporder = new cls_suporder();
+        suporder_cls clssuporder = new suporder_cls();
         filloperation fill = new filloperation();
         public SupplierOrder()
         {
@@ -149,7 +149,7 @@ namespace Bookhaven
                 clssuporder.Total_Payment = finalPayment;
 
                 // Add order details
-                clssuporder.OrderDetails.Add(new cls_suporder.SupOrderDetail
+                clssuporder.OrderDetails.Add(new suporder_cls.SupOrderDetail
                 {
                     Book_Id_fk = Convert.ToInt32(cmb_book_suporder.SelectedValue),
                     Quantity = quantity,
@@ -209,7 +209,7 @@ namespace Bookhaven
 
                 // Update order details
                 clssuporder.OrderDetails.Clear();
-                clssuporder.OrderDetails.Add(new cls_suporder.SupOrderDetail
+                clssuporder.OrderDetails.Add(new suporder_cls.SupOrderDetail
                 {
                     Book_Id_fk = Convert.ToInt32(cmb_book_suporder.SelectedValue),
                     Quantity = quantity,

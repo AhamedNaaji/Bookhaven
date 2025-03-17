@@ -16,7 +16,7 @@ namespace Bookhaven
     public partial class Staff : Form
     {
         filloperation fill = new filloperation();
-        cls_staff clsstf = new cls_staff();
+        staff_cls clsstf = new staff_cls();
         public Staff()
         {
             InitializeComponent();

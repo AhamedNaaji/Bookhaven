@@ -14,7 +14,7 @@ namespace Bookhaven
 {
     public partial class Suppliers : Form
     {
-        cls_supplier clssup = new cls_supplier();
+        supplier_cls clssup = new supplier_cls();
         filloperation fill = new filloperation();
         public Suppliers()
         {

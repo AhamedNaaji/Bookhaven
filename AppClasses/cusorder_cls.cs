@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Bookhaven.AppClasses
 {
-    internal class cls_cusorder
+    internal class cusorder_cls
     {
         public SqlConnection Connection => conn;
         SqlConnection conn = new SqlConnection("Data Source=AFRIDI;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
