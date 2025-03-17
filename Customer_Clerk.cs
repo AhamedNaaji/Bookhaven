@@ -16,9 +16,11 @@ namespace Bookhaven
     {
         customer_cls clscus = new customer_cls();
         filloperation fill = new filloperation();
-        public Customer_Clerk()
+        private int currentStaffId;
+        public Customer_Clerk(int staffId)
         {
             InitializeComponent();
+            currentStaffId = staffId;
         }
 
         private void txtbox_name_TextChanged(object sender, EventArgs e)
@@ -185,25 +187,25 @@ namespace Bookhaven
 
         private void btn_Customer_Click(object sender, EventArgs e)
         {
-            Customer_Clerk customer = new Customer_Clerk();
+            Customer_Clerk customer = new Customer_Clerk(currentStaffId);
             customer.ShowDialog();
         }
 
         private void btn_Sales_Click(object sender, EventArgs e)
         {
-            Clerk_Sales sales = new Clerk_Sales();
+            Clerk_Sales sales = new Clerk_Sales(currentStaffId);
             sales.ShowDialog();
         }
 
         private void btn_Cusorder_Click(object sender, EventArgs e)
         {
-            Clerk_CustomerOrder clerk_CustomerOrder = new Clerk_CustomerOrder();
+            Clerk_CustomerOrder clerk_CustomerOrder = new Clerk_CustomerOrder(currentStaffId);
             clerk_CustomerOrder.ShowDialog();
         }
 
         private void btn_Book_Click(object sender, EventArgs e)
         {
-            Clerk_Book book = new Clerk_Book();
+            Clerk_Book book = new Clerk_Book(currentStaffId);
             book.ShowDialog();
         }
 

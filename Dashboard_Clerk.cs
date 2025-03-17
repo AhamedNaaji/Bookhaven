@@ -57,15 +57,17 @@ namespace Bookhaven
                 try
                 {
                     connection.Open();
-                    // Query to get recent sales for the current staff member
+                    // Query to get recent sales for the current staff member with staff name and customer name
                     string query = @"
     SELECT 
         s.Sales_Id,
-        s.Staff_Id_fk,
-        s.Customer_Id_fk,
+        st.Staff_Name,
+        c.Customer_Name,
         s.Date,
         s.Total_Payment
     FROM Sales s
+    INNER JOIN Staff st ON s.Staff_Id_fk = st.Staff_Id
+    INNER JOIN Customer c ON s.Customer_Id_fk = c.Customer_Id
     WHERE s.Staff_Id_fk = @Staff_Id
     ORDER BY s.Date DESC";
                     using (SqlCommand command = new SqlCommand(query, connection))
@@ -77,8 +79,8 @@ namespace Bookhaven
                         dgv_recent_sales.DataSource = dt;
                         // Rename columns
                         dgv_recent_sales.Columns[0].HeaderText = "Sales ID";
-                        dgv_recent_sales.Columns[1].HeaderText = "Staff ID";
-                        dgv_recent_sales.Columns[2].HeaderText = "Customer ID";
+                        dgv_recent_sales.Columns[1].HeaderText = "Staff Name";
+                        dgv_recent_sales.Columns[2].HeaderText = "Customer Name";
                         dgv_recent_sales.Columns[3].HeaderText = "Date";
                         dgv_recent_sales.Columns[4].HeaderText = "Total Payment";
                     }
@@ -98,25 +100,25 @@ namespace Bookhaven
 
         private void btn_Customer_Click(object sender, EventArgs e)
         {
-            Customer_Clerk customer = new Customer_Clerk();
+            Customer_Clerk customer = new Customer_Clerk(currentStaffId);
             customer.ShowDialog();
         }
 
         private void btn_Sales_Click(object sender, EventArgs e)
         {
-            Clerk_Sales sales = new Clerk_Sales();
+            Clerk_Sales sales = new Clerk_Sales(currentStaffId);
             sales.ShowDialog();
         }
 
         private void btn_Cusorder_Click(object sender, EventArgs e)
         {
-            Clerk_CustomerOrder clerk_CustomerOrder = new Clerk_CustomerOrder();
+            Clerk_CustomerOrder clerk_CustomerOrder = new Clerk_CustomerOrder(currentStaffId);
             clerk_CustomerOrder.ShowDialog();
         }
 
         private void btn_Book_Click(object sender, EventArgs e)
         {
-            Clerk_Book book = new Clerk_Book();
+            Clerk_Book book = new Clerk_Book(currentStaffId);
             book.ShowDialog();
         }
 
@@ -142,19 +144,19 @@ namespace Bookhaven
 
         private void books_btn_Click(object sender, EventArgs e)
         {
-            Clerk_Book book = new Clerk_Book();
+            Clerk_Book book = new Clerk_Book(currentStaffId);
             book.ShowDialog();
         }
 
         private void customer_btn_Click(object sender, EventArgs e)
         {
-            Customer_Clerk customer = new Customer_Clerk();
+            Customer_Clerk customer = new Customer_Clerk(currentStaffId);
             customer.ShowDialog();
         }
 
         private void sales_btn_Click(object sender, EventArgs e)
         {
-            Clerk_Sales sales = new Clerk_Sales();
+            Clerk_Sales sales = new Clerk_Sales(currentStaffId);
             sales.ShowDialog();
         }
     }

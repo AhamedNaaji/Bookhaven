@@ -18,11 +18,13 @@ namespace Bookhaven
         cusorder_cls clscusorder = new cusorder_cls();
 
         filloperation fill = new filloperation();
-        public Clerk_CustomerOrder()
+        private int currentStaffId;
+        public Clerk_CustomerOrder(int staffId)
         {
             InitializeComponent();
             nup_Quantity.ValueChanged += nup_Quantity_ValueChanged;
             FirstRun();
+            currentStaffId = staffId;
         }
 
         private void cmb_customer_SelectedIndexChanged(object sender, EventArgs e)
@@ -380,25 +382,25 @@ namespace Bookhaven
 
         private void btn_Customer_Click(object sender, EventArgs e)
         {
-            Customer_Clerk customer = new Customer_Clerk();
+            Customer_Clerk customer = new Customer_Clerk(currentStaffId);
             customer.ShowDialog();
         }
 
         private void btn_Sales_Click(object sender, EventArgs e)
         {
-            Clerk_Sales sales = new Clerk_Sales();
+            Clerk_Sales sales = new Clerk_Sales(currentStaffId);
             sales.ShowDialog();
         }
 
         private void btn_Cusorder_Click(object sender, EventArgs e)
         {
-            Clerk_CustomerOrder clerk_CustomerOrder = new Clerk_CustomerOrder();
+            Clerk_CustomerOrder clerk_CustomerOrder = new Clerk_CustomerOrder(currentStaffId);
             clerk_CustomerOrder.ShowDialog();
         }
 
         private void btn_Book_Click(object sender, EventArgs e)
         {
-            Clerk_Book book = new Clerk_Book();
+            Clerk_Book book = new Clerk_Book(currentStaffId);
             book.ShowDialog();
         }
 
