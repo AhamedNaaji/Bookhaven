@@ -1,25 +1,98 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Bookhaven
 {
     public partial class Dashboard_Clerk : Form
     {
-        public Dashboard_Clerk()
+        private string connectionString = "Data Source=AFRIDI;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False";
+        private int currentStaffId;
+
+        public Dashboard_Clerk(int staffId)
         {
             InitializeComponent();
+            currentStaffId = staffId;
+            LoadCounts();
+            LoadRecentSales();
+        }
+
+        private void LoadCounts()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    // Count Customers
+                    label_Total_Customers.Text = GetCount(connection, "Customer").ToString();
+                    // Count Books
+                    label_Total_Books.Text = GetCount(connection, "Book").ToString();
+                    // Count Sales
+                    label_Total_Sales.Text = GetCount(connection, "Sales").ToString();
+                    // Count Customer Orders
+                    label_Total_Customer_Orders.Text = GetCount(connection, "CusOrder").ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+            }
+        }
+
+        private int GetCount(SqlConnection connection, string tableName)
+        {
+            string query = $"SELECT COUNT(*) FROM {tableName}";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                return (int)command.ExecuteScalar();
+            }
+        }
+
+        private void LoadRecentSales()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    // Query to get recent sales for the current staff member
+                    string query = @"
+    SELECT 
+        s.Sales_Id,
+        s.Staff_Id_fk,
+        s.Customer_Id_fk,
+        s.Date,
+        s.Total_Payment
+    FROM Sales s
+    WHERE s.Staff_Id_fk = @Staff_Id
+    ORDER BY s.Date DESC";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Staff_Id", currentStaffId);
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        dgv_recent_sales.DataSource = dt;
+                        // Rename columns
+                        dgv_recent_sales.Columns[0].HeaderText = "Sales ID";
+                        dgv_recent_sales.Columns[1].HeaderText = "Staff ID";
+                        dgv_recent_sales.Columns[2].HeaderText = "Customer ID";
+                        dgv_recent_sales.Columns[3].HeaderText = "Date";
+                        dgv_recent_sales.Columns[4].HeaderText = "Total Payment";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+            }
         }
 
         private void btn_Dashboard_Click(object sender, EventArgs e)
         {
-            Dashboard_Clerk dasclerk = new Dashboard_Clerk();
+            Dashboard_Clerk dasclerk = new Dashboard_Clerk(currentStaffId);
             dasclerk.ShowDialog();
         }
 
@@ -56,7 +129,7 @@ namespace Bookhaven
             if (result == DialogResult.Yes)
             {
                 // Clear session data or reset user-specific information
-                //Program.CurrentUser = null;
+                // Program.CurrentUser = null;
 
                 // Close the current Dashboard form
                 this.Close();
@@ -84,7 +157,5 @@ namespace Bookhaven
             Clerk_Sales sales = new Clerk_Sales();
             sales.ShowDialog();
         }
-
-        
     }
 }

@@ -424,7 +424,7 @@ namespace Bookhaven
 
         private void btn_dashboard_Click_1(object sender, EventArgs e)
         {
-            Dashboard_Clerk dasclerk = new Dashboard_Clerk();
+            Dashboard_Clerk dasclerk = new Dashboard_Clerk(Form1.CurrentStaffId);
             dasclerk.ShowDialog();
         }
     }
