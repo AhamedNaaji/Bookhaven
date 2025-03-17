@@ -69,8 +69,8 @@ namespace Bookhaven
             float totalAmount = CalculateTotalAmount();
             float discount = GetBookDiscount();
             float finalPayment = totalAmount - (totalAmount * (discount / 100));
-            label_TotalAmount.Text = $"{totalAmount:C}";
-            labelFinalPayment.Text = $"{finalPayment:C}";
+            label_TotalAmount.Text = $"{totalAmount}";
+            labelFinalPayment.Text = $"{finalPayment}";
         }
 
         public bool CheckBookStock(int bookId)
@@ -271,9 +271,9 @@ namespace Bookhaven
                 // Calculate final payment after applying the discount
                 float finalPayment = totalAmount - (totalAmount * (discount / 100));
                 // Update the labels dynamically
-                label_TotalAmount.Text = $"{totalAmount:C}";
+                label_TotalAmount.Text = $"{totalAmount}";
                 labelDiscount.Text = $"{discount}%";
-                labelFinalPayment.Text = $"{finalPayment:C}";
+                labelFinalPayment.Text = $"{finalPayment}";
             }
             catch (Exception ex)
             {
@@ -302,9 +302,9 @@ namespace Bookhaven
                 // Calculate final payment after applying the discount
                 float finalPayment = totalAmount - (totalAmount * (discount / 100));
                 // Update the labels dynamically
-                label_TotalAmount.Text = $"{totalAmount:C}";
+                label_TotalAmount.Text = $"{totalAmount}";
                 labelDiscount.Text = $"{discount}%";
-                labelFinalPayment.Text = $"{finalPayment:C}";
+                labelFinalPayment.Text = $"{finalPayment}";
             }
             catch (Exception ex)
             {

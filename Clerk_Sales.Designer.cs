@@ -34,8 +34,6 @@
             this.btn_updateSales = new System.Windows.Forms.Button();
             this.btn_addSales = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.comboStaff = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
             this.labelDiscount = new System.Windows.Forms.Label();
@@ -116,8 +114,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label24);
-            this.panel2.Controls.Add(this.comboStaff);
             this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.dateTimePickerDate);
             this.panel2.Controls.Add(this.labelDiscount);
@@ -137,24 +133,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(823, 281);
             this.panel2.TabIndex = 84;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(599, 124);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(51, 23);
-            this.label24.TabIndex = 24;
-            this.label24.Text = "Staff";
-            // 
-            // comboStaff
-            // 
-            this.comboStaff.FormattingEnabled = true;
-            this.comboStaff.Location = new System.Drawing.Point(603, 152);
-            this.comboStaff.Name = "comboStaff";
-            this.comboStaff.Size = new System.Drawing.Size(200, 28);
-            this.comboStaff.TabIndex = 23;
             // 
             // label23
             // 
@@ -460,8 +438,6 @@
         private System.Windows.Forms.Button btn_updateSales;
         private System.Windows.Forms.Button btn_addSales;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox comboStaff;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.DateTimePicker dateTimePickerDate;
         private System.Windows.Forms.Label labelDiscount;
