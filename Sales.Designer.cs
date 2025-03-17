@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.comboStaff = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
             this.labelDiscount = new System.Windows.Forms.Label();
             this.labelFinalPayment = new System.Windows.Forms.Label();
             this.label_TotalAmount = new System.Windows.Forms.Label();
@@ -75,6 +73,10 @@
             this.Totalsales_panel = new System.Windows.Forms.Panel();
             this.lbl_Totalsales = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dgv_addtocart = new System.Windows.Forms.DataGridView();
+            this.btn_addbook = new System.Windows.Forms.Button();
+            this.btn_removebook = new System.Windows.Forms.Button();
+            this.btn_saveSale = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).BeginInit();
@@ -85,20 +87,21 @@
             this.outofstock_panel.SuspendLayout();
             this.Totalcustomer_panel.SuspendLayout();
             this.Totalsales_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_addtocart)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(1595, 1244);
             this.chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart1.Series.Add(series4);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(2095, 733);
             this.chart1.TabIndex = 25;
             this.chart1.Text = "chart1";
@@ -107,8 +110,6 @@
             // 
             this.panel2.Controls.Add(this.label24);
             this.panel2.Controls.Add(this.comboStaff);
-            this.panel2.Controls.Add(this.label23);
-            this.panel2.Controls.Add(this.dateTimePickerDate);
             this.panel2.Controls.Add(this.labelDiscount);
             this.panel2.Controls.Add(this.labelFinalPayment);
             this.panel2.Controls.Add(this.label_TotalAmount);
@@ -121,16 +122,16 @@
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(0, 136);
+            this.panel2.Location = new System.Drawing.Point(723, 451);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(832, 309);
+            this.panel2.Size = new System.Drawing.Size(829, 309);
             this.panel2.TabIndex = 30;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(599, 124);
+            this.label24.Location = new System.Drawing.Point(581, 12);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(51, 23);
             this.label24.TabIndex = 24;
@@ -140,29 +141,10 @@
             // 
             this.comboStaff.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
             this.comboStaff.FormattingEnabled = true;
-            this.comboStaff.Location = new System.Drawing.Point(603, 152);
+            this.comboStaff.Location = new System.Drawing.Point(585, 43);
             this.comboStaff.Name = "comboStaff";
             this.comboStaff.Size = new System.Drawing.Size(200, 28);
             this.comboStaff.TabIndex = 23;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
-            this.label23.Location = new System.Drawing.Point(599, 11);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(52, 24);
-            this.label23.TabIndex = 22;
-            this.label23.Text = "Date";
-            // 
-            // dateTimePickerDate
-            // 
-            this.dateTimePickerDate.Font = new System.Drawing.Font("Lucida Console", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDate.Location = new System.Drawing.Point(603, 45);
-            this.dateTimePickerDate.Name = "dateTimePickerDate";
-            this.dateTimePickerDate.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerDate.TabIndex = 21;
-            this.dateTimePickerDate.ValueChanged += new System.EventHandler(this.dateTimePickerDate_ValueChanged);
             // 
             // labelDiscount
             // 
@@ -176,19 +158,17 @@
             // 
             // labelFinalPayment
             // 
-            this.labelFinalPayment.AutoSize = true;
             this.labelFinalPayment.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
-            this.labelFinalPayment.Location = new System.Drawing.Point(517, 217);
+            this.labelFinalPayment.Location = new System.Drawing.Point(490, 220);
             this.labelFinalPayment.Name = "labelFinalPayment";
-            this.labelFinalPayment.Size = new System.Drawing.Size(87, 20);
+            this.labelFinalPayment.Size = new System.Drawing.Size(194, 20);
             this.labelFinalPayment.TabIndex = 19;
-            this.labelFinalPayment.Text = "950.00";
             // 
             // label_TotalAmount
             // 
             this.label_TotalAmount.Location = new System.Drawing.Point(491, 129);
             this.label_TotalAmount.Name = "label_TotalAmount";
-            this.label_TotalAmount.Size = new System.Drawing.Size(56, 23);
+            this.label_TotalAmount.Size = new System.Drawing.Size(218, 23);
             this.label_TotalAmount.TabIndex = 18;
             // 
             // numericQuantity
@@ -284,7 +264,7 @@
             // btn_deleteSales
             // 
             this.btn_deleteSales.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_deleteSales.Location = new System.Drawing.Point(585, 689);
+            this.btn_deleteSales.Location = new System.Drawing.Point(1305, 782);
             this.btn_deleteSales.Name = "btn_deleteSales";
             this.btn_deleteSales.Size = new System.Drawing.Size(247, 67);
             this.btn_deleteSales.TabIndex = 33;
@@ -295,7 +275,7 @@
             // btn_updateSales
             // 
             this.btn_updateSales.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_updateSales.Location = new System.Drawing.Point(291, 689);
+            this.btn_updateSales.Location = new System.Drawing.Point(1014, 782);
             this.btn_updateSales.Name = "btn_updateSales";
             this.btn_updateSales.Size = new System.Drawing.Size(247, 67);
             this.btn_updateSales.TabIndex = 32;
@@ -306,7 +286,7 @@
             // btn_addSales
             // 
             this.btn_addSales.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_addSales.Location = new System.Drawing.Point(0, 689);
+            this.btn_addSales.Location = new System.Drawing.Point(723, 782);
             this.btn_addSales.Name = "btn_addSales";
             this.btn_addSales.Size = new System.Drawing.Size(247, 67);
             this.btn_addSales.TabIndex = 31;
@@ -318,12 +298,13 @@
             // 
             this.dgv_sales.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgv_sales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_sales.Location = new System.Drawing.Point(0, 451);
+            this.dgv_sales.Location = new System.Drawing.Point(41, 136);
             this.dgv_sales.Name = "dgv_sales";
             this.dgv_sales.RowHeadersWidth = 51;
             this.dgv_sales.RowTemplate.Height = 24;
-            this.dgv_sales.Size = new System.Drawing.Size(832, 215);
+            this.dgv_sales.Size = new System.Drawing.Size(1511, 309);
             this.dgv_sales.TabIndex = 34;
+            this.dgv_sales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sales_CellContentClick);
             this.dgv_sales.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sales_CellDoubleClick);
             // 
             // panel1
@@ -340,9 +321,9 @@
             this.panel1.Controls.Add(this.btn_overview);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.panel1.Location = new System.Drawing.Point(849, 0);
+            this.panel1.Location = new System.Drawing.Point(1558, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(285, 777);
+            this.panel1.Size = new System.Drawing.Size(285, 891);
             this.panel1.TabIndex = 35;
             // 
             // btn_Suppliers
@@ -467,7 +448,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(849, 130);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1558, 130);
             this.tableLayoutPanel1.TabIndex = 36;
             // 
             // cusorderRecieve_panel
@@ -476,10 +457,10 @@
             this.cusorderRecieve_panel.Controls.Add(this.label16);
             this.cusorderRecieve_panel.Controls.Add(this.label17);
             this.cusorderRecieve_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cusorderRecieve_panel.Location = new System.Drawing.Point(635, 0);
+            this.cusorderRecieve_panel.Location = new System.Drawing.Point(1167, 0);
             this.cusorderRecieve_panel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.cusorderRecieve_panel.Name = "cusorderRecieve_panel";
-            this.cusorderRecieve_panel.Size = new System.Drawing.Size(214, 120);
+            this.cusorderRecieve_panel.Size = new System.Drawing.Size(391, 120);
             this.cusorderRecieve_panel.TabIndex = 3;
             // 
             // label16
@@ -507,10 +488,10 @@
             this.outofstock_panel.Controls.Add(this.lbl_Outofstock);
             this.outofstock_panel.Controls.Add(this.label13);
             this.outofstock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.outofstock_panel.Location = new System.Drawing.Point(423, 0);
+            this.outofstock_panel.Location = new System.Drawing.Point(777, 0);
             this.outofstock_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.outofstock_panel.Name = "outofstock_panel";
-            this.outofstock_panel.Size = new System.Drawing.Size(202, 120);
+            this.outofstock_panel.Size = new System.Drawing.Size(380, 120);
             this.outofstock_panel.TabIndex = 2;
             // 
             // lbl_Outofstock
@@ -539,10 +520,10 @@
             this.Totalcustomer_panel.Controls.Add(this.lbl_TotalCustomer);
             this.Totalcustomer_panel.Controls.Add(this.label9);
             this.Totalcustomer_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Totalcustomer_panel.Location = new System.Drawing.Point(212, 0);
+            this.Totalcustomer_panel.Location = new System.Drawing.Point(389, 0);
             this.Totalcustomer_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.Totalcustomer_panel.Name = "Totalcustomer_panel";
-            this.Totalcustomer_panel.Size = new System.Drawing.Size(201, 120);
+            this.Totalcustomer_panel.Size = new System.Drawing.Size(378, 120);
             this.Totalcustomer_panel.TabIndex = 1;
             // 
             // lbl_TotalCustomer
@@ -574,7 +555,7 @@
             this.Totalsales_panel.Location = new System.Drawing.Point(0, 0);
             this.Totalsales_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.Totalsales_panel.Name = "Totalsales_panel";
-            this.Totalsales_panel.Size = new System.Drawing.Size(202, 120);
+            this.Totalsales_panel.Size = new System.Drawing.Size(379, 120);
             this.Totalsales_panel.TabIndex = 0;
             // 
             // lbl_Totalsales
@@ -597,11 +578,59 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Total Sales";
             // 
+            // dgv_addtocart
+            // 
+            this.dgv_addtocart.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgv_addtocart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_addtocart.Location = new System.Drawing.Point(12, 463);
+            this.dgv_addtocart.Name = "dgv_addtocart";
+            this.dgv_addtocart.RowHeadersWidth = 51;
+            this.dgv_addtocart.RowTemplate.Height = 24;
+            this.dgv_addtocart.Size = new System.Drawing.Size(693, 215);
+            this.dgv_addtocart.TabIndex = 37;
+            // 
+            // btn_addbook
+            // 
+            this.btn_addbook.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_addbook.Location = new System.Drawing.Point(12, 689);
+            this.btn_addbook.Name = "btn_addbook";
+            this.btn_addbook.Size = new System.Drawing.Size(221, 67);
+            this.btn_addbook.TabIndex = 38;
+            this.btn_addbook.Text = "Add Book";
+            this.btn_addbook.UseVisualStyleBackColor = true;
+            this.btn_addbook.Click += new System.EventHandler(this.btn_addbook_Click);
+            // 
+            // btn_removebook
+            // 
+            this.btn_removebook.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_removebook.Location = new System.Drawing.Point(541, 689);
+            this.btn_removebook.Name = "btn_removebook";
+            this.btn_removebook.Size = new System.Drawing.Size(164, 67);
+            this.btn_removebook.TabIndex = 39;
+            this.btn_removebook.Text = "Remove Book";
+            this.btn_removebook.UseVisualStyleBackColor = true;
+            this.btn_removebook.Click += new System.EventHandler(this.btn_removebook_Click);
+            // 
+            // btn_saveSale
+            // 
+            this.btn_saveSale.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_saveSale.Location = new System.Drawing.Point(282, 689);
+            this.btn_saveSale.Name = "btn_saveSale";
+            this.btn_saveSale.Size = new System.Drawing.Size(220, 67);
+            this.btn_saveSale.TabIndex = 40;
+            this.btn_saveSale.Text = "Save Book";
+            this.btn_saveSale.UseVisualStyleBackColor = true;
+            this.btn_saveSale.Click += new System.EventHandler(this.btn_saveSale_Click);
+            // 
             // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1134, 777);
+            this.ClientSize = new System.Drawing.Size(1843, 891);
+            this.Controls.Add(this.btn_saveSale);
+            this.Controls.Add(this.btn_removebook);
+            this.Controls.Add(this.btn_addbook);
+            this.Controls.Add(this.dgv_addtocart);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgv_sales);
@@ -613,6 +642,7 @@
             this.Name = "Sales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Sales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -628,6 +658,7 @@
             this.Totalcustomer_panel.PerformLayout();
             this.Totalsales_panel.ResumeLayout(false);
             this.Totalsales_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_addtocart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -651,8 +682,6 @@
         private System.Windows.Forms.Button btn_updateSales;
         private System.Windows.Forms.Button btn_addSales;
         private System.Windows.Forms.DataGridView dgv_sales;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DateTimePicker dateTimePickerDate;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.ComboBox comboStaff;
         private System.Windows.Forms.Panel panel1;
@@ -677,5 +706,9 @@
         private System.Windows.Forms.Panel Totalsales_panel;
         private System.Windows.Forms.Label lbl_Totalsales;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgv_addtocart;
+        private System.Windows.Forms.Button btn_addbook;
+        private System.Windows.Forms.Button btn_removebook;
+        private System.Windows.Forms.Button btn_saveSale;
     }
 }

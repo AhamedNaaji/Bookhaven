@@ -19,8 +19,19 @@ namespace Bookhaven.AppClasses
 
         public List<SalesDetail> SalesDetailsList { get; set; } = new List<SalesDetail>();
 
+        public class SalesDetail
+        {
+            public int Book_Id_fk { get; set; }
+            public float Price { get; set; }
+            public int Quantity { get; set; }
+            public float Discount { get; set; }
+            public float Total_Amount { get; set; }
+        }
+
+
         public void Insertdata()
         {
+            SqlTransaction transaction = null;
             try
             {
                 conn.Open();
@@ -28,28 +39,28 @@ namespace Bookhaven.AppClasses
 
                 // Insert into Sales table
                 string salesQuery = @"
-                    INSERT INTO Sales (Staff_Id_fk, Customer_Id_fk, Date, Total_Payment)
-                    VALUES (@Staff_Id_fk, @Customer_Id_fk, @Date, @Total_Payment);
-                    SELECT SCOPE_IDENTITY();";
+            INSERT INTO Sales (Staff_Id_fk, Customer_Id_fk, Date, Total_Payment)
+            VALUES (@Staff_Id_fk, @Customer_Id_fk, @Date, @Total_Payment);
+            SELECT SCOPE_IDENTITY();";
 
                 SqlCommand salesCmd = new SqlCommand(salesQuery, conn, transaction);
                 salesCmd.Parameters.AddWithValue("@Staff_Id_fk", Staff_Id_fk);
                 salesCmd.Parameters.AddWithValue("@Customer_Id_fk", Customer_Id_fk);
-                salesCmd.Parameters.AddWithValue("@Date", Date);
+                salesCmd.Parameters.AddWithValue("@Date", Date); // Current system date
                 salesCmd.Parameters.AddWithValue("@Total_Payment", Total_Payment);
 
-                int salesId = Convert.ToInt32(salesCmd.ExecuteScalar());
+                Sales_Id = Convert.ToInt32(salesCmd.ExecuteScalar());
 
                 // Insert into SalesDetails table
                 foreach (var detail in SalesDetailsList)
                 {
                     string detailsQuery = @"
-                        INSERT INTO SalesDetails (Book_Id_fk, Sales_Id_fk, Price, Quantity, Discount, Total_Amount)
-                        VALUES (@Book_Id_fk, @Sales_Id_fk, @Price, @Quantity, @Discount, @Total_Amount);";
+                INSERT INTO SalesDetails (Book_Id_fk, Sales_Id_fk, Price, Quantity, Discount, Total_Amount)
+                VALUES (@Book_Id_fk, @Sales_Id_fk, @Price, @Quantity, @Discount, @Total_Amount);";
 
                     SqlCommand detailsCmd = new SqlCommand(detailsQuery, conn, transaction);
                     detailsCmd.Parameters.AddWithValue("@Book_Id_fk", detail.Book_Id_fk);
-                    detailsCmd.Parameters.AddWithValue("@Sales_Id_fk", salesId);
+                    detailsCmd.Parameters.AddWithValue("@Sales_Id_fk", Sales_Id);
                     detailsCmd.Parameters.AddWithValue("@Price", detail.Price);
                     detailsCmd.Parameters.AddWithValue("@Quantity", detail.Quantity);
                     detailsCmd.Parameters.AddWithValue("@Discount", detail.Discount);
@@ -59,12 +70,11 @@ namespace Bookhaven.AppClasses
                 }
 
                 transaction.Commit();
-                MessageBox.Show("Sale added successfully!", "Success");
             }
             catch (Exception ex)
             {
                 transaction?.Rollback();
-                MessageBox.Show($"Error: {ex.Message}", "Insert Failed");
+                throw new Exception($"Insert failed: {ex.Message}");
             }
             finally
             {
@@ -214,12 +224,5 @@ namespace Bookhaven.AppClasses
         }
     }
 
-    public class SalesDetail
-    {
-        public int Book_Id_fk { get; set; }
-        public float Price { get; set; }
-        public int Quantity { get; set; }
-        public float Discount { get; set; }
-        public float Total_Amount { get; set; }
-    }
+    
 }

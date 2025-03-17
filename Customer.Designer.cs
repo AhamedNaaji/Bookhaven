@@ -95,7 +95,7 @@
             this.panel2.Controls.Add(this.txtbox_NIC);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtbox_name);
-            this.panel2.Location = new System.Drawing.Point(46, 151);
+            this.panel2.Location = new System.Drawing.Point(46, 136);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(783, 320);
             this.panel2.TabIndex = 26;
@@ -234,7 +234,9 @@
             // 
             // btn_addCustomer
             // 
-            this.btn_addCustomer.Location = new System.Drawing.Point(1649, 195);
+            this.btn_addCustomer.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_addCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_addCustomer.Location = new System.Drawing.Point(863, 136);
             this.btn_addCustomer.Name = "btn_addCustomer";
             this.btn_addCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_addCustomer.TabIndex = 27;
@@ -244,7 +246,9 @@
             // 
             // btn_updateCustomer
             // 
-            this.btn_updateCustomer.Location = new System.Drawing.Point(1649, 313);
+            this.btn_updateCustomer.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_updateCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_updateCustomer.Location = new System.Drawing.Point(863, 244);
             this.btn_updateCustomer.Name = "btn_updateCustomer";
             this.btn_updateCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_updateCustomer.TabIndex = 28;
@@ -254,7 +258,9 @@
             // 
             // btn_deleteCustomer
             // 
-            this.btn_deleteCustomer.Location = new System.Drawing.Point(1649, 438);
+            this.btn_deleteCustomer.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_deleteCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_deleteCustomer.Location = new System.Drawing.Point(863, 360);
             this.btn_deleteCustomer.Name = "btn_deleteCustomer";
             this.btn_deleteCustomer.Size = new System.Drawing.Size(247, 67);
             this.btn_deleteCustomer.TabIndex = 29;
@@ -266,11 +272,11 @@
             // 
             this.dgv_cus.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_cus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_cus.Location = new System.Drawing.Point(46, 498);
+            this.dgv_cus.Location = new System.Drawing.Point(46, 483);
             this.dgv_cus.Name = "dgv_cus";
             this.dgv_cus.RowHeadersWidth = 51;
             this.dgv_cus.RowTemplate.Height = 24;
-            this.dgv_cus.Size = new System.Drawing.Size(783, 238);
+            this.dgv_cus.Size = new System.Drawing.Size(1064, 238);
             this.dgv_cus.TabIndex = 30;
             this.dgv_cus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_cus_CellContentClick);
             this.dgv_cus.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_cus_CellDoubleClick);
@@ -289,9 +295,9 @@
             this.panel1.Controls.Add(this.btn_overview);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.panel1.Location = new System.Drawing.Point(889, 0);
+            this.panel1.Location = new System.Drawing.Point(1153, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(285, 783);
+            this.panel1.Size = new System.Drawing.Size(285, 820);
             this.panel1.TabIndex = 31;
             // 
             // btn_Suppliers
@@ -416,7 +422,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(889, 130);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1153, 130);
             this.tableLayoutPanel1.TabIndex = 32;
             // 
             // cusorderRecieve_panel
@@ -425,10 +431,10 @@
             this.cusorderRecieve_panel.Controls.Add(this.label16);
             this.cusorderRecieve_panel.Controls.Add(this.label17);
             this.cusorderRecieve_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cusorderRecieve_panel.Location = new System.Drawing.Point(665, 0);
+            this.cusorderRecieve_panel.Location = new System.Drawing.Point(863, 0);
             this.cusorderRecieve_panel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.cusorderRecieve_panel.Name = "cusorderRecieve_panel";
-            this.cusorderRecieve_panel.Size = new System.Drawing.Size(224, 120);
+            this.cusorderRecieve_panel.Size = new System.Drawing.Size(290, 120);
             this.cusorderRecieve_panel.TabIndex = 3;
             // 
             // label16
@@ -456,10 +462,10 @@
             this.outofstock_panel.Controls.Add(this.lbl_Outofstock);
             this.outofstock_panel.Controls.Add(this.label13);
             this.outofstock_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.outofstock_panel.Location = new System.Drawing.Point(443, 0);
+            this.outofstock_panel.Location = new System.Drawing.Point(575, 0);
             this.outofstock_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.outofstock_panel.Name = "outofstock_panel";
-            this.outofstock_panel.Size = new System.Drawing.Size(212, 120);
+            this.outofstock_panel.Size = new System.Drawing.Size(278, 120);
             this.outofstock_panel.TabIndex = 2;
             // 
             // lbl_Outofstock
@@ -488,10 +494,10 @@
             this.Totalcustomer_panel.Controls.Add(this.lbl_TotalCustomer);
             this.Totalcustomer_panel.Controls.Add(this.label9);
             this.Totalcustomer_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Totalcustomer_panel.Location = new System.Drawing.Point(222, 0);
+            this.Totalcustomer_panel.Location = new System.Drawing.Point(288, 0);
             this.Totalcustomer_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.Totalcustomer_panel.Name = "Totalcustomer_panel";
-            this.Totalcustomer_panel.Size = new System.Drawing.Size(211, 120);
+            this.Totalcustomer_panel.Size = new System.Drawing.Size(277, 120);
             this.Totalcustomer_panel.TabIndex = 1;
             // 
             // lbl_TotalCustomer
@@ -523,7 +529,7 @@
             this.Totalsales_panel.Location = new System.Drawing.Point(0, 0);
             this.Totalsales_panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
             this.Totalsales_panel.Name = "Totalsales_panel";
-            this.Totalsales_panel.Size = new System.Drawing.Size(212, 120);
+            this.Totalsales_panel.Size = new System.Drawing.Size(278, 120);
             this.Totalsales_panel.TabIndex = 0;
             // 
             // lbl_Totalsales
@@ -550,7 +556,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 783);
+            this.ClientSize = new System.Drawing.Size(1438, 820);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgv_cus);

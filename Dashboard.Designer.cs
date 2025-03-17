@@ -313,7 +313,7 @@
             // 
             this.label16.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(66, 57);
+            this.label16.Location = new System.Drawing.Point(163, 53);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(77, 23);
             this.label16.TabIndex = 1;
@@ -325,7 +325,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(-6, 9);
+            this.label17.Location = new System.Drawing.Point(87, 18);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(257, 26);
             this.label17.TabIndex = 0;
@@ -334,8 +334,8 @@
             // cusorderRecieve_panel
             // 
             this.cusorderRecieve_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(131)))), ((int)(((byte)(146)))));
-            this.cusorderRecieve_panel.Controls.Add(this.label16);
-            this.cusorderRecieve_panel.Controls.Add(this.label17);
+            this.cusorderRecieve_panel.Controls.Add(this.label24);
+            this.cusorderRecieve_panel.Controls.Add(this.label23);
             this.cusorderRecieve_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.cusorderRecieve_panel.Location = new System.Drawing.Point(677, 0);
             this.cusorderRecieve_panel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
@@ -405,7 +405,7 @@
             // 
             this.label27.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(164, 53);
+            this.label27.Location = new System.Drawing.Point(193, 44);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(63, 23);
             this.label27.TabIndex = 1;
@@ -418,7 +418,7 @@
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(142, 20);
+            this.label28.Location = new System.Drawing.Point(164, 18);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(128, 26);
             this.label28.TabIndex = 0;
@@ -427,8 +427,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(131)))), ((int)(((byte)(146)))));
-            this.panel5.Controls.Add(this.label23);
-            this.panel5.Controls.Add(this.label24);
+            this.panel5.Controls.Add(this.label16);
+            this.panel5.Controls.Add(this.label17);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
@@ -440,7 +440,7 @@
             // 
             this.label23.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(133, 53);
+            this.label23.Location = new System.Drawing.Point(43, 57);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(109, 23);
             this.label23.TabIndex = 1;
@@ -452,7 +452,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(133, 20);
+            this.label24.Location = new System.Drawing.Point(33, 18);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(143, 26);
             this.label24.TabIndex = 0;

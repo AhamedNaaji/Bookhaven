@@ -182,11 +182,11 @@ namespace Bookhaven
             sale.DeleteData();
             LoadSalesData();
         }
-        private List<SalesDetail> GetSalesDetails()
+        private List<cls_sales.SalesDetail> GetSalesDetails()
         {
-            var details = new List<SalesDetail>
+            var details = new List<cls_sales.SalesDetail>
             {
-                new SalesDetail
+                new cls_sales.SalesDetail
                 {
                     Book_Id_fk = Convert.ToInt32(comboBook.SelectedValue),
                     Price = GetBookPrice(),
