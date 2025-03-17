@@ -1,14 +1,7 @@
 ﻿using Bookhaven.AppClasses;
 using Bookhaven.CommonClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookhaven
@@ -18,7 +11,7 @@ namespace Bookhaven
         filloperation fill = new filloperation();
         cls_book clsbook = new cls_book();
         private int _staffId;
-            
+
 
         private string searchTerm = string.Empty;
         public Clerk_Book(int staffId)
@@ -395,7 +388,7 @@ namespace Bookhaven
         {
             Customer customer = new Customer(_staffId);
             customer.ShowDialog();
-            
+
         }
 
         private void btn_Sales_Click(object sender, EventArgs e)

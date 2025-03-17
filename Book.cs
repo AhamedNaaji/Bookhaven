@@ -1,14 +1,7 @@
 ﻿using Bookhaven.AppClasses;
 using Bookhaven.CommonClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookhaven
@@ -21,7 +14,7 @@ namespace Bookhaven
 
         private int _staffId;
 
-        public Book( int staffId)
+        public Book(int staffId)
         {
             _staffId = staffId;
             InitializeComponent();
@@ -158,7 +151,7 @@ namespace Bookhaven
             }
 
         }
-     
+
 
 
         private void txt_Price_TextChanged(object sender, EventArgs e)
@@ -281,14 +274,14 @@ namespace Bookhaven
 
         private void dgv_book_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void cmb_genre_SelectedIndexChanged(object sender, EventArgs e)
         {
             string genreQuery = "SELECT Genre_Id, genreName FROM Genre";
             fill.combobox(genreQuery, cmb_genre, "genreName", "Genre_Id");
-       
+
         }
 
         private void cmb_author_SelectedIndexChanged(object sender, EventArgs e)
@@ -361,7 +354,7 @@ namespace Bookhaven
 
         private void dgv_books_SelectionChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_Customer_Click(object sender, EventArgs e)

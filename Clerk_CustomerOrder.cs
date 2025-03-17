@@ -1,14 +1,7 @@
 ﻿using Bookhaven.AppClasses;
 using Bookhaven.CommonClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookhaven
@@ -64,11 +57,6 @@ namespace Bookhaven
             string statusQuery = "SELECT statusId, status FROM orderStatus"; // Populate cmb_Status
             fill.combobox(statusQuery, cmb_Status, "status", "statusId");
 
-            // Populate cmb_staff (Staff Names)
-            string staffQuery = "SELECT Staff_Id, Staff_Name FROM Staff";
-            fill.combobox(staffQuery, cmb_staff, "Staff_Name", "Staff_Id");
-
-
 
             // Populate DataGridView with existing orders
             string orderQuery = @"
@@ -122,7 +110,6 @@ namespace Bookhaven
                     cmb_Book.SelectedValue = clscusorder.OrderDetails[0].Book_Id_fk;
                     nup_Quantity.Value = clscusorder.OrderDetails[0].Quantity;
                     cmb_Deliverymethod.Text = clscusorder.OrderDetails[0].DeliveryMethod;
-                    cmb_staff.SelectedValue = clscusorder.Staff_Id_fk; // Populate cmb_staff
                     lbl_Discount_Cusorder.Text = clscusorder.OrderDetails[0].Discount.ToString();
                     lbl_Finalpayment_Cusorder.Text = clscusorder.OrderDetails[0].Final_Amount.ToString();
                     lbl_Totalamount.Text = clscusorder.Total_Payment.ToString();
@@ -139,7 +126,7 @@ namespace Bookhaven
             try
             {
                 // Validate inputs
-                if (cmb_customer.SelectedIndex == -1 || cmb_Book.SelectedIndex == -1 || cmb_staff.SelectedIndex == -1)
+                if (cmb_customer.SelectedIndex == -1 || cmb_Book.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please fill all required fields.", "Validation Error");
                     return;
@@ -168,7 +155,7 @@ namespace Bookhaven
                 }
 
                 // Assign properties
-                clscusorder.Staff_Id_fk = Convert.ToInt32(cmb_staff.SelectedValue); // Use selected staff
+                clscusorder.Staff_Id_fk = _staffId;
                 clscusorder.Customer_Id_fk = Convert.ToInt32(cmb_customer.SelectedValue);
                 clscusorder.Date = DateTime.Now;
                 clscusorder.Status_Id_fk = Convert.ToInt32(cmb_Status.SelectedValue); // Use selected status
@@ -215,7 +202,7 @@ namespace Bookhaven
                 }
 
                 // Validate inputs
-                if (cmb_customer.SelectedIndex == -1 || cmb_Book.SelectedIndex == -1 || cmb_staff.SelectedIndex == -1)
+                if (cmb_customer.SelectedIndex == -1 || cmb_Book.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please fill all required fields.", "Validation Error");
                     return;
@@ -245,7 +232,7 @@ namespace Bookhaven
 
                 // Assign properties
 
-                clscusorder.Staff_Id_fk = Convert.ToInt32(cmb_staff.SelectedValue); // Use selected staff
+                clscusorder.Staff_Id_fk = _staffId;
                 clscusorder.Customer_Id_fk = Convert.ToInt32(cmb_customer.SelectedValue);
                 clscusorder.Date = DateTime.Now;
                 clscusorder.Status_Id_fk = Convert.ToInt32(cmb_Status.SelectedValue); // Use selected status
@@ -383,7 +370,7 @@ namespace Bookhaven
 
         private void btn_Cusorder_Click(object sender, EventArgs e)
         {
-           Clerk_CustomerOrder clerk_CustomerOrder = new Clerk_CustomerOrder(_staffId);
+            Clerk_CustomerOrder clerk_CustomerOrder = new Clerk_CustomerOrder(_staffId);
             ShowDialog(clerk_CustomerOrder);
         }
 

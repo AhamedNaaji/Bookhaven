@@ -28,17 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_expectedamount = new System.Windows.Forms.Label();
             this.nup_Quantity = new System.Windows.Forms.NumericUpDown();
             this.cmb_Status = new System.Windows.Forms.ComboBox();
-            this.dtp_supplier = new System.Windows.Forms.DateTimePicker();
-            this.label23 = new System.Windows.Forms.Label();
-            this.cmb_staff = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.lbl_Finalamount = new System.Windows.Forms.Label();
@@ -59,6 +56,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.btn_Suppliers = new System.Windows.Forms.Button();
             this.btn_Staff = new System.Windows.Forms.Button();
             this.btn_Book = new System.Windows.Forms.Button();
@@ -66,29 +64,26 @@
             this.btn_Cusorder = new System.Windows.Forms.Button();
             this.btn_Sales = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nup_Quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_suporder)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // chart1
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chart1.Legends.Add(legend9);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(1707, 1264);
             this.chart1.Name = "chart1";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chart1.Series.Add(series9);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(2095, 733);
             this.chart1.TabIndex = 25;
             this.chart1.Text = "chart1";
@@ -98,9 +93,6 @@
             this.panel2.Controls.Add(this.lbl_expectedamount);
             this.panel2.Controls.Add(this.nup_Quantity);
             this.panel2.Controls.Add(this.cmb_Status);
-            this.panel2.Controls.Add(this.dtp_supplier);
-            this.panel2.Controls.Add(this.label23);
-            this.panel2.Controls.Add(this.cmb_staff);
             this.panel2.Controls.Add(this.label26);
             this.panel2.Controls.Add(this.label27);
             this.panel2.Controls.Add(this.lbl_Finalamount);
@@ -110,9 +102,9 @@
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(472, 184);
+            this.panel2.Location = new System.Drawing.Point(384, 167);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(801, 320);
+            this.panel2.Size = new System.Drawing.Size(801, 193);
             this.panel2.TabIndex = 43;
             // 
             // lbl_expectedamount
@@ -139,31 +131,6 @@
             this.cmb_Status.Name = "cmb_Status";
             this.cmb_Status.Size = new System.Drawing.Size(197, 24);
             this.cmb_Status.TabIndex = 51;
-            // 
-            // dtp_supplier
-            // 
-            this.dtp_supplier.Location = new System.Drawing.Point(306, 190);
-            this.dtp_supplier.Name = "dtp_supplier";
-            this.dtp_supplier.Size = new System.Drawing.Size(200, 22);
-            this.dtp_supplier.TabIndex = 50;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(15, 169);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(67, 36);
-            this.label23.TabIndex = 49;
-            this.label23.Text = "Staff";
-            // 
-            // cmb_staff
-            // 
-            this.cmb_staff.FormattingEnabled = true;
-            this.cmb_staff.Location = new System.Drawing.Point(19, 198);
-            this.cmb_staff.Name = "cmb_staff";
-            this.cmb_staff.Size = new System.Drawing.Size(232, 24);
-            this.cmb_staff.TabIndex = 48;
             // 
             // label26
             // 
@@ -257,11 +224,11 @@
             this.dgv_suporder.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgv_suporder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_suporder.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgv_suporder.Location = new System.Drawing.Point(472, 525);
+            this.dgv_suporder.Location = new System.Drawing.Point(384, 487);
             this.dgv_suporder.Name = "dgv_suporder";
             this.dgv_suporder.RowHeadersWidth = 51;
             this.dgv_suporder.RowTemplate.Height = 24;
-            this.dgv_suporder.Size = new System.Drawing.Size(1120, 319);
+            this.dgv_suporder.Size = new System.Drawing.Size(801, 357);
             this.dgv_suporder.TabIndex = 47;
             this.dgv_suporder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_suporder_CellContentClick);
             this.dgv_suporder.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_suporder_CellContentDoubleClick);
@@ -271,7 +238,7 @@
             this.btn_deleteOrder.BackColor = System.Drawing.Color.Red;
             this.btn_deleteOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_deleteOrder.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
-            this.btn_deleteOrder.Location = new System.Drawing.Point(21, 232);
+            this.btn_deleteOrder.Location = new System.Drawing.Point(938, 381);
             this.btn_deleteOrder.Name = "btn_deleteOrder";
             this.btn_deleteOrder.Size = new System.Drawing.Size(247, 67);
             this.btn_deleteOrder.TabIndex = 46;
@@ -284,7 +251,7 @@
             this.btn_updateorder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btn_updateorder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_updateorder.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
-            this.btn_updateorder.Location = new System.Drawing.Point(21, 126);
+            this.btn_updateorder.Location = new System.Drawing.Point(661, 381);
             this.btn_updateorder.Name = "btn_updateorder";
             this.btn_updateorder.Size = new System.Drawing.Size(247, 67);
             this.btn_updateorder.TabIndex = 45;
@@ -297,7 +264,7 @@
             this.btn_makeOrder.BackColor = System.Drawing.Color.Lime;
             this.btn_makeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_makeOrder.Font = new System.Drawing.Font("Poppins Medium", 13.8F);
-            this.btn_makeOrder.Location = new System.Drawing.Point(21, 17);
+            this.btn_makeOrder.Location = new System.Drawing.Point(384, 381);
             this.btn_makeOrder.Name = "btn_makeOrder";
             this.btn_makeOrder.Size = new System.Drawing.Size(247, 67);
             this.btn_makeOrder.TabIndex = 44;
@@ -317,7 +284,7 @@
             this.panel3.ForeColor = System.Drawing.Color.Black;
             this.panel3.Location = new System.Drawing.Point(356, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1282, 143);
+            this.panel3.Size = new System.Drawing.Size(871, 126);
             this.panel3.TabIndex = 49;
             // 
             // button1
@@ -326,7 +293,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(961, 37);
+            this.button1.Location = new System.Drawing.Point(642, 28);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 63);
             this.button1.TabIndex = 9;
@@ -338,7 +305,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(39, 45);
+            this.label1.Location = new System.Drawing.Point(30, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 58);
             this.label1.TabIndex = 8;
@@ -400,6 +367,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(356, 884);
             this.panel1.TabIndex = 48;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.Location = new System.Drawing.Point(50, 781);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(243, 63);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Report";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btn_Suppliers
             // 
@@ -499,37 +480,15 @@
             this.btn_Customer.UseVisualStyleBackColor = false;
             this.btn_Customer.Click += new System.EventHandler(this.btn_Customer_Click);
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btn_deleteOrder);
-            this.panel4.Controls.Add(this.btn_updateorder);
-            this.panel4.Controls.Add(this.btn_makeOrder);
-            this.panel4.Location = new System.Drawing.Point(1302, 184);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(290, 320);
-            this.panel4.TabIndex = 50;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(50, 781);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(243, 63);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Report";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // SupplierOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1638, 884);
-            this.Controls.Add(this.panel4);
+            this.ClientSize = new System.Drawing.Size(1227, 884);
+            this.Controls.Add(this.btn_updateorder);
+            this.Controls.Add(this.btn_deleteOrder);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.btn_makeOrder);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgv_suporder);
@@ -544,7 +503,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -564,9 +522,6 @@
         private System.Windows.Forms.Button btn_updateorder;
         private System.Windows.Forms.Button btn_makeOrder;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ComboBox cmb_staff;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DateTimePicker dtp_supplier;
         private System.Windows.Forms.ComboBox cmb_Status;
         private System.Windows.Forms.NumericUpDown nup_Quantity;
         private System.Windows.Forms.Label lbl_expectedamount;
@@ -585,7 +540,6 @@
         private System.Windows.Forms.Button btn_Cusorder;
         private System.Windows.Forms.Button btn_Sales;
         private System.Windows.Forms.Button btn_Customer;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button4;
     }
 }

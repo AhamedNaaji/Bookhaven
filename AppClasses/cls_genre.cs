@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Bookhaven.CommonClasses;
+using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using Bookhaven.CommonClasses;
 
 namespace Bookhaven.AppClasses
 {

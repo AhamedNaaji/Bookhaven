@@ -2,13 +2,8 @@
 using Bookhaven.CommonClasses;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookhaven
@@ -352,40 +347,40 @@ namespace Bookhaven
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
-                // Validate input
-                if (comboBook.SelectedValue == null || numericQuantity.Value <= 0)
+            // Validate input
+            if (comboBook.SelectedValue == null || numericQuantity.Value <= 0)
+            {
+                MessageBox.Show("Please select a valid book and quantity.", "Invalid Input");
+                return;
+            }
+
+            // Get book details
+            int bookId = Convert.ToInt32(comboBook.SelectedValue);
+            string bookName = comboBook.Text;
+            float price = GetBookPrice();
+            int quantity = (int)numericQuantity.Value;
+            float discount = GetBookDiscount();
+            float totalAmount = price * quantity;
+
+            // Check if the book is already added
+            foreach (DataGridViewRow row in dgv_books.Rows)
+            {
+                if (Convert.ToInt32(row.Cells["Book_Id"].Value) == bookId)
                 {
-                    MessageBox.Show("Please select a valid book and quantity.", "Invalid Input");
+                    MessageBox.Show("This book is already added. Update its quantity instead.", "Duplicate Book");
                     return;
                 }
+            }
 
-                // Get book details
-                int bookId = Convert.ToInt32(comboBook.SelectedValue);
-                string bookName = comboBook.Text;
-                float price = GetBookPrice();
-                int quantity = (int)numericQuantity.Value;
-                float discount = GetBookDiscount();
-                float totalAmount = price * quantity;
+            // Add the book to the DataGridView
+            dgv_books.Rows.Add(bookId, bookName, price, quantity, discount, totalAmount);
 
-                // Check if the book is already added
-                foreach (DataGridViewRow row in dgv_books.Rows)
-                {
-                    if (Convert.ToInt32(row.Cells["Book_Id"].Value) == bookId)
-                    {
-                        MessageBox.Show("This book is already added. Update its quantity instead.", "Duplicate Book");
-                        return;
-                    }
-                }
+            // Clear the input fields
+            comboBook.SelectedIndex = -1;
+            numericQuantity.Value = 1;
 
-                // Add the book to the DataGridView
-                dgv_books.Rows.Add(bookId, bookName, price, quantity, discount, totalAmount);
-
-                // Clear the input fields
-                comboBook.SelectedIndex = -1;
-                numericQuantity.Value = 1;
-
-                // Update the total payment
-                UpdateTotalPayment();
+            // Update the total payment
+            UpdateTotalPayment();
         }
 
         private void btnRemoveBook_Click(object sender, EventArgs e)
@@ -449,13 +444,13 @@ namespace Bookhaven
 
         private void btn_Cusorder_Click(object sender, EventArgs e)
         {
-            Customer cusorder = new Customer(_staffId);
+            Clerk_CustomerOrder cusorder = new Clerk_CustomerOrder(_staffId);
             cusorder.ShowDialog();
         }
 
         private void btn_Book_Click(object sender, EventArgs e)
         {
-            Book book = new Book(_staffId);
+            Clerk_Book book = new Clerk_Book(_staffId);
             book.ShowDialog();
         }
     }

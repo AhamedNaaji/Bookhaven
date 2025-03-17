@@ -1,14 +1,7 @@
 ﻿using Bookhaven.AppClasses;
 using Bookhaven.CommonClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookhaven
@@ -51,9 +44,6 @@ namespace Bookhaven
 
             string statusQuery = "SELECT statusId, status FROM orderStatus";
             fill.combobox(statusQuery, cmb_Status, "status", "statusId");
-
-            string staffQuery = "SELECT Staff_Id, Staff_Name FROM Staff";
-            fill.combobox(staffQuery, cmb_staff, "Staff_Name", "Staff_Id");
 
             // Populate dgv_suporder with existing orders
             string orderQuery = @"
@@ -123,7 +113,7 @@ namespace Bookhaven
             try
             {
                 // Validate inputs
-                if (cmb_Suporder.SelectedIndex == -1 || cmb_book_suporder.SelectedIndex == -1 || cmb_staff.SelectedIndex == -1)
+                if (cmb_Suporder.SelectedIndex == -1 || cmb_book_suporder.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please fill all required fields.", "Validation Error");
                     return;
@@ -144,10 +134,10 @@ namespace Bookhaven
                 }
 
                 // Assign properties
-                clssuporder.Staff_Id_fk = Convert.ToInt32(cmb_staff.SelectedValue);
+                clssuporder.Staff_Id_fk = _staffId;
                 clssuporder.Supplier_Id_fk = Convert.ToInt32(cmb_Suporder.SelectedValue);
                 clssuporder.Book_Id_fk = Convert.ToInt32(cmb_book_suporder.SelectedValue);
-                clssuporder.Date = dtp_supplier.Value;
+                clssuporder.Date = DateTime.Now;
                 clssuporder.Status_Id_fk = Convert.ToInt32(cmb_Status.SelectedValue);
                 clssuporder.Total_Payment = finalPayment;
 
@@ -182,7 +172,7 @@ namespace Bookhaven
                 }
 
                 // Validate inputs
-                if (cmb_Suporder.SelectedIndex == -1 || cmb_book_suporder.SelectedIndex == -1 || cmb_staff.SelectedIndex == -1)
+                if (cmb_Suporder.SelectedIndex == -1 || cmb_book_suporder.SelectedIndex == -1)
                 {
                     MessageBox.Show("Please fill all required fields.", "Validation Error");
                     return;
@@ -203,10 +193,10 @@ namespace Bookhaven
                 }
 
                 // Assign properties
-                clssuporder.Staff_Id_fk = Convert.ToInt32(cmb_staff.SelectedValue);
+                clssuporder.Staff_Id_fk = _staffId;
                 clssuporder.Supplier_Id_fk = Convert.ToInt32(cmb_Suporder.SelectedValue);
                 clssuporder.Book_Id_fk = Convert.ToInt32(cmb_book_suporder.SelectedValue);
-                clssuporder.Date = dtp_supplier.Value;
+                clssuporder.Date = DateTime.Now;
                 clssuporder.Status_Id_fk = Convert.ToInt32(cmb_Status.SelectedValue);
                 clssuporder.Total_Payment = finalPayment;
 
@@ -288,8 +278,6 @@ namespace Bookhaven
                     cmb_Suporder.SelectedValue = clssuporder.Supplier_Id_fk;
                     cmb_book_suporder.SelectedValue = clssuporder.Book_Id_fk;
                     nup_Quantity.Value = clssuporder.OrderDetails[0].Quantity;
-                    cmb_staff.SelectedValue = clssuporder.Staff_Id_fk;
-                    dtp_supplier.Value = clssuporder.Date;
                     cmb_Status.SelectedValue = clssuporder.Status_Id_fk;
                     lbl_expectedamount.Text = (clssuporder.OrderDetails[0].Final_Amount / clssuporder.OrderDetails[0].Quantity).ToString("0.00");
                     lbl_Finalamount.Text = clssuporder.OrderDetails[0].Final_Amount.ToString("0.00");
@@ -299,7 +287,7 @@ namespace Bookhaven
                     MessageBox.Show($"Error: {ex.Message}", "Fetch Failed");
                 }
             }
-        
+
         }
 
         private void nup_Quantity_ValueChanged(object sender, EventArgs e)

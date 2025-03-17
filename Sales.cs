@@ -3,8 +3,6 @@ using Bookhaven.CommonClasses;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.DirectoryServices.ActiveDirectory;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Bookhaven
@@ -490,7 +488,7 @@ namespace Bookhaven
 
         private void btn_Cusorder_Click(object sender, EventArgs e)
         {
-            Customer cusorder = new Customer(_staffId);
+            CustomerOrder cusorder = new CustomerOrder(_staffId);
             cusorder.ShowDialog();
         }
 

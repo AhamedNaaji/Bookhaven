@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookhaven.AppClasses
@@ -46,7 +43,7 @@ namespace Bookhaven.AppClasses
                 SqlCommand cmd = new SqlCommand(supplierQuery, conn, transaction);
                 cmd.Parameters.AddWithValue("@Supplier_Name", Supplier_Name);
                 cmd.Parameters.AddWithValue("@NIC", NIC);
-            
+
                 cmd.Parameters.AddWithValue("@Address", Address);
                 cmd.Parameters.AddWithValue("@Email", Email);
 
@@ -98,7 +95,7 @@ namespace Bookhaven.AppClasses
                 SqlCommand cmd = new SqlCommand(updateSupplierQuery, conn, transaction);
                 cmd.Parameters.AddWithValue("@Supplier_Name", Supplier_Name);
                 cmd.Parameters.AddWithValue("@NIC", NIC);
-               
+
                 cmd.Parameters.AddWithValue("@Address", Address);
                 cmd.Parameters.AddWithValue("@Email", Email);
                 cmd.Parameters.AddWithValue("@Supplier_Id", Supplier_Id);
@@ -198,7 +195,7 @@ namespace Bookhaven.AppClasses
                     Supplier_Id = Convert.ToInt32(rd["Supplier_Id"]);
                     Supplier_Name = rd["Supplier_Name"].ToString();
                     NIC = rd["NIC"].ToString();
-                  
+
                     Address = rd["Address"].ToString();
                     Email = rd["Email"].ToString();
 

@@ -1,13 +1,6 @@
 ﻿using Bookhaven.AppClasses;
 using Bookhaven.CommonClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookhaven
@@ -50,7 +43,7 @@ namespace Bookhaven
 
         private void dgv_genre_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void btn_add_genre_Click(object sender, EventArgs e)
@@ -62,7 +55,7 @@ namespace Bookhaven
 
         private void btn_update_genre_Click(object sender, EventArgs e)
         {
-     
+
             clsgenre.UpdateData();
             FirstRun();
         }

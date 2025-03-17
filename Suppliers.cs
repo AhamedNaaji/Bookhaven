@@ -1,13 +1,6 @@
 ﻿using Bookhaven.AppClasses;
 using Bookhaven.CommonClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookhaven
@@ -69,7 +62,7 @@ namespace Bookhaven
             dgv_Sup.Columns[0].HeaderText = "ID";
             dgv_Sup.Columns[1].HeaderText = "Name";
             dgv_Sup.Columns[2].HeaderText = "NIC";
-    
+
             dgv_Sup.Columns[3].HeaderText = "Address";
             dgv_Sup.Columns[4].HeaderText = "Email";
             dgv_Sup.Columns[5].HeaderText = "Mobile 1";
@@ -94,7 +87,7 @@ namespace Bookhaven
                 // Populate form fields
                 txtbox_Suppliername.Text = clssup.Supplier_Name;
                 txtbox_NIC.Text = clssup.NIC;
-            
+
                 txtbox_Address.Text = clssup.Address;
                 txtbox_Email.Text = clssup.Email;
 
@@ -150,7 +143,7 @@ namespace Bookhaven
         {
             clssup.Supplier_Name = txtbox_Suppliername.Text.Trim();
             clssup.NIC = txtbox_NIC.Text.Trim();
-           
+
             clssup.Address = txtbox_Address.Text.Trim();
             clssup.Email = txtbox_Email.Text.Trim();
 

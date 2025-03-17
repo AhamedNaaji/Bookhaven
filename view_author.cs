@@ -1,13 +1,6 @@
 ﻿using Bookhaven.AppClasses;
 using Bookhaven.CommonClasses;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookhaven
@@ -15,7 +8,7 @@ namespace Bookhaven
     public partial class view_author : Form
     {
         cls_Author clsauthor = new cls_Author();
-      
+
         public view_author()
         {
             InitializeComponent();
@@ -35,7 +28,7 @@ namespace Bookhaven
 
         private void btn_update_author_Click(object sender, EventArgs e)
         {
-          
+
             clsauthor.AuthorName = txtbox_author.Text.Trim();
             clsauthor.UpdateData();
             RefreshDataGridView();
@@ -44,7 +37,7 @@ namespace Bookhaven
 
         private void btn_delete_author_Click(object sender, EventArgs e)
         {
-            
+
             clsauthor.DeleteData();
             RefreshDataGridView();
         }
@@ -72,7 +65,7 @@ namespace Bookhaven
             dgv_author.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
-           
+
 
         private void view_author_Load(object sender, EventArgs e)
         {
