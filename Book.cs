@@ -359,11 +359,7 @@ namespace Bookhaven
 
         private void dgv_books_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgv_books.SelectedRows.Count > 0)
-            {
-                // Highlight the selected row
-                dgv_books.SelectedRows[0].DefaultCellStyle.BackColor = Color.LightBlue;
-            }
+            
 
         }
 
