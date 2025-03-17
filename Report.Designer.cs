@@ -28,18 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea21 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend21 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend22 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Report));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -55,74 +45,26 @@
             this.btn_Customers = new System.Windows.Forms.Button();
             this.btn_Dashboard = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.comboStaff = new System.Windows.Forms.ComboBox();
+            this.comboCustomer = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.btn_GenerateReport = new System.Windows.Forms.Button();
+            this.label_Total_Sales = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label_Total_Payments = new System.Windows.Forms.Label();
+            this.dgv_report = new System.Windows.Forms.DataGridView();
+            this.comboReportType = new System.Windows.Forms.ComboBox();
+            this.comboSupplier = new System.Windows.Forms.ComboBox();
+            this.label_Total = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_report)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.chart2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.chart1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(567, 427);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1243, 592);
-            this.tableLayoutPanel1.TabIndex = 23;
-            // 
-            // chart2
-            // 
-            chartArea21.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea21);
-            legend21.Name = "Legend1";
-            this.chart2.Legends.Add(legend21);
-            this.chart2.Location = new System.Drawing.Point(624, 3);
-            this.chart2.Name = "chart2";
-            series21.ChartArea = "ChartArea1";
-            series21.Legend = "Legend1";
-            series21.Name = "Series1";
-            this.chart2.Series.Add(series21);
-            this.chart2.Size = new System.Drawing.Size(615, 577);
-            this.chart2.TabIndex = 1;
-            this.chart2.Text = "chart2";
-            // 
-            // chart1
-            // 
-            chartArea22.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea22);
-            legend22.Name = "Legend1";
-            this.chart1.Legends.Add(legend22);
-            this.chart1.Location = new System.Drawing.Point(3, 3);
-            this.chart1.Name = "chart1";
-            series22.ChartArea = "ChartArea1";
-            series22.Legend = "Legend1";
-            series22.Name = "Series1";
-            this.chart1.Series.Add(series22);
-            this.chart1.Size = new System.Drawing.Size(615, 577);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Customer",
-            "Staff",
-            "Book ",
-            "Sales"});
-            this.comboBox1.Location = new System.Drawing.Point(567, 185);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(434, 24);
-            this.comboBox1.TabIndex = 24;
             // 
             // panel3
             // 
@@ -324,36 +266,185 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // comboStaff
+            // 
+            this.comboStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboStaff.FormattingEnabled = true;
+            this.comboStaff.Location = new System.Drawing.Point(514, 163);
+            this.comboStaff.Name = "comboStaff";
+            this.comboStaff.Size = new System.Drawing.Size(180, 33);
+            this.comboStaff.TabIndex = 53;
+            // 
+            // comboCustomer
+            // 
+            this.comboCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboCustomer.FormattingEnabled = true;
+            this.comboCustomer.Location = new System.Drawing.Point(514, 237);
+            this.comboCustomer.Name = "comboCustomer";
+            this.comboCustomer.Size = new System.Drawing.Size(180, 33);
+            this.comboCustomer.TabIndex = 54;
+            // 
+            // dateTimePickerStart
+            // 
+            this.dateTimePickerStart.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerStart.Location = new System.Drawing.Point(1047, 166);
+            this.dateTimePickerStart.Name = "dateTimePickerStart";
+            this.dateTimePickerStart.Size = new System.Drawing.Size(195, 30);
+            this.dateTimePickerStart.TabIndex = 55;
+            // 
+            // dateTimePickerEnd
+            // 
+            this.dateTimePickerEnd.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(1282, 163);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(200, 30);
+            this.dateTimePickerEnd.TabIndex = 56;
+            // 
+            // btn_GenerateReport
+            // 
+            this.btn_GenerateReport.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_GenerateReport.Location = new System.Drawing.Point(1502, 159);
+            this.btn_GenerateReport.Name = "btn_GenerateReport";
+            this.btn_GenerateReport.Size = new System.Drawing.Size(228, 37);
+            this.btn_GenerateReport.TabIndex = 57;
+            this.btn_GenerateReport.Text = "Generate Report";
+            this.btn_GenerateReport.UseVisualStyleBackColor = true;
+            this.btn_GenerateReport.Click += new System.EventHandler(this.btn_GenerateReport_Click);
+            // 
+            // label_Total_Sales
+            // 
+            this.label_Total_Sales.AutoSize = true;
+            this.label_Total_Sales.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label_Total_Sales.Location = new System.Drawing.Point(1177, 241);
+            this.label_Total_Sales.Name = "label_Total_Sales";
+            this.label_Total_Sales.Size = new System.Drawing.Size(0, 27);
+            this.label_Total_Sales.TabIndex = 58;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(509, 133);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 27);
+            this.label3.TabIndex = 60;
+            this.label3.Text = "Staffs";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(509, 207);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(130, 27);
+            this.label4.TabIndex = 61;
+            this.label4.Text = "Customers";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(1042, 136);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(119, 27);
+            this.label5.TabIndex = 62;
+            this.label5.Text = "Date Start";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(1277, 133);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 27);
+            this.label6.TabIndex = 63;
+            this.label6.Text = "Date End";
+            // 
+            // label_Total_Payments
+            // 
+            this.label_Total_Payments.AutoSize = true;
+            this.label_Total_Payments.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label_Total_Payments.Location = new System.Drawing.Point(1519, 240);
+            this.label_Total_Payments.Name = "label_Total_Payments";
+            this.label_Total_Payments.Size = new System.Drawing.Size(0, 27);
+            this.label_Total_Payments.TabIndex = 66;
+            // 
+            // dgv_report
+            // 
+            this.dgv_report.AllowUserToOrderColumns = true;
+            this.dgv_report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_report.Location = new System.Drawing.Point(514, 314);
+            this.dgv_report.Name = "dgv_report";
+            this.dgv_report.RowHeadersWidth = 51;
+            this.dgv_report.RowTemplate.Height = 24;
+            this.dgv_report.Size = new System.Drawing.Size(1260, 636);
+            this.dgv_report.TabIndex = 67;
+            // 
+            // comboReportType
+            // 
+            this.comboReportType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboReportType.FormattingEnabled = true;
+            this.comboReportType.Location = new System.Drawing.Point(718, 160);
+            this.comboReportType.Name = "comboReportType";
+            this.comboReportType.Size = new System.Drawing.Size(180, 33);
+            this.comboReportType.TabIndex = 68;
+            // 
+            // comboSupplier
+            // 
+            this.comboSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboSupplier.FormattingEnabled = true;
+            this.comboSupplier.Location = new System.Drawing.Point(718, 239);
+            this.comboSupplier.Name = "comboSupplier";
+            this.comboSupplier.Size = new System.Drawing.Size(180, 33);
+            this.comboSupplier.TabIndex = 69;
+            // 
+            // label_Total
+            // 
+            this.label_Total.AutoSize = true;
+            this.label_Total.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label_Total.Location = new System.Drawing.Point(941, 237);
+            this.label_Total.Name = "label_Total";
+            this.label_Total.Size = new System.Drawing.Size(0, 27);
+            this.label_Total.TabIndex = 70;
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(140)))), ((int)(((byte)(137)))));
             this.ClientSize = new System.Drawing.Size(1924, 1049);
+            this.Controls.Add(this.label_Total);
+            this.Controls.Add(this.comboSupplier);
+            this.Controls.Add(this.comboReportType);
+            this.Controls.Add(this.dgv_report);
+            this.Controls.Add(this.label_Total_Payments);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label_Total_Sales);
+            this.Controls.Add(this.btn_GenerateReport);
+            this.Controls.Add(this.dateTimePickerEnd);
+            this.Controls.Add(this.dateTimePickerStart);
+            this.Controls.Add(this.comboCustomer);
+            this.Controls.Add(this.comboStaff);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Report";
             this.Text = "Report";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_report)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_Logout;
         private System.Windows.Forms.Label label8;
@@ -369,5 +460,20 @@
         private System.Windows.Forms.Button btn_Customers;
         private System.Windows.Forms.Button btn_Dashboard;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox comboStaff;
+        private System.Windows.Forms.ComboBox comboCustomer;
+        private System.Windows.Forms.DateTimePicker dateTimePickerStart;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
+        private System.Windows.Forms.Button btn_GenerateReport;
+        private System.Windows.Forms.Label label_Total_Sales;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_Total_Payments;
+        private System.Windows.Forms.DataGridView dgv_report;
+        private System.Windows.Forms.ComboBox comboReportType;
+        private System.Windows.Forms.ComboBox comboSupplier;
+        private System.Windows.Forms.Label label_Total;
     }
 }
