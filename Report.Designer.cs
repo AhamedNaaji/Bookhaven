@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Report));
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_staff = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,22 +43,34 @@
             this.btn_Sales = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
             this.btn_overview = new System.Windows.Forms.Button();
+            this.dgv_report = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmb_customer = new System.Windows.Forms.ComboBox();
+            this.dtp_from = new System.Windows.Forms.DateTimePicker();
+            this.dtp_to = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_apply = new System.Windows.Forms.Button();
+            this.btn_reset = new System.Windows.Forms.Button();
+            this.btn_exportToPdf = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_report)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cmb_staff
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmb_staff.FormattingEnabled = true;
+            this.cmb_staff.Items.AddRange(new object[] {
             "Monthly",
             "Weekly",
             "Daily"});
-            this.comboBox1.Location = new System.Drawing.Point(19, 121);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(263, 24);
-            this.comboBox1.TabIndex = 24;
+            this.cmb_staff.Location = new System.Drawing.Point(19, 150);
+            this.cmb_staff.Name = "cmb_staff";
+            this.cmb_staff.Size = new System.Drawing.Size(174, 24);
+            this.cmb_staff.TabIndex = 24;
             // 
             // panel1
             // 
@@ -231,26 +242,158 @@
             this.btn_overview.Text = "Overview";
             this.btn_overview.UseVisualStyleBackColor = false;
             // 
+            // dgv_report
+            // 
+            this.dgv_report.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_report.Location = new System.Drawing.Point(19, 218);
+            this.dgv_report.Name = "dgv_report";
+            this.dgv_report.RowHeadersWidth = 51;
+            this.dgv_report.RowTemplate.Height = 24;
+            this.dgv_report.Size = new System.Drawing.Size(935, 495);
+            this.dgv_report.TabIndex = 71;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(15, 121);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 24);
+            this.label5.TabIndex = 72;
+            this.label5.Text = "Staff";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(244, 121);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 24);
+            this.label1.TabIndex = 73;
+            this.label1.Text = "Customer";
+            // 
+            // cmb_customer
+            // 
+            this.cmb_customer.FormattingEnabled = true;
+            this.cmb_customer.Items.AddRange(new object[] {
+            "Monthly",
+            "Weekly",
+            "Daily"});
+            this.cmb_customer.Location = new System.Drawing.Point(248, 150);
+            this.cmb_customer.Name = "cmb_customer";
+            this.cmb_customer.Size = new System.Drawing.Size(195, 24);
+            this.cmb_customer.TabIndex = 74;
+            // 
+            // dtp_from
+            // 
+            this.dtp_from.Location = new System.Drawing.Point(496, 152);
+            this.dtp_from.Name = "dtp_from";
+            this.dtp_from.Size = new System.Drawing.Size(200, 22);
+            this.dtp_from.TabIndex = 75;
+            // 
+            // dtp_to
+            // 
+            this.dtp_to.Location = new System.Drawing.Point(754, 152);
+            this.dtp_to.Name = "dtp_to";
+            this.dtp_to.Size = new System.Drawing.Size(200, 22);
+            this.dtp_to.TabIndex = 76;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(492, 121);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 24);
+            this.label2.TabIndex = 77;
+            this.label2.Text = "Date From";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(877, 121);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 24);
+            this.label3.TabIndex = 78;
+            this.label3.Text = "To Date";
+            // 
+            // btn_apply
+            // 
+            this.btn_apply.BackColor = System.Drawing.Color.White;
+            this.btn_apply.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_apply.ForeColor = System.Drawing.Color.Red;
+            this.btn_apply.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_apply.Location = new System.Drawing.Point(19, 754);
+            this.btn_apply.Name = "btn_apply";
+            this.btn_apply.Size = new System.Drawing.Size(405, 55);
+            this.btn_apply.TabIndex = 9;
+            this.btn_apply.Text = "Generate Report";
+            this.btn_apply.UseVisualStyleBackColor = false;
+            this.btn_apply.Click += new System.EventHandler(this.btn_apply_Click);
+            // 
+            // btn_reset
+            // 
+            this.btn_reset.BackColor = System.Drawing.Color.White;
+            this.btn_reset.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reset.ForeColor = System.Drawing.Color.Blue;
+            this.btn_reset.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_reset.Location = new System.Drawing.Point(736, 754);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(218, 55);
+            this.btn_reset.TabIndex = 79;
+            this.btn_reset.Text = "Reset";
+            this.btn_reset.UseVisualStyleBackColor = false;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
+            // 
+            // btn_exportToPdf
+            // 
+            this.btn_exportToPdf.BackColor = System.Drawing.Color.White;
+            this.btn_exportToPdf.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exportToPdf.ForeColor = System.Drawing.Color.Navy;
+            this.btn_exportToPdf.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_exportToPdf.Location = new System.Drawing.Point(453, 754);
+            this.btn_exportToPdf.Name = "btn_exportToPdf";
+            this.btn_exportToPdf.Size = new System.Drawing.Size(218, 55);
+            this.btn_exportToPdf.TabIndex = 80;
+            this.btn_exportToPdf.Text = "Export To PDF";
+            this.btn_exportToPdf.UseVisualStyleBackColor = false;
+            this.btn_exportToPdf.Click += new System.EventHandler(this.btn_exportToPdf_Click);
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 850);
+            this.Controls.Add(this.btn_exportToPdf);
+            this.Controls.Add(this.btn_reset);
+            this.Controls.Add(this.btn_apply);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dtp_to);
+            this.Controls.Add(this.dtp_from);
+            this.Controls.Add(this.cmb_customer);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dgv_report);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmb_staff);
             this.Name = "Report";
             this.Text = "Report";
+            this.Load += new System.EventHandler(this.Report_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_report)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_staff;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -264,5 +407,16 @@
         private System.Windows.Forms.Button btn_Sales;
         private System.Windows.Forms.Button btn_Customer;
         private System.Windows.Forms.Button btn_overview;
+        private System.Windows.Forms.DataGridView dgv_report;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmb_customer;
+        private System.Windows.Forms.DateTimePicker dtp_from;
+        private System.Windows.Forms.DateTimePicker dtp_to;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_apply;
+        private System.Windows.Forms.Button btn_reset;
+        private System.Windows.Forms.Button btn_exportToPdf;
     }
 }

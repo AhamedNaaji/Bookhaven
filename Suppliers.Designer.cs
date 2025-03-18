@@ -58,6 +58,7 @@
             this.btn_Sales = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
             this.btn_overview = new System.Windows.Forms.Button();
+            this.btn_Report = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Sup)).BeginInit();
             this.panel1.SuspendLayout();
@@ -205,7 +206,7 @@
             this.dgv_Sup.Name = "dgv_Sup";
             this.dgv_Sup.RowHeadersWidth = 51;
             this.dgv_Sup.RowTemplate.Height = 24;
-            this.dgv_Sup.Size = new System.Drawing.Size(997, 319);
+            this.dgv_Sup.Size = new System.Drawing.Size(997, 418);
             this.dgv_Sup.TabIndex = 59;
             this.dgv_Sup.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_sup_CellDoubleClick);
             // 
@@ -282,6 +283,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(69)))), ((int)(((byte)(89)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btn_Report);
             this.panel2.Controls.Add(this.btn_Suppliers);
             this.panel2.Controls.Add(this.btn_Staff);
             this.panel2.Controls.Add(this.btn_Book);
@@ -294,7 +296,7 @@
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel2.Location = new System.Drawing.Point(1015, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(267, 758);
+            this.panel2.Size = new System.Drawing.Size(267, 856);
             this.panel2.TabIndex = 60;
             // 
             // btn_Suppliers
@@ -401,11 +403,24 @@
             this.btn_overview.Text = "Overview";
             this.btn_overview.UseVisualStyleBackColor = false;
             // 
+            // btn_Report
+            // 
+            this.btn_Report.BackColor = System.Drawing.Color.White;
+            this.btn_Report.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Report.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_Report.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Report.Location = new System.Drawing.Point(32, 787);
+            this.btn_Report.Name = "btn_Report";
+            this.btn_Report.Size = new System.Drawing.Size(219, 56);
+            this.btn_Report.TabIndex = 9;
+            this.btn_Report.Text = "Report";
+            this.btn_Report.UseVisualStyleBackColor = false;
+            // 
             // Suppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1282, 758);
+            this.ClientSize = new System.Drawing.Size(1282, 856);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -457,5 +472,6 @@
         private System.Windows.Forms.Button btn_Sales;
         private System.Windows.Forms.Button btn_Customer;
         private System.Windows.Forms.Button btn_overview;
+        private System.Windows.Forms.Button btn_Report;
     }
 }

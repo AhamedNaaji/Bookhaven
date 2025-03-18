@@ -50,6 +50,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.cusorderRecieve_panel = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Totalsales_panel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -57,12 +59,11 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.makesales_btn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
+            this.btn_Report = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.Totalcustomer_panel.SuspendLayout();
@@ -343,6 +344,28 @@
             this.cusorderRecieve_panel.Size = new System.Drawing.Size(227, 120);
             this.cusorderRecieve_panel.TabIndex = 3;
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(33, 18);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(143, 26);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Today Earning";
+            // 
+            // label23
+            // 
+            this.label23.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(43, 57);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(109, 23);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "250000";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
@@ -436,28 +459,6 @@
             this.panel5.Size = new System.Drawing.Size(445, 123);
             this.panel5.TabIndex = 2;
             // 
-            // label23
-            // 
-            this.label23.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(43, 57);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(109, 23);
-            this.label23.TabIndex = 1;
-            this.label23.Text = "250000";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(33, 18);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(143, 26);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Today Earning";
-            // 
             // makesales_btn
             // 
             this.makesales_btn.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
@@ -506,12 +507,27 @@
             this.btn_logout.UseVisualStyleBackColor = false;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
+            // btn_Report
+            // 
+            this.btn_Report.BackColor = System.Drawing.Color.White;
+            this.btn_Report.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Report.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_Report.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Report.Location = new System.Drawing.Point(179, 591);
+            this.btn_Report.Name = "btn_Report";
+            this.btn_Report.Size = new System.Drawing.Size(500, 56);
+            this.btn_Report.TabIndex = 23;
+            this.btn_Report.Text = "Report";
+            this.btn_Report.UseVisualStyleBackColor = false;
+            this.btn_Report.Click += new System.EventHandler(this.btn_Report_Click_1);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1177, 773);
+            this.Controls.Add(this.btn_Report);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.makesales_btn);
@@ -577,5 +593,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.Button btn_Report;
     }
 }

@@ -62,6 +62,7 @@
             this.btn_Sales = new System.Windows.Forms.Button();
             this.btn_Customer = new System.Windows.Forms.Button();
             this.btn_overview = new System.Windows.Forms.Button();
+            this.btn_Report = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_staff)).BeginInit();
             this.panel1.SuspendLayout();
@@ -256,7 +257,7 @@
             this.dgv_staff.Name = "dgv_staff";
             this.dgv_staff.RowHeadersWidth = 51;
             this.dgv_staff.RowTemplate.Height = 24;
-            this.dgv_staff.Size = new System.Drawing.Size(801, 374);
+            this.dgv_staff.Size = new System.Drawing.Size(801, 475);
             this.dgv_staff.TabIndex = 66;
             this.dgv_staff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_staff_CellClick);
             this.dgv_staff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_staff_CellContentClick);
@@ -267,7 +268,7 @@
             // 
             this.btn_deleteStaff.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold);
             this.btn_deleteStaff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
-            this.btn_deleteStaff.Location = new System.Drawing.Point(820, 525);
+            this.btn_deleteStaff.Location = new System.Drawing.Point(820, 583);
             this.btn_deleteStaff.Name = "btn_deleteStaff";
             this.btn_deleteStaff.Size = new System.Drawing.Size(152, 70);
             this.btn_deleteStaff.TabIndex = 65;
@@ -336,6 +337,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(69)))), ((int)(((byte)(89)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btn_Report);
             this.panel2.Controls.Add(this.btn_Suppliers);
             this.panel2.Controls.Add(this.btn_Staff);
             this.panel2.Controls.Add(this.btn_Book);
@@ -348,7 +350,7 @@
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.panel2.Location = new System.Drawing.Point(995, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(267, 770);
+            this.panel2.Size = new System.Drawing.Size(267, 858);
             this.panel2.TabIndex = 67;
             // 
             // btn_Suppliers
@@ -455,11 +457,24 @@
             this.btn_overview.Text = "Overview";
             this.btn_overview.UseVisualStyleBackColor = false;
             // 
+            // btn_Report
+            // 
+            this.btn_Report.BackColor = System.Drawing.Color.White;
+            this.btn_Report.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Report.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.btn_Report.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Report.Location = new System.Drawing.Point(32, 789);
+            this.btn_Report.Name = "btn_Report";
+            this.btn_Report.Size = new System.Drawing.Size(219, 56);
+            this.btn_Report.TabIndex = 9;
+            this.btn_Report.Text = "Report";
+            this.btn_Report.UseVisualStyleBackColor = false;
+            // 
             // Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 770);
+            this.ClientSize = new System.Drawing.Size(1262, 858);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
@@ -514,5 +529,6 @@
         private System.Windows.Forms.Button btn_Sales;
         private System.Windows.Forms.Button btn_Customer;
         private System.Windows.Forms.Button btn_overview;
+        private System.Windows.Forms.Button btn_Report;
     }
 }

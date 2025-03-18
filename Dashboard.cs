@@ -130,5 +130,11 @@ namespace Bookhaven
         {
            
         }
+
+        private void btn_Report_Click_1(object sender, EventArgs e)
+        {
+            Report rpt = new Report();
+            rpt.ShowDialog();
+        }
     }
 }

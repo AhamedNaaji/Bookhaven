@@ -53,6 +53,7 @@
     <Compile Include="AppClasses\cls_cusorder.cs" />
     <Compile Include="AppClasses\cls_customer.cs" />
     <Compile Include="AppClasses\cls_genre.cs" />
+    <Compile Include="AppClasses\cls_report.cs" />
     <Compile Include="AppClasses\cls_sales.cs" />
     <Compile Include="AppClasses\cls_staff.cs" />
     <Compile Include="AppClasses\cls_stock.cs" />
