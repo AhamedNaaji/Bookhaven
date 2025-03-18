@@ -303,7 +303,6 @@ namespace Bookhaven
                 SELECT 
                     Staff_Id,
                     Staff_Name,
-                    Email,
                     MobileNum AS Mobile_Number,
                     Address
                 FROM Staff
