@@ -45,21 +45,14 @@
             this.btn_Customers = new System.Windows.Forms.Button();
             this.btn_Dashboard = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboStaff = new System.Windows.Forms.ComboBox();
-            this.comboCustomer = new System.Windows.Forms.ComboBox();
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.btn_GenerateReport = new System.Windows.Forms.Button();
-            this.label_Total_Sales = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label_Total_Payments = new System.Windows.Forms.Label();
             this.dgv_report = new System.Windows.Forms.DataGridView();
             this.comboReportType = new System.Windows.Forms.ComboBox();
-            this.comboSupplier = new System.Windows.Forms.ComboBox();
-            this.label_Total = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -266,28 +259,10 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // comboStaff
-            // 
-            this.comboStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboStaff.FormattingEnabled = true;
-            this.comboStaff.Location = new System.Drawing.Point(514, 163);
-            this.comboStaff.Name = "comboStaff";
-            this.comboStaff.Size = new System.Drawing.Size(180, 33);
-            this.comboStaff.TabIndex = 53;
-            // 
-            // comboCustomer
-            // 
-            this.comboCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.comboCustomer.FormattingEnabled = true;
-            this.comboCustomer.Location = new System.Drawing.Point(514, 237);
-            this.comboCustomer.Name = "comboCustomer";
-            this.comboCustomer.Size = new System.Drawing.Size(180, 33);
-            this.comboCustomer.TabIndex = 54;
-            // 
             // dateTimePickerStart
             // 
             this.dateTimePickerStart.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerStart.Location = new System.Drawing.Point(1047, 166);
+            this.dateTimePickerStart.Location = new System.Drawing.Point(808, 185);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
             this.dateTimePickerStart.Size = new System.Drawing.Size(195, 30);
             this.dateTimePickerStart.TabIndex = 55;
@@ -295,7 +270,7 @@
             // dateTimePickerEnd
             // 
             this.dateTimePickerEnd.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold);
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(1282, 163);
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(1072, 182);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(200, 30);
             this.dateTimePickerEnd.TabIndex = 56;
@@ -303,7 +278,7 @@
             // btn_GenerateReport
             // 
             this.btn_GenerateReport.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.btn_GenerateReport.Location = new System.Drawing.Point(1502, 159);
+            this.btn_GenerateReport.Location = new System.Drawing.Point(1307, 175);
             this.btn_GenerateReport.Name = "btn_GenerateReport";
             this.btn_GenerateReport.Size = new System.Drawing.Size(228, 37);
             this.btn_GenerateReport.TabIndex = 57;
@@ -311,40 +286,21 @@
             this.btn_GenerateReport.UseVisualStyleBackColor = true;
             this.btn_GenerateReport.Click += new System.EventHandler(this.btn_GenerateReport_Click);
             // 
-            // label_Total_Sales
-            // 
-            this.label_Total_Sales.AutoSize = true;
-            this.label_Total_Sales.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label_Total_Sales.Location = new System.Drawing.Point(1177, 241);
-            this.label_Total_Sales.Name = "label_Total_Sales";
-            this.label_Total_Sales.Size = new System.Drawing.Size(0, 27);
-            this.label_Total_Sales.TabIndex = 58;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(509, 133);
+            this.label3.Location = new System.Drawing.Point(521, 149);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 27);
+            this.label3.Size = new System.Drawing.Size(219, 27);
             this.label3.TabIndex = 60;
-            this.label3.Text = "Staffs";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(509, 207);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 27);
-            this.label4.TabIndex = 61;
-            this.label4.Text = "Customers";
+            this.label3.Text = "Select Report Type";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(1042, 136);
+            this.label5.Location = new System.Drawing.Point(815, 151);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 27);
             this.label5.TabIndex = 62;
@@ -354,26 +310,17 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(1277, 133);
+            this.label6.Location = new System.Drawing.Point(1079, 148);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 27);
             this.label6.TabIndex = 63;
             this.label6.Text = "Date End";
             // 
-            // label_Total_Payments
-            // 
-            this.label_Total_Payments.AutoSize = true;
-            this.label_Total_Payments.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label_Total_Payments.Location = new System.Drawing.Point(1519, 240);
-            this.label_Total_Payments.Name = "label_Total_Payments";
-            this.label_Total_Payments.Size = new System.Drawing.Size(0, 27);
-            this.label_Total_Payments.TabIndex = 66;
-            // 
             // dgv_report
             // 
             this.dgv_report.AllowUserToOrderColumns = true;
             this.dgv_report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_report.Location = new System.Drawing.Point(514, 314);
+            this.dgv_report.Location = new System.Drawing.Point(514, 400);
             this.dgv_report.Name = "dgv_report";
             this.dgv_report.RowHeadersWidth = 51;
             this.dgv_report.RowTemplate.Height = 24;
@@ -384,28 +331,10 @@
             // 
             this.comboReportType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboReportType.FormattingEnabled = true;
-            this.comboReportType.Location = new System.Drawing.Point(718, 160);
+            this.comboReportType.Location = new System.Drawing.Point(526, 183);
             this.comboReportType.Name = "comboReportType";
-            this.comboReportType.Size = new System.Drawing.Size(180, 33);
+            this.comboReportType.Size = new System.Drawing.Size(222, 33);
             this.comboReportType.TabIndex = 68;
-            // 
-            // comboSupplier
-            // 
-            this.comboSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboSupplier.FormattingEnabled = true;
-            this.comboSupplier.Location = new System.Drawing.Point(718, 239);
-            this.comboSupplier.Name = "comboSupplier";
-            this.comboSupplier.Size = new System.Drawing.Size(180, 33);
-            this.comboSupplier.TabIndex = 69;
-            // 
-            // label_Total
-            // 
-            this.label_Total.AutoSize = true;
-            this.label_Total.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label_Total.Location = new System.Drawing.Point(941, 237);
-            this.label_Total.Name = "label_Total";
-            this.label_Total.Size = new System.Drawing.Size(0, 27);
-            this.label_Total.TabIndex = 70;
             // 
             // Report
             // 
@@ -413,21 +342,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(140)))), ((int)(((byte)(137)))));
             this.ClientSize = new System.Drawing.Size(1924, 1049);
-            this.Controls.Add(this.label_Total);
-            this.Controls.Add(this.comboSupplier);
             this.Controls.Add(this.comboReportType);
             this.Controls.Add(this.dgv_report);
-            this.Controls.Add(this.label_Total_Payments);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label_Total_Sales);
             this.Controls.Add(this.btn_GenerateReport);
             this.Controls.Add(this.dateTimePickerEnd);
             this.Controls.Add(this.dateTimePickerStart);
-            this.Controls.Add(this.comboCustomer);
-            this.Controls.Add(this.comboStaff);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "Report";
@@ -460,20 +382,13 @@
         private System.Windows.Forms.Button btn_Customers;
         private System.Windows.Forms.Button btn_Dashboard;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox comboStaff;
-        private System.Windows.Forms.ComboBox comboCustomer;
         private System.Windows.Forms.DateTimePicker dateTimePickerStart;
         private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
         private System.Windows.Forms.Button btn_GenerateReport;
-        private System.Windows.Forms.Label label_Total_Sales;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label_Total_Payments;
         private System.Windows.Forms.DataGridView dgv_report;
         private System.Windows.Forms.ComboBox comboReportType;
-        private System.Windows.Forms.ComboBox comboSupplier;
-        private System.Windows.Forms.Label label_Total;
     }
 }
