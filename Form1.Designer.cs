@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btn_Login = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,23 +42,13 @@
             // btn_Login
             // 
             this.btn_Login.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Login.Location = new System.Drawing.Point(551, 399);
+            this.btn_Login.Location = new System.Drawing.Point(553, 365);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(175, 48);
             this.btn_Login.TabIndex = 15;
             this.btn_Login.Text = "Login";
             this.btn_Login.UseVisualStyleBackColor = true;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click_1);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(474, 352);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 15);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "forgotpassword";
             // 
             // txt_Password
             // 
@@ -102,9 +91,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(73, 144);
+            this.pictureBox1.Location = new System.Drawing.Point(58, 119);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(312, 223);
+            this.pictureBox1.Size = new System.Drawing.Size(283, 223);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
@@ -125,7 +114,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(842, 468);
             this.Controls.Add(this.btn_Login);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -145,7 +133,6 @@
         #endregion
 
         private System.Windows.Forms.Button btn_Login;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

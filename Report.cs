@@ -177,50 +177,50 @@ namespace Bookhaven
         private void ExportToPdf(DataGridView dgv, string filePath)
         {
             // Create a PDF document
-            using (FileStream stream = new FileStream(filePath, FileMode.Create))
-            {
-                PdfWriter writer = new PdfWriter(stream);
-                PdfDocument pdfDoc = new PdfDocument(writer);
-                Document document = new Document(pdfDoc);
+            //using (FileStream stream = new FileStream(filePath, FileMode.Create))
+            //{
+            //    PdfWriter writer = new PdfWriter(stream);
+            //    PdfDocument pdfDoc = new PdfDocument(writer);
+            //    Document document = new Document(pdfDoc);
 
-                // Add a title to the PDF
-                Paragraph title = new Paragraph("Sales Report")
-                    .SetTextAlignment(TextAlignment.CENTER)
-                    .SetFontSize(18);
-                document.Add(title);
+            //    // Add a title to the PDF
+            //    Paragraph title = new Paragraph("Sales Report")
+            //        .SetTextAlignment(TextAlignment.CENTER)
+            //        .SetFontSize(18);
+            //    document.Add(title);
 
-                // Add a blank line
-                document.Add(new Paragraph("\n"));
+            //    // Add a blank line
+            //    document.Add(new Paragraph("\n"));
 
-                // Add table headers
-                Table table = new Table(dgv.ColumnCount).UseAllAvailableWidth();
-                foreach (DataGridViewColumn column in dgv.Columns)
-                {
-                    table.AddHeaderCell(column.HeaderText);
-                }
+            //    // Add table headers
+            //    Table table = new Table(dgv.ColumnCount).UseAllAvailableWidth();
+            //    foreach (DataGridViewColumn column in dgv.Columns)
+            //    {
+            //        table.AddHeaderCell(column.HeaderText);
+            //    }
 
-                // Add rows to the table
-                foreach (DataGridViewRow row in dgv.Rows)
-                {
-                    foreach (DataGridViewCell cell in row.Cells)
-                    {
-                        if (cell.Value != null)
-                        {
-                            table.AddCell(cell.Value.ToString());
-                        }
-                        else
-                        {
-                            table.AddCell(""); // Handle null values
-                        }
-                    }
-                }
+            //    // Add rows to the table
+            //    foreach (DataGridViewRow row in dgv.Rows)
+            //    {
+            //        foreach (DataGridViewCell cell in row.Cells)
+            //        {
+            //            if (cell.Value != null)
+            //            {
+            //                table.AddCell(cell.Value.ToString());
+            //            }
+            //            else
+            //            {
+            //                table.AddCell(""); // Handle null values
+            //            }
+            //        }
+            //    }
 
-                // Add the table to the document
-                document.Add(table);
+            //    // Add the table to the document
+            //    document.Add(table);
 
-                // Close the document
-                document.Close();
-            }
+            //    // Close the document
+            //    document.Close();
+            //}
         
    } }   
 }
