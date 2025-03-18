@@ -11,16 +11,16 @@ namespace Bookhaven.AppClasses
         SqlConnection conn = new SqlConnection("Data Source=MMSALMANFARIS;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         SqlTransaction transaction;
 
-        // Properties for CusOrder
+
         public int CustOrder_Id { get; set; }
         public int Staff_Id_fk { get; set; }
         public int Customer_Id_fk { get; set; }
-        public int Supplier_Id_fk { get; set; } // New property for supplier
+        public int Supplier_Id_fk { get; set; }
         public DateTime Date { get; set; }
         public int Status_Id_fk { get; set; }
         public float Total_Payment { get; set; }
 
-        // List to store order details
+
         public List<CusOrderDetail> OrderDetails { get; set; } = new List<CusOrderDetail>();
 
         // Nested class for order details

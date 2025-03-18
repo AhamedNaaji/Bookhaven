@@ -11,7 +11,7 @@ namespace Bookhaven.AppClasses
         SqlConnection conn = new SqlConnection("Data Source=MMSALMANFARIS;Initial Catalog=Bookheaven;Integrated Security=True;Encrypt=False");
         SqlTransaction transaction;
 
-        // Add Genre_Id property
+
         public int Genre_Id { get; set; }
         public string genreName { get; set; }
 

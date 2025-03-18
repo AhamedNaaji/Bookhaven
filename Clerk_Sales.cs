@@ -432,7 +432,7 @@ namespace Bookhaven
 
         private void btn_Customer_Click(object sender, EventArgs e)
         {
-            Customer customer = new Customer(_staffId);
+            Clerk_CustomerOrder customer = new Clerk_CustomerOrder(_staffId); 
             customer.ShowDialog();
         }
 

@@ -24,9 +24,6 @@ namespace Bookhaven.AppClasses
         // Keep the rest of the properties (Customer_Id, Customer_Name, etc.)
 
 
-
-
-
         public void Insertdata()
         {
             try
@@ -187,7 +184,7 @@ namespace Bookhaven.AppClasses
                 cmd.Parameters.AddWithValue("@Supplier_Id", Supplier_Id);
                 SqlDataReader rd = cmd.ExecuteReader();
 
-                // Clear existing numbers
+                // Clear 
                 supMobNumbers.Clear();
 
                 while (rd.Read())
@@ -199,11 +196,11 @@ namespace Bookhaven.AppClasses
                     Address = rd["Address"].ToString();
                     Email = rd["Email"].ToString();
 
-                    // Add mobile number to the list (if not null)
+                    // Add mobile number to the list 
                     while (rd.Read())
                     {
-                        // ...
-                        if (rd["SupMobNumber"] != DBNull.Value) // Use SupMobNumber instead of SupMobNumber
+ 
+                        if (rd["SupMobNumber"] != DBNull.Value) 
                             supMobNumbers.Add(rd["SupMobNumber"].ToString());
                     }
                 }
